@@ -159,11 +159,11 @@ apps/web build: Done
 test at tooling/workflows.test.mjs:54:3
 ✖ development: API proxy, SPA routes, stopped backend and occupied web port (16456.001632ms)
   Error: Startup timeout: http://localhost:46341/
-  
+
     VITE v7.3.6  ready in 203 ms
-  
+
     ➜  Local:   http://localhost:46341/
-  
+
       at ready (file:///workspace/tooling/workflows.test.mjs:44:9)
       at async TestContext.<anonymous> (file:///workspace/tooling/workflows.test.mjs:64:7)
       at async Test.run (node:internal/test_runner/test:1409:7)
@@ -173,7 +173,7 @@ test at tooling/workflows.test.mjs:54:3
 ✖ preview: API proxy, SPA routes, stopped backend and occupied web port (16439.070633ms)
   Error: Startup timeout: http://localhost:39659/
     ➜  Local:   http://localhost:39659/
-  
+
       at ready (file:///workspace/tooling/workflows.test.mjs:44:9)
       at async TestContext.<anonymous> (file:///workspace/tooling/workflows.test.mjs:64:7)
       at async Test.run (node:internal/test_runner/test:1409:7)
