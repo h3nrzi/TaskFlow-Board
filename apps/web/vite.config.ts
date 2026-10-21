@@ -21,6 +21,6 @@ export default defineConfig({
   },
   root: import.meta.dirname,
   build: { outDir: 'dist/public', emptyOutDir: true },
-  server: { host: 'localhost', port, strictPort: true, proxy },
-  preview: { host: 'localhost', port, strictPort: true, proxy },
+  server: { host: '127.0.0.1', port, strictPort: true, proxy },
+  preview: { host: '127.0.0.1', port, strictPort: true, proxy },
 });
