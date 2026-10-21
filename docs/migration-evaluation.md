@@ -47,7 +47,7 @@ Nest selection: registry metadata confirms stable Nest **11.2.7**, runtime Node 
 
 | Ticket | Delivered checks / evidence | First evaluation action / pending work |
 | --- | --- | --- |
-| 01 Baseline | Original failures, exact accommodations, 66 hashes, original dependency graph, limited native browser observations | Read baseline-browser.md; rerun controlled baseline with exported fixture; remaining UI coverage pending |
+| 01 Baseline | Existing source/dependency evidence plus isolated original functional observations and dev/preview route/refresh matrix | Read [follow-up](migration-evidence/baseline-browser-followup.md); create a dedicated profile and export/restore fixture; remaining coverage and network capture pending |
 | 02 Audit | removal-audit.md and removal-files.json contain every audited file and references | Review removal-files.json against original checkout |
 | 03 Frontend workspace | Independent defaults, preservation, typecheck/build, routing/occupied-port command checks | `pnpm dev:web`; begin dashboard/navigation; full visual/persistence comparison pending |
 | 04 Nest health | Independent boot, exact HTTP smoke and cleanup, port handling | `pnpm dev:api`; curl http://localhost:8080/api/healthz |
@@ -74,7 +74,7 @@ Run these steps against the baseline and migrated frontend. Record observed resu
 | Direct routes and fallback | Directly open and refresh each route above plus an unknown route, in development and built preview. | Same page behavior and frontend not-found view; application routes load without server 404s. |
 | Deletion | Delete the probe task; create a second task in the evaluation project, then delete the project. | Same confirmation and removal of the project and its tasks; unrelated data remains. |
 
-Each feature row remains pending human evaluation. Original browser coverage is limited to the observations in baseline-browser.md; do not classify the other rows as observed equivalence. Record baseline/migrated outcomes, screenshot paths, console/network findings and classify each difference as baseline defect, migration regression, environmental difference or unverified. Confirm no browser-initiated application API requests during normal use.
+Each feature row remains pending human evaluation. Original browser coverage is recorded in baseline-browser.md and [the ticket 01 follow-up](migration-evidence/baseline-browser-followup.md); neither establishes migrated equivalence. Record baseline/migrated outcomes, screenshot paths, console/network findings and classify each difference as baseline defect, migration regression, environmental difference or unverified. Confirm no browser-initiated application API requests during normal use.
 
 ## Infrastructure evaluation
 
@@ -101,6 +101,10 @@ API_PROXY_TARGET=http://127.0.0.1:8081 pnpm preview
 
 ## Known limitations and acceptance
 
-Existing tooltip.tsx sourcemap warning occurs in both production builds; no protected-source fix was attempted. No frontend behavior defect was established by the limited baseline session. Linux-container execution passes; no native Ubuntu/x64 or hosted CI success is claimed. Browser fixture export, controlled viewport/clock/fonts, CRUD/filter/auth/mobile/cascade coverage, console/network capture and same-origin persistence comparison remain outstanding.
+Existing tooltip.tsx sourcemap warning occurs in both production builds; no protected-source fix was attempted. The original-browser follow-up records an Add task project-selection quirk; fixes are deferred. Linux-container execution passes; no native Ubuntu/x64 or hosted CI success is claimed. Browser fixture export, controlled viewport/clock/fonts, CRUD/filter/auth/mobile/cascade coverage, console/network capture and same-origin persistence comparison remain outstanding.
 
 Automated results and guide readiness do not establish human acceptance. Start with the dashboard/navigation checkpoint above and report your observations in this chat.
+
+## Ticket 01 follow-up checkpoint
+
+See [original-browser follow-up](migration-evidence/baseline-browser-followup.md) for actual 2026-10-21 observations, reproduction actions, preflight artifacts and exact gaps. The original dev/preview routing criterion is now supported; the controlled-profile/fixture and complete functional-evidence criteria remain unchecked. Actual in-app measurements were scale **1**, not the scale-2 target above. No migrated browser comparison was performed in the follow-up. Its first action is to create a disposable evaluation profile with DevTools and start the retained original checkout, then export and verify restoration of the storage fixture. Human evaluation remains pending.

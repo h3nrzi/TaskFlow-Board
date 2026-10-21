@@ -1,0 +1,7 @@
+
+> @workspace/taskflow@0.0.0 serve /private/tmp/taskflow-original-browser-01/artifacts/taskflow
+> vite preview --config vite.config.ts --host 0.0.0.0
+
+  ➜  Local:   http://localhost:21998/
+  ➜  Network: http://192.168.1.126:21998/
+  ➜  Network: http://172.16.9.1:21998/

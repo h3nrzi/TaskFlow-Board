@@ -1,0 +1,57 @@
+{
+  "original": {
+    "checked": 66,
+    "mismatches": []
+  },
+  "migrated": {
+    "checked": 66,
+    "mismatches": []
+  },
+  "original_tracked_diff": [
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "original_accommodation_matches_recorded_patch": true,
+  "preview_http": {
+    "/": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/projects": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/tasks": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/settings": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/projects/studio-site": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/login": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/signup": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    },
+    "/baseline-unknown-01": {
+      "status": 200,
+      "content_type": "text/html",
+      "app_entry": true
+    }
+  }
+}

@@ -11,3 +11,7 @@ Not measured: exact CSS viewport, device scale, browser timezone, frozen clock, 
 Observed pre-existing tooling defect: production build logs a tooltip.tsx sourcemap warning; build succeeds. No frontend behavior defect was established. Do not interpret untested behavior as defect-free.
 
 The final production build reproduces the baseline's index-CkrM45mg.css (95.50 kB) and index-BZrco9Mm.js (376.63 kB), with the same 1766 transformed modules. This is supporting artifact evidence, not human/browser acceptance. Baseline and final build logs are committed.
+
+## Subsequent original-browser evidence
+
+The [ticket 01 follow-up](baseline-browser-followup.md) adds isolated original development/preview routing, functional observations and measured viewports/font status. Its limitations supersede neither the historical interruption nor the missing controlled profile, exported fixture and network capture. Routing is now observed; the other two browser acceptance criteria remain incomplete.
