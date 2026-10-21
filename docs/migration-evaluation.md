@@ -1,6 +1,6 @@
 # TaskFlow migration evaluation
 
-Implementation is committed locally on the current branch. Human acceptance is **pending**. Broad browser equivalence, Linux execution and hosted CI execution are **unverified**; do not infer them from source checks or build output.
+Implementation is committed locally on the current branch. Human acceptance is **pending**. Broad browser equivalence and hosted CI execution are **unverified**; fresh macOS and Linux-container command checks pass; do not infer them from source checks or build output.
 
 ## First action and setup
 
@@ -35,8 +35,8 @@ To reproduce the original baseline, use a separate checkout at `f2ace8ba95606cd7
 | HTTP health | Red before implementation; green after; exact JSON and cleanup | taskflow-health-red.log; health-green.log |
 | Proxy development / preview | Red SPA fallback before rule; green after; alternate target, 404, stopped backend, SPA and occupied web ports | taskflow-proxy-red.log; taskflow-proxy-green.log; taskflow-preview-green.log |
 | Default commands | `pnpm dev`, built API + preview: direct/proxied health pass without injected settings | default-workflows.log |
-| Final complete suite / fresh checkout | Results recorded in final-validation.md | final-validation.md |
-| Linux | Pending: Docker daemon unavailable on this host | Docker reported cannot connect to unix:///Users/hossein/.docker/run/docker.sock |
+| Final complete suite / fresh checkout | Pass on macOS arm64 and Linux arm64 container at 7a332e5: frozen install, all checks and 4 tests | final-validation.md; fresh-macos.log; fresh-linux.log |
+| Linux | Pass in fresh Linux arm64 Debian bookworm container after fixing localhost address mismatch; hosted Ubuntu/x64 still pending | fresh-linux-initial.log; linux-loopback-diagnosis.md; fresh-linux.log |
 | GitHub Actions macOS/Linux | Workflow created; no hosted run claimed. Local commits have not been pushed | .github/workflows/foundation.yml |
 
 Evidence paths above are relative to [migration-evidence](migration-evidence/). The original frontend graph has no version upgrades. Removed direct dependencies are only the three Replit Vite plugins and unused workspace API client. Restored native optional packages are required by the same locked esbuild, Rollup, Lightning CSS and Tailwind Oxide versions. The esbuild 0.28.2 override and original tsx 4.23.13 are retained. Backend additions do not change frontend resolutions.
@@ -52,7 +52,7 @@ Nest selection: registry metadata confirms stable Nest **11.2.7**, runtime Node 
 | 03 Frontend workspace | Independent defaults, preservation, typecheck/build, routing/occupied-port command checks | `pnpm dev:web`; begin dashboard/navigation; full visual/persistence comparison pending |
 | 04 Nest health | Independent boot, exact HTTP smoke and cleanup, port handling | `pnpm dev:api`; curl http://localhost:8080/api/healthz |
 | 05 Proxy | Dev/preview defaults and alternate target, unknown API, stopped backend | Run curl checks below; ordinary browser network trace still pending |
-| 06 Platforms | Committed fresh-checkout-safe checks and macOS/Linux CI matrix | `pnpm check` in a clean clone; Linux and Actions execution pending |
+| 06 Platforms | Committed fresh-checkout-safe checks and macOS/Linux CI matrix | `pnpm check` in a clean clone; macOS and Linux container pass, hosted Actions pending |
 | 07 Comparison | Same protected files/dependencies and content-hashed production assets; HTTP routes checked | Run every row below on original and migrated builds; browser comparison remains incomplete |
 | 08 Review/handoff | Scope/dependency/preservation review, exact commands, evidence and limitations | Follow first action above; report observations; human acceptance pending |
 
@@ -101,6 +101,6 @@ API_PROXY_TARGET=http://127.0.0.1:8081 pnpm preview
 
 ## Known limitations and acceptance
 
-Existing tooltip.tsx sourcemap warning occurs in both production builds; no protected-source fix was attempted. No frontend behavior defect was established by the limited baseline session. No Linux or hosted CI success is claimed. Browser fixture export, controlled viewport/clock/fonts, CRUD/filter/auth/mobile/cascade coverage, console/network capture and same-origin persistence comparison remain outstanding.
+Existing tooltip.tsx sourcemap warning occurs in both production builds; no protected-source fix was attempted. No frontend behavior defect was established by the limited baseline session. Linux-container execution passes; no native Ubuntu/x64 or hosted CI success is claimed. Browser fixture export, controlled viewport/clock/fonts, CRUD/filter/auth/mobile/cascade coverage, console/network capture and same-origin persistence comparison remain outstanding.
 
 Automated results and guide readiness do not establish human acceptance. Start with the dashboard/navigation checkpoint above and report your observations in this chat.

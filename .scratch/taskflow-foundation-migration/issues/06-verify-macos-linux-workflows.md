@@ -15,6 +15,6 @@
 
 ## Implementation evidence
 
-Fresh-checkout-safe checks and macOS/Linux Actions workflow delivered. macOS fresh-clone result is recorded in final-validation.md; Linux and Actions execution pending.
+Fresh-checkout-safe checks and macOS/Linux Actions workflow delivered. Fresh native macOS arm64 and Linux arm64 container checks pass at 7a332e5; results are recorded separately in final-validation.md. Hosted Actions macOS/Linux and native Ubuntu/x64 execution remain pending.
 
 See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.

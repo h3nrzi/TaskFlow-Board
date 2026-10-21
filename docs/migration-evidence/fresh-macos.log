@@ -1,0 +1,109 @@
+Revision: 7a332e5c0cda8718dc07b6f10c04c850764963ac
+$ node --version
+v24.22.0
+$ pnpm --version
+10.11.0
+$ pnpm install --frozen-lockfile
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +318
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 318, reused 301, downloaded 0, added 0
+Progress: resolved 318, reused 318, downloaded 0, added 212
+Progress: resolved 318, reused 318, downloaded 0, added 275
+Progress: resolved 318, reused 318, downloaded 0, added 295
+Progress: resolved 318, reused 318, downloaded 0, added 314
+Progress: resolved 318, reused 318, downloaded 0, added 315
+Progress: resolved 318, reused 318, downloaded 0, added 318, done
+
+devDependencies:
++ tsx 4.23.13
++ typescript 5.9.3
++ yaml 2.9.0
+
+Done in 7.8s using pnpm v10.11.0
+$ pnpm check
+
+> taskflow@0.0.0 check /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> pnpm verify:frontend && pnpm verify:dependencies && pnpm typecheck && pnpm build && pnpm test
+
+
+> taskflow@0.0.0 verify:frontend /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> node tooling/verify-frontend.mjs
+
+66 protected files match ae51b1750a6a8c8ef795d6495c2f94f27d79d0be, including relocation and inventory completeness
+
+> taskflow@0.0.0 verify:dependencies /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> node tooling/audit-dependencies.mjs
+
+228 retained frontend snapshots and direct resolutions preserved
+
+> taskflow@0.0.0 typecheck /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> pnpm -r run typecheck
+
+Scope: 2 of 3 workspace projects
+apps/api typecheck$ tsc -p tsconfig.json --noEmit
+apps/web typecheck$ tsc -p tsconfig.json --noEmit
+apps/api typecheck: Done
+apps/web typecheck: Done
+
+> taskflow@0.0.0 build /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> pnpm -r run build
+
+Scope: 2 of 3 workspace projects
+apps/api build$ tsc -p tsconfig.json
+apps/web build$ vite build
+apps/api build: Done
+apps/web build: vite v7.3.6 building client environment for production...
+apps/web build: transforming...
+apps/web build: src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+apps/web build: ✓ 1766 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/public/index.html                   1.36 kB │ gzip:   0.54 kB
+apps/web build: dist/public/assets/index-CkrM45mg.css   95.50 kB │ gzip:  16.91 kB
+apps/web build: dist/public/assets/index-BZrco9Mm.js   376.63 kB │ gzip: 117.47 kB
+apps/web build: ✓ built in 3.43s
+apps/web build: Done
+
+> taskflow@0.0.0 test /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> pnpm --filter @taskflow/api test && pnpm test:workflows
+
+
+> @taskflow/api@0.0.0 test /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout/apps/api
+> pnpm build && node --test test/*.test.mjs
+
+
+> @taskflow/api@0.0.0 build /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout/apps/api
+> tsc -p tsconfig.json
+
+[Nest] 86176  - 10/21/2026, 8:24:28 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 86176  - 10/21/2026, 8:24:28 PM     LOG [InstanceLoader] AppModule dependencies initialized +8ms
+[Nest] 86176  - 10/21/2026, 8:24:28 PM     LOG [RoutesResolver] HealthController {/api}: +3ms
+[Nest] 86176  - 10/21/2026, 8:24:28 PM     LOG [RouterExplorer] Mapped {/api/healthz, GET} route +1ms
+[Nest] 86176  - 10/21/2026, 8:24:28 PM     LOG [NestApplication] Nest application successfully started +1ms
+✔ an independent application serves the exact HTTP health contract and closes cleanly (196.54025ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 501.721583
+
+> taskflow@0.0.0 test:workflows /private/var/folders/bp/pmw9frnx1r5b0bm78bz93d6h0000gn/T/taskflow-final-macos-zunugbsr/checkout
+> node --test tooling/workflows.test.mjs
+
+✔ development: API proxy, SPA routes, stopped backend and occupied web port (2232.520166ms)
+✔ preview: API proxy, SPA routes, stopped backend and occupied web port (860.993917ms)
+✔ backend command fails clearly on an occupied port (609.074084ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3772.351291
