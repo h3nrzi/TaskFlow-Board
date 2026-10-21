@@ -17,3 +17,17 @@ Standards: 0 findings. Spec: 0 additional findings; recorded evaluation gaps rem
 ## Follow-up: 7a332e5
 
 Both independent reviewers examined `git diff 7e0084f..7a332e5`. Standards: 0 findings. Spec: 0 findings. Explicit IPv4 loopback binding in development and preview satisfies local-only access and fixes the reproduced Linux address mismatch within the permitted configuration boundary. Browser origin, protected source, ports and proxy paths are unchanged. Final platform execution results are recorded separately.
+
+## Follow-up: remaining ticket evidence, 2026-10-22
+
+Fixed point: `4a0c61101e37cd28900908ac464924d0c8f5eaf3`. Both independent reviewers examined `git diff 4a0c611...HEAD` through `e4c3481`. The changes record browser observations, hosted CI evidence, and ticket checkpoints; application source, tooling, manifests, lockfile and workflow are unchanged.
+
+Standards: one P3 finding, corrected. Ticket 06’s current implementation paragraph incorrectly still described hosted Ubuntu/x64 as pending despite its recorded pass.
+
+Spec: the same P3 evidence inconsistency, corrected. No additional implementation defects or scope creep were identified. The two newly completed criteria (ticket 03 browser continuity and ticket 07 persistence) are supported by the observations. The remaining nine criteria are deliberately unchecked because their full evidence is still incomplete.
+
+Final CI refresh: both hosted macOS attempts were cancelled before any workflow steps ran; hosted Ubuntu passed. The final saved snapshot and current ticket/guide wording now reflect the completed run. This does not establish a hosted macOS pass.
+
+Final verification: full `pnpm check` passed in `remaining-tasks-check.log`; subsequent preservation checks report 66 unchanged frontend files and 228 unchanged dependency snapshots. Markdown local links and whitespace checks passed. Human acceptance remains pending.
+
+Both independent reviewers rechecked the final amendment and reported no remaining actionable findings in their respective axes. A final native-browser retry encountered the same recorded ScreenCaptureKit failure; its incomplete actions are appended to the browser comparison and close no further criteria.

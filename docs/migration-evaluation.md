@@ -37,7 +37,7 @@ To reproduce the original baseline, use a separate checkout at `ae51b1750a6a8c8e
 | Default commands | `pnpm dev`, built API + preview: direct/proxied health pass without injected settings | default-workflows.log |
 | Final complete suite / fresh checkout | Pass on macOS arm64 and Linux arm64 container at 7a332e5: frozen install, all checks and 4 tests | final-validation.md; fresh-macos.log; fresh-linux.log |
 | Linux | Pass in fresh Linux arm64 Debian bookworm container after fixing localhost address mismatch; hosted Ubuntu/x64 now passes separately | fresh-linux-initial.log; linux-loopback-diagnosis.md; fresh-linux.log; hosted-validation.md |
-| GitHub Actions macOS/Linux | Published Foundation branch: hosted Ubuntu passes; first macOS job cancelled, retry queued | hosted-validation.md; hosted-actions.json |
+| GitHub Actions macOS/Linux | Published Foundation branch: hosted Ubuntu passes; both macOS attempts cancelled before execution | hosted-validation.md; hosted-actions.json |
 
 Evidence paths above are relative to [migration-evidence](migration-evidence/). The original frontend graph has no version upgrades. Removed direct dependencies are only the three Replit Vite plugins and unused workspace API client. Restored native optional packages are required by the same locked esbuild, Rollup, Lightning CSS and Tailwind Oxide versions. The esbuild 0.28.2 override and original tsx 4.23.13 are retained. Backend additions do not change frontend resolutions.
 
@@ -113,7 +113,7 @@ See [original-browser follow-up](migration-evidence/baseline-browser-followup.md
 
 The [latest browser comparison](migration-evidence/browser-comparison-22.md) supersedes earlier “persistence unobserved” notes: original browser-local project/task/profile/theme state loaded after switching to migrated development at the same origin, and migrated changes survived refresh and restart. Development and built-preview direct-route/refresh matrices were exercised on both builds. Task/project deletion and cancellation, cascade preservation of all eight unrelated seed tasks, all filter controls/options, three identical sort orders, demo entry, themes and mobile drawers are recorded feature by feature. These observations do not establish complete controlled equivalence: native fixture restoration, paired screenshot/network capture, date-field editing and full mobile replay remain pending.
 
-[Hosted-platform evidence](migration-evidence/hosted-validation.md) now establishes Ubuntu/x64 success. Hosted macOS was cancelled before execution; a retry remains queued in the recorded snapshot. Local macOS and Linux-container passes remain separately recorded.
+[Hosted-platform evidence](migration-evidence/hosted-validation.md) now establishes Ubuntu/x64 success. Hosted macOS was cancelled before execution; the retry was also cancelled before execution in the final snapshot. Local macOS and Linux-container passes remain separately recorded.
 
 | Ticket | Latest checkpoint | Next action / remaining boundary |
 | --- | --- | --- |
@@ -122,7 +122,7 @@ The [latest browser comparison](migration-evidence/browser-comparison-22.md) sup
 | 03 | Remaining existing-data/routing criterion completed | `pnpm dev:web`; inspect Overview and seed project routes. Controlled visual comparison belongs to the remaining browser work. |
 | 04 | Existing actual HTTP smoke/independent startup evidence unchanged | `pnpm dev:api`, then curl localhost:8080/api/healthz. |
 | 05 | Existing dev/preview HTTP matrix and preservation audits unchanged | Capture ordinary user-flow network traffic in DevTools; no application API calls expected. |
-| 06 | Hosted Ubuntu/x64 pass; macOS cancellation/retry queued | Inspect the linked Foundation job when a hosted macOS runner executes it. No hosted macOS pass claimed. |
+| 06 | Hosted Ubuntu/x64 pass; both macOS attempts cancelled before execution | Inspect the linked Foundation job when a hosted macOS runner executes it. No hosted macOS pass claimed. |
 | 07 | Persistence criterion completed; expanded functional comparison | Finish controlled fixture, screenshots/network, date editing and mobile replay before completing remaining grouped criteria. |
 | 08 | Evidence/handoff reconciled with current observations | First action below; report observations. Human acceptance pending. |
 
