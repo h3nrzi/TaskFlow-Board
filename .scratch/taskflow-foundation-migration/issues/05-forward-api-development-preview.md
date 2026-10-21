@@ -18,4 +18,8 @@
 
 Configuration-only proxy delivered; HTTP matrix passes. Ordinary browser network capture remains pending.
 
-See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+See [evaluation guide](../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+
+## Comments
+
+2026-10-22 follow-up: Protected files and dependency resolutions still pass. In-app console capture returned no warnings/errors, but its read-only scope exposes no resource timing/network trace. The ordinary-traffic criterion stays unchecked; source identity alone is not substituted for network evidence. See [browser comparison](../../../docs/migration-evidence/browser-comparison-22.md), [hosted validation](../../../docs/migration-evidence/hosted-validation.md), and [evaluation guide](../../../docs/migration-evaluation.md).

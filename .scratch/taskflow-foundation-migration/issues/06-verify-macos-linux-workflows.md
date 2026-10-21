@@ -17,4 +17,8 @@
 
 Fresh-checkout-safe checks and macOS/Linux Actions workflow delivered. Fresh native macOS arm64 and Linux arm64 container checks pass at 7a332e5; results are recorded separately in final-validation.md. Hosted Actions macOS/Linux and native Ubuntu/x64 execution remain pending.
 
-See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+See [evaluation guide](../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+
+## Comments
+
+2026-10-22 follow-up: Published codex/foundation-validation at 4a0c611 to run Foundation. Hosted Ubuntu 24.04.5 x64 passed the complete workflow with Node 24.22.0/pnpm 10.11.0. The first hosted macOS job was cancelled without execution; one retry was requested and remains queued in the recorded snapshot. Hosted macOS success and the grouped execution criterion remain pending. See hosted-validation.md. See [browser comparison](../../../docs/migration-evidence/browser-comparison-22.md), [hosted validation](../../../docs/migration-evidence/hosted-validation.md), and [evaluation guide](../../../docs/migration-evaluation.md).

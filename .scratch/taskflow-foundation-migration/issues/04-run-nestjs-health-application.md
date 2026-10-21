@@ -18,4 +18,4 @@
 
 NestJS health-only app delivered; real HTTP smoke, defaults and occupied-port checks pass.
 
-See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+See [evaluation guide](../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.

@@ -19,4 +19,8 @@
 
 Scope review and evaluation guide delivered with explicit outstanding checks; human acceptance pending.
 
-See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+See [evaluation guide](../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.
+
+## Comments
+
+2026-10-22 follow-up: Updated the per-ticket handoff, actual browser and hosted-platform evidence, remaining limitations and exact first action. Application/tooling/configuration/manifests/lockfile are unchanged. Human acceptance remains pending. See [browser comparison](../../../docs/migration-evidence/browser-comparison-22.md), [hosted validation](../../../docs/migration-evidence/hosted-validation.md), and [evaluation guide](../../../docs/migration-evaluation.md).
