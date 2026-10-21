@@ -12,5 +12,11 @@
 - [ ] Verify persistence after refresh and same-origin frontend restart, retaining the original storage key and introducing no browser-origin data transfer.
 - [ ] Compare direct navigation, route refresh, unknown frontend routes, and built preview. Inspect assets, styling, console/network observations, and ordinary browser traffic for new application API calls.
 - [ ] Retain reproducible actions, baseline/migrated observations, screenshots where useful, and classifications for each difference. If baseline execution was blocked, explicitly leave behavioral equivalence unverified.
-- [ ] Resolve migration regressions within the allowed infrastructure boundary and rerun affected checks. Defer protected-source defect fixes and surface any conflict instead of editing protected files or weakening checks.
-- [ ] Update the feature-by-feature evaluation handoff with actual evidence, outstanding failures, and the first concrete user action; human acceptance remains pending until the user reports observations.
+- [x] Resolve migration regressions within the allowed infrastructure boundary and rerun affected checks. Defer protected-source defect fixes and surface any conflict instead of editing protected files or weakening checks.
+- [x] Update the feature-by-feature evaluation handoff with actual evidence, outstanding failures, and the first concrete user action; human acceptance remains pending until the user reports observations.
+
+## Implementation evidence
+
+Supporting preservation/dependency/build artifact and HTTP evidence delivered. Controlled feature-by-feature browser comparison remains incomplete; no behavioral-equivalence claim.
+
+See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.

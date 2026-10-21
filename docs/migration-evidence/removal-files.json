@@ -1,0 +1,1070 @@
+[
+  {
+    "original": ".replit",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": ".replitignore",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/.replit-artifact/artifact.toml",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/build.mjs",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/app.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/lib/.gitkeep",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/lib/logger.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/middlewares/.gitkeep",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/routes/health.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/src/routes/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/api-server/tsconfig.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/.replit-artifact/artifact.toml",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/components.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/index.html",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/mockupPreviewPlugin.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/.generated/mockup-components.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/App.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/accordion.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/alert-dialog.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/alert.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/aspect-ratio.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/avatar.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/badge.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/breadcrumb.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/button-group.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/button.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/calendar.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/card.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/carousel.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/chart.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/checkbox.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/collapsible.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/command.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/context-menu.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/dialog.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/drawer.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/dropdown-menu.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/empty.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/field.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/form.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/hover-card.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/input-group.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/input-otp.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/input.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/item.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/kbd.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/label.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/menubar.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/navigation-menu.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/pagination.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/popover.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/progress.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/radio-group.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/resizable.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/scroll-area.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/select.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/separator.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/sheet.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/sidebar.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/skeleton.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/slider.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/sonner.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/spinner.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/switch.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/table.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/tabs.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/textarea.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/toast.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/toaster.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/toggle-group.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/toggle.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/components/ui/tooltip.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/hooks/use-mobile.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/hooks/use-toast.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/index.css",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/lib/utils.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/src/main.tsx",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/tsconfig.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/mockup-sandbox/vite.config.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/taskflow/.replit-artifact/artifact.toml",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "artifacts/taskflow/components.json",
+    "decision": "relocate",
+    "destination": "apps/web/components.json",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/index.html",
+    "decision": "relocate",
+    "destination": "apps/web/index.html",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/package.json",
+    "decision": "relocate",
+    "destination": "apps/web/package.json",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/public/favicon.svg",
+    "decision": "relocate",
+    "destination": "apps/web/public/favicon.svg",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/public/robots.txt",
+    "decision": "relocate",
+    "destination": "apps/web/public/robots.txt",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/App.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/App.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/error-boundary.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/error-boundary.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/accordion.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/accordion.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/alert-dialog.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/alert-dialog.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/alert.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/alert.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/aspect-ratio.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/aspect-ratio.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/avatar.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/avatar.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/badge.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/badge.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/breadcrumb.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/breadcrumb.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/button-group.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/button-group.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/button.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/button.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/calendar.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/calendar.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/card.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/card.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/carousel.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/carousel.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/chart.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/chart.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/checkbox.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/checkbox.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/collapsible.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/collapsible.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/command.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/command.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/context-menu.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/context-menu.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/dialog.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/dialog.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/drawer.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/drawer.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/dropdown-menu.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/dropdown-menu.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/empty.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/empty.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/field.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/field.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/form.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/form.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/hover-card.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/hover-card.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/input-group.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/input-group.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/input-otp.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/input-otp.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/input.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/input.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/item.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/item.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/kbd.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/kbd.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/label.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/label.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/menubar.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/menubar.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/navigation-menu.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/navigation-menu.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/pagination.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/pagination.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/popover.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/popover.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/progress.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/progress.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/radio-group.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/radio-group.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/resizable.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/resizable.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/scroll-area.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/scroll-area.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/select.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/select.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/separator.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/separator.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/sheet.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/sheet.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/sidebar.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/sidebar.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/skeleton.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/skeleton.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/slider.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/slider.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/sonner.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/sonner.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/spinner.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/spinner.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/switch.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/switch.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/table.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/table.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/tabs.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/tabs.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/textarea.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/textarea.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/toast.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/toast.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/toaster.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/toaster.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/toggle-group.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/toggle-group.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/toggle.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/toggle.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/components/ui/tooltip.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/components/ui/tooltip.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/hooks/use-mobile.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/hooks/use-mobile.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/hooks/use-toast.ts",
+    "decision": "relocate",
+    "destination": "apps/web/src/hooks/use-toast.ts",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/index.css",
+    "decision": "relocate",
+    "destination": "apps/web/src/index.css",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/lib/utils.ts",
+    "decision": "relocate",
+    "destination": "apps/web/src/lib/utils.ts",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/main.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/main.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/src/pages/not-found.tsx",
+    "decision": "relocate",
+    "destination": "apps/web/src/pages/not-found.tsx",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/tsconfig.json",
+    "decision": "relocate",
+    "destination": "apps/web/tsconfig.json",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "artifacts/taskflow/vite.config.ts",
+    "decision": "relocate",
+    "destination": "apps/web/vite.config.ts",
+    "basis": "protected frontend/editor/configuration"
+  },
+  {
+    "original": "lib/api-client-react/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-client-react/src/custom-fetch.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-client-react/src/generated/api.schemas.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-client-react/src/generated/api.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-client-react/src/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-client-react/tsconfig.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-spec/openapi.yaml",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-spec/orval.config.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-spec/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-zod/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-zod/src/generated/api.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-zod/src/generated/types/healthStatus.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-zod/src/generated/types/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-zod/src/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/api-zod/tsconfig.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/db/drizzle.config.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/db/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/db/src/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/db/src/schema/index.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "lib/db/tsconfig.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "replit.md",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "scripts/package.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "scripts/post-merge.sh",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "scripts/src/hello.ts",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  },
+  {
+    "original": "scripts/tsconfig.json",
+    "decision": "remove",
+    "destination": null,
+    "basis": "audited obsolete generated infrastructure; see removal-audit.md"
+  }
+]

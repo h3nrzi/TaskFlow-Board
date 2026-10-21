@@ -1,0 +1,101 @@
+Scope: all 9 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +471
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 471, reused 0, downloaded 0, added 0
+Progress: resolved 471, reused 0, downloaded 1, added 0
+Progress: resolved 471, reused 0, downloaded 35, added 35
+Progress: resolved 471, reused 0, downloaded 68, added 68
+Progress: resolved 471, reused 0, downloaded 94, added 92
+Progress: resolved 471, reused 0, downloaded 120, added 119
+Progress: resolved 471, reused 0, downloaded 139, added 139
+Progress: resolved 471, reused 0, downloaded 149, added 149
+Progress: resolved 471, reused 0, downloaded 162, added 162
+Progress: resolved 471, reused 0, downloaded 168, added 168
+Progress: resolved 471, reused 0, downloaded 176, added 176
+Progress: resolved 471, reused 0, downloaded 177, added 176
+Progress: resolved 471, reused 0, downloaded 192, added 192
+Progress: resolved 471, reused 0, downloaded 193, added 192
+Progress: resolved 471, reused 0, downloaded 204, added 204
+Progress: resolved 471, reused 0, downloaded 205, added 204
+Progress: resolved 471, reused 0, downloaded 217, added 217
+Progress: resolved 471, reused 0, downloaded 218, added 218
+Progress: resolved 471, reused 0, downloaded 219, added 218
+
+   ╭──────────────────────────────────────────╮
+   │                                          │
+   │   Update available! 10.11.0 → 12.14.0.   │
+   │   Changelog: https://pnpm.io/v/12.14.0   │
+   │     To update, run: pnpm self-update     │
+   │                                          │
+   ╰──────────────────────────────────────────╯
+
+Progress: resolved 471, reused 0, downloaded 234, added 233
+Progress: resolved 471, reused 0, downloaded 235, added 235
+Progress: resolved 471, reused 0, downloaded 236, added 235
+Progress: resolved 471, reused 0, downloaded 248, added 248
+Progress: resolved 471, reused 0, downloaded 249, added 249
+Progress: resolved 471, reused 0, downloaded 250, added 249
+Progress: resolved 471, reused 0, downloaded 262, added 262
+Progress: resolved 471, reused 0, downloaded 263, added 263
+Progress: resolved 471, reused 0, downloaded 266, added 266
+Progress: resolved 471, reused 0, downloaded 273, added 273
+Progress: resolved 471, reused 0, downloaded 278, added 278
+Progress: resolved 471, reused 0, downloaded 289, added 288
+Progress: resolved 471, reused 0, downloaded 297, added 296
+Progress: resolved 471, reused 0, downloaded 304, added 302
+Progress: resolved 471, reused 0, downloaded 310, added 310
+Progress: resolved 471, reused 0, downloaded 317, added 316
+Progress: resolved 471, reused 0, downloaded 326, added 326
+Progress: resolved 471, reused 0, downloaded 331, added 331
+Progress: resolved 471, reused 0, downloaded 341, added 340
+Progress: resolved 471, reused 0, downloaded 347, added 341
+Progress: resolved 471, reused 0, downloaded 353, added 343
+Progress: resolved 471, reused 0, downloaded 362, added 348
+Progress: resolved 471, reused 0, downloaded 371, added 357
+Progress: resolved 471, reused 0, downloaded 375, added 373
+Progress: resolved 471, reused 0, downloaded 378, added 377
+Progress: resolved 471, reused 0, downloaded 383, added 380
+Progress: resolved 471, reused 0, downloaded 388, added 385
+Progress: resolved 471, reused 0, downloaded 388, added 386
+Progress: resolved 471, reused 0, downloaded 394, added 394
+Progress: resolved 471, reused 0, downloaded 398, added 397
+Progress: resolved 471, reused 0, downloaded 406, added 405
+Progress: resolved 471, reused 0, downloaded 408, added 408
+Progress: resolved 471, reused 0, downloaded 418, added 418
+Progress: resolved 471, reused 0, downloaded 419, added 418
+Progress: resolved 471, reused 0, downloaded 419, added 419
+Progress: resolved 471, reused 0, downloaded 420, added 419
+Progress: resolved 471, reused 0, downloaded 440, added 440
+Progress: resolved 471, reused 0, downloaded 445, added 445
+Progress: resolved 471, reused 0, downloaded 459, added 458
+Progress: resolved 471, reused 0, downloaded 469, added 469
+Progress: resolved 471, reused 0, downloaded 470, added 469
+Progress: resolved 471, reused 0, downloaded 470, added 470
+Progress: resolved 471, reused 0, downloaded 471, added 470
+Progress: resolved 471, reused 0, downloaded 471, added 471, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: [esbuild] Failed to find package "@esbuild/darwin-arm64" on the file system
+.../esbuild@0.28.2/node_modules/esbuild postinstall: This can happen if you use the "--no-optional" flag. The "optionalDependencies"
+.../esbuild@0.28.2/node_modules/esbuild postinstall: package.json feature is used by esbuild to install the correct binary executable
+.../esbuild@0.28.2/node_modules/esbuild postinstall: for your current platform. This install script will now attempt to work around
+.../esbuild@0.28.2/node_modules/esbuild postinstall: this. If that fails, you need to remove the "--no-optional" flag to use esbuild.
+.../esbuild@0.28.2/node_modules/esbuild postinstall: [esbuild] Trying to install package "@esbuild/darwin-arm64" using npm
+.../esbuild@0.28.2/node_modules/esbuild postinstall: [esbuild] Failed to install package "@esbuild/darwin-arm64" using npm: Command failed: npm install --loglevel=error --prefer-offline --no-audit --progress=false @esbuild/darwin-arm64@0.28.2
+.../esbuild@0.28.2/node_modules/esbuild postinstall: npm error code EALLOWSCRIPTS
+.../esbuild@0.28.2/node_modules/esbuild postinstall: npm error --allow-scripts is not allowed in project-scoped installs. Add the entries to the "allowScripts" field in package.json, or to .npmrc, instead.
+.../esbuild@0.28.2/node_modules/esbuild postinstall: npm error A complete log of this run can be found in: /Users/hossein/.npm/_logs/2026-10-21T16_39_15_877Z-debug-0.log
+.../esbuild@0.28.2/node_modules/esbuild postinstall: [esbuild] Trying to download "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.28.2.tgz"
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+
+dependencies:
++ @replit/connectors-sdk 0.4.3
+
+devDependencies:
++ prettier 3.9.6
++ typescript 5.9.3
+
+. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+. preinstall: Done
+Done in 1m 26.8s using pnpm v10.11.0

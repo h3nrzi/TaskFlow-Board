@@ -1,0 +1,401 @@
+{
+  "revision": "ae51b1750a6a8c8ef795d6495c2f94f27d79d0be",
+  "files": [
+    {
+      "original": "artifacts/taskflow/index.html",
+      "path": "apps/web/index.html",
+      "sha256": "2b3aadf5eb882ad2ef7dcfadf9e30193618f624fff2fbb103fb1df51af898e3b",
+      "bytes": 1262
+    },
+    {
+      "original": "artifacts/taskflow/public/favicon.svg",
+      "path": "apps/web/public/favicon.svg",
+      "sha256": "8ffbde9092b1fa4de97c9481b76f518b131268c82e7c555041925225b1dab6e0",
+      "bytes": 163
+    },
+    {
+      "original": "artifacts/taskflow/public/robots.txt",
+      "path": "apps/web/public/robots.txt",
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+      "bytes": 23
+    },
+    {
+      "original": "artifacts/taskflow/src/App.tsx",
+      "path": "apps/web/src/App.tsx",
+      "sha256": "5c0643bcee23de2b6c7b77113e385700e059a8e01b1a45ef8e0419fcbd30d890",
+      "bytes": 58805
+    },
+    {
+      "original": "artifacts/taskflow/src/components/error-boundary.tsx",
+      "path": "apps/web/src/components/error-boundary.tsx",
+      "sha256": "c1ea4d88be8cd206a46bd87f19edf025b2504a70a2b65cd9c438e4a0e62dafe0",
+      "bytes": 2735
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/accordion.tsx",
+      "path": "apps/web/src/components/ui/accordion.tsx",
+      "sha256": "8e4230a3e6d38bfab7b02f00f9e948c8c4038432c5b1bf2d0ea44dc8b5ce09cc",
+      "bytes": 2013
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/alert-dialog.tsx",
+      "path": "apps/web/src/components/ui/alert-dialog.tsx",
+      "sha256": "d76901a06e6881e94aa3847fde2602ee6f6ddc9f4cace9fa238627a5572bd24e",
+      "bytes": 4447
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/alert.tsx",
+      "path": "apps/web/src/components/ui/alert.tsx",
+      "sha256": "695369ea4d1ba4438dcedacaa8059b08b6463ac93170360f3bd42b983b7608e9",
+      "bytes": 1609
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/aspect-ratio.tsx",
+      "path": "apps/web/src/components/ui/aspect-ratio.tsx",
+      "sha256": "2f5b0ed3cbcf84e526caad0c6b88d4457f8745a365c86cc74d924a1b6e013a36",
+      "bytes": 143
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/avatar.tsx",
+      "path": "apps/web/src/components/ui/avatar.tsx",
+      "sha256": "429f5e82fc3dcf265625650176f16ff9b35e55826183e1f1b2d4dc2a338f9b15",
+      "bytes": 1431
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/badge.tsx",
+      "path": "apps/web/src/components/ui/badge.tsx",
+      "sha256": "ba6f51e428a520f54e600fded4ea030a8099fa6a9a7b7110af8dca34795415d1",
+      "bytes": 1528
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/breadcrumb.tsx",
+      "path": "apps/web/src/components/ui/breadcrumb.tsx",
+      "sha256": "44b4de47f806eec0e3de5130f0399e83700eaf0bc8deb47af5ffda2bb11eb3f1",
+      "bytes": 2735
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/button-group.tsx",
+      "path": "apps/web/src/components/ui/button-group.tsx",
+      "sha256": "b89025c11d08652597cb46b097d3e04658ad2c383bf81ed445c8182c0ed1b260",
+      "bytes": 2222
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/button.tsx",
+      "path": "apps/web/src/components/ui/button.tsx",
+      "sha256": "9c20a340ca0c948d0164158eff44fca2e26343c8ee387ffc22f9cd677c59d27d",
+      "bytes": 2370
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/calendar.tsx",
+      "path": "apps/web/src/components/ui/calendar.tsx",
+      "sha256": "1cdd1e62797356fe62f61f5521fcf0da8e3570b1120868ccca2b48370157fe46",
+      "bytes": 7607
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/card.tsx",
+      "path": "apps/web/src/components/ui/card.tsx",
+      "sha256": "9fed39a53303c12fa6ac6f5f8813c1683e2198df9ee067cffbdfe69044cf3e4f",
+      "bytes": 1856
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/carousel.tsx",
+      "path": "apps/web/src/components/ui/carousel.tsx",
+      "sha256": "4ae2f69bc2c1ce33c60b23ddc5382f4b93882dac07c2d18cce32fb148ff52c48",
+      "bytes": 6288
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/chart.tsx",
+      "path": "apps/web/src/components/ui/chart.tsx",
+      "sha256": "ac747c83483d742e207426a193ba5e2cf639fa18cd819c1f12d12329520c6c12",
+      "bytes": 10846
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/checkbox.tsx",
+      "path": "apps/web/src/components/ui/checkbox.tsx",
+      "sha256": "6b9e336fa42475bbb2ad4d76478afb8d2555e6e26bac245b9ccde62a9a033adc",
+      "bytes": 1038
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/collapsible.tsx",
+      "path": "apps/web/src/components/ui/collapsible.tsx",
+      "sha256": "aedcd10b62404b39d8d5544c01fee90aa7b66e7280bb80a215601ad198a1b8fd",
+      "bytes": 335
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/command.tsx",
+      "path": "apps/web/src/components/ui/command.tsx",
+      "sha256": "d8fb66e44f9f8de558f6a94c781f3d890871d76dbabcda64e6fab3c917b3237d",
+      "bytes": 4918
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/context-menu.tsx",
+      "path": "apps/web/src/components/ui/context-menu.tsx",
+      "sha256": "bdff38b45a6010e3db808c099c799bd61e6aca619378074e7b14b63c1291e4c9",
+      "bytes": 7446
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/dialog.tsx",
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "sha256": "e0d3fa53f4cb7d8011ab09f2d198c24234062d24638fabf5142f5fbce57d2ba5",
+      "bytes": 3889
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/drawer.tsx",
+      "path": "apps/web/src/components/ui/drawer.tsx",
+      "sha256": "152bc340ad982e84f851e3bc1a6b8e7ffd0151a7445c6ecf1b1e3e13cbc19210",
+      "bytes": 3029
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/dropdown-menu.tsx",
+      "path": "apps/web/src/components/ui/dropdown-menu.tsx",
+      "sha256": "a79d5419ee174de35880340aef44d67847cee54846c058e02ac4a846b603c60f",
+      "bytes": 7646
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/empty.tsx",
+      "path": "apps/web/src/components/ui/empty.tsx",
+      "sha256": "48824b1b37bd406fa74f48db726a4f1d70cf88db5b3432f7b1d59f584f1c5dad",
+      "bytes": 2410
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/field.tsx",
+      "path": "apps/web/src/components/ui/field.tsx",
+      "sha256": "c3787ffb045354e9f18e70d94890627caea94939a226e49c1e6cedee84a1e9e1",
+      "bytes": 6079
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/form.tsx",
+      "path": "apps/web/src/components/ui/form.tsx",
+      "sha256": "1960463b09152760fdd99ca3eb16187408d064c7599ed66384b42d1613d3a3a3",
+      "bytes": 4232
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/hover-card.tsx",
+      "path": "apps/web/src/components/ui/hover-card.tsx",
+      "sha256": "e0b4e3f0126757a8eb5c6e436c8c041c049430abe9a2eb84b10154144b31c29c",
+      "bytes": 1245
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/input-group.tsx",
+      "path": "apps/web/src/components/ui/input-group.tsx",
+      "sha256": "f4befbf9bf8ebd755b267c4db2b396be296adb95acca5c3fba54f6495bdedebd",
+      "bytes": 4993
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/input-otp.tsx",
+      "path": "apps/web/src/components/ui/input-otp.tsx",
+      "sha256": "b4891335e70920518cfbdef2aeb399f61477fbc4b3ffe3b8a2938f19074164cc",
+      "bytes": 2160
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/input.tsx",
+      "path": "apps/web/src/components/ui/input.tsx",
+      "sha256": "03ac1648171bd5ad90dbc03e9ebff9a9cc77708bcc53bdac914b80eeebfe3032",
+      "bytes": 775
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/item.tsx",
+      "path": "apps/web/src/components/ui/item.tsx",
+      "sha256": "4a84cda22d692ee176f5128517a4003a63d11f907df445e7586ef034c88e8772",
+      "bytes": 4519
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/kbd.tsx",
+      "path": "apps/web/src/components/ui/kbd.tsx",
+      "sha256": "4348a7a06a715e9e9673602cbb9ed89a6a4c6cbdd457d4c03db0f23a139d19eb",
+      "bytes": 867
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/label.tsx",
+      "path": "apps/web/src/components/ui/label.tsx",
+      "sha256": "fbc0c7db4221227941271a004bf71db5067aee9d8668f3351d91113cd5934c8c",
+      "bytes": 733
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/menubar.tsx",
+      "path": "apps/web/src/components/ui/menubar.tsx",
+      "sha256": "26dbbf36e4ffd87aab74e61dd1e3613f0c640988479679d53bacd8dbd15cc891",
+      "bytes": 8655
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/navigation-menu.tsx",
+      "path": "apps/web/src/components/ui/navigation-menu.tsx",
+      "sha256": "222020e1ac703ce01700d6e8822c6263932bc71c481d724b8ef53ccaae8ad63f",
+      "bytes": 5150
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/pagination.tsx",
+      "path": "apps/web/src/components/ui/pagination.tsx",
+      "sha256": "dd65d2e59226a3f384014b596ae701aef50f130cb3061f4657e81c588587b8da",
+      "bytes": 2772
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/popover.tsx",
+      "path": "apps/web/src/components/ui/popover.tsx",
+      "sha256": "dc574442536873c8aa88733c348503c4599ad6ed0fc9898fd25406d94e095cca",
+      "bytes": 1351
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/progress.tsx",
+      "path": "apps/web/src/components/ui/progress.tsx",
+      "sha256": "74223bcccf7ca2ed026d197476abbe3d48fbc531c40f4252445f56954a270c75",
+      "bytes": 799
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/radio-group.tsx",
+      "path": "apps/web/src/components/ui/radio-group.tsx",
+      "sha256": "8155d32dea5d4ddea2048b6d12f83fe4805d9bc87c97b994dbb0d040981334f2",
+      "bytes": 1421
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/resizable.tsx",
+      "path": "apps/web/src/components/ui/resizable.tsx",
+      "sha256": "8e73dfb8b582944364d73b64ed03378016f20f7251f15f880dcf0fb140e1ad41",
+      "bytes": 1733
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/scroll-area.tsx",
+      "path": "apps/web/src/components/ui/scroll-area.tsx",
+      "sha256": "73f5dedda781e5285092ea269f747378dbad8d95631eab638e15b3c31595dc59",
+      "bytes": 1650
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/select.tsx",
+      "path": "apps/web/src/components/ui/select.tsx",
+      "sha256": "c64c9c1574c91f1eff922f3557e7609ba6c1d5e39959dbdecf8d386d7ae41990",
+      "bytes": 5773
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/separator.tsx",
+      "path": "apps/web/src/components/ui/separator.tsx",
+      "sha256": "2b129347f918742bf006099f7f56a9be373250de2ecc3ad201297563e3d1f807",
+      "bytes": 764
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/sheet.tsx",
+      "path": "apps/web/src/components/ui/sheet.tsx",
+      "sha256": "ef2ae35ccab1252c4eee56e67e9f1b2499b5bbfb3ae39037d8d4be39915c272f",
+      "bytes": 4307
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/sidebar.tsx",
+      "path": "apps/web/src/components/ui/sidebar.tsx",
+      "sha256": "de7566e708ba8bf34cb4a78fc018c784315c9d7a16d70e66255f8c72caf9d1db",
+      "bytes": 21969
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/skeleton.tsx",
+      "path": "apps/web/src/components/ui/skeleton.tsx",
+      "sha256": "d78130b2e311a750e7bb524e66e3af4c04e2ab02b04fd68539c1afd0bbb47152",
+      "bytes": 269
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/slider.tsx",
+      "path": "apps/web/src/components/ui/slider.tsx",
+      "sha256": "ecac74b8f3a044ba7a9e4eb0bdbfdf48be92483a32d2c414c5078c9f38e1f369",
+      "bytes": 1043
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/sonner.tsx",
+      "path": "apps/web/src/components/ui/sonner.tsx",
+      "sha256": "de5a5d9ae404545fcb0f21123530ffcf89d24a47812c70b3ca1376591e28dbdd",
+      "bytes": 902
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/spinner.tsx",
+      "path": "apps/web/src/components/ui/spinner.tsx",
+      "sha256": "4458ea392b32f439cd4c64b9593846f339370fa1295c04f9003f05c1f3386689",
+      "bytes": 334
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/switch.tsx",
+      "path": "apps/web/src/components/ui/switch.tsx",
+      "sha256": "f81bc9b5ce2d6a92b6b2f1f3376c0489f30f7073081a1d9d6c56553880f44c58",
+      "bytes": 1155
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/table.tsx",
+      "path": "apps/web/src/components/ui/table.tsx",
+      "sha256": "dd29f5ef260af67ed09c84505495e3fddbad14009e3b3ce689d0c354ffaf55d3",
+      "bytes": 2881
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/tabs.tsx",
+      "path": "apps/web/src/components/ui/tabs.tsx",
+      "sha256": "320609101fbaa6cccda0b899154cb510fa322926cfdbaf07e33b79c00c83fcd6",
+      "bytes": 1890
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/textarea.tsx",
+      "path": "apps/web/src/components/ui/textarea.tsx",
+      "sha256": "63fb699771afe60c5073ed50e1a042d7d7f21eefd12d15bcb750cf3230985011",
+      "bytes": 655
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/toast.tsx",
+      "path": "apps/web/src/components/ui/toast.tsx",
+      "sha256": "04d4ef720079342e2f4380c22683f1544bd8e93a581fb55e447458f04a6127d5",
+      "bytes": 4871
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/toaster.tsx",
+      "path": "apps/web/src/components/ui/toaster.tsx",
+      "sha256": "d34c7cd51482ddd5703a13378d9ac69b3459a304581e42f56ac2c696e53163ac",
+      "bytes": 777
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/toggle-group.tsx",
+      "path": "apps/web/src/components/ui/toggle-group.tsx",
+      "sha256": "6d7aca86245edf5d0a8f6f3ed73bd19316f4865425891eabccd6f3e37e59519e",
+      "bytes": 1767
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/toggle.tsx",
+      "path": "apps/web/src/components/ui/toggle.tsx",
+      "sha256": "5800d2099224ef90892e8c1d972d2a0964391c33cd43d7f5c6abf5cd42e023e1",
+      "bytes": 1494
+    },
+    {
+      "original": "artifacts/taskflow/src/components/ui/tooltip.tsx",
+      "path": "apps/web/src/components/ui/tooltip.tsx",
+      "sha256": "e3c6ea9d4ecd62881af33564e25be013d35a8a7fa78475a6dcc98a06c7f894eb",
+      "bytes": 1277
+    },
+    {
+      "original": "artifacts/taskflow/src/hooks/use-mobile.tsx",
+      "path": "apps/web/src/hooks/use-mobile.tsx",
+      "sha256": "82bff42ff087bd5dc90a5d17609cc428b8688de92d1333073a839af5ad3c9cbd",
+      "bytes": 585
+    },
+    {
+      "original": "artifacts/taskflow/src/hooks/use-toast.ts",
+      "path": "apps/web/src/hooks/use-toast.ts",
+      "sha256": "12cce940e597e1d597f7063131acd19658d25e924904308bf719bde17b67e351",
+      "bytes": 3952
+    },
+    {
+      "original": "artifacts/taskflow/src/index.css",
+      "path": "apps/web/src/index.css",
+      "sha256": "09887fa3d609c31638b62c5bab8b448e33bf5ea39fae532c301f8b0a8dd77ac9",
+      "bytes": 13286
+    },
+    {
+      "original": "artifacts/taskflow/src/lib/utils.ts",
+      "path": "apps/web/src/lib/utils.ts",
+      "sha256": "afc0e1dc0e142d6b81f688d91087f81a4b2db4240cf70f55b6e5e4dcc199ebf1",
+      "bytes": 170
+    },
+    {
+      "original": "artifacts/taskflow/src/main.tsx",
+      "path": "apps/web/src/main.tsx",
+      "sha256": "e7e03b61f962dc1787ea029d4941424475455366b5a4f079c8fcb4f5df4d076c",
+      "bytes": 446
+    },
+    {
+      "original": "artifacts/taskflow/src/pages/not-found.tsx",
+      "path": "apps/web/src/pages/not-found.tsx",
+      "sha256": "6aaea7a7125024440020566f3a14fde4f65149b1fd21f68c6a437b193e88c642",
+      "bytes": 739
+    }
+  ]
+}

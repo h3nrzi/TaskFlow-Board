@@ -1,19 +1,29 @@
 {
-  "name": "workspace",
+  "name": "taskflow",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
-  },
   "private": true,
-  "dependencies": {
-    "@replit/connectors-sdk": "^0.4.3"
+  "license": "MIT",
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": "24.22.0",
+    "pnpm": "10.11.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "dev:web": "pnpm --filter @taskflow/web dev",
+    "dev:api": "pnpm --filter @taskflow/api dev",
+    "preview": "pnpm --filter @taskflow/web preview",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm --filter @taskflow/api test && pnpm test:workflows",
+    "verify:frontend": "node tooling/verify-frontend.mjs",
+    "check": "pnpm verify:frontend && pnpm verify:dependencies && pnpm typecheck && pnpm build && pnpm test",
+    "verify:dependencies": "node tooling/audit-dependencies.mjs",
+    "test:workflows": "node --test tooling/workflows.test.mjs"
   },
   "devDependencies": {
-    "prettier": "^3.9.6",
-    "typescript": "~5.9.3"
+    "typescript": "5.9.3",
+    "yaml": "2.9.0",
+    "tsx": "4.23.13"
   }
 }

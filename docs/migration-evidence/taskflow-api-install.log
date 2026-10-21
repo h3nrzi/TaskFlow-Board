@@ -1,0 +1,22 @@
+Scope: all 3 workspace projects
+Progress: resolved 1, reused 0, downloaded 0, added 0
+apps/web                                 |  WARN  deprecated recharts@2.15.4
+Progress: resolved 62, reused 62, downloaded 0, added 0
+Progress: resolved 65, reused 62, downloaded 0, added 0
+Progress: resolved 67, reused 62, downloaded 2, added 0
+Progress: resolved 294, reused 228, downloaded 4, added 0
+Progress: resolved 312, reused 231, downloaded 8, added 0
+Progress: resolved 332, reused 244, downloaded 14, added 0
+Progress: resolved 350, reused 255, downloaded 20, added 0
+Progress: resolved 374, reused 276, downloaded 26, added 0
+Progress: resolved 379, reused 281, downloaded 27, added 0
+Progress: resolved 388, reused 290, downloaded 27, added 0
+Packages: +95 -3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+Progress: resolved 389, reused 291, downloaded 27, added 26
+Progress: resolved 389, reused 291, downloaded 27, added 27, done
+
+devDependencies:
++ tsx 4.23.13 (4.23.15 is available)
+
+Done in 12.4s using pnpm v10.11.0

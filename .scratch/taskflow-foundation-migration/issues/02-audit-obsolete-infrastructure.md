@@ -6,9 +6,15 @@
 
 **Status:** ready-for-agent
 
-- [ ] Produce a file-by-file removal/retention inventory for the old health-only server, empty database scaffold, generated API client/Zod/OpenAPI pipeline, empty mockup sandbox, placeholder script package, and Replit runtime/tooling configuration and dependencies.
-- [ ] Audit source imports, assets, workspace membership, manifests, catalogs, lockfile importers, build/typecheck references, scripts, installation hooks, generated artifacts, and runtime configuration. Record evidence supporting each removal and references that must change together.
-- [ ] Identify native-dependency exclusions that prevent macOS/Linux installation and explain the required infrastructure changes without broad frontend dependency upgrades.
-- [ ] Explicitly retain protected frontend files and referenced assets, repository agent skills and guidance, Google Fonts requests, and incidental Replit attribution/comments inside protected files.
-- [ ] Distinguish operational Replit reliance from harmless textual mentions. Identify any unresolved reference or preservation conflict before deletion work begins.
-- [ ] This ticket produces the audit without deleting application infrastructure. Its handoff includes reproducible audit checks, actual evidence, and the first concrete review action; human acceptance remains pending.
+- [x] Produce a file-by-file removal/retention inventory for the old health-only server, empty database scaffold, generated API client/Zod/OpenAPI pipeline, empty mockup sandbox, placeholder script package, and Replit runtime/tooling configuration and dependencies.
+- [x] Audit source imports, assets, workspace membership, manifests, catalogs, lockfile importers, build/typecheck references, scripts, installation hooks, generated artifacts, and runtime configuration. Record evidence supporting each removal and references that must change together.
+- [x] Identify native-dependency exclusions that prevent macOS/Linux installation and explain the required infrastructure changes without broad frontend dependency upgrades.
+- [x] Explicitly retain protected frontend files and referenced assets, repository agent skills and guidance, Google Fonts requests, and incidental Replit attribution/comments inside protected files.
+- [x] Distinguish operational Replit reliance from harmless textual mentions. Identify any unresolved reference or preservation conflict before deletion work begins.
+- [x] This ticket produces the audit without deleting application infrastructure. Its handoff includes reproducible audit checks, actual evidence, and the first concrete review action; human acceptance remains pending.
+
+## Implementation evidence
+
+Reference audit delivered before deletions. Every audited file is listed in removal-files.json.
+
+See [evaluation guide](../../../../docs/migration-evaluation.md) for this ticket’s reproducible checkpoint and first action. Human evaluation remains pending until observations are reported.

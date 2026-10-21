@@ -1,0 +1,42 @@
+
+> taskflow@0.0.0 dev /Users/hossein/Downloads/TaskFlow-Board
+> pnpm --parallel --filter "./apps/*" dev
+
+Scope: 2 of 3 workspace projects
+apps/api dev$ tsx watch src/main.ts
+apps/web dev$ vite
+apps/web dev:   VITE v7.3.6  ready in 195 ms
+apps/web dev:   ➜  Local:   http://localhost:21998/
+apps/api dev: [Nest] 76430  - 10/21/2026, 8:15:23 PM     LOG [NestFactory] Starting Nest application...
+apps/api dev: [Nest] 76430  - 10/21/2026, 8:15:23 PM     LOG [InstanceLoader] AppModule dependencies initialized +6ms
+apps/api dev: [Nest] 76430  - 10/21/2026, 8:15:23 PM     LOG [RoutesResolver] HealthController {/api}: +2ms
+apps/api dev: [Nest] 76430  - 10/21/2026, 8:15:23 PM     LOG [RouterExplorer] Mapped {/api/healthz, GET} route +2ms
+apps/api dev: [Nest] 76430  - 10/21/2026, 8:15:23 PM     LOG [NestApplication] Nest application successfully started +1ms
+apps/api dev: API listening at http://localhost:8080
+PASS default root dev http://localhost:8080/api/healthz {"status":"ok"}
+PASS default root dev http://localhost:21998/api/healthz {"status":"ok"}
+ ELIFECYCLE  Command failed.
+
+> taskflow@0.0.0 preview /Users/hossein/Downloads/TaskFlow-Board
+> pnpm --filter @taskflow/web preview
+
+
+> @taskflow/api@0.0.0 start /Users/hossein/Downloads/TaskFlow-Board/apps/api
+> node dist/main.js
+
+
+> @taskflow/web@0.0.0 preview /Users/hossein/Downloads/TaskFlow-Board/apps/web
+> vite preview
+
+[Nest] 76613  - 10/21/2026, 8:15:23 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 76613  - 10/21/2026, 8:15:23 PM     LOG [InstanceLoader] AppModule dependencies initialized +6ms
+[Nest] 76613  - 10/21/2026, 8:15:23 PM     LOG [RoutesResolver] HealthController {/api}: +3ms
+[Nest] 76613  - 10/21/2026, 8:15:23 PM     LOG [RouterExplorer] Mapped {/api/healthz, GET} route +2ms
+[Nest] 76613  - 10/21/2026, 8:15:23 PM     LOG [NestApplication] Nest application successfully started +1ms
+API listening at http://localhost:8080
+  ➜  Local:   http://localhost:21998/
+PASS default preview health {"status":"ok"}
+ ELIFECYCLE  Command failed.
+/Users/hossein/Downloads/TaskFlow-Board/apps/api:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskflow/api@0.0.0 start: `node dist/main.js`
+Command failed with signal "SIGTERM"
