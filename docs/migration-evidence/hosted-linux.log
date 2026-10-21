@@ -1,0 +1,324 @@
+2026-10-21T17:53:57.2809026Z Current runner version: '2.338.0'
+2026-10-21T17:53:57.2829614Z ##[group]Runner Image Provisioner
+2026-10-21T17:53:57.2830199Z Hosted Compute Agent
+2026-10-21T17:53:57.2830555Z Version: 20261012.601
+2026-10-21T17:53:57.2831001Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-21T17:53:57.2831517Z Build Date: 2026-10-12T17:48:21Z
+2026-10-21T17:53:57.2832419Z Worker ID: {0cb0982a-1052-4ccc-8db6-35b23116b917}
+2026-10-21T17:53:57.2832854Z Region: centralus
+2026-10-21T17:53:57.2833195Z Cloud: Azure
+2026-10-21T17:53:57.2833596Z ##[endgroup]
+2026-10-21T17:53:57.2834453Z ##[group]Operating System
+2026-10-21T17:53:57.2834869Z Ubuntu
+2026-10-21T17:53:57.2835216Z 24.04.5
+2026-10-21T17:53:57.2835543Z LTS
+2026-10-21T17:53:57.2835905Z ##[endgroup]
+2026-10-21T17:53:57.2836254Z ##[group]Runner Image
+2026-10-21T17:53:57.2836989Z Image: ubuntu-24.04
+2026-10-21T17:53:57.2837359Z Version: 20261012.334.1
+2026-10-21T17:53:57.2838211Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-21T17:53:57.2839153Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-21T17:53:57.2839769Z ##[endgroup]
+2026-10-21T17:53:57.2840505Z ##[group]GITHUB_TOKEN Permissions
+2026-10-21T17:53:57.2841890Z Contents: read
+2026-10-21T17:53:57.2842256Z Metadata: read
+2026-10-21T17:53:57.2842645Z Packages: read
+2026-10-21T17:53:57.2843034Z ##[endgroup]
+2026-10-21T17:53:57.2844512Z Secret source: Actions
+2026-10-21T17:53:57.2845135Z Cache mode: write
+2026-10-21T17:53:57.2845625Z Prepare workflow directory
+2026-10-21T17:53:57.3842600Z Prepare all required actions
+2026-10-21T17:53:57.3889193Z Getting action download info
+2026-10-21T17:53:57.6719825Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-21T17:53:58.0078046Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+2026-10-21T17:53:58.7259346Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-21T17:53:58.9145778Z Complete job name: verify (ubuntu-latest)
+2026-10-21T17:53:58.9678794Z ##[group]Run actions/checkout@v4
+2026-10-21T17:53:58.9679298Z with:
+2026-10-21T17:53:58.9679575Z   repository: h3nrzi/TaskFlow-Board
+2026-10-21T17:53:58.9682020Z   token: ***
+2026-10-21T17:53:58.9682280Z   ssh-strict: true
+2026-10-21T17:53:58.9682544Z   ssh-user: git
+2026-10-21T17:53:58.9682812Z   persist-credentials: true
+2026-10-21T17:53:58.9683102Z   clean: true
+2026-10-21T17:53:58.9683372Z   sparse-checkout-cone-mode: true
+2026-10-21T17:53:58.9683686Z   fetch-depth: 1
+2026-10-21T17:53:58.9683947Z   fetch-tags: false
+2026-10-21T17:53:58.9684218Z   show-progress: true
+2026-10-21T17:53:58.9684499Z   lfs: false
+2026-10-21T17:53:58.9684767Z   submodules: false
+2026-10-21T17:53:58.9685038Z   set-safe-directory: true
+2026-10-21T17:53:58.9685350Z   allow-unsafe-pr-checkout: false
+2026-10-21T17:53:58.9685744Z ##[endgroup]
+2026-10-21T17:53:59.0393875Z Syncing repository: h3nrzi/TaskFlow-Board
+2026-10-21T17:53:59.0395373Z ##[group]Getting Git version info
+2026-10-21T17:53:59.0395937Z Working directory is '/home/runner/work/TaskFlow-Board/TaskFlow-Board'
+2026-10-21T17:53:59.0396951Z [command]/usr/bin/git version
+2026-10-21T17:53:59.0460948Z git version 2.55.0
+2026-10-21T17:53:59.0486724Z ##[endgroup]
+2026-10-21T17:53:59.0493916Z Temporarily overriding HOME='/home/runner/work/_temp/5f65cfdd-878a-42fe-98a3-05a0a068ba63' before making global git config changes
+2026-10-21T17:53:59.0495482Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-21T17:53:59.0497147Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:53:59.0552492Z Deleting the contents of '/home/runner/work/TaskFlow-Board/TaskFlow-Board'
+2026-10-21T17:53:59.0556280Z ##[group]Initializing the repository
+2026-10-21T17:53:59.0564009Z [command]/usr/bin/git init /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:53:59.0690127Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-21T17:53:59.0691881Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-21T17:53:59.0693072Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-21T17:53:59.0694475Z hint: call:
+2026-10-21T17:53:59.0695437Z hint:
+2026-10-21T17:53:59.0696084Z hint: 	git config --global init.defaultBranch <name>
+2026-10-21T17:53:59.0696846Z hint:
+2026-10-21T17:53:59.0697445Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-21T17:53:59.0698413Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-21T17:53:59.0699172Z hint:
+2026-10-21T17:53:59.0699591Z hint: 	git branch -m <name>
+2026-10-21T17:53:59.0700075Z hint:
+2026-10-21T17:53:59.0700691Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-21T17:53:59.0701796Z Initialized empty Git repository in /home/runner/work/TaskFlow-Board/TaskFlow-Board/.git/
+2026-10-21T17:53:59.0703941Z [command]/usr/bin/git remote add origin https://github.com/h3nrzi/TaskFlow-Board
+2026-10-21T17:53:59.0760271Z ##[endgroup]
+2026-10-21T17:53:59.0761000Z ##[group]Disabling automatic garbage collection
+2026-10-21T17:53:59.0763954Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-21T17:53:59.0799565Z ##[endgroup]
+2026-10-21T17:53:59.0800230Z ##[group]Setting up auth
+2026-10-21T17:53:59.0805224Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-21T17:53:59.0840472Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-21T17:53:59.1166354Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-21T17:53:59.1200087Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-21T17:53:59.1388637Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-21T17:53:59.1422195Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-21T17:53:59.1607384Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-21T17:53:59.1645200Z ##[endgroup]
+2026-10-21T17:53:59.1645882Z ##[group]Fetching the repository
+2026-10-21T17:53:59.1652216Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4a0c61101e37cd28900908ac464924d0c8f5eaf3:refs/remotes/origin/codex/foundation-validation
+2026-10-21T17:53:59.7103308Z From https://github.com/h3nrzi/TaskFlow-Board
+2026-10-21T17:53:59.7104356Z  * [new ref]         4a0c61101e37cd28900908ac464924d0c8f5eaf3 -> origin/codex/foundation-validation
+2026-10-21T17:53:59.7106917Z ##[endgroup]
+2026-10-21T17:53:59.7107604Z ##[group]Determining the checkout info
+2026-10-21T17:53:59.7109802Z ##[endgroup]
+2026-10-21T17:53:59.7114441Z [command]/usr/bin/git sparse-checkout disable
+2026-10-21T17:53:59.7161595Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-21T17:53:59.7189673Z ##[group]Checking out the ref
+2026-10-21T17:53:59.7192797Z [command]/usr/bin/git checkout --progress --force -B codex/foundation-validation refs/remotes/origin/codex/foundation-validation
+2026-10-21T17:53:59.7394282Z Switched to a new branch 'codex/foundation-validation'
+2026-10-21T17:53:59.7398071Z branch 'codex/foundation-validation' set up to track 'origin/codex/foundation-validation'.
+2026-10-21T17:53:59.7404269Z ##[endgroup]
+2026-10-21T17:53:59.7444892Z [command]/usr/bin/git log -1 --format=%H
+2026-10-21T17:53:59.7468611Z 4a0c61101e37cd28900908ac464924d0c8f5eaf3
+2026-10-21T17:53:59.7733689Z ##[group]Run pnpm/action-setup@v4
+2026-10-21T17:53:59.7734224Z with:
+2026-10-21T17:53:59.7734464Z   version: 10.11.0
+2026-10-21T17:53:59.7734748Z   dest: ~/setup-pnpm
+2026-10-21T17:53:59.7735034Z   run_install: null
+2026-10-21T17:53:59.7735311Z   cache: false
+2026-10-21T17:53:59.7735594Z   cache_dependency_path: pnpm-lock.yaml
+2026-10-21T17:53:59.7735954Z   package_json_file: package.json
+2026-10-21T17:53:59.7736262Z   standalone: false
+2026-10-21T17:53:59.7736613Z ##[endgroup]
+2026-10-21T17:53:59.8716808Z ##[group]Running self-installer...
+2026-10-21T17:54:00.1227886Z (node:2119) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-21T17:54:00.1230652Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-21T17:54:00.4376071Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-10-21T17:54:00.4436114Z Packages: +1
+2026-10-21T17:54:00.4437124Z +
+2026-10-21T17:54:00.8497212Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2026-10-21T17:54:00.8921218Z
+2026-10-21T17:54:00.8922247Z dependencies:
+2026-10-21T17:54:00.8923235Z + pnpm 10.11.0 (12.14.0 is available)
+2026-10-21T17:54:00.8924068Z
+2026-10-21T17:54:00.8942724Z Done in 908ms
+2026-10-21T17:54:00.9142773Z ##[endgroup]
+2026-10-21T17:54:00.9144460Z Installation Completed!
+2026-10-21T17:54:00.9387443Z ##[group]Run actions/setup-node@v4
+2026-10-21T17:54:00.9388247Z with:
+2026-10-21T17:54:00.9388852Z   node-version-file: .node-version
+2026-10-21T17:54:00.9389585Z   cache: pnpm
+2026-10-21T17:54:00.9390156Z   always-auth: false
+2026-10-21T17:54:00.9390771Z   check-latest: false
+2026-10-21T17:54:00.9397260Z   token: ***
+2026-10-21T17:54:00.9397818Z env:
+2026-10-21T17:54:00.9398508Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:00.9399374Z ##[endgroup]
+2026-10-21T17:54:01.0355537Z Node version file is not JSON file
+2026-10-21T17:54:01.0357121Z Resolved .node-version as 24.22.0
+2026-10-21T17:54:01.0369574Z Attempting to download 24.22.0...
+2026-10-21T17:54:01.0451098Z (node:2133) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-21T17:54:01.0453861Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-21T17:54:01.9128201Z Acquiring 24.22.0 - x64 from https://github.com/actions/node-versions/releases/download/24.22.0-38668177966/node-24.22.0-linux-x64.tar.gz
+2026-10-21T17:54:02.5670203Z Extracting ...
+2026-10-21T17:54:02.5762143Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/4b7a02b5-3bde-45a8-bdf0-4f14b4eed6eb -f /home/runner/work/_temp/4ada8e7e-a4c4-4695-99d2-03b293e6b5f9
+2026-10-21T17:54:03.5269880Z Adding to the cache ...
+2026-10-21T17:54:05.3586415Z ##[group]Environment details
+2026-10-21T17:54:05.5772951Z node: v24.22.0
+2026-10-21T17:54:05.5773481Z npm: 11.19.1
+2026-10-21T17:54:05.5773763Z yarn: 1.22.22
+2026-10-21T17:54:05.5774309Z ##[endgroup]
+2026-10-21T17:54:05.5786457Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2026-10-21T17:54:05.8180712Z /home/runner/setup-pnpm/node_modules/.bin/store/v10
+2026-10-21T17:54:06.1087389Z pnpm cache is not found
+2026-10-21T17:54:06.1248827Z ##[group]Run node --version && pnpm --version
+2026-10-21T17:54:06.1249098Z node --version && pnpm --version
+2026-10-21T17:54:06.1481944Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:06.1482203Z env:
+2026-10-21T17:54:06.1482379Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:06.1482572Z ##[endgroup]
+2026-10-21T17:54:06.1604903Z v24.22.0
+2026-10-21T17:54:06.3280616Z 10.11.0
+2026-10-21T17:54:06.3367709Z ##[group]Run pnpm install --frozen-lockfile
+2026-10-21T17:54:06.3367935Z pnpm install --frozen-lockfile
+2026-10-21T17:54:06.3425172Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:06.3425326Z env:
+2026-10-21T17:54:06.3425478Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:06.3425857Z ##[endgroup]
+2026-10-21T17:54:06.5358297Z Scope: all 3 workspace projects
+2026-10-21T17:54:06.5810194Z Lockfile is up to date, resolution step is skipped
+2026-10-21T17:54:06.6151673Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-10-21T17:54:06.6524937Z Packages: +321
+2026-10-21T17:54:06.6525946Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-10-21T17:54:07.6154506Z Progress: resolved 321, reused 0, downloaded 183, added 183
+2026-10-21T17:54:08.6178261Z Progress: resolved 321, reused 0, downloaded 299, added 271
+2026-10-21T17:54:09.1300212Z Progress: resolved 321, reused 0, downloaded 321, added 321, done
+2026-10-21T17:54:09.2070917Z .../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+2026-10-21T17:54:09.3282983Z .../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+2026-10-21T17:54:09.7826917Z
+2026-10-21T17:54:09.7827626Z devDependencies:
+2026-10-21T17:54:09.7828053Z + tsx 4.23.13
+2026-10-21T17:54:09.7828332Z + typescript 5.9.3
+2026-10-21T17:54:09.7828553Z + yaml 2.9.0
+2026-10-21T17:54:09.7828654Z
+2026-10-21T17:54:09.8037821Z Done in 3.4s using pnpm v10.11.0
+2026-10-21T17:54:09.8424341Z ##[group]Run pnpm verify:frontend
+2026-10-21T17:54:09.8424546Z pnpm verify:frontend
+2026-10-21T17:54:09.8477992Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:09.8478136Z env:
+2026-10-21T17:54:09.8478288Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:09.8478467Z ##[endgroup]
+2026-10-21T17:54:10.0359517Z
+2026-10-21T17:54:10.0360499Z > taskflow@0.0.0 verify:frontend /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:10.0361037Z > node tooling/verify-frontend.mjs
+2026-10-21T17:54:10.0361212Z
+2026-10-21T17:54:10.0725792Z 66 protected files match ae51b1750a6a8c8ef795d6495c2f94f27d79d0be, including relocation and inventory completeness
+2026-10-21T17:54:10.1835404Z ##[group]Run pnpm verify:dependencies
+2026-10-21T17:54:10.1835727Z pnpm verify:dependencies
+2026-10-21T17:54:10.1889242Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:10.1889416Z env:
+2026-10-21T17:54:10.1889572Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:10.1889756Z ##[endgroup]
+2026-10-21T17:54:10.3634886Z
+2026-10-21T17:54:10.3635826Z > taskflow@0.0.0 verify:dependencies /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:10.3636306Z > node tooling/audit-dependencies.mjs
+2026-10-21T17:54:10.3636432Z
+2026-10-21T17:54:10.4838064Z 228 retained frontend snapshots and direct resolutions preserved
+2026-10-21T17:54:10.5069594Z ##[group]Run pnpm typecheck
+2026-10-21T17:54:10.5069774Z pnpm typecheck
+2026-10-21T17:54:10.5122639Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:10.5122786Z env:
+2026-10-21T17:54:10.5122939Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:10.5123120Z ##[endgroup]
+2026-10-21T17:54:10.6962630Z
+2026-10-21T17:54:10.6963666Z > taskflow@0.0.0 typecheck /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:10.6964205Z > pnpm -r run typecheck
+2026-10-21T17:54:10.6964351Z
+2026-10-21T17:54:10.8844719Z Scope: 2 of 3 workspace projects
+2026-10-21T17:54:10.8862305Z apps/api typecheck$ tsc -p tsconfig.json --noEmit
+2026-10-21T17:54:10.8866388Z apps/web typecheck$ tsc -p tsconfig.json --noEmit
+2026-10-21T17:54:11.7695331Z apps/api typecheck: Done
+2026-10-21T17:54:14.2728070Z apps/web typecheck: Done
+2026-10-21T17:54:14.2915012Z ##[group]Run pnpm build
+2026-10-21T17:54:14.2915188Z pnpm build
+2026-10-21T17:54:14.2968245Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:14.2968396Z env:
+2026-10-21T17:54:14.2968543Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:14.2968718Z ##[endgroup]
+2026-10-21T17:54:14.4856009Z
+2026-10-21T17:54:14.4857154Z > taskflow@0.0.0 build /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:14.4857800Z > pnpm -r run build
+2026-10-21T17:54:14.4857938Z
+2026-10-21T17:54:14.6883358Z Scope: 2 of 3 workspace projects
+2026-10-21T17:54:14.6903373Z apps/api build$ tsc -p tsconfig.json
+2026-10-21T17:54:14.6908198Z apps/web build$ vite build
+2026-10-21T17:54:15.0069103Z apps/web build: vite v7.3.6 building client environment for production...
+2026-10-21T17:54:15.0887106Z apps/web build: transforming...
+2026-10-21T17:54:15.7547795Z apps/api build: Done
+2026-10-21T17:54:15.9329075Z apps/web build: src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+2026-10-21T17:54:17.1590024Z apps/web build: ✓ 1766 modules transformed.
+2026-10-21T17:54:17.3328571Z apps/web build: rendering chunks...
+2026-10-21T17:54:17.3380393Z apps/web build: computing gzip size...
+2026-10-21T17:54:17.3468514Z apps/web build: dist/public/index.html                   1.36 kB │ gzip:   0.54 kB
+2026-10-21T17:54:17.3470227Z apps/web build: dist/public/assets/index-CkrM45mg.css   95.50 kB │ gzip:  16.91 kB
+2026-10-21T17:54:17.3471709Z apps/web build: dist/public/assets/index-BZrco9Mm.js   376.63 kB │ gzip: 117.47 kB
+2026-10-21T17:54:17.3472569Z apps/web build: ✓ built in 2.32s
+2026-10-21T17:54:17.3997109Z apps/web build: Done
+2026-10-21T17:54:17.4846444Z ##[group]Run pnpm test
+2026-10-21T17:54:17.4846871Z pnpm test
+2026-10-21T17:54:17.4900773Z shell: /usr/bin/bash -e {0}
+2026-10-21T17:54:17.4900928Z env:
+2026-10-21T17:54:17.4901081Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-21T17:54:17.4901261Z ##[endgroup]
+2026-10-21T17:54:17.7915162Z
+2026-10-21T17:54:17.7915802Z > taskflow@0.0.0 test /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:17.7916228Z > pnpm --filter @taskflow/api test && pnpm test:workflows
+2026-10-21T17:54:17.7916624Z
+2026-10-21T17:54:18.0001555Z
+2026-10-21T17:54:18.0002326Z > @taskflow/api@0.0.0 test /home/runner/work/TaskFlow-Board/TaskFlow-Board/apps/api
+2026-10-21T17:54:18.0003082Z > pnpm build && node --test test/*.test.mjs
+2026-10-21T17:54:18.0003422Z
+2026-10-21T17:54:18.1940062Z
+2026-10-21T17:54:18.1941057Z > @taskflow/api@0.0.0 build /home/runner/work/TaskFlow-Board/TaskFlow-Board/apps/api
+2026-10-21T17:54:18.1941621Z > tsc -p tsconfig.json
+2026-10-21T17:54:18.1941858Z
+2026-10-21T17:54:19.1848567Z [Nest] 2515  - 10/21/2026, 5:54:19 PM     LOG [NestFactory] Starting Nest application...
+2026-10-21T17:54:19.1887291Z [Nest] 2515  - 10/21/2026, 5:54:19 PM     LOG [InstanceLoader] AppModule dependencies initialized +5ms
+2026-10-21T17:54:19.1906355Z [Nest] 2515  - 10/21/2026, 5:54:19 PM     LOG [RoutesResolver] HealthController {/api}: +2ms
+2026-10-21T17:54:19.1920747Z [Nest] 2515  - 10/21/2026, 5:54:19 PM     LOG [RouterExplorer] Mapped {/api/healthz, GET} route +1ms
+2026-10-21T17:54:19.1949459Z [Nest] 2515  - 10/21/2026, 5:54:19 PM     LOG [NestApplication] Nest application successfully started +2ms
+2026-10-21T17:54:19.2302206Z ✔ an independent application serves the exact HTTP health contract and closes cleanly (98.878058ms)
+2026-10-21T17:54:19.2438548Z ℹ tests 1
+2026-10-21T17:54:19.2439133Z ℹ suites 0
+2026-10-21T17:54:19.2439733Z ℹ pass 1
+2026-10-21T17:54:19.2440116Z ℹ fail 0
+2026-10-21T17:54:19.2457866Z ℹ cancelled 0
+2026-10-21T17:54:19.2458346Z ℹ skipped 0
+2026-10-21T17:54:19.2458739Z ℹ todo 0
+2026-10-21T17:54:19.2459079Z ℹ duration_ms 254.50295
+2026-10-21T17:54:19.4430671Z
+2026-10-21T17:54:19.4431497Z > taskflow@0.0.0 test:workflows /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:19.4431896Z > node --test tooling/workflows.test.mjs
+2026-10-21T17:54:19.4432014Z
+2026-10-21T17:54:20.9120116Z ✔ development: API proxy, SPA routes, stopped backend and occupied web port (1409.31592ms)
+2026-10-21T17:54:21.4216876Z ✔ preview: API proxy, SPA routes, stopped backend and occupied web port (510.075237ms)
+2026-10-21T17:54:21.8365534Z ✔ backend command fails clearly on an occupied port (415.047848ms)
+2026-10-21T17:54:21.8461243Z ℹ tests 3
+2026-10-21T17:54:21.8461875Z ℹ suites 0
+2026-10-21T17:54:21.8462442Z ℹ pass 3
+2026-10-21T17:54:21.8462633Z ℹ fail 0
+2026-10-21T17:54:21.8462827Z ℹ cancelled 0
+2026-10-21T17:54:21.8463033Z ℹ skipped 0
+2026-10-21T17:54:21.8463222Z ℹ todo 0
+2026-10-21T17:54:21.8463449Z ℹ duration_ms 2379.555891
+2026-10-21T17:54:21.8843941Z Post job cleanup.
+2026-10-21T17:54:22.0108894Z (node:2701) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-21T17:54:22.0109386Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-21T17:54:22.0289037Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/TaskFlow-Board/TaskFlow-Board --files-from manifest.txt --use-compress-program zstdmt
+2026-10-21T17:54:22.9996450Z (node:2701) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-21T17:54:23.9937662Z Sent 78416982 of 78416982 (100.0%), 74.8 MBs/sec
+2026-10-21T17:54:24.4680365Z Cache saved with the key: node-cache-Linux-x64-pnpm-2334ba6947f02c19a439b723e72c3a1bed948af7d42123ec9b6a6afb8a4efdb6
+2026-10-21T17:54:24.4812865Z Post job cleanup.
+2026-10-21T17:54:24.5789666Z Pruning is unnecessary.
+2026-10-21T17:54:24.5958554Z Post job cleanup.
+2026-10-21T17:54:24.6597144Z [command]/usr/bin/git version
+2026-10-21T17:54:24.6635133Z git version 2.55.0
+2026-10-21T17:54:24.6661722Z Temporarily overriding HOME='/home/runner/work/_temp/842ff473-ff31-47c4-b2c3-985af9360ad4' before making global git config changes
+2026-10-21T17:54:24.6662729Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-21T17:54:24.6665823Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TaskFlow-Board/TaskFlow-Board
+2026-10-21T17:54:24.6704462Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-21T17:54:24.6740816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-21T17:54:24.7040813Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-21T17:54:24.7069833Z http.https://github.com/.extraheader
+2026-10-21T17:54:24.7111623Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-21T17:54:24.7976836Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-21T17:54:24.8175953Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-21T17:54:24.8209737Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-21T17:54:24.8553146Z Cleaning up orphan processes
+2026-10-21T17:54:24.8784938Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

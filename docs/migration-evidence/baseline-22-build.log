@@ -1,0 +1,14 @@
+
+> @workspace/taskflow@0.0.0 build /Users/hossein/Downloads/taskflow-evaluation-original/artifacts/taskflow
+> vite build --config vite.config.ts
+
+vite v7.3.6 building client environment for production...
+transforming...
+src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+✓ 1766 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/public/index.html                   1.36 kB │ gzip:   0.54 kB
+dist/public/assets/index-CkrM45mg.css   95.50 kB │ gzip:  16.91 kB
+dist/public/assets/index-BZrco9Mm.js   376.63 kB │ gzip: 117.47 kB
+✓ built in 1.64s
