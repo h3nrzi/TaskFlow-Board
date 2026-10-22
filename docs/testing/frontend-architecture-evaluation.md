@@ -235,3 +235,97 @@ The saved profile and initials must survive reload.
 
 Report Ticket 03, browser/viewport, actions and expected/actual observations.
 Human acceptance remains **Pending**.
+
+## Ticket 04 — Feature modules and shell composition
+
+### Preflight evidence
+
+- Based on reviewed integration `6e98ce75a7b80c83df22ecd5e9126b9b2d20f693`;
+  worktree `/Users/hossein/.codex/worktrees/feature-boundaries/TaskFlow-Board`,
+  branch `codex/frontend-architecture-features`.
+- Frozen install and `pnpm typecheck` passed using Node v24.22.0 and pnpm 10.11.0.
+  Typecheck log: `/tmp/taskflow-features-typecheck.log`. No dependencies, lockfile,
+  CSS, existing tests or route/provider contracts changed.
+- Mechanical extraction retained all 26 original top-level declarations. A
+  one-off comparison of emitted JavaScript ASTs found zero executable changes,
+  including resulting JSX text, after accounting for the shell rename, exports,
+  formatting and adjacent string-child splits introduced by Prettier. This is
+  structural evidence, not a browser-render or human-acceptance claim. Script:
+  `/tmp/taskflow-feature-preservation.cjs`; original snapshot:
+  `/tmp/taskflow-ticket04-before.tsx`.
+- The static JSX audit counted 523 intrinsic elements both before and after;
+  zero static-attribute/style groups changed after normalizing AST formatting
+  (trailing commas, quote spelling and equivalent numeric literals). Script:
+  `/tmp/taskflow-architecture-audit-normalized.cjs <checkout>`.
+- Import audit: 87 frontend source modules, zero cycles. Pure workspace rules
+  have no React, browser, persistence or feature imports. Features do not import
+  the shell. The [architecture guide](../architecture/frontend.md) documents
+  resulting responsibilities and retained state lifetimes.
+- Existing targeted regression command, prefixed with
+  `PATH=/Users/hossein/.nvm/versions/node/v24.22.0/bin:$PATH`:
+
+  ```sh
+  pnpm test:frontend --grep 'task CRUD|project CRUD|search, combined|overview, settings|responsive routes|board task entry|task modal contains|switching login|project and board task titles|task without a project|editing an unassigned|nested edit'
+  ```
+
+  Result: **70 passed, 2 failed** in 2.0 minutes across all six browser/viewport
+  projects. Log: `/tmp/taskflow-features-regressions.log`; retained artifacts:
+  `/tmp/taskflow-features-initial-test-results`. Firefox mobile timed out closing
+  the overview task drawer; its trace shows external Google font TLS handshakes
+  of 30.069–30.077 seconds. WebKit desktop timed out loading `/tasks`; its local
+  document returned in 1.435 milliseconds while both external Google Fonts CSS
+  requests remained pending. These match the external waits recorded for earlier
+  tickets; no font, test, timeout or application workaround was introduced.
+- Scoped self-review found no actionable issue: both route switches, keyed auth,
+  search/filter/form lifetimes, selected-task fallback, overlay ordering,
+  `inert`, focus hook integration and explicit operations remain unchanged.
+  `git diff --check` passed. Final integration full repository check and
+  independent two-axis review remain pending checkpoints.
+
+### Session-resumed verification — 2026-10-22
+
+The Ticket 04 evidence above is the prior implementer's recorded evidence. Its
+one-off audit scripts, logs and trace artifacts under `/tmp` are no longer
+available after session resumption; those audits and trace diagnoses were not
+repeated or independently reverified in this resumed session. The persisted
+`test-results/.last-run.json` initially reported `passed` with no failed test IDs,
+but did not identify the scenarios or duration, so it is not used as a focused
+recheck result.
+
+Fresh checks in the same feature worktree, with
+`PATH=/Users/hossein/.nvm/versions/node/v24.22.0/bin:$PATH`:
+
+- `pnpm typecheck`: passed for API and web, exit 0.
+- `pnpm test:frontend tests/frontend/workflows.spec.ts
+  --project=firefox-mobile --project=webkit-desktop
+  --grep 'overview, settings|task CRUD'`: **4 passed in 32.7 seconds**, exit 0.
+  This includes both combinations that previously timed out. This targeted pass
+  is not a clean 72-case run or a full-suite pass.
+- `git diff --check`: passed. No test, font, timing, dependency or application
+  behavior workaround was added.
+
+Final integration `pnpm check` and independent two-axis review remain pending.
+Human evaluation remains **Pending**.
+
+### First concrete action
+
+Using Node v24.22.0, run `pnpm dev:web` and open its printed URL in a disposable
+browser profile. Open **Tasks**, choose **New task**, create `Architecture review`,
+wait for **All changes saved locally**, and reload. The task must remain and open
+in the same task drawer.
+
+### Reproducible feature checks
+
+| Feature | Actions | Expected result |
+| --- | --- | --- |
+| Task list and drawer | Perform the first action; edit the drawer's status, priority, date, project and assignee. Open Edit task, cancel, then save an edit. Toggle completion from the list. | Existing fields and labels behave identically; changes save/reload; cancel preserves the drawer and current selection. |
+| Search and filters | Search for a task, combine status/priority/project filters and change priority/due sorting. Navigate to Settings and back to Tasks. | Matching rows/order and existing search-versus-filter reset behavior remain unchanged. |
+| Projects and board | Create and edit a project, navigate between two boards, then create a task on each. Use board status controls. Delete a project after first choosing Keep it. | Correct board defaults and explicit task assignment, same movement controls; Keep it cancels; deletion removes the project/tasks and navigates to Projects. |
+| Overview and navigation | Open overview project summaries/upcoming/recent tasks, use desktop sidebar and mobile bottom/menu links, then open an unknown URL and a missing project URL. | Same destinations, drawer contents, fallback screens and responsive navigation. |
+| Profile, appearance and auth | Save a profile in Settings; toggle appearance using each existing entry point. Visit /login, switch to /signup, submit a new demo profile and reload. | Signup starts empty, profile/theme persist, existing tasks/projects remain, and submission returns to Overview. |
+| Nested overlays and keyboard | Open a task with the keyboard, open Edit task and Escape, then Delete and Keep it. Cycle Tab/Shift+Tab in each dialog and close the drawer. | Focus stays in the active layer, returns to the prior control, and only the top layer closes; the page underneath remains inactive. |
+| Responsive presentation | Repeat primary routes and forms at phone portrait/landscape and desktop sizes. | Existing layout, controls, labels and visual styling remain unchanged with no horizontal overflow. |
+| Local data safety | Repeat Ticket 02's recovery, export, failure, stale-tab and unload checks. | Identical saved schema/bytes, recovery/export, warning and refusal to overwrite newer work. |
+
+Record Ticket 04, browser/viewport, actions and expected/actual observations.
+Human acceptance remains **Pending** for this and every preceding ticket.

@@ -2,6 +2,8 @@
 
 React demo in `apps/web`, independent NestJS health application in `apps/api`.
 
+See the [frontend architecture guide](docs/architecture/frontend.md) for module ownership and state lifetimes.
+
 Use **Node 24.22.0** (`.node-version` / `.nvmrc`) and **pnpm 10.11.0** (`packageManager`). With those installed:
 
 ```sh
