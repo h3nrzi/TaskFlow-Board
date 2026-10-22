@@ -4,7 +4,7 @@ Status: ready-for-agent
 Implementation: complete
 Ticket breakdown: approved; published as tickets 01 and 02
 Regression baseline: executed; original suite 129 passed / 3 intentional skips
-Human evaluation: Not Evaluated
+Human evaluation: smoke checkpoint Passed; all other manual checks Not Evaluated
 
 ## Problem Statement
 
@@ -87,3 +87,10 @@ Earlier architecture work documented full-suite timeout limitations. Those recor
 ## Implementation outcome
 
 Both approved tickets are complete. All four overlays use supported Radix Dialog composition while preserving existing backdrop mouse-down, native scrolling, synchronous restoration timing, focused-layer Escape handling, presentation and component interfaces. Zod and all other migrations remain deferred. Final full repository check passed, including 156 frontend passes / 6 intentional skips; independent Standards and Spec reviews found no remaining actionable implementation issues. Earlier test-development failures, an introduced and fixed Escape regression, and evidenced external-font timeouts remain separately recorded. Production JavaScript increased by 3,095 gzip bytes; CSS is unchanged. Controlled visual checks resolved font-timing capture differences without application changes. Per-ticket evidence and evaluation guidance are in docs/testing/frontend-library-adoption-evaluation.md. Human acceptance remains Pending; no user observations for this phase have been reported.
+
+
+### Human smoke-test checkpoint — 2026-10-23
+
+The user directly reported **Passed** for the Phase 3 manual smoke test: the task form opens and closes correctly, focus behaves as expected, and Escape works. Browser, viewport, and exact opening/dismissal methods were not supplied. Do not infer backdrop, nested-layer, full keyboard-cycle, CRUD, persistence, project-form, drawer, confirmation, dark-theme, or touch-scrolling acceptance from this report.
+
+All other unperformed manual checks remain **Not Evaluated**. This is a passed smoke checkpoint, not whole-ticket human acceptance. Implementation is complete; documented automated results, intentional skips, earlier failures, infrastructure timeouts, and limitations remain unchanged. Earlier Pending/Not Evaluated statements describe prior checkpoints and are superseded only for the smoke behaviors explicitly reported here.
