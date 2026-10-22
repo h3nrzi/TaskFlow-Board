@@ -26,3 +26,17 @@ changes and found both findings resolved, with no remaining actionable spec issu
 Standards: 1 initial finding, 0 remaining. Spec: 2 initial findings, 0 remaining.
 
 Human evaluation remains pending; these reviews do not establish acceptance.
+
+
+## Ticket 03 human-evaluation follow-up
+
+Compared the follow-up working diff with `2239f26`. Independent standards and spec
+reviewers found no actionable findings. Both confirmed that using the board's
+route matcher is a minimal fix for the separately reproduced trailing-slash bug.
+Coverage now includes persisted assignment/reload, SPA navigation, creation entry
+points, cancellation, explicit project selection, and development versus preview.
+
+The exact human failure was an old loaded canonical document with failed Vite
+updates, resolved by reloading from the verified current server. The slash bug
+must not be presented as the cause of that canonical report. Review and automated
+results leave human acceptance pending retest.

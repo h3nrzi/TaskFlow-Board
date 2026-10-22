@@ -61,16 +61,45 @@ test('stale tab cannot overwrite another tab’s saved changes', async ({ page, 
   await expect(other.getByRole('alert')).toContainText(/another tab|elsewhere/i);
 });
 
-test('new task on a project board belongs to that project', async ({ page }) => {
-  await page.goto('/projects/field-notes');
-  await page.getByTestId('button-add-task-project').click();
-  await expect(page.getByTestId('input-task-project')).toHaveValue('field-notes');
-  await page.getByTestId('input-task-title').fill('Board-specific task');
-  await page.getByTestId('button-save-task').click();
-  await expect(page.getByText('Board-specific task', { exact: true })).toBeVisible();
-  await expect(page.getByTestId('workspace-save-state')).toHaveText('All changes saved locally');
-  await page.reload();
-  await expect(page.getByText('Board-specific task', { exact: true })).toBeVisible();
+for (const suffix of ['', '/']) {
+  test(`new task on a project board belongs to that project (path suffix: ${suffix || 'none'})`, async ({ page }) => {
+    await page.goto(`/projects/field-notes${suffix}`);
+    await page.getByTestId('button-add-task-project').click();
+    await expect(page.getByTestId('input-task-project')).toHaveValue('field-notes');
+    await page.getByTestId('input-task-title').fill('Board-specific task');
+    await page.getByTestId('button-save-task').click();
+    await expect(page.getByText('Board-specific task', { exact: true })).toBeVisible();
+    await expect(page.getByTestId('workspace-save-state')).toHaveText('All changes saved locally');
+    await expect.poll(async () => (await saved(page)).tasks.find(t => t.title === 'Board-specific task')?.projectId).toBe('field-notes');
+    await page.reload();
+    await expect(page.getByText('Board-specific task', { exact: true })).toBeVisible();
+  });
+}
+
+test('board task entry points follow navigation and keep explicit project choices', async ({ page }) => {
+  await page.goto('/projects');
+  for (const [projectId, projectName] of [['field-notes', 'Field Notes'], ['launch-plan', 'Spring launch']]) {
+    await page.getByTestId(`card-project-${projectId}`).getByRole('link', { name: projectName, exact: true }).click();
+    await expect(page.getByRole('heading', { name: projectName, exact: true })).toBeVisible();
+    for (const trigger of ['button-add-task-project', 'button-add-task-column', 'button-quick-add']) {
+      if (await page.getByTestId(trigger).isVisible()) {
+        await page.getByTestId(trigger).click();
+        await expect(page.getByTestId('input-task-project')).toHaveValue(projectId);
+        await expect(page.getByTestId('input-task-project').locator('option:checked')).toHaveText(projectName);
+        // A cancelled choice must not leak into the next form or board.
+        await page.getByTestId('input-task-project').selectOption('studio-site');
+        await page.getByTestId('button-cancel-task').click();
+      }
+    }
+    await page.getByTestId('button-add-task-project').click();
+    const title = `Explicit assignment from ${projectId}`;
+    await page.getByTestId('input-task-title').fill(title);
+    await page.getByTestId('input-task-project').selectOption('studio-site');
+    await page.getByTestId('button-save-task').click();
+    await expect.poll(async () => (await saved(page)).tasks.find(t => t.title === title)?.projectId).toBe('studio-site');
+    await page.goBack();
+    await expect(page.getByRole('heading', { name: 'Projects', exact: true })).toBeVisible();
+  }
 });
 
 test('task modal contains keyboard focus, closes with Escape, and restores focus', async ({ page }) => {

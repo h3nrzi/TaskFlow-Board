@@ -30,3 +30,18 @@ separately below and were not used to expand the bug-fixing phase.
 - The viewport metadata includes maximum-scale=1. Physical-device zoom behavior was
   not evaluated; accessibility/zoom behavior remains a follow-up observation, not a
   claimed reproduced defect.
+
+
+## Ticket 03 human-evaluation follow-up
+
+The first human attempt failed; acceptance remains pending retest. The canonical
+Chrome document was stale (missing current UI markers, failed Vite updates), while
+the dev server served current source; reload restored correct preselection.
+Separately, a fresh trailing-slash route reproduced a default-project bug. The
+follow-up uses the same route matcher as the board and expands dev/preview tests.
+See [Ticket 03](issues/03-project-context.md) for exact evidence and retest steps.
+
+Follow-up validation: 18 focused development cases passed; full `pnpm check`
+passed with 129 preview browser cases and 3 documented mobile unload skips, plus
+all dependency/type/build/API/tooling checks. Review findings: none. Human status:
+pending retest after the recorded failed attempt.

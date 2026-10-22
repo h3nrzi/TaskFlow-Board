@@ -23,6 +23,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium firefox webkit
       - run: pnpm verify:frontend
+      - name: Check project task defaults in development mode
+        run: pnpm test:frontend --grep "new task on a project board|board task entry points"
+        env:
+          TASKFLOW_TEST_SERVER: development
       - run: pnpm verify:dependencies
       - run: pnpm typecheck
       - run: pnpm build

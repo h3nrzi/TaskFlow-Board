@@ -5,14 +5,24 @@ human acceptance. Real-device testing is optional and remains pending.
 
 ## First action
 
-Run `pnpm dev:web`, open http://localhost:21998/projects/field-notes in a disposable
-browser profile, and choose **Add task**. Confirm **Field Notes** is selected, create
-an “Evaluation task”, and confirm it appears on that board after reloading once
-**All changes saved locally** appears. This is ticket 03's first checkpoint.
+Ticket 03's first human attempt **failed**. The follow-up is **pending retest**;
+automated passes do not accept that ticket. See the [Ticket 03 investigation](../../.scratch/frontend-stability/issues/03-project-context.md).
 
-Use a disposable profile or private window for destructive and storage-failure
-scenarios. Tests themselves use isolated browser contexts at `127.0.0.1:22017` and
-do not access your normal workspace at `localhost:21998`.
+Run `pnpm dev:web` if needed. Stay on the same origin used for the failure,
+http://127.0.0.1:21998/projects/field-notes. Close or save drafts, then reload the
+page so it loads the current frontend. Verify **All changes saved locally** is
+visible before choosing **Add task**. Expect **Field Notes** to be selected.
+
+In a disposable browser profile, create an “Evaluation task”, wait for saved status,
+and verify it remains on that board after reloading. Repeat with a trailing slash,
+the column plus and desktop topbar New task. The user's acceptance remains pending
+until these observations are reported.
+
+Use a disposable profile for destructive and storage-failure scenarios. Automated
+tests use isolated contexts at `127.0.0.1:22017` (preview) or `127.0.0.1:22016`
+(development). They do not access your workspace at port 21998. `localhost` and
+`127.0.0.1` are different browser storage origins; retain the origin used for your
+existing workspace when retesting it.
 
 ## Reproduce automated preflight
 
@@ -28,9 +38,18 @@ pnpm check
 `pnpm test:frontend` runs only the browser matrix; `pnpm exec playwright test
 --project=webkit-mobile` selects one project. `pnpm exec playwright show-report`
 opens the latest HTML report. Failure traces and screenshots are in `test-results/`.
-The browser suite builds the frontend and serves it at port 22017; keep that port
-free. Other application checks also test API health/proxy behavior; frontend
-workflows remain independent of the API.
+The default suite builds the frontend and serves it at port 22017; keep that port
+free. The development mode uses port 22016 and starts its own Vite server. Run the
+Ticket 03 group in both modes:
+
+```sh
+TASKFLOW_TEST_SERVER=development pnpm exec playwright test -g 'new task on a project board|board task entry points'
+pnpm exec playwright test -g 'new task on a project board|board task entry points'
+```
+
+CI runs the development group in addition to the default full preview matrix.
+Other application checks also test API health/proxy behavior; frontend workflows
+remain independent of the API.
 
 ## Coverage and per-ticket checkpoints
 
@@ -42,7 +61,7 @@ workflows remain independent of the API.
 | 02: save failure | Follow the injection below, then create a task or change appearance. | App remains usable; persistent **not saved** warning and settings status; current-workspace download contains the change. Do not treat a transient “updated” notice as a successful save. |
 | 02: stale tab | Load two tabs before changing either. Add “Tab A task” in A; wait for saved status. Add “Tab B task” in B. | B reports that another tab changed the workspace and does not overwrite A. Download B before reloading; A's task remains persisted. There is no automatic merge/import. |
 | 02: unload protection | On desktop save dark appearance, inject write failure, switch back to light, then reload. Choose to stay. | Browser warns about unsaved changes; light stays visible and can be exported. Mobile prompts are not guaranteed; persistent warning/download are the recovery path. |
-| 03: board context | Perform the first action above. Also use the column plus and desktop topbar New task from another project. | Each board entry point defaults to that board; an explicitly selected different project is respected. |
+| 03: board context (pending retest) | Reload and verify current-version UI as described above. Perform the first action above. Also use the column plus and desktop topbar New task from another project. | Each board entry point defaults to that board; an explicitly selected different project is respected. |
 | 04: keyboard overlays | Keyboard-focus New task, press Enter, edit, Tab/Shift+Tab through controls, then Escape. Repeat with project editor, task drawer, nested task editor and delete confirmation. | Focus stays inside the top overlay; Escape closes one layer; focus returns to a surviving opener; background controls are inactive. Cancel deletion keeps data. |
 | 04: keyboard cards | Tab to a project's title on Projects and press Enter. Tab to a task title on the board and press Enter. | Project opens; task drawer opens. Status dropdown remains independently keyboard accessible. |
 | 05: demo forms | From login choose Create a demo profile; enter name/email and submit. Switch signup/login in both directions. | Signup starts empty; login defaults to current demo profile; no previous mode's draft leaks. Existing projects/tasks remain intact. No backend account is created. |
@@ -90,7 +109,7 @@ and 390×844. Responsive sweeps include 320, 390, 768, 844, 1024 and 1440px widt
 Firefox mobile uses viewport+touch emulation because its engine does not support
 Playwright's `isMobile` option. Browser engines are emulation, not physical devices.
 
-## Actual preflight evidence (2026-10-22)
+## Initial preflight evidence (2026-10-22, before the Ticket 03 human report)
 
 - Starting commit: `2af2532cda6094cdb0eb13843c01b0b96fe94358`; working tree was clean.
 - Runtime observed: Node `v24.22.0`, pnpm `10.11.0`.
@@ -114,7 +133,7 @@ Playwright's `isMobile` option. Browser engines are emulation, not physical devi
   finding and two spec findings were reproduced/addressed; both reviewers reported
   zero remaining findings after reinspection.
 - Final `pnpm install --frozen-lockfile --offline`: passed; lockfile up to date.
-- Final `pnpm check`: **exit 0**. Browser matrix: **117 passed, 3 intentionally
+- Initial implementation `pnpm check`: **exit 0**. Browser matrix: **117 passed, 3 intentionally
   skipped** (mobile native unload prompts), 0 failed. All 20 scenarios execute in
   six projects; the native unload safeguard executes on desktop only.
 - Both application typechecks and production builds: passed. Vite retains an
@@ -129,7 +148,7 @@ Playwright's `isMobile` option. Browser engines are emulation, not physical devi
 | --- | --- |
 | 01 | Six browser projects; dependency audit (297 snapshots), typechecks, builds, API/tooling tests. |
 | 02 | Malformed/invalid-shape preservation, exact recovery downloads, write/read failures, stale tabs, missing-lock protection; desktop native unload warning. |
-| 03 | Board task project default, creation and reload. |
+| 03 | Initial checkpoint: canonical preview URL only. Follow-up adds canonical/slash URLs, persisted assignment/reload, SPA board changes, all visible create entry points, cancelled selection and explicit overrides; development and preview. |
 | 04 | Modal focus containment/Escape/restoration; keyboard project/task titles; nested edit/delete focus restoration. |
 | 05 | Login-to-signup reset plus existing demo signup/profile workflow. |
 | 06 | Pinned near-midnight Asia/Tehran creation-date regression. |
@@ -142,3 +161,33 @@ Report each ticket/checkpoint as **pass**, **fail**, or **not evaluated**, with
 browser, viewport/device, steps, expected behavior, observed behavior and any
 screenshot/console error. All eight ticket checkpoints remain pending until you
 report observations. Automated passes do not change that status.
+
+
+## Ticket 03 follow-up evidence (2026-10-22)
+
+The actual canonical Chrome tab selected Studio website and lacked current UI
+markers. Its Vite connection had failed. The running server served the current
+checkout (`2239f26` before this follow-up), verified by process working directory,
+development HTML, and transformed App source. Reloading that same empty-form tab
+restored current markers, a connected Vite WebSocket, and Field Notes preselection.
+This explains the observed human/automated discrepancy: the earlier test loaded a
+fresh production preview while the human tab retained an older document.
+
+Separately, a fresh development-server test reproduced a real trailing-slash defect:
+the board matched `/projects/field-notes/` but exact pathname equality failed when
+choosing the default project. A two-line fix uses the board's route matcher. This
+was **not** the cause of the exact no-slash human failure.
+
+- Red run: Chromium development, canonical + slash URLs: **1 passed, 1 failed**;
+  slash variant expected `field-notes`, received `studio-site`.
+- Fixed development group: **18 passed**, 0 failed across all six browser projects.
+- Follow-up full `pnpm check`: **exit 0**, **129 preview browser cases passed**,
+  **3 intentionally skipped** mobile unload-prompt cases, 0 failed. Dependency
+  preservation (297 snapshots), typechecks/builds, 1 API test and 3 tooling workflow
+  tests passed. `git diff --check` passed; CI YAML parses with the new development step.
+  Remote CI was not run for the uncommitted follow-up.
+- Direct fresh-browser verification against the existing server at port 21998:
+  canonical and slash URLs both selected `field-notes` / **Field Notes** with current
+  UI markers. This was separate from the managed test servers.
+- Follow-up standards/spec reviews: no actionable findings.
+- Human acceptance: **pending retest**, with the earlier failed attempt retained.

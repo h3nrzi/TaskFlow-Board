@@ -99,6 +99,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [mobileMenu, setMobileMenu] = useState(false);
   const [location, setLocation] = useLocation();
+  const [, projectRoute] = useRoute('/projects/:id');
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', store.theme === 'dark');
@@ -210,7 +211,7 @@ function App() {
         <MobileLink href="/settings" active={location === '/settings'} icon={<Settings2 />} label="Settings" />
       </nav>
       {drawerTask && <TaskDrawer task={store.tasks.find(t => t.id === drawerTask.id) || drawerTask} projects={store.projects} inactive={!!(taskModal || confirm)} onClose={() => setDrawerTask(null)} onEdit={t => setTaskModal(t)} onDelete={id => setConfirm({ kind: 'task', id })} onUpdate={patchTask} />}
-      {taskModal && <TaskForm task={taskModal === 'new' ? undefined : taskModal} projects={store.projects} defaultProjectId={store.projects.find(p => location === `/projects/${p.id}`)?.id} onClose={() => setTaskModal(null)} onSave={saveTask} />}
+      {taskModal && <TaskForm task={taskModal === 'new' ? undefined : taskModal} projects={store.projects} defaultProjectId={store.projects.find(p => p.id === projectRoute?.id)?.id} onClose={() => setTaskModal(null)} onSave={saveTask} />}
       {projectModal && <ProjectForm project={projectModal === 'new' ? undefined : projectModal} onClose={() => setProjectModal(null)} onSave={saveProject} />}
       {confirm && <ConfirmDialog title={confirm.kind === 'task' ? 'Delete this task?' : 'Delete this project?'} description={confirm.kind === 'task' ? 'This task will be permanently removed from your workspace.' : 'This will also remove every task inside the project.'} onCancel={() => setConfirm(null)} onConfirm={deleteConfirmed} />}
       {notice && <div className="toast-stack"><div className="toast-item" role="status" data-testid="status-toast">{notice}</div></div>}
