@@ -20,6 +20,18 @@ Users retain task, project, profile, and theme workflows while pages update work
 
 ## Comments
 
+2026-10-22: Integration review verified one mounted `useWorkspace` owner and
+private setter; Settings receives only profile/theme operations. Existing
+validation notices, navigation, modal closure, search/filter ownership and
+selected-task fallback remain in their original coordinators. Task/project
+identifier and date generation retain updater placement; transition ordering,
+theme-before-save effect order and persistence session lifetime are unchanged.
+No actionable behavior/scope/dependency finding. Integrated with merge commit
+`e2c868794bc6a6fd640a6bb199e066628018c217`; required Node 24.22.0
+`pnpm typecheck` passed in the integration checkout. Targeted browser evidence
+and remote-font timeout limitations remain as recorded below; Human evaluation
+is Pending.
+
 2026-10-22: Approved four-step scope and sequential breakdown carried forward from the implementation chat. Parent: ../spec.md.
 
 2026-10-22: Implemented one workspace hook with explicit task/project/profile/theme
