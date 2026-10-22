@@ -35,7 +35,17 @@ Record observations separately for each item, with browser/viewport and expected
 
 ## Ticket 02 — Radix adoption
 
-Implementation and automated checks: **Not started**.
+Implementation: **In progress**. Ticket 01 follow-up Standards and Spec reviews found no remaining actionable issues (the initial two Spec findings were resolved before migration).
+
+Task-form migration step: web/API typechecks passed; focused task form, nested edit/delete, existing task-modal focus and desktop scrolling checks recorded **21 passed / 3 explicit mobile wheel skips**, 40.1 seconds. Command: `pnpm exec playwright test tests/frontend/overlays.spec.ts tests/frontend/stability.spec.ts --grep 'task form|task modal contains|nested edit'`. Durable log: `.scratch/frontend-library-adoption/evidence/task-step.log`.
+
+Project-form migration step: web/API typechecks passed; project-form contracts and project CRUD/board/cascade workflows recorded **12 passed**, 24.6 seconds across all six projects. Command: `pnpm exec playwright test tests/frontend/overlays.spec.ts tests/frontend/workflows.spec.ts --grep 'project form|project CRUD'`. Log: `evidence/project-step.log`.
+
+Drawer/confirmation first step: typechecks passed but browser checks recorded **15 passed / 3 behavioral failures**, 37.0 seconds. Escape could close the underlying drawer while leaving the top overlay open. This was an introduced regression, not an infrastructure failure. The existing nested workflow reproduced it in **3 of 5 attempts** on Chromium mobile; traces recorded the drawer's Escape handler receiving a key while an edit/confirmation overlay was focused. Diagnostic evidence: `/tmp/taskflow-phase3-escape-diagnosis-results`; logs: `evidence/nested-regression.log`, `evidence/escape-diagnosis.log`.
+
+Supported compatibility fix: prevent Radix's document-level Escape dismissal and close the content receiving the key via its capture handler. Preserve the existing synchronous restoration cleanup and custom mouse-down backdrop; use primitive focus/layer machinery without introducing scroll locking. No private primitive APIs or altered assertions. Temporary debug logging removed. The identical five-attempt workflow passed **5/5**, 21.7 seconds (`evidence/escape-fixed.log`). Full nested follow-up and final integration checks remain pending.
+
+Broader nested follow-up: **17 passed / 1 infrastructure-related navigation timeout**, 1.0m. WebKit desktop confirmation timed out in `page.goto` before assertions; both external Google Fonts stylesheets were pending (status/time -1). No behavioral failure in that run; the timed-out configuration was not verified by it. Trace: `/tmp/taskflow-phase3-nested-font-timeout-results`; log: `evidence/nested-fixed.log`. Fixed web/API typechecks passed. All four overlays migrated; unused custom focus hook removed. Final full repository check and two-axis review are in progress.
 
 First action after implementation: repeat the task-form check above, then nested Edit/Delete from the same task drawer. Follow the complete feature list above for acceptance; also create/edit/delete a disposable task and project, reload, and confirm local persistence and cascade deletion.
 

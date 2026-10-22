@@ -1,7 +1,7 @@
 # 02: Adopt Radix Dialog across all four overlay types
 
 Status: ready-for-agent
-Implementation: not started
+Implementation: in progress
 Human evaluation: Pending
 Blocked by: 01
 

@@ -1,0 +1,188 @@
+[WebServer] (node:43662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:43682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:43713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:43734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 3 workers
+
+(node:43744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (3.4s)
+(node:43800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (3.9s)
+(node:43817) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (3.4s)
+  ✘   2 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (9.2s)
+(node:43860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (7.8s)
+(node:43917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (7.0s)
+(node:43942) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (4.7s)
+(node:43983) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (5.0s)
+(node:44005) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [firefox-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (4.2s)
+(node:44024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (4.5s)
+(node:44066) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [firefox-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (4.1s)
+  ✓  11 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (6.2s)
+(node:44147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (3.7s)
+(node:44166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [webkit-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.7s)
+(node:44215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (3.5s)
+(node:44225) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (4.1s)
+  ✓  17 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (1.8s)
+  ✓  18 [webkit-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (1.4s)
+
+
+  1) [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('alertdialog', { name: 'Delete this task?', exact: true })
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" getByRole('alertdialog', { name: 'Delete this task?', exact: true }) with timeout 5000ms
+      - waiting for getByRole('alertdialog', { name: 'Delete this task?', exact: true })
+        14 × locator resolved to <div tabindex="-1" class="modal" id="radix-«r9»" aria-modal="true" data-state="open" role="alertdialog" data-dialog-layer="true" aria-labelledby="confirm-title">…</div>
+           - unexpected value "visible"
+
+
+      72 |     }
+      73 |     await page.keyboard.press('Escape');
+    > 74 |     await expect(dialog).toBeHidden();
+         |                          ^
+      75 |     await expect(opener).toBeFocused();
+      76 |     if (overlay.name === 'confirmation') {
+      77 |       await expect(page.getByTestId('drawer-task-details')).toBeVisible();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/overlays.spec.ts:74:26
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-desktop/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('alertdialog', { name: 'Delete this task?', exact: true })
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" getByRole('alertdialog', { name: 'Delete this task?', exact: true }) with timeout 5000ms
+      - waiting for getByRole('alertdialog', { name: 'Delete this task?', exact: true })
+        14 × locator resolved to <div tabindex="-1" class="modal" id="radix-«r9»" aria-modal="true" data-state="open" role="alertdialog" data-dialog-layer="true" aria-labelledby="confirm-title">…</div>
+           - unexpected value "visible"
+
+
+      72 |     }
+      73 |     await page.keyboard.press('Escape');
+    > 74 |     await expect(dialog).toBeHidden();
+         |                          ^
+      75 |     await expect(opener).toBeFocused();
+      76 |     if (overlay.name === 'confirmation') {
+      77 |       await expect(page.getByTestId('drawer-task-details')).toBeVisible();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/overlays.spec.ts:74:26
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-mobile/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-mobile/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/overlays-confirmation-pres-09419-n-and-backdrop-cancellation-chromium-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('alertdialog')
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" getByRole('alertdialog') with timeout 5000ms
+      - waiting for getByRole('alertdialog')
+        14 × locator resolved to <div tabindex="-1" class="modal" id="radix-«r6»" aria-modal="true" data-state="open" role="alertdialog" data-dialog-layer="true" aria-labelledby="confirm-title">…</div>
+           - unexpected value "visible"
+
+
+      243 |   await expect(page.getByTestId('button-confirm-delete')).toBeFocused();
+      244 |   await page.keyboard.press('Escape');
+    > 245 |   await expect(page.getByRole('alertdialog')).toBeHidden();
+          |                                               ^
+      246 |   await expect(remove).toBeFocused();
+      247 |   await page.keyboard.press('Escape');
+      248 |   await expect(page.getByTestId('drawer-task-details')).toBeHidden();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/stability.spec.ts:245:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+    [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+    [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+  15 passed (37.0s)

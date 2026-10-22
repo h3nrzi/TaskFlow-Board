@@ -1,0 +1,75 @@
+[WebServer] (node:42223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:42270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42290) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 3 workers
+
+(node:42302) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (5.3s)
+  ✓   1 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (5.7s)
+  ✓   2 [chromium-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (5.9s)
+(node:42363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -   6 [chromium-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓   4 [chromium-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.5s)
+(node:42387) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [chromium-mobile] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (2.0s)
+(node:42404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (3.0s)
+(node:42406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.8s)
+(node:42426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [firefox-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (4.1s)
+  ✓   9 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (5.3s)
+(node:42478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [firefox-desktop] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (5.7s)
+  ✓  12 [firefox-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.8s)
+(node:42499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  14 [firefox-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓  13 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (4.0s)
+(node:42547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [firefox-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.7s)
+  ✓  15 [firefox-mobile] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (4.5s)
+(node:42566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42575) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [webkit-desktop] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (2.6s)
+  ✓  18 [webkit-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (3.2s)
+(node:42635) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  20 [webkit-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (1.5s)
+(node:42646) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  22 [webkit-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓  17 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (5.7s)
+(node:42672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  21 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (2.7s)
+  ✓  24 [webkit-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.1s)
+  ✓  23 [webkit-mobile] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (6.9s)
+
+  3 skipped
+  21 passed (40.1s)

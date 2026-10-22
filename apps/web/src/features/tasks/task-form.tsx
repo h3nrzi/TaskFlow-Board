@@ -6,8 +6,8 @@ import {
   type Priority,
   priorities,
 } from '@/workspace/types';
-import { useState, useRef } from 'react';
-import { useDialogFocus } from '@/components/use-dialog-focus';
+import { useState } from 'react';
+import { OverlayDialog } from '@/components/workspace/overlay-dialog';
 import { X } from 'lucide-react';
 import { statuses } from '@/features/tasks/presentation';
 
@@ -33,8 +33,6 @@ export function TaskForm({
       task?.projectId ?? defaultProjectId ?? projects[0]?.id ?? '',
     ),
     [assignee, setAssignee] = useState(task?.assignee || '');
-  const dialogRef = useRef<HTMLFormElement>(null);
-  useDialogFocus(dialogRef, onClose);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave(
@@ -51,14 +49,8 @@ export function TaskForm({
     );
   };
   return (
-    <div
-      className="modal-wrap"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
+    <OverlayDialog className="modal-wrap" onClose={onClose}>
       <form
-        ref={dialogRef}
         data-dialog-layer
         tabIndex={-1}
         role="dialog"
@@ -243,6 +235,6 @@ export function TaskForm({
           </button>
         </div>
       </form>
-    </div>
+    </OverlayDialog>
   );
 }

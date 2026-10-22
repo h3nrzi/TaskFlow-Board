@@ -1,0 +1,29 @@
+[WebServer] (node:45204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:45257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:45284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (4.2s)
+(node:45343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.5s)
+(node:45360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.4s)
+(node:45417) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (3.0s)
+(node:45509) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (4.7s)
+
+  5 passed (21.7s)

@@ -5,8 +5,7 @@ import {
   type Priority,
   priorities,
 } from '@/workspace/types';
-import { useRef } from 'react';
-import { useDialogFocus } from '@/components/use-dialog-focus';
+import { OverlayDialog } from '@/components/workspace/overlay-dialog';
 import { X, Pencil, Trash2 } from 'lucide-react';
 import {
   StatusBadge,
@@ -32,19 +31,11 @@ export function TaskDrawer({
   onDelete: (id: string) => void;
   onUpdate: (id: string, changes: Partial<Task>) => void;
 }) {
-  const dialogRef = useRef<HTMLElement>(null);
-  useDialogFocus(dialogRef, onClose);
   const project = projects.find((p) => p.id === task.projectId);
   return (
-    <div
-      className="overlay"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
+    <OverlayDialog className="overlay" onClose={onClose}>
       <aside
         inert={inactive}
-        ref={dialogRef}
         data-dialog-layer
         tabIndex={-1}
         className="drawer"
@@ -207,6 +198,6 @@ export function TaskDrawer({
           </div>
         </div>
       </aside>
-    </div>
+    </OverlayDialog>
   );
 }

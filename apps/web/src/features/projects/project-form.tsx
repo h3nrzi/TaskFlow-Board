@@ -1,6 +1,6 @@
 import { type Project, type ProjectInput } from '@/workspace/types';
-import { useState, useRef } from 'react';
-import { useDialogFocus } from '@/components/use-dialog-focus';
+import { useState } from 'react';
+import { OverlayDialog } from '@/components/workspace/overlay-dialog';
 import { X } from 'lucide-react';
 
 const PROJECT_COLORS = [
@@ -25,8 +25,6 @@ export function ProjectForm({
     [description, setDescription] = useState(project?.description || ''),
     [color, setColor] = useState(project?.color || PROJECT_COLORS[0]),
     [icon, setIcon] = useState(project?.icon || 'N');
-  const dialogRef = useRef<HTMLFormElement>(null);
-  useDialogFocus(dialogRef, onClose);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave(
@@ -40,14 +38,8 @@ export function ProjectForm({
     );
   };
   return (
-    <div
-      className="modal-wrap"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
+    <OverlayDialog className="modal-wrap" onClose={onClose}>
       <form
-        ref={dialogRef}
         data-dialog-layer
         tabIndex={-1}
         role="dialog"
@@ -165,6 +157,6 @@ export function ProjectForm({
           </button>
         </div>
       </form>
-    </div>
+    </OverlayDialog>
   );
 }

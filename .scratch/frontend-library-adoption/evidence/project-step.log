@@ -1,0 +1,48 @@
+[WebServer] (node:42921) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:42968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 3 workers
+
+(node:43002) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43001) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (3.3s)
+  ✓   2 [chromium-desktop] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (3.4s)
+(node:43056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (5.4s)
+(node:43073) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium-mobile] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (2.7s)
+(node:43078) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (4.6s)
+(node:43122) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (4.7s)
+(node:43143) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [firefox-desktop] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (6.1s)
+(node:43155) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (2.7s)
+(node:43195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [firefox-mobile] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (5.4s)
+(node:43208) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [webkit-desktop] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (4.4s)
+  ✓  11 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (2.1s)
+  ✓  12 [webkit-mobile] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (3.2s)
+
+  12 passed (24.6s)

@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { useDialogFocus } from '@/components/use-dialog-focus';
+import { OverlayDialog } from '@/components/workspace/overlay-dialog';
 import { Trash2 } from 'lucide-react';
 
 export function ConfirmDialog({
@@ -13,17 +12,9 @@ export function ConfirmDialog({
   onCancel: () => void;
   onConfirm: () => void;
 }) {
-  const dialogRef = useRef<HTMLDivElement>(null);
-  useDialogFocus(dialogRef, onCancel);
   return (
-    <div
-      className="modal-wrap"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onCancel();
-      }}
-    >
+    <OverlayDialog className="modal-wrap" onClose={onCancel}>
       <div
-        ref={dialogRef}
         data-dialog-layer
         tabIndex={-1}
         className="modal"
@@ -84,6 +75,6 @@ export function ConfirmDialog({
           </button>
         </div>
       </div>
-    </div>
+    </OverlayDialog>
   );
 }

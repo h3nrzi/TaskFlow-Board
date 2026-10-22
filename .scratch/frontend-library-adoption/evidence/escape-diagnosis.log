@@ -1,0 +1,153 @@
+[WebServer] (node:44584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:44638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:44682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (4.1s)
+(node:44730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (30.7s)
+(node:44925) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (6.6s)
+(node:44990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.7s)
+(node:45011) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (6.8s)
+
+
+  1) [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('alertdialog')
+    Expected: hidden
+    Received: visible
+
+    Call log:
+      - Expect "toBeHidden" getByRole('alertdialog') with timeout 5000ms
+      - waiting for getByRole('alertdialog')
+        6 × locator resolved to <div tabindex="-1" class="modal" id="radix-«r6»" aria-modal="true" data-state="open" role="alertdialog" data-dialog-layer="true" aria-labelledby="confirm-title">…</div>
+          - unexpected value "visible"
+      - Test timeout of 30000ms exceeded.
+
+
+      243 |   await expect(page.getByTestId('button-confirm-delete')).toBeFocused();
+      244 |   await page.keyboard.press('Escape');
+    > 245 |   await expect(page.getByRole('alertdialog')).toBeHidden();
+          |                                               ^
+      246 |   await expect(remove).toBeFocused();
+      247 |   await page.keyboard.press('Escape');
+      248 |   await expect(page.getByTestId('drawer-task-details')).toBeHidden();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/stability.spec.ts:245:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat1/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('form-task')
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" getByTestId('form-task') with timeout 5000ms
+      - waiting for getByTestId('form-task')
+        14 × locator resolved to <form tabindex="-1" role="dialog" class="modal" id="radix-«r3»" aria-modal="true" data-state="open" aria-label="Edit task" data-testid="form-task" data-dialog-layer="true">…</form>
+           - unexpected value "visible"
+
+
+      234 |   await expect(page.getByTestId('input-task-title')).toBeFocused();
+      235 |   await page.keyboard.press('Escape');
+    > 236 |   await expect(page.getByTestId('form-task')).toBeHidden();
+          |                                               ^
+      237 |   await expect(edit).toBeFocused();
+      238 |   const remove = page.getByTestId('button-delete-task');
+      239 |   await remove.focus();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/stability.spec.ts:236:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat2/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat2/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat2/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat2/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('alertdialog')
+    Expected: hidden
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeHidden" getByRole('alertdialog') with timeout 5000ms
+      - waiting for getByRole('alertdialog')
+        14 × locator resolved to <div tabindex="-1" class="modal" id="radix-«r6»" aria-modal="true" data-state="open" role="alertdialog" data-dialog-layer="true" aria-labelledby="confirm-title">…</div>
+           - unexpected value "visible"
+
+
+      243 |   await expect(page.getByTestId('button-confirm-delete')).toBeFocused();
+      244 |   await page.keyboard.press('Escape');
+    > 245 |   await expect(page.getByRole('alertdialog')).toBeHidden();
+          |                                               ^
+      246 |   await expect(remove).toBeFocused();
+      247 |   await page.keyboard.press('Escape');
+      248 |   await expect(page.getByTestId('drawer-task-details')).toBeHidden();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/stability.spec.ts:245:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat4/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat4/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat4/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/stability-nested-edit-and--ee6ec--and-restore-keyboard-focus-chromium-mobile-repeat4/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+    [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+    [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+  2 passed (55.9s)
