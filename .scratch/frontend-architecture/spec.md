@@ -1,7 +1,8 @@
 # Frontend architecture refactoring
 
 Status: ready-for-agent
-Implementation: pending
+Implementation: complete
+Automated validation: limited — final full browser runs contain external-network timeouts
 Human evaluation: Pending
 
 ## Problem Statement
@@ -62,3 +63,7 @@ Bug fixes, library modernization or removal, new features, UI redesign, backend 
 ## Further Notes
 
 Approved in this chat: Q1–Q7, including evidence-driven boundaries, small green steps, bounded completion, four responsibilities, existing state mechanisms, and regression protection. Baseline commit: 4cca4b6a61a1e8c74efc85a72c174cadb7e35c08. Integration branch: codex/frontend-architecture. No frontend glossary or ADRs existed during investigation. The implementation workflow uses isolated implementer worktrees and integration merges. Automated completion and guide readiness do not constitute human acceptance.
+
+## Implementation outcome
+
+All four scoped extractions are integrated. Independent Standards/Spec reviews found no actionable issue. Type checks, builds, dependency audit, API/tooling tests and all 18 development-mode board checks passed. Neither final full browser run was clean: both recorded 126 passed, 3 timeouts and 3 existing skips, with different failures and stalled external font requests. Every runnable configuration passed in at least one run; that is not a clean full-suite pass. See the durable final checkpoint in `docs/testing/frontend-architecture-evaluation.md`. Human evaluation remains Pending.

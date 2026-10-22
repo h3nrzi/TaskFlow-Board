@@ -3,6 +3,85 @@
 Human evaluation: **Pending** for every ticket until the user reports observations.
 Automated regression passes and this guide establish readiness, not acceptance.
 
+## Final integration checkpoint — 2026-10-22
+
+Implementation of all four tickets is complete on `codex/frontend-architecture`.
+Independent Standards and Spec reviews reported **0 actionable findings** against
+application baseline `4cca4b6` and code integration `047bc26`; see the
+[review record](frontend-architecture-review.md). Human acceptance remains
+**Pending**. Automated full-matrix verification is **limited by external network
+waits**: neither final full browser invocation was clean.
+
+### Actual preflight evidence
+
+All resumed commands used Node v24.22.0 and pnpm 10.11.0 in the integration checkout.
+
+| Command / check | Actual result |
+| --- | --- |
+| `pnpm check` | Exit 1 in the browser stage: 126 passed, 3 failed by timeout, 3 existing skips, 6.0 minutes. Later stages did not run through this command. |
+| `pnpm test:frontend --workers=1` | Exit 1: 126 passed, 3 different timeout failures, 3 existing skips, 13.3 minutes. Reducing concurrency did not eliminate the waits. |
+| `TASKFLOW_TEST_SERVER=development pnpm test:frontend --grep 'new task on a project board&#124;board task entry points'` | Exit 0: all 18 development-mode board checks passed, 59.4 seconds. |
+| `pnpm verify:dependencies` | Exit 0: 297 retained dependency snapshots and direct resolutions preserved. |
+| `pnpm typecheck` | Exit 0 for web and API. |
+| `pnpm build` | Exit 0 for web and API. |
+| `pnpm test` | Exit 0: API test 1 passed, workflow/tooling tests 3 passed. |
+| Resumed Ticket 04 focused check | Exit 0: 4/4 task CRUD and overview/settings workflow combinations passed on Firefox mobile and WebKit desktop. |
+| Integration static JSX/import audit | Exit 0: 523 intrinsic elements before/after, zero changed static-attribute/style groups, 87 source modules, 155 internal import edges, zero cycles, domain imports confined to domain. |
+| Scope inspection | Existing CSS, HTML, regression tests, manifests and lockfile unchanged. |
+
+The two final full runs together recorded a successful execution for each of the
+129 distinct runnable scenario/browser/viewport configurations (123 passed in
+both). This is coverage evidence, **not a clean full-suite pass** or a human
+acceptance claim. Three existing mobile unload-prompt configurations remain
+intentionally skipped.
+
+Default-run timeouts were Chromium desktop task-dialog focus, WebKit mobile board
+creation/reload, and WebKit mobile login-to-signup navigation. The serialized-run
+timeouts were WebKit desktop stale-tab task saving, WebKit mobile keyboard card
+navigation, and WebKit mobile responsive-route navigation. Every failed
+configuration passed in the other full run. The failures were action/load waits,
+not assertion mismatches. Retained traces show pending Google Fonts stylesheet or
+font requests; the Chromium trace includes stylesheet waits of 30.010 and 30.001
+seconds. Local application data/markup checks and independent semantic review did
+not identify an introduced regression. No fonts, test scenarios, assertions,
+timeouts, dependencies or application behavior were changed to obtain passes.
+A clean default full-matrix pass remains unestablished; font/network remediation
+is outside this architecture-only phase.
+
+Current-session logs: `/tmp/taskflow-architecture-final-check.log`,
+`/tmp/taskflow-architecture-final-serial.log`,
+`/tmp/taskflow-architecture-final-development.log`, and the corresponding
+`final-typecheck`, `final-dependencies`, `final-build`, `final-other-tests` logs.
+Failure artifacts were copied before subsequent runs to
+`/tmp/taskflow-architecture-default-results` and
+`/tmp/taskflow-architecture-serial-results`. These are temporary session artifacts;
+the results above are the durable record. Historical evidence in the ticket
+sections remains distinct from these resumed checks.
+
+### Your first concrete action
+
+The evaluation server is running from this checkout at
+[TaskFlow Tasks](http://127.0.0.1:22018/tasks). HTTP preflight returned 200 with the
+TaskFlow document for `/`, `/tasks` and `/settings`. This verifies serving, not
+browser rendering or human acceptance. Port 22018 is a separate browser origin
+with its own local workspace.
+
+Open that link in a disposable browser profile, choose **New task**, create
+`Architecture review`, wait for **All changes saved locally**, then reload.
+The task should remain and open in the existing drawer. Report the observed
+result and browser/viewport; no acceptance is assumed. Continue with the
+feature-by-feature checks for Tickets 01–04 below.
+
+To reproduce the server later from the integration checkout:
+
+```sh
+WEB_PORT=22018 pnpm dev:web
+```
+
+Managed-worktree archive requests were submitted for all four temporary
+implementer worktrees; all implementation commits are retained in the integration
+history and local branches.
+
 ## Baseline checkpoint — 2026-10-22
 
 Before implementation, `pnpm check` exited 0 in the integration checkout at

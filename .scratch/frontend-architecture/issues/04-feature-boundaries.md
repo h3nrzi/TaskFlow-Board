@@ -2,7 +2,8 @@
 
 Status: ready-for-agent
 Type: task
-Implementation: complete (final integration checks pending)
+Implementation: complete
+Automated validation: limited — no clean final full-matrix run
 Human evaluation: Pending
 Blocked by: 03
 
@@ -15,7 +16,7 @@ Users retain all routes, overlays, forms, and responsive workflows while feature
 - [x] Feature pages, forms, overlays, and presentation helpers have cohesive boundaries with readable formatting.
 - [x] Shell composes routing and coordinates overlays; domain and persistence do not import feature presentation.
 - [x] No dependency cycles, duplicate domain rules, changed markup, changed providers, or changed route lifetimes.
-- [ ] Final full repository checks and two-axis review complete; findings resolved.
+- [x] Final full repository checks and two-axis review complete; findings resolved (execution completed with the documented browser-network limitation).
 - [x] Relevant existing regressions and type checking pass, with actual evidence recorded.
 - [x] Ticket code review and reproducible hands-on evaluation guide prepared; human acceptance remains pending.
 
@@ -52,3 +53,7 @@ overlay ordering and focus integration remain intact. Alias import graph across
 extraction. Pinned Node v24.22.0 `pnpm typecheck` passed in integration (API and
 web). This focused review does not replace final full repository checks or the
 independent two-axis review, which remain pending. Human evaluation is Pending.
+
+### Final shared integration checkpoint — 2026-10-22
+
+Implementation is complete; independent Standards/Spec reviews report 0 findings. Web/API type checks and builds, 297-snapshot dependency audit, API test (1), workflow/tooling tests (3), and development board matrix (18) passed. Default and serialized full browser runs each ended with 126 passed, 3 timeout failures, 3 existing skips; failed configurations differed and passed in the alternate run. A clean full-matrix pass remains unestablished, so passing coverage across runs does not close that validation limitation. Full command results, retained trace evidence, running-server first action and per-feature evaluation steps are in [the evaluation guide](../../../docs/testing/frontend-architecture-evaluation.md). Human evaluation remains **Pending**.

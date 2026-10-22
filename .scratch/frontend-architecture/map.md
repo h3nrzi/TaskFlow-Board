@@ -13,4 +13,6 @@ Q1–Q7 approved in chat. Scope, state lifetimes, existing regression seam, and 
 
 ## Fog
 
-No unresolved design decisions. Discoveries outside architecture scope are recorded, not fixed. Human evaluation remains Pending.
+No unresolved design decisions. All four implementation tickets are integrated; independent Standards and Spec reviews found 0 actionable findings. Final automated validation remains limited: default and serialized full browser runs each had 126 passes, 3 network-associated timeouts and 3 existing skips. All runnable configurations passed in one of the runs, without establishing a clean full-matrix pass. All other repository checks and the 18-case development board matrix passed. External font/network remediation remains outside this scope. Human evaluation remains Pending.
+
+Final evidence and first hands-on action: [evaluation guide](../../docs/testing/frontend-architecture-evaluation.md). Module ownership: [architecture guide](../../docs/architecture/frontend.md). Review: [two-axis report](../../docs/testing/frontend-architecture-review.md).
