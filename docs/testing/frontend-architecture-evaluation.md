@@ -1,15 +1,35 @@
 # Frontend architecture evaluation
 
-Human evaluation: **Pending** for every ticket until the user reports observations.
-Automated regression passes and this guide establish readiness, not acceptance.
+Human evaluation: the shared task smoke checkpoint **Passed** by user report.
+All other manual checks are **Not Evaluated**. This records the specific observed
+path, without inferring complete human acceptance of any ticket.
+
+## Recorded human outcomes — 2026-10-22
+
+| Manual checkpoint | Current result |
+| --- | --- |
+| Create a task, confirm persistence after reload, and open its details | **Passed** — user-reported shared smoke checkpoint |
+| Remaining Ticket 01 domain/workflow checks | **Not Evaluated** |
+| Remaining Ticket 02 storage recovery, exports, failures, conflicts and unload checks | **Not Evaluated** |
+| Remaining Ticket 03 operations, profile/theme, auth and transient-state checks | **Not Evaluated** |
+| Remaining Ticket 04 feature, navigation, overlay, keyboard and responsive checks | **Not Evaluated** |
+| Other manual browser/device/viewport or end-to-end checks | **Not Evaluated** |
+
+The first row is one shared observation relevant to Tickets 01–04, not four
+independent evaluations or whole-ticket acceptance. The user supplied no browser
+or viewport details. All checks beyond the reported smoke path are Not Evaluated,
+not failed or pending evaluation requests. The retained procedures are references
+for reproducing behavior, not an additional approval gate. Automated results and
+full-suite timeout limitations below are unchanged; no tests were rerun for this
+records-only update.
 
 ## Final integration checkpoint — 2026-10-22
 
 Implementation of all four tickets is complete on `codex/frontend-architecture`.
 Independent Standards and Spec reviews reported **0 actionable findings** against
 application baseline `4cca4b6` and code integration `047bc26`; see the
-[review record](frontend-architecture-review.md). Human acceptance remains
-**Pending**. Automated full-matrix verification is **limited by external network
+[review record](frontend-architecture-review.md). Current human outcomes are
+recorded above. Automated full-matrix verification is **limited by external network
 waits**: neither final full browser invocation was clean.
 
 ### Actual preflight evidence
@@ -64,9 +84,9 @@ Failure artifacts were copied before subsequent runs to
 the results above are the durable record. Historical evidence in the ticket
 sections remains distinct from these resumed checks.
 
-### Your first concrete action
+### Original first concrete action — smoke checkpoint now Passed
 
-The evaluation server is running from this checkout at
+At the original handoff, the evaluation server ran from this checkout at
 [TaskFlow Tasks](http://127.0.0.1:22018/tasks). HTTP preflight returned 200 with the
 TaskFlow document for `/`, `/tasks` and `/settings`. This verifies serving, not
 browser rendering or human acceptance. Port 22018 is a separate browser origin
@@ -74,9 +94,9 @@ with its own local workspace.
 
 Open that link in a disposable browser profile, choose **New task**, create
 `Architecture review`, wait for **All changes saved locally**, then reload.
-The task should remain and open in the existing drawer. Report the observed
-result and browser/viewport; no acceptance is assumed. Continue with the
-feature-by-feature checks for Tickets 01–04 below.
+The user has now reported that creation, persistence after reload and opening
+details passed. All remaining feature-by-feature checks below are Not Evaluated.
+No additional manual evaluation is requested by this records update.
 
 To reproduce the server later from the integration checkout:
 
@@ -87,6 +107,14 @@ WEB_PORT=22018 pnpm dev:web
 Managed-worktree archive requests were submitted for all four temporary
 implementer worktrees; all implementation commits are retained in the integration
 history and local branches.
+
+## Historical evidence and reproduction references
+
+The following ticket sections preserve earlier preflight evidence and procedures.
+Statements that human evaluation was Pending describe those historical handoff
+checkpoints; the current results above supersede them. All manual checks beyond
+the reported smoke path are Not Evaluated. Historical automated pending statements
+are superseded by the final integration results above, including their limitations.
 
 ## Baseline checkpoint — 2026-10-22
 

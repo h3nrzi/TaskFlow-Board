@@ -17,7 +17,7 @@ No actionable Standards findings.
 The changes follow the documented module ownership and dependency direction,
 keep the persistent setter private, preserve the issue/spec layout, and provide
 per-ticket evaluation instructions with actual preflight evidence and explicitly
-pending human acceptance. No newly introduced Fowler smell warranted a finding
+pending human acceptance at the reviewed checkpoint. No newly introduced Fowler smell warranted a finding
 within this bounded refactoring.
 
 Limits: static review of the pinned diff; no tests run by this reviewer and no
@@ -44,5 +44,6 @@ Existing external-font network delays are recorded as validation limitations,
 not as introduced code defects.
 
 Standards: 0 findings. Spec: 0 findings. Full execution evidence is in the
-[per-ticket evaluation guide](frontend-architecture-evaluation.md). Human
-acceptance remains Pending until the user reports observations.
+[per-ticket evaluation guide](frontend-architecture-evaluation.md). The user has since reported the shared task creation/reload/details smoke checkpoint
+as Passed; all other manual checks are Not Evaluated. This does not change the
+review findings or documented automated timeout limitations.

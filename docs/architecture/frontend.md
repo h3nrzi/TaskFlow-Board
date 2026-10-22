@@ -36,5 +36,5 @@ their original render order; inactive layers and the shell retain their existing
 `inert` and focus handling.
 
 Use the [per-ticket evaluation guide](../testing/frontend-architecture-evaluation.md)
-for reproducible behavior checks and actual validation evidence. Human acceptance
-remains pending until observations are reported.
+for reproducible behavior checks and actual validation evidence. The shared task creation/reload/details smoke checkpoint Passed by user report;
+all other manual checks are Not Evaluated. Whole-ticket acceptance is not inferred.

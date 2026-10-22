@@ -3,7 +3,7 @@
 Status: ready-for-agent
 Implementation: complete
 Automated validation: limited — final full browser runs contain external-network timeouts
-Human evaluation: Pending
+Human evaluation: shared smoke checkpoint Passed; all other manual checks Not Evaluated
 
 ## Problem Statement
 
@@ -66,4 +66,18 @@ Approved in this chat: Q1–Q7, including evidence-driven boundaries, small gree
 
 ## Implementation outcome
 
-All four scoped extractions are integrated. Independent Standards/Spec reviews found no actionable issue. Type checks, builds, dependency audit, API/tooling tests and all 18 development-mode board checks passed. Neither final full browser run was clean: both recorded 126 passed, 3 timeouts and 3 existing skips, with different failures and stalled external font requests. Every runnable configuration passed in at least one run; that is not a clean full-suite pass. See the durable final checkpoint in `docs/testing/frontend-architecture-evaluation.md`. Human evaluation remains Pending.
+All four scoped extractions are integrated. Independent Standards/Spec reviews found no actionable issue. Type checks, builds, dependency audit, API/tooling tests and all 18 development-mode board checks passed. Neither final full browser run was clean: both recorded 126 passed, 3 timeouts and 3 existing skips, with different failures and stalled external font requests. Every runnable configuration passed in at least one run; that is not a clean full-suite pass. See the durable final checkpoint in `docs/testing/frontend-architecture-evaluation.md`. Current human results: the shared smoke checkpoint Passed; all other manual checks Not Evaluated.
+
+## Human evaluation record
+
+### Human evaluation checkpoint — 2026-10-22
+
+The user reported **Passed** for one shared smoke checkpoint: created a task,
+confirmed it persisted after reload, and successfully opened its details.
+All other manual checks are **Not Evaluated** by explicit user instruction.
+This does not establish full-ticket human acceptance or a clean automated
+full-matrix pass. Browser and viewport were not supplied. Implementation remains
+complete; the documented full-suite timeout limitations and actual automated
+results are unchanged. Source: the user's direct report in the implementation
+chat. Earlier pending statements in this comment history describe prior
+checkpoints and are superseded by this outcome.
