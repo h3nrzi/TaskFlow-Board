@@ -1,6 +1,6 @@
 # Phase 3 overlay adoption: evidence and hands-on evaluation
 
-Human acceptance: **Pending** for both tickets. No human result is inferred from tests or this guide.
+Human smoke checkpoint: **Passed by user report** for task-form opening/closing, expected focus, and Escape. All other unperformed manual checks: **Not Evaluated**. Whole-ticket acceptance is not inferred.
 
 ## Ticket 01 — baseline and contract coverage
 
@@ -68,3 +68,23 @@ Visual verification: seven of eight initial Chromium desktop/mobile overlay scre
 Actual final desktop scrolling retained the baseline behavior in all three browsers: before/open background scroll 150px, form scroll 160px, background around 150px after inside wheel and 310px after backdrop wheel, and 0–2px after Escape/focus restoration. Small native rounding/scroll-settling differences of up to 2px are recorded rather than represented as exact numeric equality. See `scroll-baseline.json` and `scroll-final.json`.
 
 All temporary diagnostic tests/logging were removed. Controlled original-code checks restored application files in a finally block; `git diff -- apps/web/src` confirmed no changes from the reviewed migrated implementation. No assertions, production font loading, timeout limits, or user contracts were changed to obtain passing results.
+
+
+### Human smoke-test checkpoint — 2026-10-23
+
+The user directly reported **Passed** for the Phase 3 manual smoke test: the task form opens and closes correctly, focus behaves as expected, and Escape works. Browser, viewport, and exact opening/dismissal methods were not supplied. Do not infer backdrop, nested-layer, full keyboard-cycle, CRUD, persistence, project-form, drawer, confirmation, dark-theme, or touch-scrolling acceptance from this report.
+
+All other unperformed manual checks remain **Not Evaluated**. This is a passed smoke checkpoint, not whole-ticket human acceptance. Implementation is complete; documented automated results, intentional skips, earlier failures, infrastructure timeouts, and limitations remain unchanged. Earlier Pending/Not Evaluated statements describe prior checkpoints and are superseded only for the smoke behaviors explicitly reported here.
+
+
+| Human check | Recorded outcome |
+| --- | --- |
+| Task form opens and closes correctly | Passed — user report |
+| Focus behaves as expected in the smoke test | Passed — user report |
+| Escape works in the smoke test | Passed — user report |
+| Other task-form checks, including full Tab cycling and backdrop-specific sequencing | Not Evaluated |
+| Project form and project workflows | Not Evaluated |
+| Task drawer and nested Edit/Delete flows | Not Evaluated |
+| Confirmation cancellation and deletion | Not Evaluated |
+| CRUD, persistence/reload and cascade behavior | Not Evaluated |
+| Manual desktop/mobile visual, dark-theme and scrolling checks | Not Evaluated |
