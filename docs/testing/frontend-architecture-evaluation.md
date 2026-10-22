@@ -20,7 +20,7 @@ All resumed commands used Node v24.22.0 and pnpm 10.11.0 in the integration chec
 | --- | --- |
 | `pnpm check` | Exit 1 in the browser stage: 126 passed, 3 failed by timeout, 3 existing skips, 6.0 minutes. Later stages did not run through this command. |
 | `pnpm test:frontend --workers=1` | Exit 1: 126 passed, 3 different timeout failures, 3 existing skips, 13.3 minutes. Reducing concurrency did not eliminate the waits. |
-| `TASKFLOW_TEST_SERVER=development pnpm test:frontend --grep 'new task on a project board&#124;board task entry points'` | Exit 0: all 18 development-mode board checks passed, 59.4 seconds. |
+| Development-mode board regression (command below) | Exit 0: all 18 development-mode board checks passed, 59.4 seconds. |
 | `pnpm verify:dependencies` | Exit 0: 297 retained dependency snapshots and direct resolutions preserved. |
 | `pnpm typecheck` | Exit 0 for web and API. |
 | `pnpm build` | Exit 0 for web and API. |
@@ -28,6 +28,12 @@ All resumed commands used Node v24.22.0 and pnpm 10.11.0 in the integration chec
 | Resumed Ticket 04 focused check | Exit 0: 4/4 task CRUD and overview/settings workflow combinations passed on Firefox mobile and WebKit desktop. |
 | Integration static JSX/import audit | Exit 0: 523 intrinsic elements before/after, zero changed static-attribute/style groups, 87 source modules, 155 internal import edges, zero cycles, domain imports confined to domain. |
 | Scope inspection | Existing CSS, HTML, regression tests, manifests and lockfile unchanged. |
+
+Reproduce the development-mode check with the same CI command:
+
+```sh
+TASKFLOW_TEST_SERVER=development pnpm test:frontend --grep 'new task on a project board|board task entry points'
+```
 
 The two final full runs together recorded a successful execution for each of the
 129 distinct runnable scenario/browser/viewport configurations (123 passed in
