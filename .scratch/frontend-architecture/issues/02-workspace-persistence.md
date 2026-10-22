@@ -20,6 +20,18 @@ Users retain safe saved workspaces, recovery downloads, conflict warnings, and u
 
 ## Comments
 
+2026-10-22: Integration review compared read/recovery/export and both persistence
+effects against their previous App bodies. Storage key/schema/default theme,
+saved-raw comparison inside the cross-tab lock, latest-state ref semantics,
+cancelled status updates, write-error behavior and unload guard are preserved.
+Theme application remains before persistence at the same mounted lifetime and
+dependency cadence. Domain modules do not import this browser/React boundary;
+no cycle or unrelated behavior change found. Integrated in merge commit
+`dc61de7e3e1168ed675e2508a7c592940200b829`; required Node 24.22.0
+`pnpm typecheck` passed in the integration checkout. Implementer storage/theme
+matrix evidence is 45 passed / 3 existing skips / 0 failed. Human evaluation
+remains Pending.
+
 2026-10-22: Approved four-step scope and sequential breakdown carried forward from the implementation chat. Parent: ../spec.md.
 
 2026-10-22: Extracted browser storage reading/recovery/export and a dedicated
