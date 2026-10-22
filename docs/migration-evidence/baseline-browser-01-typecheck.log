@@ -1,9 +1,0 @@
-
-> taskflow@0.0.0 typecheck /Users/hossein/Downloads/TaskFlow-Board
-> pnpm -r run typecheck
-
-Scope: 2 of 3 workspace projects
-apps/api typecheck$ tsc -p tsconfig.json --noEmit
-apps/web typecheck$ tsc -p tsconfig.json --noEmit
-apps/api typecheck: Done
-apps/web typecheck: Done

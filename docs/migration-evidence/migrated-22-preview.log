@@ -1,9 +1,0 @@
-
-> taskflow@0.0.0 preview /Users/hossein/Downloads/TaskFlow-Board
-> pnpm --filter @taskflow/web preview
-
-
-> @taskflow/web@0.0.0 preview /Users/hossein/Downloads/TaskFlow-Board/apps/web
-> vite preview
-
-  ➜  Local:   http://127.0.0.1:21998/
