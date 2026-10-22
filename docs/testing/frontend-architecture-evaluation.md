@@ -99,3 +99,66 @@ For exact automated reproductions, run `pnpm test:frontend`; named scenarios liv
 in `tests/frontend/workflows.spec.ts` and `tests/frontend/stability.spec.ts`.
 Report browser, viewport, steps, expected/actual behavior, and the ticket number
 for observations. Ticket 01 human acceptance remains **Pending**.
+
+## Ticket 02 — Persistence and recovery boundary
+
+### Preflight evidence
+
+- Based on integration `055a99364595ab68275cc11827308f591deb0a63`; worktree
+  `/Users/hossein/.codex/worktrees/workspace-persistence/TaskFlow-Board`.
+- Required runtime: Node v24.22.0 and pnpm 10.11.0. Frozen install passed without
+  manifest or lockfile changes.
+- `pnpm typecheck`: passed for API and web; final log
+  `/tmp/taskflow-persistence-typecheck-final.log`. An initial extraction attempt
+  removed a React `useRef` import still needed by dialogs; type checking caught
+  that compile error, and the import was restored before browser validation.
+- Existing storage and theme regression command, prefixed with
+  `PATH=/Users/hossein/.nvm/versions/node/v24.22.0/bin:$PATH`:
+
+  ```sh
+  pnpm test:frontend --grep 'invalid saved data|valid JSON with invalid workspace|storage write failure|stale tab cannot|missing cross-tab locking|unsaved return to the initial theme|unavailable reads|overview, settings, theme'
+  ```
+
+  Result: **45 passed, 3 existing mobile unload-prompt skips, 0 failed** in 1.1
+  minutes across all six browser/viewport projects. Log:
+  `/tmp/taskflow-persistence-regressions.log`. These cover exact recovery/current
+  downloads, malformed/invalid-shape data preservation, failures, stale-tab
+  refusal, missing locks, native desktop unload warning, normal saving/reload,
+  profile/theme persistence and demo route behavior. No existing test changed.
+- Focused self-review: the read snapshot still initializes once per mounted App;
+  raw bytes, missing-theme normalization, storage key, export filename/type and
+  URL revocation timing remain unchanged. Compare/read/serialize/write stays
+  inside the browser lock and uses the latest store ref; cancellation still
+  suppresses status updates without changing queued write behavior. Persistence
+  retains `[store, loaded]`, unload protection `[loaded]`. Theme runs before
+  persistence with its original `[store, loaded]` lifetime.
+- The hook exposes save status and download actions; store ownership remains in
+  App for Ticket 03. Pure workspace modules import no browser or React modules;
+  browser storage depends on pure fixtures/validation/types, and the hook depends
+  on browser storage/types. No circular dependency was introduced.
+- `git diff --check`: passed. Static JSX audit against the application baseline:
+  523 intrinsic elements before/after, zero changed static-attribute/style groups.
+  This is structural evidence, not a visual or human acceptance claim.
+- Full integration `pnpm check` and two-axis final review remain later checkpoints.
+
+### First concrete action
+
+Start `pnpm dev:web` using the required runtime. Open its printed URL in a
+**disposable browser profile**, visit **Settings**, switch appearance, wait for
+**All changes saved locally**, then reload. The selected appearance must remain.
+Use this disposable profile for the failure/recovery checks below.
+
+### Reproducible feature checks
+
+| Feature | Actions | Expected result |
+| --- | --- | --- |
+| Successful local saves | Perform the first action, change profile name/email, save, create a task and reload after saved status. | Profile, appearance and task survive reload; status returns to All changes saved locally. |
+| Malformed recovery and raw export | In the disposable profile's console run `localStorage.setItem('taskflow-store-v1', '{broken workspace')`; reload, then Download saved data. Inspect the download and storage key. | Recovery screen appears; both retained/downloaded bytes are exactly `{broken workspace`; filename is taskflow-workspace.json. No demo data overwrites storage. Restore a valid backup manually and choose Try again. |
+| Invalid workspace shape | Set the same key to `'{"projects":[],"tasks":[{"id":"important"}],"profile":null}'`; reload. | Same recovery screen and exact original saved bytes. This is a separate validation checkpoint from malformed JSON. |
+| Write failure and current export | After restoring valid data, run `Storage.prototype.setItem = () => { throw new DOMException('Evaluation quota failure', 'QuotaExceededError'); };` in this tab's console. Change appearance or create a task, then Download current workspace. | App remains usable, persistent warning/status say changes are not saved, and downloaded JSON contains the unsaved change. Download before reloading; reload removes this injection. |
+| Concurrent tabs | Open two tabs before editing. In A create Tab A task and wait for saved status. In B create Tab B task and download B's current workspace. Reload only after exporting. | B reports another tab changed the workspace; B does not overwrite A. B's export includes its own draft; stored/reloaded workspace includes A's task. No automatic merge occurs. |
+| Unsaved unload protection | On desktop save dark theme; inject write failure as above, then switch back to light and request reload. Choose Stay when prompted. | Native warning appears; unsaved light theme remains visible and exportable. Mobile native prompts are not guaranteed; warning/download remain available. |
+| Missing locks/read failure | Run the exact regression command above (or select the named missing-lock/unavailable-read scenarios in the existing stability suite). | No unsafe write with unavailable locks. Unavailable reads preserve stored bytes, permit an unsaved session, and allow exporting current work. |
+
+Record Ticket 02, browser/viewport, actions, expected/actual behavior and any
+observed storage/download differences. Human acceptance remains **Pending**.
