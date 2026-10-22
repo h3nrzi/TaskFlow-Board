@@ -35,3 +35,14 @@ root review found no actionable issue. Static JSX audit: 523 intrinsic elements,
 zero changed static-attribute/style groups. Reproducible guide and actual evidence:
 `docs/testing/frontend-architecture-evaluation.md`, Ticket 01. Human evaluation
 remains Pending; final two-axis integration review still required.
+
+2026-10-22: Integration review compared the App extraction and each domain
+module against the approved scope. Validation predicates, optional field
+acceptance, transition spread order, ID/date generation placement, fixture
+evaluation timing, task sorting and project deletion cascade retain their
+existing behavior. Domain imports point only to sibling workspace modules;
+no React/browser/presentation dependency or cycle was introduced. No actionable
+finding. Integrated with merge commit
+`b492710000613bb447909eadfc4ef3992e1ae1c4`; required Node 24.22.0
+`pnpm typecheck` passed in the integration checkout. Browser evidence above is
+targeted and does not claim a clean broad rerun. Human evaluation stays Pending.
