@@ -4,7 +4,7 @@ Status: ready-for-agent
 Type: task
 Priority: P0
 Implementation: complete
-Human evaluation: pending
+Human evaluation: Human-accepted
 
 ## Reproduction
 
@@ -18,10 +18,18 @@ Validate before rendering, retain raw invalid bytes behind recovery UI, catch st
 
 ## Checks and handoff
 
-2026-10-22: final `pnpm check` exited 0. Browser matrix: 117 passed, 3 mobile unload-prompt cases intentionally skipped. Independent standards/spec review findings resolved. Human evaluation remains pending.
+2026-10-22: final `pnpm check` exited 0. Browser matrix: 117 passed, 3 mobile unload-prompt cases intentionally skipped. Independent standards/spec review findings resolved. At that automated checkpoint, human evaluation was pending.
 
 See [evaluation guide](../../../docs/testing/frontend-evaluation.md) for per-ticket coverage and preflight evidence. Regression tests live in `tests/frontend/`.
 
 ## Comments
 
 2026-10-22: scoped under the approved frontend stability specification; no backend integration or library modernization.
+
+### Human evaluation closeout — 2026-10-22
+
+Human-accepted at the user’s explicit direction. This is ticket-level acceptance; no additional per-subcheck, browser or physical-device results are inferred.
+
+Source: user's explicit instruction in the implementation chat. All other manual
+checks are Not Evaluated; no further manual evaluation is requested now. Existing
+automated evidence is unchanged.

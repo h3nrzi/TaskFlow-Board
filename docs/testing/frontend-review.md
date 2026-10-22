@@ -25,7 +25,9 @@ changes and found both findings resolved, with no remaining actionable spec issu
 
 Standards: 1 initial finding, 0 remaining. Spec: 2 initial findings, 0 remaining.
 
-Human evaluation remains pending; these reviews do not establish acceptance.
+Human evaluation was pending at the initial review; these reviews do not
+establish acceptance. The subsequent user-directed outcomes are recorded in the
+evaluation guide.
 
 
 ## Ticket 03 human-evaluation follow-up
@@ -39,4 +41,7 @@ points, cancellation, explicit project selection, and development versus preview
 The exact human failure was an old loaded canonical document with failed Vite
 updates, resolved by reloading from the verified current server. The slash bug
 must not be presented as the cause of that canonical report. Review and automated
-results leave human acceptance pending retest.
+results left human acceptance pending retest at that handoff. The user has since
+marked Tickets 02 and 03 Human-accepted, reported the first Ticket 04 dialog check
+Passed, and marked all remaining manual checks Not Evaluated. No review findings
+or automated results changed as part of that closeout.

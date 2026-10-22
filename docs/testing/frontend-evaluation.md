@@ -1,28 +1,36 @@
 # TaskFlow frontend stability evaluation
 
-Human evaluation: **pending**. Automated results establish preflight readiness, not
-human acceptance. Real-device testing is optional and remains pending.
+Human evaluation for this stage is **closed at the user's request** (2026-10-22).
+The user is satisfied with the current automated coverage and manual checks so far.
+No further detailed manual evaluation is requested now. Automated results below
+are unchanged; no tests were rerun for this records-only update.
 
-## First action
+## Recorded human outcomes
 
-Ticket 03's first human attempt **failed**. The follow-up is **pending retest**;
-automated passes do not accept that ticket. See the [Ticket 03 investigation](../../.scratch/frontend-stability/issues/03-project-context.md).
+| Ticket / checkpoint | Current human result |
+| --- | --- |
+| 01: regression gates | Not Evaluated |
+| 02: storage integrity | Human-accepted |
+| 03: project task context | Human-accepted; earlier failed attempt retained in history |
+| 04: first keyboard-dialog check (New task dialog scenario) | Passed (user-reported) |
+| 04: remaining dialogs, nested-dialog checks and keyboard cards | Not Evaluated |
+| 05: demo forms | Not Evaluated |
+| 06: local calendar dates | Not Evaluated |
+| 07: no-project tasks | Not Evaluated |
+| 08: responsive layout | Not Evaluated |
+| Additional manual end-to-end walkthroughs and physical-device checks | Not Evaluated |
 
-Run `pnpm dev:web` if needed. Stay on the same origin used for the failure,
-http://127.0.0.1:21998/projects/field-notes. Close or save drafts, then reload the
-page so it loads the current frontend. Verify **All changes saved locally** is
-visible before choosing **Add task**. Expect **Field Notes** to be selected.
+Tickets 02 and 03 are accepted at ticket level by explicit user direction. This
+does not invent separate pass results for every detailed subcheck or device.
+Ticket 04 is only partially evaluated, not human-accepted as a whole. No browser,
+viewport or granular observations were supplied for the first keyboard-dialog pass.
+The [Ticket 03 investigation](../../.scratch/frontend-stability/issues/03-project-context.md)
+retains its initial failed attempt and subsequent fix/evidence; the current outcome
+is Human-accepted, not pending retest.
 
-In a disposable browser profile, create an “Evaluation task”, wait for saved status,
-and verify it remains on that board after reloading. Repeat with a trailing slash,
-the column plus and desktop topbar New task. The user's acceptance remains pending
-until these observations are reported.
-
-Use a disposable profile for destructive and storage-failure scenarios. Automated
-tests use isolated contexts at `127.0.0.1:22017` (preview) or `127.0.0.1:22016`
-(development). They do not access your workspace at port 21998. `localhost` and
-`127.0.0.1` are different browser storage origins; retain the origin used for your
-existing workspace when retesting it.
+The procedures below are retained as reproducible references, not outstanding
+requests or acceptance gates. Remaining manual checks are **Not Evaluated**, not
+failed or scheduled for later evaluation.
 
 ## Reproduce automated preflight
 
@@ -53,21 +61,22 @@ remain independent of the API.
 
 ## Coverage and per-ticket checkpoints
 
-| Ticket | Hands-on steps | Expected result / checkpoint |
-| --- | --- | --- |
-| 01: regression gates | Run the preflight commands. Read six projects in the browser report. | Chromium, Firefox, WebKit each have desktop and mobile projects. Dependency, type, build, API and tooling checks also pass. |
-| 02: malformed saved data | In a disposable profile set `taskflow-store-v1` to `{broken workspace` using browser storage tools; reload. Choose **Download saved data**. | Recovery screen replaces normal workflows. Stored bytes and downloaded bytes remain exactly `{broken workspace`; no demo data overwrites them. Restore a valid copy manually and choose **Try again**. |
-| 02: invalid shape | Set the key to `{"projects":[],"tasks":[{"id":"important"}],"profile":null}` and reload. | Recovery screen, unchanged original bytes, no component crash. |
-| 02: save failure | Follow the injection below, then create a task or change appearance. | App remains usable; persistent **not saved** warning and settings status; current-workspace download contains the change. Do not treat a transient “updated” notice as a successful save. |
-| 02: stale tab | Load two tabs before changing either. Add “Tab A task” in A; wait for saved status. Add “Tab B task” in B. | B reports that another tab changed the workspace and does not overwrite A. Download B before reloading; A's task remains persisted. There is no automatic merge/import. |
-| 02: unload protection | On desktop save dark appearance, inject write failure, switch back to light, then reload. Choose to stay. | Browser warns about unsaved changes; light stays visible and can be exported. Mobile prompts are not guaranteed; persistent warning/download are the recovery path. |
-| 03: board context (pending retest) | Reload and verify current-version UI as described above. Perform the first action above. Also use the column plus and desktop topbar New task from another project. | Each board entry point defaults to that board; an explicitly selected different project is respected. |
-| 04: keyboard overlays | Keyboard-focus New task, press Enter, edit, Tab/Shift+Tab through controls, then Escape. Repeat with project editor, task drawer, nested task editor and delete confirmation. | Focus stays inside the top overlay; Escape closes one layer; focus returns to a surviving opener; background controls are inactive. Cancel deletion keeps data. |
-| 04: keyboard cards | Tab to a project's title on Projects and press Enter. Tab to a task title on the board and press Enter. | Project opens; task drawer opens. Status dropdown remains independently keyboard accessible. |
-| 05: demo forms | From login choose Create a demo profile; enter name/email and submit. Switch signup/login in both directions. | Signup starts empty; login defaults to current demo profile; no previous mode's draft leaks. Existing projects/tasks remain intact. No backend account is created. |
-| 06: local dates | Run the near-midnight regression (command below). Manually change a task on either side of local midnight if convenient. | Creation/update dates use the current local calendar day; due dates retain the selected calendar date. |
-| 07: no-project tasks | In a disposable empty workspace create a task before any project exists. Open/edit it. Then create a project and edit that task again. | Drawer/form show **No project**; saving does not silently assign the task to the newly created project. |
-| 08: responsive layout | At 320px and 390px portrait, 844px landscape, then tablet/desktop widths, visit overview, projects, board, tasks, settings and demo forms. Open task/project forms and drawer. | No unintended document-wide horizontal scroll. Overview header and appearance controls wrap. Tablet board may scroll horizontally inside the board. Mobile bottom navigation/menu work by touch; form controls and action buttons remain reachable. |
+| Ticket | Hands-on steps | Expected result / checkpoint | Human result |
+| --- | --- | --- | --- |
+| 01: regression gates | Run the preflight commands. Read six projects in the browser report. | Chromium, Firefox, WebKit each have desktop and mobile projects. Dependency, type, build, API and tooling checks also pass. | Not Evaluated |
+| 02: malformed saved data | In a disposable profile set `taskflow-store-v1` to `{broken workspace` using browser storage tools; reload. Choose **Download saved data**. | Recovery screen replaces normal workflows. Stored bytes and downloaded bytes remain exactly `{broken workspace`; no demo data overwrites them. Restore a valid copy manually and choose **Try again**. | Human-accepted (ticket-level) |
+| 02: invalid shape | Set the key to `{"projects":[],"tasks":[{"id":"important"}],"profile":null}` and reload. | Recovery screen, unchanged original bytes, no component crash. | Human-accepted (ticket-level) |
+| 02: save failure | Follow the injection below, then create a task or change appearance. | App remains usable; persistent **not saved** warning and settings status; current-workspace download contains the change. Do not treat a transient “updated” notice as a successful save. | Human-accepted (ticket-level) |
+| 02: stale tab | Load two tabs before changing either. Add “Tab A task” in A; wait for saved status. Add “Tab B task” in B. | B reports that another tab changed the workspace and does not overwrite A. Download B before reloading; A's task remains persisted. There is no automatic merge/import. | Human-accepted (ticket-level) |
+| 02: unload protection | On desktop save dark appearance, inject write failure, switch back to light, then reload. Choose to stay. | Browser warns about unsaved changes; light stays visible and can be exported. Mobile prompts are not guaranteed; persistent warning/download are the recovery path. | Human-accepted (ticket-level) |
+| 03: board context | Reference: reload the board, verify current-version UI, then choose Add task. Also use the column plus and desktop topbar New task from another project. | Each board entry point defaults to that board; an explicitly selected different project is respected. | Human-accepted (ticket-level) |
+| 04: first keyboard-dialog check | Keyboard-focus New task, press Enter, edit, Tab/Shift+Tab through controls, then Escape. | Focus stays in the dialog; Escape closes it and focus returns to a surviving opener. | Passed (first scenario, user-reported) |
+| 04: remaining keyboard dialogs | Project editor, task drawer, nested task editor and delete confirmation. | Focus stays inside the top overlay; Escape closes one layer; focus returns to a surviving opener; background controls are inactive. Cancel deletion keeps data. | Not Evaluated |
+| 04: keyboard cards | Tab to a project's title on Projects and press Enter. Tab to a task title on the board and press Enter. | Project opens; task drawer opens. Status dropdown remains independently keyboard accessible. | Not Evaluated |
+| 05: demo forms | From login choose Create a demo profile; enter name/email and submit. Switch signup/login in both directions. | Signup starts empty; login defaults to current demo profile; no previous mode's draft leaks. Existing projects/tasks remain intact. No backend account is created. | Not Evaluated |
+| 06: local dates | Run the near-midnight regression (command below). Manually change a task on either side of local midnight if convenient. | Creation/update dates use the current local calendar day; due dates retain the selected calendar date. | Not Evaluated |
+| 07: no-project tasks | In a disposable empty workspace create a task before any project exists. Open/edit it. Then create a project and edit that task again. | Drawer/form show **No project**; saving does not silently assign the task to the newly created project. | Not Evaluated |
+| 08: responsive layout | At 320px and 390px portrait, 844px landscape, then tablet/desktop widths, visit overview, projects, board, tasks, settings and demo forms. Open task/project forms and drawer. | No unintended document-wide horizontal scroll. Overview header and appearance controls wrap. Tablet board may scroll horizontally inside the board. Mobile bottom navigation/menu work by touch; form controls and action buttons remain reachable. | Not Evaluated |
 
 For repeatable date evidence:
 
@@ -87,7 +96,11 @@ Reload restores that injected method, but first download any unsaved work. To
 exercise a read failure and exact recovery exports unattended, run the storage
 regressions rather than changing your real browser's storage permissions.
 
-## Existing workflow walkthrough
+## Reference workflow walkthrough
+
+Manual walkthrough status: **Not Evaluated** except for the explicitly recorded
+ticket-level acceptance and first Ticket 04 check above. No additional step-level
+manual passes are inferred.
 
 1. Overview: verify metrics, upcoming deadlines, recent tasks, completion toggles,
    and links reflect the same tasks shown elsewhere.
@@ -155,13 +168,28 @@ Playwright's `isMobile` option. Browser engines are emulation, not physical devi
 | 07 | Empty-workspace No project display; existing-project unassigned task edit preserves empty project ID. |
 | 08 | Route sweeps across narrow/landscape/tablet/desktop widths, narrow modal fit, mobile touch navigation; attached screenshots. |
 
-## Evaluation report
+## Evaluation closeout and remaining risks
 
-Report each ticket/checkpoint as **pass**, **fail**, or **not evaluated**, with
-browser, viewport/device, steps, expected behavior, observed behavior and any
-screenshot/console error. All eight ticket checkpoints remain pending until you
-report observations. Automated passes do not change that status.
+The human outcomes above come from the user's explicit closeout instruction.
+Detailed manual evaluation is not continuing at this stage. No confirmed defect
+remains open in the recorded bounded audit, so no further implementation is queued.
 
+- Remaining manual workflows and physical-device behavior are Not Evaluated.
+  Automated browser engines and viewports cannot establish their human usability
+  or physical-device behavior; this includes mobile zoom/accessibility behavior.
+- Three native mobile unload-prompt cases remain intentionally skipped in the
+  existing automated results. Mobile recovery relies on visible unsaved-work
+  warnings and export; native prompts are not guaranteed.
+- Workspace persistence remains browser-local. Stale-tab protection refuses
+  conflicting writes and offers export; it does not merge work or provide a server
+  backup. Clearing browser storage or abandoning unsaved work can still lose it.
+- An old development document can remain visible if its Vite update connection
+  fails. Reloading from the current server resolved the observed discrepancy;
+  that operational risk is separate from the fixed route-matching defect.
+
+Deferred unknown-route copy and unverified mobile zoom behavior remain observations,
+not newly confirmed defects. No implementation or new test run was performed for
+this closeout.
 
 ## Ticket 03 follow-up evidence (2026-10-22)
 
@@ -190,4 +218,5 @@ was **not** the cause of the exact no-slash human failure.
   canonical and slash URLs both selected `field-notes` / **Field Notes** with current
   UI markers. This was separate from the managed test servers.
 - Follow-up standards/spec reviews: no actionable findings.
-- Human acceptance: **pending retest**, with the earlier failed attempt retained.
+- Human acceptance: **Human-accepted** by explicit user direction at closeout;
+  the earlier failed attempt remains in the history. No further retest is requested.

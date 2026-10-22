@@ -4,7 +4,7 @@ Status: ready-for-agent
 Type: task
 Priority: P1
 Implementation: complete (follow-up automatically verified)
-Human evaluation: pending retest (previous attempt failed)
+Human evaluation: Human-accepted
 
 ## Expected behavior
 
@@ -17,8 +17,9 @@ trailing-slash URLs must behave consistently.
 
 2026-10-22: user reported that Add task on `/projects/field-notes` did not preselect
 Field Notes, despite the earlier automated pass. That human attempt is recorded
-as **failed**, not accepted or superseded by test results. Acceptance is pending
-until the user retests.
+as **failed** in the history. The user subsequently marked this ticket
+**Human-accepted** on 2026-10-22; acceptance comes from that explicit direction,
+not from automated results.
 
 ## Exact workflow and served-version investigation
 
@@ -95,7 +96,7 @@ passed. The new development-mode CI step also parsed correctly. These are actual
 local preflight results; remote CI has not been run for this uncommitted follow-up.
 Independent standards/spec reviews of the follow-up: no actionable findings.
 
-## Retest checkpoint
+## Retest procedure (reference; no further evaluation requested)
 
 1. Stay on the same origin used for the failure: `http://127.0.0.1:21998`.
    `localhost` is a different browser storage origin.
@@ -108,8 +109,10 @@ Independent standards/spec reviews of the follow-up: no actionable findings.
    topbar New task. Explicitly select another project once and confirm that choice
    is respected.
 
-Report each checkpoint as pass/fail with the full URL and viewport. Human
-acceptance stays **pending retest** until those observations are reported.
+This procedure remains as a reproducible reference. The user has now marked
+the ticket Human-accepted and ended detailed manual evaluation at this stage.
+No additional retest is requested. Individual subcheck or device observations
+were not supplied and are not inferred from ticket-level acceptance.
 
 ## Checks and handoff
 
@@ -125,4 +128,12 @@ See the [evaluation guide](../../../docs/testing/frontend-evaluation.md) and
 - 2026-10-22, follow-up: reproduced the stale-document failure in the actual tab,
   verified the currently served source, confirmed reload resolved the canonical
   workflow, reproduced and fixed the separate trailing-slash defect, strengthened
-  development/preview regression coverage. Human acceptance remains pending retest.
+  development/preview regression coverage. At that handoff, human acceptance was pending retest.
+
+### Human evaluation closeout — 2026-10-22
+
+Human-accepted at the user’s explicit direction. This is ticket-level acceptance; no additional per-subcheck, browser or physical-device results are inferred.
+
+Source: user's explicit instruction in the implementation chat. All other manual
+checks are Not Evaluated; no further manual evaluation is requested now. Existing
+automated evidence is unchanged.
