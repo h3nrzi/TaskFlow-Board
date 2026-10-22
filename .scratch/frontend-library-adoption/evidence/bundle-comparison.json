@@ -1,0 +1,20 @@
+{
+  "runtime": "Node v24.22.0, node:zlib gzipSync defaults",
+  "baselineCommit": "6ba23cd057d6517c0009c0f9f9145a94f910bac3",
+  "implementationCommit": "860faa7",
+  "javascript": {
+    "beforeBytes": 383321,
+    "afterBytes": 391506,
+    "deltaBytes": 8185,
+    "beforeGzipBytes": 119794,
+    "afterGzipBytes": 122889,
+    "deltaGzipBytes": 3095
+  },
+  "css": {
+    "beforeBytes": 96167,
+    "afterBytes": 96167,
+    "beforeGzipBytes": 17075,
+    "afterGzipBytes": 17075
+  },
+  "loading": "One eagerly loaded JavaScript entry remains; no additional emitted JavaScript chunks."
+}

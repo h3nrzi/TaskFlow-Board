@@ -64,7 +64,7 @@ Running 18 tests using 3 workers
   ✓  18 [webkit-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (1.4s)
 
 
-  1) [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+  1) [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation
 
     Error: expect(locator).toBeHidden() failed
 
@@ -103,7 +103,7 @@ Running 18 tests using 3 workers
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-  2) [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+  2) [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation
 
     Error: expect(locator).toBeHidden() failed
 
@@ -142,7 +142,7 @@ Running 18 tests using 3 workers
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-  3) [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+  3) [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus
 
     Error: expect(locator).toBeHidden() failed
 
@@ -182,7 +182,7 @@ Running 18 tests using 3 workers
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
   3 failed
-    [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
-    [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
-    [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus 
+    [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation
+    [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation
+    [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus
   15 passed (37.0s)

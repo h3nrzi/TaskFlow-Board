@@ -1,9 +1,9 @@
 # Phase 3: Adopt Radix Dialog for existing overlays
 
 Status: ready-for-agent
-Implementation: not started
+Implementation: complete
 Ticket breakdown: approved; published as tickets 01 and 02
-Regression baseline: not executed for this phase
+Regression baseline: executed; original suite 129 passed / 3 intentional skips
 Human evaluation: Not Evaluated
 
 ## Problem Statement
@@ -83,3 +83,7 @@ Workflow order is mandatory: finalize this specification, propose and obtain sep
 Discovery recorded a successful temporary-output production build, a passing 297-snapshot dependency audit, and a clean working tree. Discovery did not rerun the frontend regression suite. The measured discovery application assets were 383,321 bytes JavaScript (119,336 gzip) and 96,167 bytes CSS (17,066 gzip). A standalone Dialog probe excluding React/ReactDOM measured 38,073 bytes (12,948 gzip); it is not an incremental application measurement. Re-establish build evidence at implementation baseline.
 
 Earlier architecture work documented full-suite timeout limitations. Those records inform investigation but do not pre-classify new failures or establish current passing status. Human evaluation for this phase remains Not Evaluated.
+
+## Implementation outcome
+
+Both approved tickets are complete. All four overlays use supported Radix Dialog composition while preserving existing backdrop mouse-down, native scrolling, synchronous restoration timing, focused-layer Escape handling, presentation and component interfaces. Zod and all other migrations remain deferred. Final full repository check passed, including 156 frontend passes / 6 intentional skips; independent Standards and Spec reviews found no remaining actionable implementation issues. Earlier test-development failures, an introduced and fixed Escape regression, and evidenced external-font timeouts remain separately recorded. Production JavaScript increased by 3,095 gzip bytes; CSS is unchanged. Controlled visual checks resolved font-timing capture differences without application changes. Per-ticket evidence and evaluation guidance are in docs/testing/frontend-library-adoption-evaluation.md. Human acceptance remains Pending; no user observations for this phase have been reported.

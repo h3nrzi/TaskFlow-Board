@@ -1,0 +1,106 @@
+{
+  "chromiumScreenshotByteEquality": {
+    "chromium-desktop / task form preserves focus, inside interaction and backdrop cancellation": true,
+    "chromium-desktop / project form preserves focus, inside interaction and backdrop cancellation": true,
+    "chromium-desktop / task drawer preserves focus, inside interaction and backdrop cancellation": true,
+    "chromium-desktop / confirmation preserves focus, inside interaction and backdrop cancellation": true,
+    "chromium-mobile / task form preserves focus, inside interaction and backdrop cancellation": true,
+    "chromium-mobile / project form preserves focus, inside interaction and backdrop cancellation": true,
+    "chromium-mobile / task drawer preserves focus, inside interaction and backdrop cancellation": false,
+    "chromium-mobile / confirmation preserves focus, inside interaction and backdrop cancellation": true
+  },
+  "webkitSettledFontComparison": {
+    "originalGeometry": {
+      "x": 470,
+      "y": 139.640625,
+      "width": 500,
+      "height": 620.71875
+    },
+    "migratedGeometry": {
+      "x": 470,
+      "y": 139.640625,
+      "width": 500,
+      "height": 620.71875
+    },
+    "screenshotsByteIdentical": true,
+    "migratedScreenshot": "/tmp/taskflow-phase3-settled-migrated-report/data/5f901d9397c011abdc94983a1e08409bcf349fa3.png"
+  },
+  "chromiumMobileSettledDrawerComparison": {
+    "originalControls": [
+      {
+        "testId": "select-drawer-task-status",
+        "x": 27,
+        "y": 341.578125,
+        "width": 337,
+        "height": 42
+      },
+      {
+        "testId": "select-drawer-task-priority",
+        "x": 27,
+        "y": 428.578125,
+        "width": 161.5,
+        "height": 42
+      },
+      {
+        "testId": "input-drawer-task-date",
+        "x": 202.5,
+        "y": 428.578125,
+        "width": 161.5,
+        "height": 43
+      },
+      {
+        "testId": "select-drawer-task-project",
+        "x": 27,
+        "y": 516.578125,
+        "width": 337,
+        "height": 42
+      },
+      {
+        "testId": "input-drawer-assignee",
+        "x": 27,
+        "y": 603.578125,
+        "width": 337,
+        "height": 43
+      }
+    ],
+    "migratedControls": [
+      {
+        "testId": "select-drawer-task-status",
+        "x": 27,
+        "y": 341.578125,
+        "width": 337,
+        "height": 42
+      },
+      {
+        "testId": "select-drawer-task-priority",
+        "x": 27,
+        "y": 428.578125,
+        "width": 161.5,
+        "height": 42
+      },
+      {
+        "testId": "input-drawer-task-date",
+        "x": 202.5,
+        "y": 428.578125,
+        "width": 161.5,
+        "height": 43
+      },
+      {
+        "testId": "select-drawer-task-project",
+        "x": 27,
+        "y": 516.578125,
+        "width": 337,
+        "height": 42
+      },
+      {
+        "testId": "input-drawer-assignee",
+        "x": 27,
+        "y": 603.578125,
+        "width": 337,
+        "height": 43
+      }
+    ],
+    "screenshotsByteIdentical": true,
+    "migratedScreenshot": "/tmp/taskflow-phase3-drawer-migrated-report/data/25860031ba22f99560c7007f55aae9af4eccd69e.png"
+  }
+}

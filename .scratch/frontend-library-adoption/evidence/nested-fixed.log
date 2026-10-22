@@ -64,7 +64,7 @@ Running 18 tests using 3 workers
   ✘  14 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (35.2s)
 
 
-  1) [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+  1) [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation
 
     Test timeout of 30000ms exceeded.
 
@@ -93,5 +93,5 @@ Running 18 tests using 3 workers
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
   1 failed
-    [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation 
+    [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation
   17 passed (1.0m)

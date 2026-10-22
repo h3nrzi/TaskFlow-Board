@@ -1,0 +1,299 @@
+
+> taskflow@0.0.0 check /Users/hossein/Downloads/TaskFlow-Board
+> pnpm verify:frontend && pnpm verify:dependencies && pnpm typecheck && pnpm build && pnpm test
+
+
+> taskflow@0.0.0 verify:frontend /Users/hossein/Downloads/TaskFlow-Board
+> pnpm test:frontend
+
+
+> taskflow@0.0.0 test:frontend /Users/hossein/Downloads/TaskFlow-Board
+> playwright test
+
+[WebServer] (node:46896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:46934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:47006) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:47037) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 162 tests using 3 workers
+
+(node:47060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:47059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:47058) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    2 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (3.1s)
+  ✓    1 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (3.2s)
+  ✓    3 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (3.3s)
+  ✓    6 [chromium-desktop] › tests/frontend/stability.spec.ts:12:5 › invalid saved data is preserved with a recovery message (2.4s)
+  ✓    4 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (2.9s)
+  ✓    5 [chromium-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (3.3s)
+  ✓    9 [chromium-desktop] › tests/frontend/stability.spec.ts:49:5 › stale tab cannot overwrite another tab’s saved changes (2.2s)
+  ✓    7 [chromium-desktop] › tests/frontend/stability.spec.ts:23:5 › valid JSON with invalid workspace shape does not crash or overwrite (3.0s)
+  ✓    8 [chromium-desktop] › tests/frontend/stability.spec.ts:31:5 › storage write failure leaves the UI usable and reports unsaved changes (2.9s)
+  ✓   11 [chromium-desktop] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: /) (2.0s)
+  ✓   10 [chromium-desktop] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: none) (3.2s)
+  ✓   12 [chromium-desktop] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (3.9s)
+  ✓   13 [chromium-desktop] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (3.8s)
+  ✓   14 [chromium-desktop] › tests/frontend/stability.spec.ts:120:5 › switching login to signup starts an empty signup form (3.9s)
+  ✓   15 [chromium-desktop] › tests/frontend/stability.spec.ts:127:5 › local calendar dates are used near midnight (3.2s)
+  ✓   16 [chromium-desktop] › tests/frontend/stability.spec.ts:141:5 › project and board task titles can be opened with the keyboard (2.8s)
+  ✓   17 [chromium-desktop] › tests/frontend/stability.spec.ts:154:5 › task without a project stays unassigned when editing (3.2s)
+  ✓   18 [chromium-desktop] › tests/frontend/stability.spec.ts:165:5 › missing cross-tab locking never permits unsafe writes (3.6s)
+  ✓   19 [chromium-desktop] › tests/frontend/stability.spec.ts:172:5 › unsaved return to the initial theme still warns before reload (3.8s)
+  ✓   20 [chromium-desktop] › tests/frontend/stability.spec.ts:192:5 › unavailable reads preserve existing storage and allow an unsaved session (4.1s)
+  ✓   21 [chromium-desktop] › tests/frontend/stability.spec.ts:209:5 › editing an unassigned task with existing projects keeps it unassigned (5.7s)
+  ✓   22 [chromium-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (4.8s)
+  ✓   23 [chromium-desktop] › tests/frontend/workflows.spec.ts:4:5 › task CRUD, drawer edits, completion and reload (4.5s)
+  ✓   24 [chromium-desktop] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (2.6s)
+  ✓   25 [chromium-desktop] › tests/frontend/workflows.spec.ts:74:5 › search, combined filters and priority/due sorting (2.6s)
+(node:47493) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   27 [chromium-desktop] › tests/frontend/workflows.spec.ts:122:5 › responsive routes fit portrait and landscape, with touch navigation (2.3s)
+(node:47513) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   26 [chromium-desktop] › tests/frontend/workflows.spec.ts:93:5 › overview, settings, theme, demo profile and route fallbacks (2.9s)
+(node:47519) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   28 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (2.5s)
+  ✓   30 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.0s)
+  -   32 [chromium-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓   29 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (2.9s)
+  ✓   31 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (3.3s)
+  ✓   33 [chromium-mobile] › tests/frontend/stability.spec.ts:12:5 › invalid saved data is preserved with a recovery message (2.8s)
+  ✓   34 [chromium-mobile] › tests/frontend/stability.spec.ts:23:5 › valid JSON with invalid workspace shape does not crash or overwrite (2.9s)
+  ✓   36 [chromium-mobile] › tests/frontend/stability.spec.ts:49:5 › stale tab cannot overwrite another tab’s saved changes (2.9s)
+  ✓   35 [chromium-mobile] › tests/frontend/stability.spec.ts:31:5 › storage write failure leaves the UI usable and reports unsaved changes (3.4s)
+  ✓   37 [chromium-mobile] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: none) (3.5s)
+  ✓   38 [chromium-mobile] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: /) (2.7s)
+  ✓   40 [chromium-mobile] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (2.6s)
+  ✓   39 [chromium-mobile] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (3.7s)
+  ✓   43 [chromium-mobile] › tests/frontend/stability.spec.ts:141:5 › project and board task titles can be opened with the keyboard (2.2s)
+  ✓   42 [chromium-mobile] › tests/frontend/stability.spec.ts:127:5 › local calendar dates are used near midnight (2.9s)
+  ✓   41 [chromium-mobile] › tests/frontend/stability.spec.ts:120:5 › switching login to signup starts an empty signup form (5.6s)
+  -   46 [chromium-mobile] › tests/frontend/stability.spec.ts:172:5 › unsaved return to the initial theme still warns before reload
+  ✓   45 [chromium-mobile] › tests/frontend/stability.spec.ts:165:5 › missing cross-tab locking never permits unsafe writes (2.3s)
+  ✓   44 [chromium-mobile] › tests/frontend/stability.spec.ts:154:5 › task without a project stays unassigned when editing (3.3s)
+  ✓   48 [chromium-mobile] › tests/frontend/stability.spec.ts:209:5 › editing an unassigned task with existing projects keeps it unassigned (2.0s)
+  ✓   47 [chromium-mobile] › tests/frontend/stability.spec.ts:192:5 › unavailable reads preserve existing storage and allow an unsaved session (2.4s)
+  ✓   49 [chromium-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.8s)
+  ✓   51 [chromium-mobile] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (2.1s)
+  ✓   50 [chromium-mobile] › tests/frontend/workflows.spec.ts:4:5 › task CRUD, drawer edits, completion and reload (2.6s)
+  ✓   52 [chromium-mobile] › tests/frontend/workflows.spec.ts:74:5 › search, combined filters and priority/due sorting (2.9s)
+(node:47713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   53 [chromium-mobile] › tests/frontend/workflows.spec.ts:93:5 › overview, settings, theme, demo profile and route fallbacks (2.9s)
+(node:47715) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   54 [chromium-mobile] › tests/frontend/workflows.spec.ts:122:5 › responsive routes fit portrait and landscape, with touch navigation (4.1s)
+(node:47731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   55 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (6.5s)
+  ✓   57 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (7.0s)
+  ✓   58 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (3.6s)
+  ✓   56 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (11.1s)
+  ✓   59 [firefox-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (3.8s)
+  ✓   60 [firefox-desktop] › tests/frontend/stability.spec.ts:12:5 › invalid saved data is preserved with a recovery message (3.3s)
+  ✓   62 [firefox-desktop] › tests/frontend/stability.spec.ts:31:5 › storage write failure leaves the UI usable and reports unsaved changes (3.4s)
+  ✓   61 [firefox-desktop] › tests/frontend/stability.spec.ts:23:5 › valid JSON with invalid workspace shape does not crash or overwrite (4.4s)
+  ✓   63 [firefox-desktop] › tests/frontend/stability.spec.ts:49:5 › stale tab cannot overwrite another tab’s saved changes (4.5s)
+  ✓   65 [firefox-desktop] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: /) (4.3s)
+  ✓   64 [firefox-desktop] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: none) (5.2s)
+  ✓   68 [firefox-desktop] › tests/frontend/stability.spec.ts:120:5 › switching login to signup starts an empty signup form (4.5s)
+  ✓   67 [firefox-desktop] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (5.1s)
+  ✓   66 [firefox-desktop] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (7.3s)
+  ✓   70 [firefox-desktop] › tests/frontend/stability.spec.ts:141:5 › project and board task titles can be opened with the keyboard (3.5s)
+  ✓   69 [firefox-desktop] › tests/frontend/stability.spec.ts:127:5 › local calendar dates are used near midnight (3.7s)
+  ✓   71 [firefox-desktop] › tests/frontend/stability.spec.ts:154:5 › task without a project stays unassigned when editing (3.6s)
+  ✓   72 [firefox-desktop] › tests/frontend/stability.spec.ts:165:5 › missing cross-tab locking never permits unsafe writes (2.8s)
+  ✓   73 [firefox-desktop] › tests/frontend/stability.spec.ts:172:5 › unsaved return to the initial theme still warns before reload (5.0s)
+  ✓   74 [firefox-desktop] › tests/frontend/stability.spec.ts:192:5 › unavailable reads preserve existing storage and allow an unsaved session (4.5s)
+  ✓   75 [firefox-desktop] › tests/frontend/stability.spec.ts:209:5 › editing an unassigned task with existing projects keeps it unassigned (4.0s)
+  ✓   76 [firefox-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (3.4s)
+  ✓   77 [firefox-desktop] › tests/frontend/workflows.spec.ts:4:5 › task CRUD, drawer edits, completion and reload (5.6s)
+  ✓   78 [firefox-desktop] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (4.6s)
+  ✓   79 [firefox-desktop] › tests/frontend/workflows.spec.ts:74:5 › search, combined filters and priority/due sorting (3.5s)
+(node:48216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   80 [firefox-desktop] › tests/frontend/workflows.spec.ts:93:5 › overview, settings, theme, demo profile and route fallbacks (7.1s)
+  ✓   81 [firefox-desktop] › tests/frontend/workflows.spec.ts:122:5 › responsive routes fit portrait and landscape, with touch navigation (7.3s)
+(node:48267) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   82 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (5.9s)
+  ✓   84 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (3.6s)
+  -   86 [firefox-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓   85 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (4.5s)
+  ✓   83 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (4.6s)
+  ✓   88 [firefox-mobile] › tests/frontend/stability.spec.ts:23:5 › valid JSON with invalid workspace shape does not crash or overwrite (1.9s)
+  ✓   87 [firefox-mobile] › tests/frontend/stability.spec.ts:12:5 › invalid saved data is preserved with a recovery message (2.7s)
+  ✓   89 [firefox-mobile] › tests/frontend/stability.spec.ts:31:5 › storage write failure leaves the UI usable and reports unsaved changes (2.8s)
+  ✓   91 [firefox-mobile] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: none) (3.0s)
+  ✓   90 [firefox-mobile] › tests/frontend/stability.spec.ts:49:5 › stale tab cannot overwrite another tab’s saved changes (3.9s)
+  ✓   92 [firefox-mobile] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: /) (5.3s)
+  ✓   94 [firefox-mobile] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (3.3s)
+  ✓   93 [firefox-mobile] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (5.8s)
+  ✓   96 [firefox-mobile] › tests/frontend/stability.spec.ts:127:5 › local calendar dates are used near midnight (3.3s)
+  ✓   95 [firefox-mobile] › tests/frontend/stability.spec.ts:120:5 › switching login to signup starts an empty signup form (3.9s)
+  ✓   97 [firefox-mobile] › tests/frontend/stability.spec.ts:141:5 › project and board task titles can be opened with the keyboard (2.7s)
+  -  100 [firefox-mobile] › tests/frontend/stability.spec.ts:172:5 › unsaved return to the initial theme still warns before reload
+  ✓   99 [firefox-mobile] › tests/frontend/stability.spec.ts:165:5 › missing cross-tab locking never permits unsafe writes (3.0s)
+  ✓   98 [firefox-mobile] › tests/frontend/stability.spec.ts:154:5 › task without a project stays unassigned when editing (3.7s)
+  ✓  101 [firefox-mobile] › tests/frontend/stability.spec.ts:192:5 › unavailable reads preserve existing storage and allow an unsaved session (3.9s)
+  ✓  103 [firefox-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (3.6s)
+  ✓  104 [firefox-mobile] › tests/frontend/workflows.spec.ts:4:5 › task CRUD, drawer edits, completion and reload (5.1s)
+  ✓  105 [firefox-mobile] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (4.2s)
+  ✓  102 [firefox-mobile] › tests/frontend/stability.spec.ts:209:5 › editing an unassigned task with existing projects keeps it unassigned (11.7s)
+  ✓  106 [firefox-mobile] › tests/frontend/workflows.spec.ts:74:5 › search, combined filters and priority/due sorting (5.6s)
+  ✓  107 [firefox-mobile] › tests/frontend/workflows.spec.ts:93:5 › overview, settings, theme, demo profile and route fallbacks (5.2s)
+(node:48590) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  108 [firefox-mobile] › tests/frontend/workflows.spec.ts:122:5 › responsive routes fit portrait and landscape, with touch navigation (9.8s)
+  ✓  109 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (5.4s)
+  ✓  110 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (5.0s)
+(node:48706) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  111 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (3.1s)
+  ✓  112 [webkit-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (3.6s)
+  ✓  113 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.9s)
+  ✓  115 [webkit-desktop] › tests/frontend/stability.spec.ts:23:5 › valid JSON with invalid workspace shape does not crash or overwrite (1.5s)
+  ✓  114 [webkit-desktop] › tests/frontend/stability.spec.ts:12:5 › invalid saved data is preserved with a recovery message (3.3s)
+  ✓  116 [webkit-desktop] › tests/frontend/stability.spec.ts:31:5 › storage write failure leaves the UI usable and reports unsaved changes (2.4s)
+  ✓  118 [webkit-desktop] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: none) (2.3s)
+  ✓  119 [webkit-desktop] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: /) (2.5s)
+  ✓  117 [webkit-desktop] › tests/frontend/stability.spec.ts:49:5 › stale tab cannot overwrite another tab’s saved changes (3.9s)
+  ✓  121 [webkit-desktop] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (1.8s)
+  ✓  122 [webkit-desktop] › tests/frontend/stability.spec.ts:120:5 › switching login to signup starts an empty signup form (2.5s)
+  ✓  123 [webkit-desktop] › tests/frontend/stability.spec.ts:127:5 › local calendar dates are used near midnight (2.3s)
+  ✓  124 [webkit-desktop] › tests/frontend/stability.spec.ts:141:5 › project and board task titles can be opened with the keyboard (1.9s)
+  ✓  120 [webkit-desktop] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (5.0s)
+  ✓  125 [webkit-desktop] › tests/frontend/stability.spec.ts:154:5 › task without a project stays unassigned when editing (1.8s)
+  ✓  126 [webkit-desktop] › tests/frontend/stability.spec.ts:165:5 › missing cross-tab locking never permits unsafe writes (2.0s)
+  ✓  127 [webkit-desktop] › tests/frontend/stability.spec.ts:172:5 › unsaved return to the initial theme still warns before reload (2.1s)
+  ✓  128 [webkit-desktop] › tests/frontend/stability.spec.ts:192:5 › unavailable reads preserve existing storage and allow an unsaved session (1.9s)
+  ✓  130 [webkit-desktop] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (2.6s)
+  ✓  129 [webkit-desktop] › tests/frontend/stability.spec.ts:209:5 › editing an unassigned task with existing projects keeps it unassigned (3.0s)
+  ✓  133 [webkit-desktop] › tests/frontend/workflows.spec.ts:74:5 › search, combined filters and priority/due sorting (1.9s)
+  ✓  131 [webkit-desktop] › tests/frontend/workflows.spec.ts:4:5 › task CRUD, drawer edits, completion and reload (3.9s)
+  ✓  134 [webkit-desktop] › tests/frontend/workflows.spec.ts:93:5 › overview, settings, theme, demo profile and route fallbacks (2.9s)
+  ✓  132 [webkit-desktop] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (5.4s)
+(node:48939) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  135 [webkit-desktop] › tests/frontend/workflows.spec.ts:122:5 › responsive routes fit portrait and landscape, with touch navigation (3.9s)
+(node:48953) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  138 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.2s)
+  ✓  137 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (2.5s)
+  ✓  136 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (2.5s)
+  -  140 [webkit-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓  139 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (2.3s)
+  ✓  142 [webkit-mobile] › tests/frontend/stability.spec.ts:23:5 › valid JSON with invalid workspace shape does not crash or overwrite (2.5s)
+  ✓  141 [webkit-mobile] › tests/frontend/stability.spec.ts:12:5 › invalid saved data is preserved with a recovery message (2.9s)
+  ✓  145 [webkit-mobile] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: none) (2.8s)
+  ✓  144 [webkit-mobile] › tests/frontend/stability.spec.ts:49:5 › stale tab cannot overwrite another tab’s saved changes (3.3s)
+  ✓  146 [webkit-mobile] › tests/frontend/stability.spec.ts:65:7 › new task on a project board belongs to that project (path suffix: /) (2.3s)
+  ✓  143 [webkit-mobile] › tests/frontend/stability.spec.ts:31:5 › storage write failure leaves the UI usable and reports unsaved changes (6.4s)
+  ✓  147 [webkit-mobile] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (3.8s)
+  ✓  149 [webkit-mobile] › tests/frontend/stability.spec.ts:120:5 › switching login to signup starts an empty signup form (2.6s)
+  ✓  148 [webkit-mobile] › tests/frontend/stability.spec.ts:105:5 › task modal contains keyboard focus, closes with Escape, and restores focus (3.0s)
+  ✓  150 [webkit-mobile] › tests/frontend/stability.spec.ts:127:5 › local calendar dates are used near midnight (2.3s)
+  ✓  152 [webkit-mobile] › tests/frontend/stability.spec.ts:154:5 › task without a project stays unassigned when editing (1.9s)
+  -  154 [webkit-mobile] › tests/frontend/stability.spec.ts:172:5 › unsaved return to the initial theme still warns before reload
+  ✓  151 [webkit-mobile] › tests/frontend/stability.spec.ts:141:5 › project and board task titles can be opened with the keyboard (2.6s)
+  ✓  153 [webkit-mobile] › tests/frontend/stability.spec.ts:165:5 › missing cross-tab locking never permits unsafe writes (2.0s)
+  ✓  155 [webkit-mobile] › tests/frontend/stability.spec.ts:192:5 › unavailable reads preserve existing storage and allow an unsaved session (1.9s)
+  ✓  156 [webkit-mobile] › tests/frontend/stability.spec.ts:209:5 › editing an unassigned task with existing projects keeps it unassigned (1.9s)
+  ✓  157 [webkit-mobile] › tests/frontend/stability.spec.ts:226:5 › nested edit and delete dialogs close one layer and restore keyboard focus (1.8s)
+  ✓  160 [webkit-mobile] › tests/frontend/workflows.spec.ts:74:5 › search, combined filters and priority/due sorting (2.1s)
+  ✓  158 [webkit-mobile] › tests/frontend/workflows.spec.ts:4:5 › task CRUD, drawer edits, completion and reload (3.9s)
+  ✓  159 [webkit-mobile] › tests/frontend/workflows.spec.ts:42:5 › project CRUD, board status controls and cascade deletion (5.1s)
+  ✓  161 [webkit-mobile] › tests/frontend/workflows.spec.ts:93:5 › overview, settings, theme, demo profile and route fallbacks (4.9s)
+  ✓  162 [webkit-mobile] › tests/frontend/workflows.spec.ts:122:5 › responsive routes fit portrait and landscape, with touch navigation (4.5s)
+
+  6 skipped
+  156 passed (3.4m)
+
+> taskflow@0.0.0 verify:dependencies /Users/hossein/Downloads/TaskFlow-Board
+> node tooling/audit-dependencies.mjs
+
+297 retained frontend snapshots and direct resolutions preserved
+
+> taskflow@0.0.0 typecheck /Users/hossein/Downloads/TaskFlow-Board
+> pnpm -r run typecheck
+
+Scope: 2 of 3 workspace projects
+apps/api typecheck$ tsc -p tsconfig.json --noEmit
+apps/web typecheck$ tsc -p tsconfig.json --noEmit
+apps/api typecheck: Done
+apps/web typecheck: Done
+
+> taskflow@0.0.0 build /Users/hossein/Downloads/TaskFlow-Board
+> pnpm -r run build
+
+Scope: 2 of 3 workspace projects
+apps/api build$ tsc -p tsconfig.json
+apps/web build$ vite build
+apps/web build: vite v7.3.6 building client environment for production...
+apps/web build: transforming...
+apps/api build: Done
+apps/web build: src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+apps/web build: ✓ 1831 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/public/index.html                   1.36 kB │ gzip:   0.54 kB
+apps/web build: dist/public/assets/index-BnUOpog4.css   96.17 kB │ gzip:  17.08 kB
+apps/web build: dist/public/assets/index-5lxxgvvH.js   391.51 kB │ gzip: 122.89 kB
+apps/web build: ✓ built in 1.61s
+apps/web build: Done
+
+> taskflow@0.0.0 test /Users/hossein/Downloads/TaskFlow-Board
+> pnpm --filter @taskflow/api test && pnpm test:workflows
+
+
+> @taskflow/api@0.0.0 test /Users/hossein/Downloads/TaskFlow-Board/apps/api
+> pnpm build && node --test test/*.test.mjs
+
+
+> @taskflow/api@0.0.0 build /Users/hossein/Downloads/TaskFlow-Board/apps/api
+> tsc -p tsconfig.json
+
+[Nest] 49560  - 10/23/2026, 1:03:27 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 49560  - 10/23/2026, 1:03:27 AM     LOG [InstanceLoader] AppModule dependencies initialized +3ms
+[Nest] 49560  - 10/23/2026, 1:03:27 AM     LOG [RoutesResolver] HealthController {/api}: +2ms
+[Nest] 49560  - 10/23/2026, 1:03:27 AM     LOG [RouterExplorer] Mapped {/api/healthz, GET} route +1ms
+[Nest] 49560  - 10/23/2026, 1:03:27 AM     LOG [NestApplication] Nest application successfully started +1ms
+✔ an independent application serves the exact HTTP health contract and closes cleanly (151.519542ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 398.762708
+
+> taskflow@0.0.0 test:workflows /Users/hossein/Downloads/TaskFlow-Board
+> node --test tooling/workflows.test.mjs
+
+✔ development: API proxy, SPA routes, stopped backend and occupied web port (1221.883792ms)
+✔ preview: API proxy, SPA routes, stopped backend and occupied web port (520.3245ms)
+✔ backend command fails clearly on an occupied port (398.648125ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2186.764875

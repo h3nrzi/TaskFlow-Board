@@ -1,0 +1,12 @@
+{
+  "webkit-desktop / task form preserves focus, inside interaction and backdrop cancellation": {
+    "y": {
+      "before": 140.640625,
+      "after": 141.390625
+    },
+    "height": {
+      "before": 618.71875,
+      "after": 617.21875
+    }
+  }
+}

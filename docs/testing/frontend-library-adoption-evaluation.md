@@ -20,7 +20,7 @@ Commands and current evidence:
 
 Do not pool passing cases across runs into a full-suite pass. Preserve original failure evidence before reruns. Classify only with evidence: pre-existing, infrastructure-related, behavioral regression, or unresolved. Earlier external-font timeouts are historical context, not a diagnosis of new failures.
 
-First concrete action: run `pnpm dev:web`, open `http://127.0.0.1:21998/tasks`, and choose **New task**.
+First concrete action: open `http://127.0.0.1:22019/tasks` and choose **New task**. This checkout's evaluation server is started on port 22019; to restart it, run `WEB_PORT=22019 pnpm dev:web` from this repository. Port 21998 belongs to an older checkout and must not be used to evaluate this migration.
 
 Reproducible checks (use a disposable browser profile/workspace):
 
@@ -47,6 +47,24 @@ Supported compatibility fix: prevent Radix's document-level Escape dismissal and
 
 Broader nested follow-up: **17 passed / 1 infrastructure-related navigation timeout**, 1.0m. WebKit desktop confirmation timed out in `page.goto` before assertions; both external Google Fonts stylesheets were pending (status/time -1). No behavioral failure in that run; the timed-out configuration was not verified by it. Trace: `/tmp/taskflow-phase3-nested-font-timeout-results`; log: `evidence/nested-fixed.log`. Fixed web/API typechecks passed. All four overlays migrated; unused custom focus hook removed. Final full repository check and two-axis review are in progress.
 
+Final code review at `860faa7` against the user-approved `6ba23cd057d6517c0009c0f9f9145a94f910bac3`: **Standards 0 actionable findings; Spec 0 actionable implementation findings**. Review is not behavioral certification; running integration and visual verification were explicitly pending at review time.
+
+Production asset comparison (same Node v24.22.0 zlib defaults): JS 383,321 → 391,506 bytes (**+8,185**); gzip 119,794 → 122,889 (**+3,095**). CSS remains 96,167 bytes / 17,075 gzip, with identical emitted asset hash. Both builds emit one eager JavaScript entry and no other JavaScript chunks, so adoption adds no overlay-load request. Dependency manifests/lockfile and routes are unchanged. Measured details: `.scratch/frontend-library-adoption/evidence/bundle-comparison.json`. Console evidence logs normalize trailing whitespace only; original local logs retain exact console formatting.
+
 First action after implementation: repeat the task-form check above, then nested Edit/Delete from the same task drawer. Follow the complete feature list above for acceptance; also create/edit/delete a disposable task and project, reload, and confirm local persistence and cascade deletion.
 
 Actual per-step checks, final regression results, bundle differences, code-review findings, and compatibility decisions will be appended during implementation. Unexecuted or incomplete checks are not passing checks.
+
+## Final integration checkpoint — 2026-10-23
+
+Implementation is complete. **Human acceptance remains Pending for both tickets**; all hands-on items above remain Not Evaluated until the user reports observations.
+
+`pnpm check` exited 0 on reviewed application revision `860faa7`: frontend **156 passed / 6 intentional skips**, 3.4 minutes; dependency audit preserved all 297 snapshots/direct resolutions; web/API typechecks and builds passed; API test **1 passed**; workflow/tooling tests **3 passed**. The six browser skips are the three existing mobile beforeunload safeguards and three explicit desktop-wheel-only checks. Mobile touch scrolling and dark-theme hands-on inspection remain manual evaluation items, not automated passes. Durable console: `.scratch/frontend-library-adoption/evidence/final-check.log`; full browser report: `/tmp/taskflow-phase3-final-report/index.html`.
+
+Final production JS is +8,185 bytes raw / +3,095 gzip, CSS unchanged. No dependency manifest or lockfile edits were necessary. Both final review axes recorded 0 actionable implementation findings. Earlier failures and partial runs above remain part of the record and are not replaced by pooled passes.
+
+Visual verification: seven of eight initial Chromium desktop/mobile overlay screenshot pairs were byte-identical. The mobile drawer pair differed, and one WebKit task-form geometry sample differed by 1.5px in height. Rather than treating those as acceptable changes, a temporary browser diagnostic compared the original application commit with the migrated application under equivalent settled-font/animation conditions. WebKit task-form geometry and screenshot bytes matched exactly (**1 original pass, 1 migrated pass**); Chromium mobile drawer control geometry and screenshot bytes also matched exactly (**1 original pass, 1 migrated pass**). This supports font/render-timing variation in the unsynchronized captures rather than a migration presentation change. Evidence: `visual-comparison.json`, `presentation-baseline.json`, `presentation-final.json`, `presentation-comparison.json` under the feature's evidence directory. Local diagnostic logs/reports are `/tmp/taskflow-phase3-settled-{original,migrated}*` and `/tmp/taskflow-phase3-drawer-{original,migrated}*`. The migrated WebKit and original/final mobile drawer images were visually inspected.
+
+Actual final desktop scrolling retained the baseline behavior in all three browsers: before/open background scroll 150px, form scroll 160px, background around 150px after inside wheel and 310px after backdrop wheel, and 0–2px after Escape/focus restoration. Small native rounding/scroll-settling differences of up to 2px are recorded rather than represented as exact numeric equality. See `scroll-baseline.json` and `scroll-final.json`.
+
+All temporary diagnostic tests/logging were removed. Controlled original-code checks restored application files in a finally block; `git diff -- apps/web/src` confirmed no changes from the reviewed migrated implementation. No assertions, production font loading, timeout limits, or user contracts were changed to obtain passing results.

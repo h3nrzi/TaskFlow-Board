@@ -1,0 +1,26 @@
+{
+  "chromium-desktop": {
+    "beforeOpen": 150,
+    "afterOpen": 150,
+    "formScroll": 160,
+    "afterInside": 150,
+    "afterBackdrop": 310,
+    "afterClose": 0
+  },
+  "firefox-desktop": {
+    "beforeOpen": 150,
+    "afterOpen": 150,
+    "formScroll": 160,
+    "afterInside": 150,
+    "afterBackdrop": 310,
+    "afterClose": 2
+  },
+  "webkit-desktop": {
+    "beforeOpen": 150,
+    "afterOpen": 150,
+    "formScroll": 160,
+    "afterInside": 150,
+    "afterBackdrop": 310,
+    "afterClose": 0
+  }
+}
