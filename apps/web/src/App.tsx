@@ -1,7 +1,8 @@
 import { priorities, type Priority, type Profile, type Project, type Status, type Store, type Task, type TaskInput, type ProjectInput } from '@/workspace/types';
 import { dateOffset } from '@/workspace/dates';
-import { demoStore } from '@/workspace/fixtures';
-import { hasProjectName, hasSignupName, hasTaskTitle, hasValidEmail, hasValidProfile, isStore } from '@/workspace/validation';
+import { readWorkspace } from '@/workspace/browser-storage';
+import { useWorkspacePersistence } from '@/workspace/use-workspace-persistence';
+import { hasProjectName, hasSignupName, hasTaskTitle, hasValidEmail, hasValidProfile } from '@/workspace/validation';
 import { addProject, addTask, deleteProject, deleteTask, initials, replaceProfile, toggleWorkspaceTheme, updateProject, updateTask } from '@/workspace/transitions';
 import { dashboardTasks, filterTasks, projectTasks, taskCounts, tasksByStatus } from '@/workspace/selectors';
 
@@ -26,35 +27,11 @@ const statuses: { id: Status; name: string; icon: typeof Circle; className: stri
   { id: 'in-progress', name: 'In progress', icon: Activity, className: 'status-progress' },
   { id: 'done', name: 'Done', icon: CheckCircle2, className: 'status-done' },
 ];
-const STORE_KEY = 'taskflow-store-v1';
-const readStore = (): { store: Store; raw: string | null; problem: 'invalid' | 'read' | null } => {
-  let raw: string | null = null;
-  try {
-    raw = localStorage.getItem(STORE_KEY);
-    if (raw !== null) {
-      const value: unknown = JSON.parse(raw);
-      if (!isStore(value)) return { store: demoStore(), raw, problem: 'invalid' };
-      return { store: { ...value, theme: value.theme || 'light' }, raw, problem: null };
-    }
-  } catch { return { store: demoStore(), raw, problem: raw === null ? 'read' : 'invalid' }; }
-  return { store: demoStore(), raw, problem: null };
-};
-function downloadWorkspace(raw: string) {
-  const url = URL.createObjectURL(new Blob([raw], { type: 'application/json' }));
-  const link = document.createElement('a');
-  link.href = url; link.download = 'taskflow-workspace.json'; link.click();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
 const dayString = (value?: string) => value ? new Date(`${value}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'No date';
 
 function App() {
-  const [loaded] = useState(readStore);
+  const [loaded] = useState(readWorkspace);
   const [store, setStore] = useState<Store>(loaded.store);
-  const savedRaw = useRef(loaded.raw);
-  const latestStore = useRef(store);
-  latestStore.current = store;
-  const [persistedRaw, setPersistedRaw] = useState(loaded.raw);
-  const [storageProblem, setStorageProblem] = useState<'invalid' | 'read' | 'write' | 'conflict' | null>(loaded.problem);
   const [notice, setNotice] = useState('');
   const [taskModal, setTaskModal] = useState<Task | 'new' | null>(null);
   const [projectModal, setProjectModal] = useState<Project | 'new' | null>(null);
@@ -67,32 +44,8 @@ function App() {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', store.theme === 'dark');
-    if (loaded.problem) return;
-    let cancelled = false;
-    const persist = () => {
-      try {
-        // Compare inside a cross-tab lock so a stale workspace never replaces newer data.
-        if (localStorage.getItem(STORE_KEY) !== savedRaw.current) { if (!cancelled) setStorageProblem('conflict'); return; }
-        const raw = JSON.stringify(latestStore.current);
-        if (raw !== savedRaw.current) localStorage.setItem(STORE_KEY, raw);
-        savedRaw.current = raw;
-        if (!cancelled) { setPersistedRaw(raw); setStorageProblem(null); }
-      } catch { if (!cancelled) setStorageProblem('write'); }
-    };
-    if (navigator.locks) {
-      void navigator.locks.request(STORE_KEY, persist).catch(() => { if (!cancelled) setStorageProblem('write'); });
-    } else setStorageProblem('write');
-    return () => { cancelled = true; };
   }, [store, loaded]);
-  useEffect(() => {
-    const guardUnsavedWork = (event: BeforeUnloadEvent) => {
-      const raw = JSON.stringify(latestStore.current);
-      if (loaded.problem !== 'invalid' && raw !== savedRaw.current && (savedRaw.current !== null || raw !== JSON.stringify(loaded.store))) { event.preventDefault(); event.returnValue = ''; }
-    };
-    window.addEventListener('beforeunload', guardUnsavedWork);
-    return () => window.removeEventListener('beforeunload', guardUnsavedWork);
-  }, [loaded]);
-  const saving = !storageProblem && JSON.stringify(store) !== persistedRaw;
+  const { storageProblem, saving, downloadCurrentWorkspace, downloadSavedData } = useWorkspacePersistence(store, loaded);
   useEffect(() => { if (!notice) return; const t = window.setTimeout(() => setNotice(''), 2800); return () => window.clearTimeout(t); }, [notice]);
 
   const patchTask = (id: string, updates: Partial<Task>) => setStore(s => updateTask(s, id, updates, dateOffset(0)));
@@ -121,12 +74,12 @@ function App() {
   const storageWarning = storageProblem && <div className="storage-warning" role="alert">
     <strong>{storageProblem === 'conflict' ? 'Your workspace changed in another tab. Changes here are not saved.' : 'Your changes are not saved. This browser could not safely save your workspace.'}</strong>
     <p>Keep this tab open to retain your current work. Download a copy before reloading.</p>
-    <button className="button" onClick={() => downloadWorkspace(JSON.stringify(store))}>Download current workspace</button>
+    <button className="button" onClick={downloadCurrentWorkspace}>Download current workspace</button>
   </div>;
   if (storageProblem === 'invalid') return <main className="content"><section className="panel" style={{ padding: 24 }} role="alert">
     <h1 className="page-title display">Your saved workspace could not be read</h1>
     <p>Your saved data has been kept unchanged. Download a copy for recovery before making any changes to browser storage.</p>
-    <button className="button" onClick={() => downloadWorkspace(loaded.raw!)}>Download saved data</button>
+    <button className="button" onClick={downloadSavedData}>Download saved data</button>
     <button className="button" onClick={() => window.location.reload()}>Try again</button>
   </section></main>;
   if (authRoute) return <>{storageWarning}<AuthScreen key={location} mode={location === '/signup' ? 'signup' : 'login'} profile={store.profile} onSave={profile => { setStore(s => replaceProfile(s, profile)); setNotice('Your demo workspace is ready'); setLocation('/'); }} /></>;
