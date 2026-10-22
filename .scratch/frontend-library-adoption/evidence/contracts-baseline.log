@@ -1,0 +1,74 @@
+[WebServer] (node:37480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37501) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:37536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 3 workers
+
+(node:37563) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37565) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.8s)
+  ✓   2 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (2.8s)
+(node:37635) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (3.4s)
+(node:37640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (2.8s)
+(node:37657) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (3.0s)
+  ✓   6 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (3.1s)
+(node:37675) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.3s)
+(node:37690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (2.8s)
+(node:37693) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (4.6s)
+  ✓   9 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (4.9s)
+(node:37755) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (5.2s)
+(node:37769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [firefox-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (3.4s)
+(node:37796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (4.4s)
+  ✓  14 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (4.6s)
+(node:37834) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (3.3s)
+  ✓  15 [firefox-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (5.5s)
+(node:37859) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (2.6s)
+  ✓  20 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (2.8s)
+  ✓  18 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (3.1s)
+  ✓  19 [webkit-desktop] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.8s)
+(node:37918) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37919) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › task drawer preserves focus, inside interaction and backdrop cancellation (2.2s)
+  ✓  22 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › project form preserves focus, inside interaction and backdrop cancellation (2.3s)
+  ✓  21 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › task form preserves focus, inside interaction and backdrop cancellation (3.7s)
+  ✓  24 [webkit-mobile] › tests/frontend/overlays.spec.ts:11:7 › confirmation preserves focus, inside interaction and backdrop cancellation (1.7s)
+
+  24 passed (36.0s)
