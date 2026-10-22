@@ -81,3 +81,37 @@ for (const overlay of overlays) {
     }
   });
 }
+
+test('overflowing task form preserves overlay and background scrolling', async ({ page }, info) => {
+  test.skip(info.project.name.endsWith('mobile'), 'Wheel characterization is desktop-only; touch scrolling remains a manual evaluation item');
+  await page.setViewportSize({ width: page.viewportSize()!.width, height: 420 });
+  await page.goto('/tasks');
+  const opener = page.getByTestId('button-create-task');
+  await opener.focus();
+  await page.mouse.move(page.viewportSize()!.width / 2, 400);
+  await page.mouse.wheel(0, 150);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  const beforeOpen = await page.evaluate(() => window.scrollY);
+  await page.keyboard.press('Enter');
+  const form = page.getByRole('dialog', { name: 'New task', exact: true });
+  await expect(form).toBeVisible();
+  await form.evaluate(el => Promise.all(el.getAnimations().map(animation => animation.finished)));
+  const afterOpen = await page.evaluate(() => window.scrollY);
+  const bounds = await form.boundingBox();
+  if (!bounds) throw new Error('Task form is not visible');
+  await page.mouse.move(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+  await page.mouse.wheel(0, 160);
+  await expect.poll(() => form.evaluate(el => el.scrollTop)).toBeGreaterThan(0);
+  const formScroll = await form.evaluate(el => el.scrollTop);
+  const afterInside = await page.evaluate(() => window.scrollY);
+  await page.mouse.move(2, 2);
+  await page.mouse.wheel(0, 160);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(afterInside);
+  const afterBackdrop = await page.evaluate(() => window.scrollY);
+  await page.keyboard.press('Escape');
+  await expect(form).toBeHidden();
+  await expect(opener).toBeFocused();
+  const afterClose = await page.evaluate(() => window.scrollY);
+  await info.attach('scrolling', { body: JSON.stringify({ beforeOpen, afterOpen, formScroll,
+    afterInside, afterBackdrop, afterClose }), contentType: 'application/json' });
+});

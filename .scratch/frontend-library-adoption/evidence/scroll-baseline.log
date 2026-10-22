@@ -1,0 +1,33 @@
+[WebServer] (node:40858) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:40878) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:40909) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:40929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 3 workers
+
+(node:40936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40937) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40938) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  3 [chromium-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+(node:40967) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  4 [firefox-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+(node:40996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (3.5s)
+(node:41003) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  6 [webkit-mobile] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling
+  ✓  1 [firefox-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (4.9s)
+  ✓  5 [webkit-desktop] › tests/frontend/overlays.spec.ts:85:5 › overflowing task form preserves overlay and background scrolling (16.1s)
+
+  3 skipped
+  3 passed (24.0s)
