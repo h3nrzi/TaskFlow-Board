@@ -162,3 +162,76 @@ Use this disposable profile for the failure/recovery checks below.
 
 Record Ticket 02, browser/viewport, actions, expected/actual behavior and any
 observed storage/download differences. Human acceptance remains **Pending**.
+
+## Ticket 03 — Explicit workspace operations
+
+### Preflight evidence
+
+- Based on integration `ff1f3a562e42d0b87d7169b54b2f89bf75190d57`; worktree
+  `/Users/hossein/.codex/worktrees/workspace-operations/TaskFlow-Board`.
+- Frozen dependency install passed with required Node v24.22.0 and pnpm 10.11.0;
+  manifests and lockfile unchanged.
+- `pnpm typecheck` passed for API and web; log
+  `/tmp/taskflow-operations-typecheck.log`.
+- Focused self-review and independent root hook review found no actionable issue.
+  The loaded snapshot/store stay in one hook per existing mounted App session.
+  Task IDs are generated inside their updater; project IDs before the updater;
+  creation/update dates retain their original evaluation placement. Task title
+  trimming stays on form save, project trimming/order/cascades in pure transitions.
+  Theme application remains a separate presentation effect before persistence,
+  with its existing `[store, loaded]` lifetime. UI validation messages, notices,
+  route changes, modal closure, filters/search state and selected task fallback
+  remain in their existing components. Settings and demo auth receive an explicit
+  profile operation; no persistent raw setter escapes the hook.
+- No existing tests, rendered markup/styles, route/providers, dependencies or
+  persistence contracts changed. `git diff --check` passed. Workspace dependencies
+  remain directed from the React owner to persistence/domain, without cycles.
+- Existing workflow/state regression command, with required-runtime PATH prefix:
+
+  ```sh
+  pnpm test:frontend --grep 'task CRUD|project CRUD|search, combined|overview, settings|board task entry|switching login|local calendar dates|task without a project|editing an unassigned|unsaved return|storage write failure|stale tab cannot'
+  ```
+
+  Initial result: **65 passed, 4 failed, 3 existing mobile unload-prompt skips**
+  in 2.7 minutes across all six browser/viewport projects. Log:
+  `/tmp/taskflow-operations-regressions.log`; retained artifacts:
+  `/tmp/taskflow-operations-initial-test-results`. Failed scenarios: Firefox
+  desktop overview drawer close, Firefox mobile project initial navigation and
+  search/filter workflow, WebKit mobile task initial navigation. Firefox traces
+  show Google Fonts TLS waits of about 30.088 seconds (desktop) and 30.064 seconds
+  (mobile search); mobile project font requests remained pending at timeout.
+  WebKit local document/CSS/JS returned in 15.6/42.5/75.7 milliseconds, with both
+  external Google Fonts stylesheets still pending at the navigation timeout.
+  This reproduces the external-font waits recorded in Ticket 01. No application,
+  font, timeout or test changes were made to address these network delays.
+- Focused recheck command with the same runtime prefix:
+
+  ```sh
+  pnpm test:frontend tests/frontend/workflows.spec.ts --project=firefox-desktop --project=firefox-mobile --project=webkit-mobile --grep 'overview, settings|project CRUD|search, combined|task CRUD'
+  ```
+
+  Result: **12 passed in 27.9 seconds**, including all four initially failed
+  combinations. Log: `/tmp/taskflow-operations-recheck.log`. This targeted pass
+  is not represented as a clean 72-case run or a full-suite pass.
+- Full integration `pnpm check` and final two-axis review remain later checkpoints.
+
+### First concrete action
+
+Run `pnpm dev:web` using Node v24.22.0. Open its printed URL in a fresh disposable
+browser profile, visit **Settings**, set your name to `Architecture Evaluator`,
+change the email, save, and wait for **All changes saved locally** before reload.
+The saved profile and initials must survive reload.
+
+### Reproducible feature checks
+
+| Feature | Actions | Expected result |
+| --- | --- | --- |
+| Profile and demo auth | Perform the first action, then visit /login, follow Create a demo profile, enter a new name/email and submit. | Signup starts empty; submission returns to Overview with the saved profile while keeping projects/tasks. |
+| Task operations | Create a task with leading/trailing title spaces, open its drawer, change status/priority/date/assignee, edit its title, save, toggle completion, then delete it after trying Keep it first. | Title is trimmed on form save; drawer edits persist; completion resets to To do when toggled off; Keep it preserves the task; confirmed deletion removes it. |
+| Project operations | Create a project, edit it, add a task on its board, move the task using status controls, then delete the project. | Creation navigates to its board; the new task belongs to it; movement updates the board; deletion removes its tasks and returns to Projects. |
+| Transient state and cancellation | Search tasks and choose filters/sort; navigate to Settings and back. Open a task, open Edit task and cancel; then cancel deletion. Navigate between boards before creating another task. | Existing navigation/reset behavior remains unchanged; closing nested dialogs reveals the same drawer; board task defaults follow the current board and explicit assignments remain intact. |
+| Appearance and unsaved work | Toggle theme in Settings/sidebar/topbar, wait for saved status and reload. Then use Ticket 02's write-failure/stale-tab checks. | Appearance persists; unsaved sessions stay usable, warn and export current changes without overwriting newer data. |
+| Unassigned tasks and local dates | Use the existing named unassigned-task/local-calendar regression scenarios below, or edit a previously saved task whose projectId is empty. | Editing preserves empty assignment; creation/update dates retain the same local-calendar behavior. |
+
+Report Ticket 03, browser/viewport, actions and expected/actual observations.
+Human acceptance remains **Pending**.

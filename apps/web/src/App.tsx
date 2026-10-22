@@ -1,9 +1,7 @@
 import { priorities, type Priority, type Profile, type Project, type Status, type Store, type Task, type TaskInput, type ProjectInput } from '@/workspace/types';
-import { dateOffset } from '@/workspace/dates';
-import { readWorkspace } from '@/workspace/browser-storage';
-import { useWorkspacePersistence } from '@/workspace/use-workspace-persistence';
+import { useWorkspace } from '@/workspace/use-workspace';
 import { hasProjectName, hasSignupName, hasTaskTitle, hasValidEmail, hasValidProfile } from '@/workspace/validation';
-import { addProject, addTask, deleteProject, deleteTask, initials, replaceProfile, toggleWorkspaceTheme, updateProject, updateTask } from '@/workspace/transitions';
+import { initials } from '@/workspace/transitions';
 import { dashboardTasks, filterTasks, projectTasks, taskCounts, tasksByStatus } from '@/workspace/selectors';
 
 import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
@@ -30,8 +28,7 @@ const statuses: { id: Status; name: string; icon: typeof Circle; className: stri
 const dayString = (value?: string) => value ? new Date(`${value}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'No date';
 
 function App() {
-  const [loaded] = useState(readWorkspace);
-  const [store, setStore] = useState<Store>(loaded.store);
+  const { store, createTask, updateTask: patchTask, deleteTask, createProject, updateProject, deleteProject, updateProfile, toggleTheme, storageProblem, saving, downloadCurrentWorkspace, downloadSavedData } = useWorkspace();
   const [notice, setNotice] = useState('');
   const [taskModal, setTaskModal] = useState<Task | 'new' | null>(null);
   const [projectModal, setProjectModal] = useState<Project | 'new' | null>(null);
@@ -42,33 +39,27 @@ function App() {
   const [location, setLocation] = useLocation();
   const [, projectRoute] = useRoute('/projects/:id');
 
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', store.theme === 'dark');
-  }, [store, loaded]);
-  const { storageProblem, saving, downloadCurrentWorkspace, downloadSavedData } = useWorkspacePersistence(store, loaded);
   useEffect(() => { if (!notice) return; const t = window.setTimeout(() => setNotice(''), 2800); return () => window.clearTimeout(t); }, [notice]);
 
-  const patchTask = (id: string, updates: Partial<Task>) => setStore(s => updateTask(s, id, updates, dateOffset(0)));
   const saveTask = (data: TaskInput, existing?: Task) => {
     if (!hasTaskTitle(data.title)) { setNotice('Add a task title to continue.'); return; }
-    if (existing) { setStore(s => updateTask(s, existing.id, { ...data, title: data.title.trim() }, dateOffset(0))); setNotice('Task updated'); }
-    else { const now = dateOffset(0); setStore(s => addTask(s, data, `task-${Date.now()}`, now)); setNotice('Task added to your workspace'); }
+    if (existing) { patchTask(existing.id, { ...data, title: data.title.trim() }); setNotice('Task updated'); }
+    else { createTask(data); setNotice('Task added to your workspace'); }
     setTaskModal(null);
   };
   const saveProject = (data: ProjectInput, existing?: Project) => {
     if (!hasProjectName(data.name)) { setNotice('Add a project name to continue.'); return; }
-    if (existing) { setStore(s => updateProject(s, existing.id, data)); setNotice('Project updated'); }
-    else { const id = `project-${Date.now()}`; setStore(s => addProject(s, data, id, dateOffset(0))); setNotice('Project created'); setLocation(`/projects/${id}`); }
+    if (existing) { updateProject(existing.id, data); setNotice('Project updated'); }
+    else { const id = createProject(data); setNotice('Project created'); setLocation(`/projects/${id}`); }
     setProjectModal(null);
   };
   const deleteConfirmed = () => {
     if (!confirm) return;
-    if (confirm.kind === 'task') { setStore(s => deleteTask(s, confirm.id)); setDrawerTask(null); setNotice('Task deleted'); }
-    else { setStore(s => deleteProject(s, confirm.id)); if (location === `/projects/${confirm.id}`) setLocation('/projects'); setNotice('Project and its tasks deleted'); }
+    if (confirm.kind === 'task') { deleteTask(confirm.id); setDrawerTask(null); setNotice('Task deleted'); }
+    else { deleteProject(confirm.id); if (location === `/projects/${confirm.id}`) setLocation('/projects'); setNotice('Project and its tasks deleted'); }
     setConfirm(null);
   };
   const openTask = (task: Task) => { setDrawerTask(task); };
-  const toggleTheme = () => setStore(toggleWorkspaceTheme);
   const authRoute = location === '/login' || location === '/signup';
 
   const storageWarning = storageProblem && <div className="storage-warning" role="alert">
@@ -82,7 +73,7 @@ function App() {
     <button className="button" onClick={downloadSavedData}>Download saved data</button>
     <button className="button" onClick={() => window.location.reload()}>Try again</button>
   </section></main>;
-  if (authRoute) return <>{storageWarning}<AuthScreen key={location} mode={location === '/signup' ? 'signup' : 'login'} profile={store.profile} onSave={profile => { setStore(s => replaceProfile(s, profile)); setNotice('Your demo workspace is ready'); setLocation('/'); }} /></>;
+  if (authRoute) return <>{storageWarning}<AuthScreen key={location} mode={location === '/signup' ? 'signup' : 'login'} profile={store.profile} onSave={profile => { updateProfile(profile); setNotice('Your demo workspace is ready'); setLocation('/'); }} /></>;
 
   const pageTitle = location === '/' ? 'Your workspace' : location === '/projects' ? 'Projects' : location === '/tasks' ? 'All tasks' : location === '/settings' ? 'Settings' : 'Project workspace';
   return (
@@ -117,7 +108,7 @@ function App() {
           <Route path="/projects"><ProjectsPage store={store} onCreate={() => setProjectModal('new')} onEdit={p => setProjectModal(p)} onDelete={id => setConfirm({ kind: 'project', id })} onNavigate={setLocation} /></Route>
           <Route path="/projects/:id">{params => <ProjectBoard project={store.projects.find(p => p.id === params.id)} tasks={projectTasks(store.tasks, params.id)} allProjects={store.projects} onMove={patchTask} onOpenTask={openTask} onCreateTask={() => setTaskModal('new')} onEditProject={p => setProjectModal(p)} onDeleteProject={id => setConfirm({ kind: 'project', id })} onNavigate={setLocation} />}</Route>
           <Route path="/tasks"><TasksPage store={store} query={search} setQuery={setSearch} onOpenTask={openTask} onToggleTask={id => patchTask(id, { status: store.tasks.find(t => t.id === id)?.status === 'done' ? 'todo' : 'done' })} onCreateTask={() => setTaskModal('new')} /></Route>
-          <Route path="/settings"><SettingsPage store={store} setStore={setStore} toggleTheme={toggleTheme} storageProblem={!!storageProblem} saving={saving} onNotify={setNotice} /></Route>
+          <Route path="/settings"><SettingsPage store={store} onUpdateProfile={updateProfile} toggleTheme={toggleTheme} storageProblem={!!storageProblem} saving={saving} onNotify={setNotice} /></Route>
           <Route component={NotFound} />
         </Switch>
       </main>
@@ -261,9 +252,9 @@ function ProjectForm({ project, onClose, onSave }: { project?: Project; onClose:
 }
 function ConfirmDialog({ title, description, onCancel, onConfirm }: { title: string; description: string; onCancel: () => void; onConfirm: () => void }) { const dialogRef = useRef<HTMLDivElement>(null); useDialogFocus(dialogRef, onCancel); return <div className="modal-wrap" onMouseDown={e => { if (e.target === e.currentTarget) onCancel(); }}><div ref={dialogRef} data-dialog-layer tabIndex={-1} className="modal" role="alertdialog" aria-modal="true" aria-labelledby="confirm-title" style={{ width: 'min(420px,100%)' }}><div style={{ width: 39, height: 39, borderRadius: 11, background: 'hsl(var(--destructive) / .12)', color: 'hsl(var(--destructive))', display: 'grid', placeItems: 'center' }}><Trash2 size={18} /></div><h2 id="confirm-title" className="display" style={{ fontSize: 23, margin: '17px 0 7px' }}>{title}</h2><p className="subtle" style={{ lineHeight: 1.55 }}>{description}</p><div style={{ display: 'flex', justifyContent: 'end', gap: 8, marginTop: 24 }}><button className="button" onClick={onCancel} data-testid="button-cancel-delete">Keep it</button><button className="button" style={{ background: 'hsl(var(--destructive))', color: 'white', borderColor: 'hsl(var(--destructive))' }} onClick={onConfirm} data-testid="button-confirm-delete">Delete</button></div></div></div>; }
 
-function SettingsPage({ store, setStore, toggleTheme, storageProblem, saving, onNotify }: { store: Store; setStore: React.Dispatch<React.SetStateAction<Store>>; toggleTheme: () => void; storageProblem: boolean; saving: boolean; onNotify: (s: string) => void }) {
+function SettingsPage({ store, onUpdateProfile, toggleTheme, storageProblem, saving, onNotify }: { store: Store; onUpdateProfile: (profile: Profile) => void; toggleTheme: () => void; storageProblem: boolean; saving: boolean; onNotify: (s: string) => void }) {
   const [name, setName] = useState(store.profile.name), [email, setEmail] = useState(store.profile.email);
-  const save = (e: React.FormEvent) => { e.preventDefault(); if (!hasValidProfile(name, email)) { onNotify('Enter a name and a valid email address.'); return; } setStore(s => replaceProfile(s, { name: name.trim(), email: email.trim(), avatar: initials(name) })); onNotify('Profile preferences saved'); };
+  const save = (e: React.FormEvent) => { e.preventDefault(); if (!hasValidProfile(name, email)) { onNotify('Enter a name and a valid email address.'); return; } onUpdateProfile({ name: name.trim(), email: email.trim(), avatar: initials(name) }); onNotify('Profile preferences saved'); };
   return <div className="content" style={{ maxWidth: 900 }}><div style={{ marginBottom: 27 }}><div className="eyebrow" style={{ marginBottom: 10 }}>Make it yours</div><h1 className="page-title display">Settings</h1><p className="subtle" style={{ marginTop: 8 }}>A few details to make your workspace feel like home.</p></div>
     <form className="panel" onSubmit={save} style={{ padding: 22, marginBottom: 15 }}><div style={{ marginBottom: 20 }}><div style={{ fontWeight: 700 }}>Profile</div><div className="subtle" style={{ fontSize: 12, marginTop: 4 }}>Your details stay on this device.</div></div><div style={{ display: 'flex', gap: 14, alignItems: 'center', marginBottom: 19 }}><span className="avatar" style={{ width: 48, height: 48, fontSize: 14 }}>{initials(name)}</span><div><div style={{ fontWeight: 700 }}>{name || 'Your name'}</div><div className="subtle" style={{ fontSize: 12 }}>{email}</div></div></div><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 13 }}><div><label className="label">Name</label><input className="field" value={name} onChange={e => setName(e.target.value)} required data-testid="input-profile-name" /></div><div><label className="label">Email</label><input className="field" type="email" value={email} onChange={e => setEmail(e.target.value)} required data-testid="input-profile-email" /></div></div><div style={{ display: 'flex', justifyContent: 'end', marginTop: 17 }}><button className="button button-primary" type="submit" data-testid="button-save-profile">Save profile</button></div></form>
     <section className="panel appearance-settings" style={{ padding: 22, marginBottom: 15 }}><div style={{ display: 'flex', justifyContent: 'space-between', gap: 15, alignItems: 'center' }}><div style={{ display: 'flex', gap: 12, alignItems: 'center' }}><span className="brand-glyph" style={{ width: 36, height: 36, background: 'hsl(var(--accent))', color: 'hsl(var(--primary))' }}>{store.theme === 'light' ? <Sun size={18} /> : <Moon size={18} />}</span><div><div style={{ fontWeight: 700 }}>Appearance</div><div className="subtle" style={{ fontSize: 12, marginTop: 4 }}>Choose the mood for your workspace.</div></div></div><div style={{ display: 'flex', gap: 6 }}><button className={`button ${store.theme === 'light' ? 'button-primary' : ''}`} onClick={() => { if (store.theme === 'dark') toggleTheme(); }} data-testid="button-theme-light"><Sun size={15} /> Light</button><button className={`button ${store.theme === 'dark' ? 'button-primary' : ''}`} onClick={() => { if (store.theme === 'light') toggleTheme(); }} data-testid="button-theme-dark"><Moon size={15} /> Dark</button></div></div></section>
