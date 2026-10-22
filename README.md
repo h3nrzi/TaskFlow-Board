@@ -1,6 +1,6 @@
 # TaskFlow
 
-Preserved React demo in `apps/web`, independent NestJS health application in `apps/api`.
+React demo in `apps/web`, independent NestJS health application in `apps/api`.
 
 Use **Node 24.22.0** (`.node-version` / `.nvmrc`) and **pnpm 10.11.0** (`packageManager`). With those installed:
 
@@ -21,9 +21,9 @@ Open http://localhost:21998/. No environment files, Replit settings, credentials
 | `pnpm --filter @taskflow/api start` | Run built backend |
 | `pnpm typecheck` | Check both applications |
 | `pnpm test` | Actual HTTP application and workflow tests |
-| `pnpm verify:frontend` | Verify every relocated protected file against committed hashes |
-| `pnpm verify:dependencies` | Check original retained frontend resolutions and dependency edges |
-| `pnpm check` | Preservation, dependency audit, typecheck, builds, tests |
+| `pnpm test:frontend` / `pnpm verify:frontend` | Cross-browser frontend workflows and bug regressions |
+| `pnpm verify:dependencies` | Check retained frontend resolutions and dependency edges against the stability baseline |
+| `pnpm check` | Frontend regressions, dependency audit, typecheck, builds, API/tooling tests |
 
 Override ports explicitly; occupied ports fail rather than silently moving:
 
@@ -37,4 +37,4 @@ API_PROXY_TARGET=http://127.0.0.1:8081 pnpm preview
 
 `/api` is the future browser-facing API base. Development and local preview preserve paths and proxy to `http://127.0.0.1:8080` by default. `GET /api/healthz` returns exactly `{"status":"ok"}`. Unknown API routes return backend 404 JSON; a stopped backend causes an explicit proxy failure. SPA navigation continues without the backend. The frontend makes no new API calls. Production API routing remains a future deployment decision; Vite preview is a local evaluation server.
 
-See [evaluation instructions and actual evidence](docs/migration-evaluation.md). Human acceptance remains pending.
+For browser tests, first run `pnpm exec playwright install --with-deps chromium firefox webkit`. See [frontend evaluation instructions and actual evidence](docs/testing/frontend-evaluation.md). Human acceptance remains pending.

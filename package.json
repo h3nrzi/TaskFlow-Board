@@ -16,14 +16,16 @@
     "build": "pnpm -r run build",
     "typecheck": "pnpm -r run typecheck",
     "test": "pnpm --filter @taskflow/api test && pnpm test:workflows",
-    "verify:frontend": "node tooling/verify-frontend.mjs",
+    "verify:frontend": "pnpm test:frontend",
     "check": "pnpm verify:frontend && pnpm verify:dependencies && pnpm typecheck && pnpm build && pnpm test",
     "verify:dependencies": "node tooling/audit-dependencies.mjs",
-    "test:workflows": "node --test tooling/workflows.test.mjs"
+    "test:workflows": "node --test tooling/workflows.test.mjs",
+    "test:frontend": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "tsx": "4.23.13",
     "typescript": "5.9.3",
-    "yaml": "2.9.0",
-    "tsx": "4.23.13"
+    "yaml": "2.9.0"
   }
 }

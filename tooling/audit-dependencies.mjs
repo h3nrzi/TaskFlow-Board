@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { parse } from 'yaml';
 
-const baseline = JSON.parse(await readFile('docs/migration-evidence/frontend-dependencies.json', 'utf8'));
+const baseline = JSON.parse(await readFile('docs/testing/frontend-dependencies.json', 'utf8'));
 const lock = parse(await readFile('pnpm-lock.yaml', 'utf8'));
 const direct = lock.importers['apps/web'].devDependencies;
 for (const [name, entry] of Object.entries(baseline.direct)) {
