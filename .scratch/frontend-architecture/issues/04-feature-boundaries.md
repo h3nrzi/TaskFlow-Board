@@ -39,3 +39,16 @@ is unavailable and explicitly distinguished from fresh evidence in the guide.
 No application/test/font/timing changes were made to address external waits.
 Full integration checks and independent two-axis review remain pending;
 human evaluation remains Pending.
+
+2026-10-22 integration review: merged exact feature revision
+`04dcbed36c374c6c634071a6ef9e2967a9a9d51b` with merge commit
+`071c4603d795589b2dce5b05d2fd5c234e61d84f`. Focused review found no actionable
+behavior or scope finding. Compared every original component declaration using
+TypeScript AST normalization of export modifiers, App/WorkspaceShell naming,
+parentheses and JSX formatting whitespace; all 22 declarations matched.
+Shell state/hook order, route composition, providers, selected-record fallback,
+overlay ordering and focus integration remain intact. Alias import graph across
+87 source files has no cycles; domain/persistence changes are absent from this
+extraction. Pinned Node v24.22.0 `pnpm typecheck` passed in integration (API and
+web). This focused review does not replace final full repository checks or the
+independent two-axis review, which remain pending. Human evaluation is Pending.
