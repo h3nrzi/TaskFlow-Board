@@ -99,4 +99,11 @@ test('edit-form unassignment preserves absent assignee and empty due date', asyn
   const task = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).tasks[0], key);
   expect(task.dueDate).toBe('');
   expect(task).not.toHaveProperty('assignee');
+  await page.reload();
+  await page.getByTestId('button-open-task-optional').click();
+  await expect(page.getByTestId('drawer-task-details')).toContainText('Optional values');
+  await expect(page.getByTestId('drawer-task-details')).toContainText('No description yet.');
+  await expect(page.getByTestId('input-drawer-task-date')).toHaveValue('');
+  await expect(page.getByTestId('input-drawer-assignee')).toHaveValue('');
+  await expect(page.getByTestId('select-drawer-task-project')).toHaveValue('');
 });

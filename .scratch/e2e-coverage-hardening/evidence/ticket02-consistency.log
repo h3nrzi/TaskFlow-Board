@@ -1,0 +1,104 @@
+[WebServer] (node:5962) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:6026) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:6046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 54 tests using 3 workers
+
+(node:6067) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in light theme (1.2s)
+  ✓   2 [chromium-desktop] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in dark theme (1.3s)
+  ✓   5 [chromium-desktop] › tests/frontend/overdue.spec.ts:86:5 › render and reload after local midnight refresh overdue classification (676ms)
+  ✓   4 [chromium-desktop] › tests/frontend/overdue.spec.ts:52:5 › completion, reopening and date edits update overdue without storing a badge (1.1s)
+  ✓   1 [chromium-desktop] › tests/frontend/consistency.spec.ts:4:5 › task assignment and status stay consistent across boards, summaries and reload (2.4s)
+  ✓   8 [chromium-desktop] › tests/frontend/standalone.spec.ts:58:5 › No project combines with search, status, priority, sorting and empty results (348ms)
+  ✓   6 [chromium-desktop] › tests/frontend/standalone.spec.ts:5:5 › standalone creation overrides general and board defaults and survives reload (1.6s)
+  ✓   9 [chromium-desktop] › tests/frontend/standalone.spec.ts:87:5 › edit-form unassignment preserves absent assignee and empty due date (875ms)
+  ✓   7 [chromium-desktop] › tests/frontend/standalone.spec.ts:30:5 › unassignment preserves task fields, supports cancellation and is reversible in both editors (1.4s)
+(node:6129) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6131) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [chromium-mobile] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in light theme (806ms)
+  ✓  12 [chromium-mobile] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in dark theme (773ms)
+  ✓  14 [chromium-mobile] › tests/frontend/overdue.spec.ts:86:5 › render and reload after local midnight refresh overdue classification (576ms)
+  ✓  13 [chromium-mobile] › tests/frontend/overdue.spec.ts:52:5 › completion, reopening and date edits update overdue without storing a badge (1.1s)
+  ✓  10 [chromium-mobile] › tests/frontend/consistency.spec.ts:4:5 › task assignment and status stay consistent across boards, summaries and reload (2.2s)
+  ✓  17 [chromium-mobile] › tests/frontend/standalone.spec.ts:58:5 › No project combines with search, status, priority, sorting and empty results (250ms)
+  ✓  15 [chromium-mobile] › tests/frontend/standalone.spec.ts:5:5 › standalone creation overrides general and board defaults and survives reload (1.5s)
+  ✓  16 [chromium-mobile] › tests/frontend/standalone.spec.ts:30:5 › unassignment preserves task fields, supports cancellation and is reversible in both editors (1.2s)
+  ✓  18 [chromium-mobile] › tests/frontend/standalone.spec.ts:87:5 › edit-form unassignment preserves absent assignee and empty due date (786ms)
+(node:6175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6178) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  21 [firefox-desktop] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in dark theme (2.7s)
+  ✓  20 [firefox-desktop] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in light theme (2.8s)
+  ✓  22 [firefox-desktop] › tests/frontend/overdue.spec.ts:52:5 › completion, reopening and date edits update overdue without storing a badge (2.1s)
+  ✓  19 [firefox-desktop] › tests/frontend/consistency.spec.ts:4:5 › task assignment and status stay consistent across boards, summaries and reload (5.0s)
+  ✓  23 [firefox-desktop] › tests/frontend/overdue.spec.ts:86:5 › render and reload after local midnight refresh overdue classification (1.7s)
+  ✓  26 [firefox-desktop] › tests/frontend/standalone.spec.ts:58:5 › No project combines with search, status, priority, sorting and empty results (1.5s)
+  ✓  24 [firefox-desktop] › tests/frontend/standalone.spec.ts:5:5 › standalone creation overrides general and board defaults and survives reload (3.4s)
+  ✓  25 [firefox-desktop] › tests/frontend/standalone.spec.ts:30:5 › unassignment preserves task fields, supports cancellation and is reversible in both editors (2.9s)
+  ✓  27 [firefox-desktop] › tests/frontend/standalone.spec.ts:87:5 › edit-form unassignment preserves absent assignee and empty due date (1.5s)
+(node:6320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6321) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6319) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [firefox-mobile] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in light theme (2.7s)
+  ✓  28 [firefox-mobile] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in dark theme (3.0s)
+  ✓  31 [firefox-mobile] › tests/frontend/overdue.spec.ts:52:5 › completion, reopening and date edits update overdue without storing a badge (2.5s)
+  ✓  32 [firefox-mobile] › tests/frontend/overdue.spec.ts:86:5 › render and reload after local midnight refresh overdue classification (2.3s)
+  ✓  30 [firefox-mobile] › tests/frontend/consistency.spec.ts:4:5 › task assignment and status stay consistent across boards, summaries and reload (6.1s)
+  ✓  35 [firefox-mobile] › tests/frontend/standalone.spec.ts:58:5 › No project combines with search, status, priority, sorting and empty results (1.3s)
+  ✓  34 [firefox-mobile] › tests/frontend/standalone.spec.ts:30:5 › unassignment preserves task fields, supports cancellation and is reversible in both editors (2.6s)
+  ✓  36 [firefox-mobile] › tests/frontend/standalone.spec.ts:87:5 › edit-form unassignment preserves absent assignee and empty due date (1.5s)
+(node:6510) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  33 [firefox-mobile] › tests/frontend/standalone.spec.ts:5:5 › standalone creation overrides general and board defaults and survives reload (4.4s)
+(node:6528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6529) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  38 [webkit-desktop] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in light theme (2.0s)
+  ✓  39 [webkit-desktop] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in dark theme (2.0s)
+  ✓  41 [webkit-desktop] › tests/frontend/overdue.spec.ts:86:5 › render and reload after local midnight refresh overdue classification (1.0s)
+  ✓  37 [webkit-desktop] › tests/frontend/consistency.spec.ts:4:5 › task assignment and status stay consistent across boards, summaries and reload (3.5s)
+  ✓  40 [webkit-desktop] › tests/frontend/overdue.spec.ts:52:5 › completion, reopening and date edits update overdue without storing a badge (1.5s)
+  ✓  44 [webkit-desktop] › tests/frontend/standalone.spec.ts:58:5 › No project combines with search, status, priority, sorting and empty results (488ms)
+  ✓  42 [webkit-desktop] › tests/frontend/standalone.spec.ts:5:5 › standalone creation overrides general and board defaults and survives reload (1.8s)
+  ✓  45 [webkit-desktop] › tests/frontend/standalone.spec.ts:87:5 › edit-form unassignment preserves absent assignee and empty due date (1.0s)
+  ✓  43 [webkit-desktop] › tests/frontend/standalone.spec.ts:30:5 › unassignment preserves task fields, supports cancellation and is reversible in both editors (1.7s)
+(node:6632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6633) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6634) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  47 [webkit-mobile] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in light theme (1.4s)
+  ✓  48 [webkit-mobile] › tests/frontend/overdue.spec.ts:24:7 › overdue uses local dates across task surfaces in dark theme (1.4s)
+  ✓  50 [webkit-mobile] › tests/frontend/overdue.spec.ts:86:5 › render and reload after local midnight refresh overdue classification (828ms)
+  ✓  46 [webkit-mobile] › tests/frontend/consistency.spec.ts:4:5 › task assignment and status stay consistent across boards, summaries and reload (3.1s)
+  ✓  49 [webkit-mobile] › tests/frontend/overdue.spec.ts:52:5 › completion, reopening and date edits update overdue without storing a badge (1.4s)
+  ✓  53 [webkit-mobile] › tests/frontend/standalone.spec.ts:58:5 › No project combines with search, status, priority, sorting and empty results (594ms)
+  ✓  51 [webkit-mobile] › tests/frontend/standalone.spec.ts:5:5 › standalone creation overrides general and board defaults and survives reload (2.1s)
+  ✓  54 [webkit-mobile] › tests/frontend/standalone.spec.ts:87:5 › edit-form unassignment preserves absent assignee and empty due date (1.1s)
+  ✓  52 [webkit-mobile] › tests/frontend/standalone.spec.ts:30:5 › unassignment preserves task fields, supports cancellation and is reversible in both editors (1.9s)
+
+  54 passed (44.9s)
