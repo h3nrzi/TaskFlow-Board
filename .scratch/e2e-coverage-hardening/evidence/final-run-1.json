@@ -1,0 +1,13 @@
+{
+  "command": "pnpm test:frontend",
+  "revision": "57f57323521405de23f3e7ab3afa59bb2753c0a2",
+  "started_utc": "2026-10-23T11:01:15.620676+00:00",
+  "server_env": null,
+  "workers": 3,
+  "retries": 0,
+  "timezone": "Asia/Tehran",
+  "server": "production build/preview :22017",
+  "exit_code": 0,
+  "duration_seconds": 140.96,
+  "ended_utc": "2026-10-23T11:03:36.576006+00:00"
+}

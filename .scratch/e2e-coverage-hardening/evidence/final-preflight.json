@@ -1,0 +1,9 @@
+{
+  "revision": "57f57323521405de23f3e7ab3afa59bb2753c0a2",
+  "node": "v24.22.0",
+  "pnpm": "10.11.0",
+  "server_env": null,
+  "product_config_changed_paths": [],
+  "uncommitted_test_config_paths": [],
+  "scope": "tests, test fixture helper, phase docs/planning and evidence only; no product, dependency, browser configuration or backend change"
+}

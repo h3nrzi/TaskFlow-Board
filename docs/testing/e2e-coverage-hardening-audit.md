@@ -77,3 +77,43 @@ D01–D03/N01 added in `discovery.spec.ts`, using UI task identities and control
 | Cross-tab write safety UI evidence incomplete | Existing local assertion retained, coverage strengthened | Check rejected task absent from saved data and first tab UI after reload; keep conflict warning and original task. |
 
 L01–L05 classified and preserved; L03/L05 strengthened in `stability.spec.ts`. I01–I03/I05 preserved, I04 synchronization strengthened in `workflows.spec.ts`. The fixture-local and locator failures above are not product defects or evidence of intermittent flakes. No new skips. Physical touch scrolling remains a manual limitation.
+
+## Final journey reconciliation — ticket 06
+
+Final test implementation candidate: `57f57323521405de23f3e7ab3afa59bb2753c0a2`. Two-axis review through tickets 01–05: Standards 0 remaining, Spec 0 remaining. No product defects exposed; no blocked journeys or required deferrals. The final three-run protocol passed consecutively: 270 passes and six documented skips in each full run, with the third supplied by passing `pnpm check`. Actual logs, metadata, durations and preserved reports are in the evaluation guide. Each row below reconciles the initial disposition with current assertion ownership. Classifications remain those in the original matrix; mixed storage/fixture cases were retained deliberately.
+
+| IDs | Final disposition and current assertion location | Verification scope |
+| --- | --- | --- |
+| T01 | Strengthened `workflows: task CRUD`: rich creation, dirty edit cancellation, unchanged description and every drawer field after reload | Focused 6 configs; final sequence |
+| T02 | Strengthened same test: dirty-create cancel absent after reload; edited original retained; existing overlay cancellation remains | Focused 6 configs; final sequence |
+| T03 | Strengthened same test: cancelled deletion survives reload with same row/content/status; confirmed deletion stays absent; `consistency` reopens and persists active state | Focused 6 configs; final sequence |
+| T04 | Preserved `standalone: standalone creation` and `stability: task without a project`; added empty Tasks/Dashboard capture without projects | Baseline + focused + final sequence |
+| T05 | Preserved both-editor exact identity/fields in `standalone: unassignment preserves`, optional representation in `edit-form unassignment`; added optional UI fields after reload | Focused 6 configs; final sequence |
+| T06 | Preserved two slash-form board-default tests; strengthened `stability: board task entry points` with source absence and chosen-board presence | Baseline + focused + final sequence |
+| T07 | Added `consistency: task assignment and status stay consistent`: UI-created identity across source/destination/No project filters, status, drawer and reload | Focused 6 configs; final sequence |
+| T08 | Added same `consistency`: Dashboard open/active/completed/progress, source/destination summaries and project card/board count/progress | Focused 6 configs; final sequence |
+| P01 | Strengthened `workflows: project CRUD`: UI name/description/icon/color, rename, cancelled draft, navigation and reload; existing native desktop drag retained | Focused 6 configs; final sequence |
+| P02 | Strengthened same test: cancellation/reload, assigned cascade, unrelated project and assigned/standalone survivors through list/board/reload plus stored absence | Focused 6 configs; final sequence |
+| P03 | Strengthened `stability: board task entry points`: required controls, defaults after navigation/cancel, explicit override and destination UI; mobile hidden quick-add explicit | Focused 6 configs; final sequence |
+| P04 | Added `empty-workspace`: actual empty Dashboard project/task actions, first-project action, board column capture and empty Tasks action; saved UI reload | Focused 6 configs; final sequence |
+| D01 | Strengthened through `discovery: search identifies`: title/description/project names, case, all filters, exact All/No project identities; prior tests preserved | Focused 6 configs; final sequence |
+| D02 | Added `discovery: sorts order every result`: all result identities, ordered distinct-value groups, ties as sets, empty/absent dates last, date-only recency | Focused 6 configs; final sequence |
+| D03 | Strengthened same search test: clear no-result query/filters and recover known exact memberships | Focused 6 configs; final sequence |
+| N01 | Added `discovery: in-app navigation`: real app routes retain query, page filters/sort reset on remount, reload clears search | Focused 6 configs; final sequence |
+| N02 | Strengthened `recovery` light/dark: Browse projects to usable board/Tasks after keyboard unknown-route recovery; created task and exact bytes persist | Focused 6 configs; final sequence |
+| A01 | Strengthened `workflows: overview, settings`: both fields and light/dark reload, visible signup result; existing personalized time-neutral `welcome` retained | Focused 6 configs; final sequence |
+| A02 | Added `demo-profile`: native required/email and signup-name validation, failed-submit profile preservation, mode draft resets, trimmed signup/login results and saved UI | Focused 6 configs; final sequence |
+| O01 | Preserved `overdue: overdue uses local dates` both themes, all date/status/surface conditions | Baseline + focused + final sequence |
+| O02 | Preserved `overdue: completion, reopening` edits/reload/schema and `render and reload after local midnight` | Baseline + focused + final sequence |
+| L01 | Preserved malformed exact bytes/download and invalid-shape nonoverwrite in `stability` | Baseline + focused + final sequence |
+| L02 | Preserved warning/usable unsaved capture/current export in `stability: storage write failure` | Baseline + focused + final sequence |
+| L03 | Strengthened `stability: stale tab`: rejected write absent, first saved task retained through UI reload | Focused 6 configs; final sequence |
+| L04 | Preserved missing-lock no-write and unavailable-read original-byte retention/usable unsaved session | Baseline + focused + final sequence |
+| L05 | Strengthened explicit dismissed reload/no swallowed error in `stability: unsaved return`; same three mobile skips | Focused desktop; final sequence |
+| I01 | Preserved all four `overlays` focus/pointer/backdrop checks and nested edit/delete keyboard checks | Baseline + focused + final sequence |
+| I02 | Preserved keyboard project/task activation and task modal containment/restoration | Baseline + focused + final sequence |
+| I03 | Preserved desktop wheel/background scrolling checks, same three mobile skips | Baseline + focused desktop; final sequence |
+| I04 | Strengthened original responsive overflow/form conditions with retryable observations; same route/width/tap coverage | Focused 6 configs; final sequence |
+| I05 | Preserved native desktop drag and six-config status menu in project CRUD | Baseline + focused + final sequence |
+
+Coverage choices: representative rich and optional tasks, two-project movement plus standalone survivor, explicit empty captures and five-item discovery fixture cover high-risk paths without a Cartesian product. Existing overdue themes/calendar boundaries and local safeguard fault injections remain. No new product requirement, dependency, instrumentation or backend fixture abstraction was introduced. Manual physical touch scrolling and human observations remain outside automated certification; they are not hidden skips or claimed acceptance.

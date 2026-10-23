@@ -1,20 +1,20 @@
 # E2E hardening evaluation
 
-Human observations for all six tickets: **Pending**. Automated checks do not establish acceptance. Use a disposable browser profile; deletion examples intentionally remove test work. Run `pnpm preview` after `pnpm --filter @taskflow/web build`, then open http://127.0.0.1:22017 (set `WEB_PORT=22017` for preview). Browser emulation does not certify physical devices or touch scrolling.
+Human observations for all six tickets: **Pending**. Automated checks do not establish acceptance. Use a disposable browser profile; deletion examples intentionally remove test work. Run `pnpm --filter @taskflow/web build`, then `WEB_PORT=22017 pnpm preview` and open [the preview](http://127.0.0.1:22017). Browser emulation does not certify physical devices or touch scrolling.
 
 ## Environment and preflight — ticket 01
 
-2026-10-23, starting branch `main`, HEAD `61c872d9ddf195caaede740847d58738cef1049a`. Eight staged planning Markdown files were present and preserved. No initial test/application/configuration changes. Node v24.22.0, pnpm 10.11.0. Chromium 1243, Firefox 1543 and WebKit 2359 caches present (older Firefox/WebKit caches also present). Port 22017 had no listener. `TASKFLOW_TEST_SERVER=b`, which is not `development`; production build/preview selected. Configuration: six desktop/mobile browser combinations, Tehran timezone, three workers, zero retries, cosmetic Google font isolation. Glossary/ADRs absent. Read architecture, all existing frontend tests and source contracts. Historical 222-pass results were not counted as current evidence.
+2026-10-23, starting branch `main`, HEAD `61c872d9ddf195caaede740847d58738cef1049a`. Eight staged planning Markdown files were present and preserved. No initial test/application/configuration changes. Node v24.22.0, pnpm 10.11.0. Chromium 1243, Firefox 1543 and WebKit 2359 caches present (older Firefox/WebKit caches also present). Port 22017 had no listener. `TASKFLOW_TEST_SERVER` unset; production build/preview selected. Configuration: six desktop/mobile browser combinations, Tehran timezone, three workers, zero retries, cosmetic Google font isolation. Glossary/ADRs absent. Read architecture, all existing frontend tests and source contracts. Historical 222-pass results were not counted as current evidence.
 
 Baseline command: `pnpm test:frontend`, before any test/configuration changes. Complete output: `.scratch/e2e-coverage-hardening/evidence/baseline.log`. Result: **222 passed, 6 skipped, 1.8m**, exit 0. The six skips are mobile beforeunload (three) and desktop-wheel characterization on mobile (three).
 
 First action: choose T01 in [the matrix](e2e-coverage-hardening-audit.md), open `workflows.spec.ts` and compare the pre-edit post-reload assertion with the fields the scenario entered. Follow the baseline log to its terminal result. Expected: the baseline protects title/project but lacks complete field retention proof. Inspect each matrix family against its cited test; classifications must distinguish UI assertions, raw-storage guarantees and fixture-only setup.
 
-Review/checkpoint: pending required two-axis review. No product blocker inferred from inspection alone.
+Review/checkpoint: completed; the two-axis result and resolved finding are recorded below. No product blocker inferred from inspection alone.
 
 ## Evaluation checkpoints
 
-Implementation checkpoints, executed checks, review results and feature-by-feature actions will be appended per ticket. User observations remain pending until reported.
+The following implementation checkpoints retain executed checks, review results and feature-by-feature actions per ticket. User observations remain pending until reported.
 
 ### Ticket 01 feature inspection checkpoints
 
@@ -33,9 +33,9 @@ Ticket 01 review: Standards **0 findings**; Spec **1 finding**, insufficient per
 
 Candidate pre-ticket HEAD: `2dbfbc4`. Approved seam: browser UI; test-only additions, no product fixes. Strengthened `workflows: task CRUD` with dirty-create cancellation/reload, dirty-edit cancellation and all drawer fields after saved reload. `consistency.spec.ts` uses two known projects and a UI-created rich task, follows its ID across list/Dashboard/boards, completes/reassigns/unassigns/reopens, verifies project membership, counts/progress and saved field retention. `standalone` retains exact local identity/optional-representation checks and adds empty-field UI evidence. Existing overdue tests preserved unchanged.
 
-Executed: six-config task CRUD focus **6 passed, 16.9s** (`ticket02-fields.log`); consistency/standalone/overdue **54 passed, 44.9s** (`ticket02-consistency.log`); typecheck passed (`typecheck-02.log`). Optional-value UI assertion was added during that focused run; a separate final focused recheck is recorded below. No failing product expectation observed. Review pending.
+Executed: six-config task CRUD focus **6 passed, 16.9s** (`ticket02-fields.log`); consistency/standalone/overdue **54 passed, 44.9s** (`ticket02-consistency.log`); typecheck passed (`typecheck-02.log`). Optional-value UI assertion was added during that focused run; a separate final focused recheck is recorded below. No failing product expectation observed. Review results are recorded below.
 
-First action: create `Evaluation moving task` in Tasks, with description `Keep this context`, assignee `Sam`, a due date, high priority and a known source project.
+First action: use the disposable empty fixture described under ticket 03, create two projects, then create `Evaluation moving task` in Tasks, with description `Keep this context`, assignee `Sam`, a due date, high priority and a known source project.
 
 | Feature | Reproducible actions | Expected result |
 | --- | --- | --- |
@@ -114,6 +114,55 @@ First action: in a disposable browser profile, open the same saved workspace in 
 
 Human observations: Pending. Required review recorded below.
 
-Ticket 04 review: Standards **0 findings**; Spec **1 finding** (undocumented ordering within tied priority/date/undated groups). Resolved using ordered groups with exact tied identities compared as sets, including no extra rows; precise ordering remains required between distinct sort values. Also added Settings UI checks that invalid signup/login attempts preserve both current profile fields before valid submission. Final review-focus recheck: **30 passed, 25.0s** (`ticket04-review-fixed.log`). No expectation for actual supported sorting or validation was weakened. Review recheck pending below.
+Ticket 04 review: Standards **0 findings**; Spec **1 finding** (undocumented ordering within tied priority/date/undated groups). Resolved using ordered groups with exact tied identities compared as sets, including no extra rows; precise ordering remains required between distinct sort values. Also added Settings UI checks that invalid signup/login attempts preserve both current profile fields before valid submission. Final review-focus recheck: **30 passed, 25.0s** (`ticket04-review-fixed.log`). No expectation for actual supported sorting or validation was weakened. Review recheck completed at `57f5732`, recorded below.
 
 For deterministic manual write failure, run this in DevTools on the disposable application origin: `Storage.prototype.setItem = () => { throw new DOMException('Quota exceeded', 'QuotaExceededError'); }`. This affects only that page's JavaScript realm and ends on reload. Export unsaved work before reloading.
+
+Tickets 04–05 review at `57f5732`: **Standards 0, Spec 0 remaining findings**. All prior findings resolved. No speculative split of responsive tests or drag rewrite was needed: current baseline/focused checks passed. No new retries/skips or worker reductions. Human evaluation remains Pending for each ticket.
+
+## Ticket 06 — final reliability and handoff
+
+Candidate pre-ticket HEAD and final application/test/configuration revision: `57f57323521405de23f3e7ab3afa59bb2753c0a2`. Final scope inspection found no changes under `apps/`, `package.json`, `pnpm-lock.yaml`, or `playwright.config.ts` against `61c872d`. SHA-256 of `git ls-tree -r HEAD apps tests/frontend playwright.config.ts package.json pnpm-lock.yaml`: `f653353ddc3ad2eb6150de61e15df823974038d5b59305bcef90295bdee971b0`. Later documentation/evidence commits do not alter this implementation tree. No product blockers; no required coverage deferred. The matrix reconciles each journey with final tests/classification/disposition. Automated reliability passed the required sequence below.
+
+The required sequence uses the unchanged environment: Node v24.22.0/pnpm 10.11.0, `TASKFLOW_TEST_SERVER` unset (production default), preview port 22017, six Chromium/Firefox/WebKit × desktop/mobile projects, Asia/Tehran, three workers, zero retries. Browser invocations run sequentially. A failure breaks the sequence; material implementation changes require restarting it. Diagnostic reruns above do not count.
+
+First action: compare the three final run records below and their saved logs/metadata, then create a uniquely named task with all optional fields and follow the ticket 02 reassignment/reload actions.
+
+| Feature | Reproducible evaluation | Expected outcome |
+| --- | --- | --- |
+| Final evidence | Inspect each run's `.json` metadata and terminal log summary; check same revision/environment and order, including the repository-check frontend stage. | Three consecutive passing full six-config runs; each six intentional skips explained; repository dependency/type/build/API/tooling stages also pass. |
+| Coverage reconciliation | Pick a high-risk matrix ID from each of task/project/discovery/storage/interaction families; inspect its cited assertion and execute its ticket's steps above. | Correct identities/fields and survivors are observed through UI; local-specific byte/schema safeguards are clearly labelled. |
+| Representative user journey | Create `Final evaluation task`, fill description/assignee/date/priority, assign and reassign between disposable projects, complete/reopen, choose No project and reload. | All values and same task identity survive; source/destination/filter/summary states agree. |
+| Acceptance checkpoint | Record observations per ticket and feature, including any physical-device/touch checks. | Human observations stay Pending until supplied; no backend-readiness conclusion follows from this phase. |
+
+Final run results are recorded below; ticket 06 evidence review is the remaining implementation checkpoint.
+
+### Final run evidence
+
+`final-preflight.json` records actual versions, unset server selector, no product/config/dependency changes and no uncommitted implementation paths. Log/metadata/report archives live in `.scratch/e2e-coverage-hardening/evidence/`. Run 1: `pnpm test:frontend`, **270 passed, 6 skipped, 2.3m**; process duration **140.96s**, exit 0. Started 2026-10-23 11:01:15 UTC, ended 11:03:36 UTC (14:31–14:33 Tehran). Metadata `final-run-1.json`, complete log `final-run-1.log`, report `final-run-1-report.zip`, status `final-run-1-status.json`. The completed run 2 and repository-check results below finish the consecutive sequence.
+
+### Human observations — preserve per-ticket checkpoints
+
+| Ticket | Guide/checkpoint | Human result |
+| --- | --- | --- |
+| 01 | Matrix family inspection and baseline comparison | Pending — no observations supplied |
+| 02 | Rich/optional fields, assignment and cross-surface lifecycle | Pending — no observations supplied |
+| 03 | Project fields, cascade survivors and empty-state capture | Pending — no observations supplied |
+| 04 | Discovery/order/navigation and demo/profile/theme/recovery | Pending — no observations supplied |
+| 05 | Disposable storage recovery, conflicts, keyboard/pointer/responsive behavior | Pending — no observations supplied |
+| 06 | Final evidence inspection and representative end-to-end journey | Pending — no observations supplied |
+
+
+| Order | Command at `57f5732` | Full frontend result | Process duration / exit | Evidence |
+| --- | --- | --- | --- | --- |
+| 1 | `pnpm test:frontend` | 270 passed, 6 skipped, 2.3m | 140.96s / 0 | `final-run-1.log`, `.json`, `-report.zip`, `-status.json` |
+| 2 | `pnpm test:frontend` | 270 passed, 6 skipped, 2.7m | 161.45s / 0 | `final-run-2.log`, `.json`, `-report.zip`, `-status.json` |
+| 3 | `pnpm check` | 270 passed, 6 skipped, 2.4m | 151.34s / 0 (whole check) | `final-check.log`, `.json`, `-report.zip`, `-status.json` |
+
+Run 2: 2026-10-23 11:04:00–11:06:41 UTC. Repository check: 11:06:50–11:09:21 UTC. All three metadata records identify the same revision and unset server selector. No implementation edits occurred between or after these runs. Same six skip instances per run: beforeunload on Chromium/Firefox/WebKit mobile, and desktop-wheel characterization on those same mobile projects. No retries, serial reruns or reduced workers counted. There were no failures in this final sequence; earlier deterministic test defects were fixed before it started.
+
+The repository check additionally verified **297 retained frontend dependency snapshots/direct resolutions**, completed API/web typechecks and builds, passed **1 API test** and **3 tooling tests**. These are existing regression checks, not backend integration work. Full command output is preserved rather than inferred from the frontend summary.
+
+All audited MVP journeys have current evidence, no required deferrals and no product-defect blockers. Implementation and automated reliability are complete; final ticket 06 review is pending at this evidence checkpoint. Human observations remain Pending for all six tickets. This phase does not certify physical devices, touch scrolling or NestJS integration readiness.
+
+Two-axis per-ticket reports and fixes are preserved separately in [the review record](e2e-coverage-hardening-review.md).
