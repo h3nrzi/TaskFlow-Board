@@ -64,3 +64,7 @@ export function filterTasks(
           : b.updatedAt.localeCompare(a.updatedAt),
     );
 }
+
+export function isTaskOverdue(task: Task, today: string): boolean {
+  return Boolean(task.dueDate && task.dueDate < today && task.status !== 'done');
+}

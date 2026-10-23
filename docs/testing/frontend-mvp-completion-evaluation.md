@@ -28,3 +28,22 @@ Standards: no findings. Spec: one optional-field preservation finding resolved. 
 Verification incident: concurrent browser invocations shared Playwright's artifact directory, causing six missing-trace-file failures; that run also had three navigation/reload timeouts (138 passed, 3 intentional mobile beforeunload skips). The concurrent development run had 23 passes and one Firefox timeout. These runs are not counted as a passing checkpoint. Subsequent browser invocations are sequential.
 
 Ticket 01 final preflight: `pnpm exec playwright test tests/frontend/standalone.spec.ts tests/frontend/stability.spec.ts tests/frontend/workflows.spec.ts` on the reviewed implementation: 147 passed, 3 intentional mobile beforeunload skips, 6 intermittent timeouts. `pnpm exec playwright test --last-failed --workers=1`: all 6 passed. No assertion was weakened. Repeated `pnpm typecheck`: passed. Application/test checkpoint: `c38c75e` (documentation finalized in the amended ticket commit).
+
+## Ticket 02 — Show minimal Overdue badges
+
+Review base: `655dfea`. First action: find an incomplete task dated before your local today, open its drawer, mark it Done, then reopen it. Overdue disappears and returns.
+
+1. Set up tasks with past, today, future, and no due dates. Test To do, In progress, and Done. Only past-due incomplete tasks show **Overdue**.
+2. Find a past-due incomplete task in Tasks, its project board, Dashboard Recently touched (ensure it is among the five displayed), and its drawer. The same text badge appears in all four surfaces.
+3. Complete/reopen from Tasks and from the drawer. Change its date to today, a past date, and empty. The badge follows each saved change. Edit the date through the form too; the form itself has no badge.
+4. Reload: the result remains correct. Coming up still excludes past dates and includes eligible today/future tasks.
+5. Repeat in light/dark themes at a narrow width: badge text and controls remain readable and usable. The automated matrix includes both themes and narrow mobile viewports; screenshots of boards are attached to the Playwright report.
+6. With a controlled browser clock, view a task due today just before local midnight, advance past midnight, then open its drawer or reload. Overdue now appears. Idle-page automatic refresh is intentionally absent.
+
+Evidence: local-calendar four-surface test failed before implementation (Chromium desktop). After implementation, both light/dark tests passed on Chromium desktop; `pnpm typecheck` passed. The matrix also exercises status/date edits, persistence schema, local/UTC difference, and local-midnight render/reload.
+
+User observations: **Pending**.
+
+Retained limitations: an idle tab may remain stale across midnight until relevant render/reload. Date-only `updatedAt` cannot order same-day edits precisely; Recently touched ties keep existing order and may omit a task edited today. Neither behavior changes in this phase.
+
+Ticket 02 final preflight (application/test checkpoint `a06ec45`): `pnpm exec playwright test tests/frontend/overdue.spec.ts --workers=1`: **24 passed**, no skips (1.7 minutes). Standards: 0 findings. Spec: 0 findings. Reviewed diff `655dfea...a06ec45`. Inspected attached desktop dark and mobile dark board screenshots: badge and existing controls remain readable.

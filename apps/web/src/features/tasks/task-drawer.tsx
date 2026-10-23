@@ -9,6 +9,7 @@ import { OverlayDialog } from '@/components/workspace/overlay-dialog';
 import { X, Pencil, Trash2 } from 'lucide-react';
 import {
   StatusBadge,
+  OverdueBadge,
   PriorityBadge,
   statuses,
 } from '@/features/tasks/presentation';
@@ -64,9 +65,10 @@ export function TaskDrawer({
           </button>
         </div>
         <div style={{ padding: '27px 26px' }}>
-          <div style={{ display: 'flex', gap: 8, marginBottom: 18 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 18 }}>
             <StatusBadge status={task.status} />
             <PriorityBadge priority={task.priority} />
+            <OverdueBadge task={task} />
           </div>
           <h2
             className="display"

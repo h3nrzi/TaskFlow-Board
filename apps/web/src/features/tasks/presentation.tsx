@@ -5,6 +5,8 @@ import {
   type Project,
 } from '@/workspace/types';
 import { Circle, Activity, CheckCircle2, Check } from 'lucide-react';
+import { isTaskOverdue } from '@/workspace/selectors';
+import { dateOffset } from '@/workspace/dates';
 import { dayString } from '@/components/workspace/date-format';
 
 export const statuses: {
@@ -43,6 +45,12 @@ export function StatusBadge({ status }: { status: Status }) {
       {item.name}
     </span>
   );
+}
+
+export function OverdueBadge({ task }: { task: Task }) {
+  return isTaskOverdue(task, dateOffset(0)) ? (
+    <span className="badge priority-urgent">Overdue</span>
+  ) : null;
 }
 
 export function TaskListRow({
@@ -102,7 +110,8 @@ export function TaskListRow({
           style={{ display: 'block', fontSize: 11, marginTop: 4 }}
         >
           {project?.name || 'No project'}
-          {task.dueDate ? ` · Due ${dayString(task.dueDate)}` : ''}
+          {task.dueDate ? ` · Due ${dayString(task.dueDate)}` : ''}{' '}
+          <OverdueBadge task={task} />
         </span>
       </button>
       <StatusBadge status={task.status} />

@@ -9,7 +9,7 @@ import {
   CalendarDays,
 } from 'lucide-react';
 import { EmptyState } from '@/components/workspace/empty-state';
-import { statuses, PriorityBadge } from '@/features/tasks/presentation';
+import { statuses, PriorityBadge, OverdueBadge } from '@/features/tasks/presentation';
 import { dayString } from '@/components/workspace/date-format';
 
 export function ProjectBoard({
@@ -243,10 +243,12 @@ export function ProjectBoard({
                         justifyContent: 'space-between',
                         alignItems: 'center',
                         gap: 6,
+                        flexWrap: 'wrap',
                         marginTop: 11,
                       }}
                     >
                       <PriorityBadge priority={task.priority} />
+                      <OverdueBadge task={task} />
                       {task.dueDate && (
                         <span
                           className="subtle"
