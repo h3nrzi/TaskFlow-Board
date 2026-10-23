@@ -1,6 +1,6 @@
 # Frontend MVP completion evaluation
 
-Human evaluation is **pending** for every ticket. Automated checks and this guide do not establish acceptance. Use a disposable browser profile/workspace for deletion checks. Run `pnpm dev:web` from the repository root and open http://localhost:21998/.
+The standalone-task creation/reload smoke checkpoint is **Passed** by user report on 2026-10-23. All other unperformed manual evaluations are **Not Evaluated**. Automated checks and this guide do not establish broader human acceptance. Use a disposable browser profile/workspace for deletion checks. Run `pnpm dev:web` from the repository root and open http://localhost:21998/.
 
 ## Environment and checkpoints
 
@@ -19,7 +19,7 @@ Review base: `4f7d925`. First action: open Tasks, click New task, select **No pr
 
 Evidence: new creation/unassignment workflows failed before the options were added (2 Chromium desktop failures); the filter workflow failed before the filter option was added (1 failure). Creation/unassignment then passed (2 Chromium desktop tests). `pnpm typecheck` passed. Matrix regression result and two-axis review recorded below after completion.
 
-User observations: **Pending**. Record browser/device, step, actual outcome, and any mismatch.
+User observations: **Passed** for the specific creation/reload smoke checkpoint, by user report on 2026-10-23: created a task with No project and verified that it remained unassigned after reload. Browser/device were not reported. This accepts only creation with No project and retention of the unassigned state after reload; the other checks in step 1 and all checks in steps 2–6 are **Not Evaluated**.
 
 ### Ticket 01 review
 
@@ -42,7 +42,7 @@ Review base: `655dfea`. First action: find an incomplete task dated before your 
 
 Evidence: local-calendar four-surface test failed before implementation (Chromium desktop). After implementation, both light/dark tests passed on Chromium desktop; `pnpm typecheck` passed. The matrix also exercises status/date edits, persistence schema, local/UTC difference, and local-midnight render/reload.
 
-User observations: **Pending**.
+User observations: **Not Evaluated**. No manual observations reported for this ticket.
 
 Retained limitations: an idle tab may remain stale across midnight until relevant render/reload. Date-only `updatedAt` cannot order same-day edits precisely; Recently touched ties keep existing order and may omit a task edited today. Neither behavior changes in this phase.
 
@@ -57,7 +57,7 @@ Review base: `d29a8a4`. First action: open Dashboard and read **Welcome back, <f
 
 Evidence: focused Chromium desktop test failed on the welcome assertion before the copy change. Matrix and typecheck results recorded below after completion.
 
-User observations: **Pending**.
+User observations: **Not Evaluated**. No manual observations reported for this ticket.
 
 Ticket 03 final preflight (application/test checkpoint `3124ea8`): `pnpm exec playwright test tests/frontend/welcome.spec.ts --workers=1`: **6 passed**, no skips. `pnpm typecheck`: passed. Standards: 0 findings. Spec: 0 findings. Reviewed diff `d29a8a4...3124ea8`.
 
@@ -73,7 +73,7 @@ Review base: `6983769`. First action: visit http://localhost:21998/not-a-route a
 
 Evidence: the focused Chromium desktop workflow failed before the friendly-copy change. Matrix, non-root-base smoke, full repository check and review results follow below.
 
-User observations: **Pending**.
+User observations: **Not Evaluated**. No manual observations reported for this ticket.
 
 Ticket 04 keyboard preflight: initial matrix had 7 passes and 5 failures: two timeouts plus three WebKit focus assertions. macOS WebKit uses Option-Tab for links by default ([Apple reference](https://help.apple.com/safari/mac/8.0/en.lproj/cpsh003.html)). The test now uses that platform shortcut, retaining focus and Enter assertions; no application workaround was added.
 
@@ -95,4 +95,16 @@ On 2026-10-23 at application/test revision `508edce`, **`pnpm check` passed (exi
 
 This final run rechecks all earlier ticket checkpoints using the shared cosmetic-resource fixture, with no retries or failed-test reruns required. The existing nonfatal tooltip sourcemap diagnostic remains in Vite build output. No application changes followed this check; the final ticket commit adds completion evidence and ticket checkboxes.
 
-First concrete evaluation action: open the local Tasks page, click **New task**, choose **No project**, enter a unique title, and save. Then follow each ticket's steps above and report observations by ticket/step. All four tickets are implemented and reviewed; **human evaluation remains pending** for each. The final implementation commits are discoverable with `git log -4 --oneline` (evidence-only amendments finalize each ticket checkpoint).
+The first concrete evaluation action—creating a No project task and confirming it remains unassigned after reload—is **Passed** by user report on 2026-10-23. All four tickets are implemented and reviewed. All other unperformed manual evaluations are **Not Evaluated**; whole-ticket or whole-phase human acceptance is not inferred. The implementation checkpoint is `972add8`; subsequent finalization commits record this manual checkpoint without application changes.
+
+## Manual evaluation checkpoint — 2026-10-23
+
+| Evaluation | Result | Evidence |
+| --- | --- | --- |
+| Create a task with No project and verify it remains unassigned after reload | Passed | User report in this chat on 2026-10-23 |
+| Remaining standalone-task manual checks | Not Evaluated | Not reported as performed |
+| Overdue badges manual evaluation | Not Evaluated | Not reported as performed |
+| Dashboard welcome manual evaluation | Not Evaluated | Not reported as performed |
+| 404 recovery manual evaluation | Not Evaluated | Not reported as performed |
+
+The user authorized finalization, push, and merge into `main` after reporting this limited smoke result. This authorization does not change the manual evaluation results above.

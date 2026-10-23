@@ -21,3 +21,5 @@
 - User approved this ticket's scope, granularity, and lack of technical blockers on 2026-10-23. Execute first, sequentially, in a fresh implementation session. No prefactoring or backend work is authorized.
 
 - Implemented and reviewed on 2026-10-23; see `docs/testing/frontend-mvp-completion-evaluation.md` for red/green evidence, matrix results, resolved review finding, and pending human evaluation. Status remains the canonical triage role; implementation is complete.
+
+- Manual smoke checkpoint, 2026-10-23: **Passed** by user report—created a task with No project and verified it remained unassigned after reload. All other unperformed manual evaluations are **Not Evaluated**; this does not establish whole-ticket acceptance. User authorized Phase 4 finalization, push, and merge into main.
