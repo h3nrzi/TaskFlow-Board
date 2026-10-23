@@ -52,7 +52,7 @@ export function Dashboard({
             A good day to make progress
           </div>
           <h1 className="page-title display">
-            Good morning, {store.profile.name.split(' ')[0]}.
+            Welcome back, {store.profile.name.split(' ')[0]}.
           </h1>
           <p className="subtle" style={{ margin: '10px 0 0' }}>
             Here’s the shape of your work right now.

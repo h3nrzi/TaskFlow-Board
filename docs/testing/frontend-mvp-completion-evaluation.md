@@ -47,3 +47,16 @@ User observations: **Pending**.
 Retained limitations: an idle tab may remain stale across midnight until relevant render/reload. Date-only `updatedAt` cannot order same-day edits precisely; Recently touched ties keep existing order and may omit a task edited today. Neither behavior changes in this phase.
 
 Ticket 02 final preflight (application/test checkpoint `a06ec45`): `pnpm exec playwright test tests/frontend/overdue.spec.ts --workers=1`: **24 passed**, no skips (1.7 minutes). Standards: 0 findings. Spec: 0 findings. Reviewed diff `655dfea...a06ec45`. Inspected attached desktop dark and mobile dark board screenshots: badge and existing controls remain readable.
+
+## Ticket 03 — Use a time-neutral Dashboard welcome
+
+Review base: `d29a8a4`. First action: open Dashboard and read **Welcome back, <first name>.**
+
+1. Save a multi-word profile name in Settings, return to Dashboard, and reload. The first name remains personalized and the welcome has no fixed time of day.
+2. Follow View all to Tasks and open a task. Existing Dashboard metrics, Recently touched, Coming up, and layout remain unchanged. Check both themes if used.
+
+Evidence: focused Chromium desktop test failed on the welcome assertion before the copy change. Matrix and typecheck results recorded below after completion.
+
+User observations: **Pending**.
+
+Ticket 03 final preflight (application/test checkpoint `3124ea8`): `pnpm exec playwright test tests/frontend/welcome.spec.ts --workers=1`: **6 passed**, no skips. `pnpm typecheck`: passed. Standards: 0 findings. Spec: 0 findings. Reviewed diff `d29a8a4...3124ea8`.
