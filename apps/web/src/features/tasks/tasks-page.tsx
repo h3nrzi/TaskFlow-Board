@@ -122,6 +122,7 @@ export function TasksPage({
           data-testid="filter-task-project"
         >
           <option value="all">All projects</option>
+          <option value="">No project</option>
           {store.projects.map((p) => (
             <option key={p.id} value={p.id}>
               {p.name}

@@ -41,9 +41,12 @@ export function TaskForm({
         description,
         status,
         priority,
-        dueDate: dueDate || undefined,
+        dueDate:
+          task && dueDate === (task.dueDate || '')
+            ? task.dueDate
+            : dueDate || undefined,
         projectId,
-        assignee,
+        assignee: task && assignee === (task.assignee || '') ? task.assignee : assignee,
       },
       task,
     );
@@ -170,18 +173,12 @@ export function TaskForm({
               onChange={(e) => setProjectId(e.target.value)}
               data-testid="input-task-project"
             >
-              {task?.projectId === '' && projects.length > 0 && (
-                <option value="">No project</option>
-              )}
-              {projects.length ? (
-                projects.map((p) => (
-                  <option value={p.id} key={p.id}>
-                    {p.name}
-                  </option>
-                ))
-              ) : (
-                <option value="">No project</option>
-              )}
+              <option value="">No project</option>
+              {projects.map((p) => (
+                <option value={p.id} key={p.id}>
+                  {p.name}
+                </option>
+              ))}
             </select>
           </div>
           <div>

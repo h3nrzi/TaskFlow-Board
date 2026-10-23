@@ -146,7 +146,7 @@ export function TaskDrawer({
               onChange={(e) => onUpdate(task.id, { projectId: e.target.value })}
               data-testid="select-drawer-task-project"
             >
-              {task.projectId === '' && <option value="">No project</option>}
+              <option value="">No project</option>
               {projects.map((p) => (
                 <option key={p.id} value={p.id}>
                   {p.name}
