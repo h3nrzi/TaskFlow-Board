@@ -43,3 +43,8 @@ Final ticket 06 Standards report: “No Standards findings in `61c872d...62235a6
 Final ticket 06 Spec report: “Spec: 0 actionable findings for ticket 06; 0 remaining across the phase.” The reviewer verified the three sequential 270-pass/six-skip runs and ZIP integrity of all reports, matching implementation/environment, full repository success and no scope expansion. “Final review bookkeeping can now be completed without rerunning unchanged implementation.”
 
 Final totals: Standards **0 findings**, worst none; Spec **3 resolved findings, 0 remaining**, worst remaining none. Implementation, required checks and reviews are complete. Human evaluation remains pending.
+
+
+## Manual checkpoint update — 2026-10-23
+
+User-reported task creation, reassignment to another project and assignment persistence after reload: **Passed**. All other unperformed manual evaluations: **Not Evaluated**. Historical reviewer references to pending observations describe the earlier review checkpoint and do not imply additional acceptance. Automated test implementation and final reliability evidence are unchanged.

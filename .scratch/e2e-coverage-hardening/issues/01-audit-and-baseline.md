@@ -22,4 +22,4 @@ This ticket establishes the inventory and baseline evidence; it does not certify
 
 ## Implementation checkpoint
 
-Audit and unchanged production baseline recorded in `docs/testing/e2e-coverage-hardening-{audit,evaluation}.md`. Baseline: 222 passed, six intentional mobile skips, 1.8m. Typecheck passed. Two-axis review: Standards 0; Spec 1 documentation finding fixed. Human evaluation pending.
+Audit and unchanged production baseline recorded in `docs/testing/e2e-coverage-hardening-{audit,evaluation}.md`. Baseline: 222 passed, six intentional mobile skips, 1.8m. Typecheck passed. Two-axis review: Standards 0; Spec 1 documentation finding fixed. Unperformed manual evaluations: Not Evaluated.

@@ -19,4 +19,8 @@
 
 ## Implementation checkpoint
 
-Focused verification and both review axes completed; see `docs/testing/e2e-coverage-hardening-evaluation.md` for commands/results, resolved findings and feature evaluation actions. Human observations pending. No product defects exposed. Phase reliability is ticket 06.
+Focused verification and both review axes completed; see `docs/testing/e2e-coverage-hardening-evaluation.md` for commands/results, resolved findings and feature evaluation actions. Unperformed manual evaluations: Not Evaluated. No product defects exposed. Phase reliability is ticket 06.
+
+## Comments
+
+2026-10-23: **Passed** by user report for task creation, reassignment to another project and assignment persistence after reload. All other unperformed manual evaluations are **Not Evaluated**; this does not establish whole-ticket or whole-phase manual acceptance.

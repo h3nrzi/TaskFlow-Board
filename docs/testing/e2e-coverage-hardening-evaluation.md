@@ -1,6 +1,6 @@
 # E2E hardening evaluation
 
-Human observations for all six tickets: **Pending**. Automated checks do not establish acceptance. Use a disposable browser profile; deletion examples intentionally remove test work. Run `pnpm --filter @taskflow/web build`, then `WEB_PORT=22017 pnpm preview` and open [the preview](http://127.0.0.1:22017). Browser emulation does not certify physical devices or touch scrolling.
+Manual smoke checkpoint: **Passed** by user report on 2026-10-23 (Asia/Tehran): created a task, reassigned it to another project, and confirmed the assignment persisted after reload. All other unperformed manual evaluations are **Not Evaluated**. This checkpoint does not imply acceptance of broader lifecycle, field-retention, cross-surface, or whole-phase manual evaluations. Automated checks do not establish acceptance. Use a disposable browser profile; deletion examples intentionally remove test work. Run `pnpm --filter @taskflow/web build`, then `WEB_PORT=22017 pnpm preview` and open [the preview](http://127.0.0.1:22017). Browser emulation does not certify physical devices or touch scrolling.
 
 ## Environment and preflight — ticket 01
 
@@ -14,7 +14,7 @@ Review/checkpoint: completed; the two-axis result and resolved finding are recor
 
 ## Evaluation checkpoints
 
-The following implementation checkpoints retain executed checks, review results and feature-by-feature actions per ticket. User observations remain pending until reported.
+The following implementation checkpoints retain executed checks, review results and feature-by-feature actions per ticket. Unperformed manual evaluations are Not Evaluated; reported observations are recorded explicitly below.
 
 ### Ticket 01 feature inspection checkpoints
 
@@ -27,7 +27,7 @@ The following implementation checkpoints retain executed checks, review results 
 | Overdue | Trace O01–O02 through fixed Tehran dates, status/date edits and midnight render/reload assertions. | Past active work is overdue; done/today/future/undated are not; current tests are preserved. No idle timer is required. |
 | Storage and interactions | Trace L01–L05 and I01–I05; compare raw export, seeded setup, focus and geometry assertions. | Exact bytes and write safety are local contracts; fixture setup is a dependency; focus/cancellation are portable UI contracts. Six skips have explicit platform reasons. |
 
-Ticket 01 review: Standards **0 findings**; Spec **1 finding**, insufficient per-feature evaluation guidance. Resolved by the table above; documentation-only inspection recheck confirms every matrix family has an action and expected outcome. Typecheck passed (see `typecheck-01.log`). Candidate pre-ticket HEAD was `61c872d`; reviewed checkpoint `2dbfbc4`, cumulative base `61c872d`. No test/configuration edits preceded the recorded baseline. Human observations: Pending.
+Ticket 01 review: Standards **0 findings**; Spec **1 finding**, insufficient per-feature evaluation guidance. Resolved by the table above; documentation-only inspection recheck confirms every matrix family has an action and expected outcome. Typecheck passed (see `typecheck-01.log`). Candidate pre-ticket HEAD was `61c872d`; reviewed checkpoint `2dbfbc4`, cumulative base `61c872d`. No test/configuration edits preceded the recorded baseline. Other manual evaluations: Not Evaluated.
 
 ## Ticket 02 — task lifecycle and consistency
 
@@ -46,11 +46,11 @@ First action: use the disposable empty fixture described under ticket 03, create
 | Deletion | Cancel task deletion once, then confirm; wait for saved status and reload. | Cancellation preserves the task; confirmed deletion stays absent. |
 | Overdue | With local dates, inspect past active, due-today, future, undated and done tasks; complete/reopen and change date. | Only past active work is overdue across list/drawer/board/recent; relevant render/reload refreshes calendar boundaries. No idle-page refresh requirement. |
 
-Human observations: Pending.
+Other manual evaluations: Not Evaluated.
 
 Ticket 02 causal finding: adding the final optional-field reload assertion exposed the existing fixture's unconditional `addInitScript` storage replacement, resetting the assignment to `p` on every reload. Focused run: **6 failed**, expected No project, received `p` (`ticket02-optional.log`). This is deterministic fixture interference, not product evidence. Kept the expectation and switched that fixture to guarded initialization. Representative Chromium desktop trace/screenshot/context preserved under `evidence/optional-fixture-failure/`. No product changes. The passing earlier combined run did not reliably execute that last added assertion in every worker and is not counted as its final verification.
 
-Ticket 02 review: Standards **0 findings**; Spec **1 finding** (reload proof after deletion cancellation). Resolved by reloading, checking the same row identity, reopening the preserved description and Done status, then confirming deletion. Optional fixture correction final focus: **6 passed, 12.2s** (`ticket02-optional-fixed.log`). Follow-up task CRUD is included in `ticket03-final-focus.log`. Human observations remain Pending.
+Ticket 02 review: Standards **0 findings**; Spec **1 finding** (reload proof after deletion cancellation). Resolved by reloading, checking the same row identity, reopening the preserved description and Done status, then confirming deletion. Optional fixture correction final focus: **6 passed, 12.2s** (`ticket02-optional-fixed.log`). Follow-up task CRUD is included in `ticket03-final-focus.log`. Other manual evaluations remain Not Evaluated.
 
 ## Ticket 03 — projects, cascade and empty capture
 
@@ -68,11 +68,11 @@ First action: in a disposable workspace, create an evaluation project, another p
 | Empty Dashboard | In a separate fresh empty fixture, use Recently touched's Add a task, save and reload. Use Start with a project's Create project action, then Create your first project; add from the board column. | Standalone task requires no project; first project leads to usable board; board task retains its chosen project after reload. |
 | Empty Tasks | In another empty fixture, use Create a task; save, reload and open details. | Exactly one task is usable with No project selected. |
 
-For an empty manual fixture, use a disposable profile's DevTools on the application origin to set `taskflow-store-v1` to `{"projects":[],"tasks":[],"profile":{"name":"Evaluator","email":"evaluation@example.com","avatar":"E"},"theme":"light"}`, then reload. This is fixture setup, not an application reset feature. Human observations: Pending.
+For an empty manual fixture, use a disposable profile's DevTools on the application origin to set `taskflow-store-v1` to `{"projects":[],"tasks":[],"profile":{"name":"Evaluator","email":"evaluation@example.com","avatar":"E"},"theme":"light"}`, then reload. This is fixture setup, not an application reset feature. Other manual evaluations: Not Evaluated.
 
 Ticket 03 final focused execution: `ticket03-final-focus.log` **33 passed / 3 failed, 42.7s**; all task CRUD review checks, project CRUD and required board entry checks passed. Only desktop empty-Dashboard Create project action was ambiguous with the sidebar button. Scoped that action to `main`, preserving the empty-state workflow. Second representative failure preserved in `evidence/empty-project-locator-failure/`. Final empty-workspace recheck: **12 passed, 16.7s** (`ticket03-empty-fixed.log`). No product defect inferred. Profile assertions sharing `workflows.spec.ts` were also strengthened for ticket 04 before this checkpoint; their focused verification remains ticket 04 work.
 
-Tickets 02–03 review recheck at `537812a`: **Standards 0, Spec 0 remaining findings**. Ticket 02 cancellation reload proof accepted. Ticket 03 feature actions and actual failure/fix/check records retained. Human observations remain Pending.
+Tickets 02–03 review recheck at `537812a`: **Standards 0, Spec 0 remaining findings**. Ticket 02 cancellation reload proof accepted. Ticket 03 feature actions and actual failure/fix/check records retained. Other manual evaluations remain Not Evaluated.
 
 ## Ticket 04 — discovery, navigation and local profile
 
@@ -92,7 +92,7 @@ First action: search Tasks for a known title, then for text found only in its de
 | Appearance/profile | Save both profile fields; choose dark, reload; choose light, wait for saved status and reload. Open Dashboard. | Both fields and selected theme persist; welcome uses first name without time-of-day assumptions. |
 | Recovery | Create/save a unique task, visit an unknown route, use Back to Dashboard with keyboard. Visit a missing project and choose Browse projects, then a valid board and Tasks. | All routes recover to usable pages; saved task remains after reload. |
 
-Human observations: Pending. Required review recorded below.
+Other manual evaluations: Not Evaluated. Required review recorded below.
 
 ## Ticket 05 — local safeguards and interaction reliability
 
@@ -110,15 +110,15 @@ First action: in a disposable browser profile, open the same saved workspace in 
 | Beforeunload | On desktop save dark theme, simulate write failure, choose light, attempt reload and cancel the native prompt. | Prompt occurs; unsaved warning and light in-memory UI remain. Mobile uses warning/export rather than a guaranteed prompt. |
 | Keyboard overlays | Open task/project forms and task drawer via keyboard; Tab/Shift-Tab through boundaries. Open edit/delete over drawer, cancel each with Escape. | Focus stays within active layer, one layer closes at a time and focus returns to its opener; cancellation preserves work. |
 | Pointer/scroll | Desktop: drag a board card between columns; open a tall form, scroll inside and on backdrop, press inside/release outside and separately press exposed backdrop. | Status changes through actual drag; inside/outside-release retains form; exposed backdrop cancels; documented background scrolling remains usable. Wheel evidence does not certify touch scrolling. |
-| Responsive navigation/forms | At 320/390/844px and 768/1024/1440px, visit all documented routes, open forms, use mobile menu/bottom navigation. | No document/form horizontal overflow; intended routes open and menu closes; fields/actions remain operable. Physical-device observations are still Pending. |
+| Responsive navigation/forms | At 320/390/844px and 768/1024/1440px, visit all documented routes, open forms, use mobile menu/bottom navigation. | No document/form horizontal overflow; intended routes open and menu closes; fields/actions remain operable. Physical-device observations are Not Evaluated. |
 
-Human observations: Pending. Required review recorded below.
+Other manual evaluations: Not Evaluated. Required review recorded below.
 
 Ticket 04 review: Standards **0 findings**; Spec **1 finding** (undocumented ordering within tied priority/date/undated groups). Resolved using ordered groups with exact tied identities compared as sets, including no extra rows; precise ordering remains required between distinct sort values. Also added Settings UI checks that invalid signup/login attempts preserve both current profile fields before valid submission. Final review-focus recheck: **30 passed, 25.0s** (`ticket04-review-fixed.log`). No expectation for actual supported sorting or validation was weakened. Review recheck completed at `57f5732`, recorded below.
 
 For deterministic manual write failure, run this in DevTools on the disposable application origin: `Storage.prototype.setItem = () => { throw new DOMException('Quota exceeded', 'QuotaExceededError'); }`. This affects only that page's JavaScript realm and ends on reload. Export unsaved work before reloading.
 
-Tickets 04–05 review at `57f5732`: **Standards 0, Spec 0 remaining findings**. All prior findings resolved. No speculative split of responsive tests or drag rewrite was needed: current baseline/focused checks passed. No new retries/skips or worker reductions. Human evaluation remains Pending for each ticket.
+Tickets 04–05 review at `57f5732`: **Standards 0, Spec 0 remaining findings**. All prior findings resolved. No speculative split of responsive tests or drag rewrite was needed: current baseline/focused checks passed. No new retries/skips or worker reductions. Except for the reported smoke checkpoint, manual evaluations are Not Evaluated for each ticket.
 
 ## Ticket 06 — final reliability and handoff
 
@@ -133,7 +133,7 @@ First action: compare the three final run records below and their saved logs/met
 | Final evidence | Inspect each run's `.json` metadata and terminal log summary; check same revision/environment and order, including the repository-check frontend stage. | Three consecutive passing full six-config runs; each six intentional skips explained; repository dependency/type/build/API/tooling stages also pass. |
 | Coverage reconciliation | Pick a high-risk matrix ID from each of task/project/discovery/storage/interaction families; inspect its cited assertion and execute its ticket's steps above. | Correct identities/fields and survivors are observed through UI; local-specific byte/schema safeguards are clearly labelled. |
 | Representative user journey | Create `Final evaluation task`, fill description/assignee/date/priority, assign and reassign between disposable projects, complete/reopen, choose No project and reload. | All values and same task identity survive; source/destination/filter/summary states agree. |
-| Acceptance checkpoint | Record observations per ticket and feature, including any physical-device/touch checks. | Human observations stay Pending until supplied; no backend-readiness conclusion follows from this phase. |
+| Acceptance checkpoint | Record observations per ticket and feature, including any physical-device/touch checks. | Unperformed manual evaluations stay Not Evaluated; no backend-readiness conclusion follows from this phase. |
 
 Final run results and completed ticket 06 evidence review are recorded below.
 
@@ -145,12 +145,13 @@ Final run results and completed ticket 06 evidence review are recorded below.
 
 | Ticket | Guide/checkpoint | Human result |
 | --- | --- | --- |
-| 01 | Matrix family inspection and baseline comparison | Pending — no observations supplied |
-| 02 | Rich/optional fields, assignment and cross-surface lifecycle | Pending — no observations supplied |
-| 03 | Project fields, cascade survivors and empty-state capture | Pending — no observations supplied |
-| 04 | Discovery/order/navigation and demo/profile/theme/recovery | Pending — no observations supplied |
-| 05 | Disposable storage recovery, conflicts, keyboard/pointer/responsive behavior | Pending — no observations supplied |
-| 06 | Final evidence inspection and representative end-to-end journey | Pending — no observations supplied |
+| 01 | Matrix family inspection and baseline comparison | Not Evaluated — no observations supplied for these broader checks |
+| 02 | Task creation → reassignment to another project → assignment persists after reload | **Passed** — user report, 2026-10-23 (Asia/Tehran) |
+| 02 | Remaining rich/optional fields, cancellation, completion/reopening, unassignment, deletion, overdue and cross-surface summaries | **Not Evaluated** — no observations supplied for these broader checks |
+| 03 | Project fields, cascade survivors and empty-state capture | Not Evaluated — no observations supplied for these broader checks |
+| 04 | Discovery/order/navigation and demo/profile/theme/recovery | Not Evaluated — no observations supplied for these broader checks |
+| 05 | Disposable storage recovery, conflicts, keyboard/pointer/responsive behavior | Not Evaluated — no observations supplied for these broader checks |
+| 06 | Final evidence inspection and representative end-to-end journey | Not Evaluated — no observations supplied for these broader checks |
 
 
 | Order | Command at `57f5732` | Full frontend result | Process duration / exit | Evidence |
@@ -163,11 +164,16 @@ Run 2: 2026-10-23 11:04:00–11:06:41 UTC. Repository check: 11:06:50–11:09:21
 
 The repository check additionally verified **297 retained frontend dependency snapshots/direct resolutions**, completed API/web typechecks and builds, passed **1 API test** and **3 tooling tests**. These are existing regression checks, not backend integration work. Full command output is preserved rather than inferred from the frontend summary.
 
-All audited MVP journeys have current evidence, no required deferrals and no product-defect blockers. Implementation, automated reliability and final ticket 06 review are complete. Human observations remain Pending for all six tickets. This phase does not certify physical devices, touch scrolling or NestJS integration readiness.
+All audited MVP journeys have current evidence, no required deferrals and no product-defect blockers. Implementation, automated reliability and final ticket 06 review are complete. The reported task creation/reassignment/reload smoke is Passed; all other unperformed manual evaluations across the six tickets are Not Evaluated. This phase does not certify physical devices, touch scrolling or NestJS integration readiness.
 
 Two-axis per-ticket reports and fixes are preserved separately in [the review record](e2e-coverage-hardening-review.md).
 
 
-Ticket 06 review at `62235a6`: **Standards 0 findings; Spec 0 actionable findings; 0 remaining across the phase**. Reviewers confirmed matching final revision/environment, all three archived reports' integrity, repository-check results, reconciled coverage and pending human observations. Final bookkeeping changes only Markdown; the tested implementation tree hash remains unchanged. No further full-suite run is justified by these documentation-only updates.
+Ticket 06 review at `62235a6`: **Standards 0 findings; Spec 0 actionable findings; 0 remaining across the phase**. Reviewers confirmed matching final revision/environment, all three archived reports' integrity, repository-check results, reconciled coverage and the then-unperformed human evaluations. Final bookkeeping changes only Markdown; the tested implementation tree hash remains unchanged. No further full-suite run is justified by these documentation-only updates.
 
-Implementation completion: all six approved tickets complete, no product blockers and no required deferrals. First human action: launch the preview using the command at the top, initialize the disposable empty fixture under ticket 03, create two projects and the rich uniquely named task under ticket 02, then evaluate assignment and saved reload. Record observations against the per-ticket table; whole-phase human acceptance is not inferred.
+Implementation completion: all six approved tickets complete, no product blockers and no required deferrals. The user-reported task creation/reassignment/reload smoke is Passed. For further evaluation, use the remaining feature steps above and record observations against the per-ticket table; all unperformed manual evaluations are Not Evaluated and whole-phase human acceptance is not inferred.
+
+
+## User-reported manual smoke checkpoint — 2026-10-23
+
+**Result: Passed.** The user reported: “I created a task, reassigned it to another project, and confirmed the assignment persisted after reload.” This records only those actions and their observed assignment persistence. No additional fields, cancellation, completion, deletion, summary consistency, empty states, discovery, profile, recovery, storage-fault, keyboard, responsive or physical-device checks were reported; those manual evaluations remain **Not Evaluated**. The broader ticket 06 representative journey and whole-phase manual acceptance are also **Not Evaluated**. The final three-run automated evidence remains unchanged.
