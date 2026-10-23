@@ -29,5 +29,14 @@ for (const theme of ['light', 'dark']) {
     await page.goto('/projects/does-not-exist');
     await expect(page.getByText('This project has moved')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Back to Dashboard', exact: true })).toHaveCount(0);
+    await page.getByRole('button', { name: 'Browse projects', exact: true }).click();
+    await expect(page).toHaveURL(/\/projects$/);
+    await expect(page.getByTestId('card-project-field-notes')).toBeVisible();
+    await page.getByTestId('card-project-field-notes').getByRole('link', { name: 'Field Notes', exact: true }).click();
+    await expect(page.getByTestId('board-project')).toBeVisible();
+    await page.goto('/tasks');
+    await page.reload();
+    await expect(page.getByText('Recovery keeps this task', { exact: true })).toBeVisible();
+    expect(await page.evaluate(() => localStorage.getItem('taskflow-store-v1'))).toBe(before);
   });
 }

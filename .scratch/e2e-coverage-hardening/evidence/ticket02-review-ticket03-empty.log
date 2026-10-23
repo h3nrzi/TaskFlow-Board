@@ -1,0 +1,274 @@
+[WebServer] (node:9271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9291) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:9403) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9435) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 3 workers
+
+(node:9445) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9446) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (485ms)
+(node:9470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (993ms)
+(node:9486) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (241ms)
+(node:9491) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (711ms)
+(node:9501) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (3.9s)
+(node:9517) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium-mobile] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (3.2s)
+(node:9526) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.6s)
+(node:9551) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (2.3s)
+(node:9571) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.6s)
+(node:9595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (2.0s)
+(node:9606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [firefox-desktop] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (6.1s)
+(node:9628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  13 [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.2s)
+(node:9655) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.5s)
+(node:9662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  16 [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (563ms)
+(node:9678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [firefox-mobile] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (6.1s)
+  ✓  17 [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.1s)
+(node:9701) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [webkit-desktop] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (4.5s)
+  ✓  18 [webkit-mobile] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (4.1s)
+
+
+  1) [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Add a task', exact: true }) resolved to 2 elements:
+        1) <button class="button button-primary" data-testid="button-add-task-dashboard">…</button> aka getByTestId('button-add-task-dashboard')
+        2) <button class="button">Add a task</button> aka locator('button').filter({ hasText: /^Add a task$/ })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Add a task', exact: true })
+
+
+       7 |   await expect(page.getByText('Nothing on the board yet', { exact: true })).toBeVisible();
+       8 |   await expect(page.getByText('Start with a project', { exact: true })).toBeVisible();
+    >  9 |   await page.getByRole('button', { name: 'Add a task', exact: true }).click();
+         |                                                                       ^
+      10 |   await expect(page.getByTestId('input-task-project')).toHaveValue('');
+      11 |   await page.getByTestId('input-task-title').fill('Empty workspace capture');
+      12 |   await page.getByTestId('button-save-task').click();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:9:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Add a task', exact: true }) resolved to 2 elements:
+        1) <button class="button button-primary" data-testid="button-add-task-dashboard">…</button> aka getByTestId('button-add-task-dashboard')
+        2) <button class="button">Add a task</button> aka locator('button').filter({ hasText: /^Add a task$/ })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Add a task', exact: true })
+
+
+       7 |   await expect(page.getByText('Nothing on the board yet', { exact: true })).toBeVisible();
+       8 |   await expect(page.getByText('Start with a project', { exact: true })).toBeVisible();
+    >  9 |   await page.getByRole('button', { name: 'Add a task', exact: true }).click();
+         |                                                                       ^
+      10 |   await expect(page.getByTestId('input-task-project')).toHaveValue('');
+      11 |   await page.getByTestId('input-task-title').fill('Empty workspace capture');
+      12 |   await page.getByTestId('button-save-task').click();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:9:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-mobile/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-mobile/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Add a task', exact: true }) resolved to 2 elements:
+        1) <button class="button button-primary" data-testid="button-add-task-dashboard">…</button> aka getByTestId('button-add-task-dashboard')
+        2) <button class="button">Add a task</button> aka locator('button').filter({ hasText: /^Add a task$/ })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Add a task', exact: true })
+
+
+       7 |   await expect(page.getByText('Nothing on the board yet', { exact: true })).toBeVisible();
+       8 |   await expect(page.getByText('Start with a project', { exact: true })).toBeVisible();
+    >  9 |   await page.getByRole('button', { name: 'Add a task', exact: true }).click();
+         |                                                                       ^
+      10 |   await expect(page.getByTestId('input-task-project')).toHaveValue('');
+      11 |   await page.getByTestId('input-task-title').fill('Empty workspace capture');
+      12 |   await page.getByTestId('button-save-task').click();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:9:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Add a task', exact: true }) resolved to 2 elements:
+        1) <button class="button button-primary" data-testid="button-add-task-dashboard">…</button> aka getByTestId('button-add-task-dashboard')
+        2) <button class="button">Add a task</button> aka locator('button').filter({ hasText: /^Add a task$/ })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Add a task', exact: true })
+
+
+       7 |   await expect(page.getByText('Nothing on the board yet', { exact: true })).toBeVisible();
+       8 |   await expect(page.getByText('Start with a project', { exact: true })).toBeVisible();
+    >  9 |   await page.getByRole('button', { name: 'Add a task', exact: true }).click();
+         |                                                                       ^
+      10 |   await expect(page.getByTestId('input-task-project')).toHaveValue('');
+      11 |   await page.getByTestId('input-task-title').fill('Empty workspace capture');
+      12 |   await page.getByTestId('button-save-task').click();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:9:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-mobile/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-mobile/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Add a task', exact: true }) resolved to 2 elements:
+        1) <button class="button button-primary" data-testid="button-add-task-dashboard">…</button> aka getByTestId('button-add-task-dashboard')
+        2) <button class="button">Add a task</button> aka locator('button').filter({ hasText: /^Add a task$/ })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Add a task', exact: true })
+
+
+       7 |   await expect(page.getByText('Nothing on the board yet', { exact: true })).toBeVisible();
+       8 |   await expect(page.getByText('Start with a project', { exact: true })).toBeVisible();
+    >  9 |   await page.getByRole('button', { name: 'Add a task', exact: true }).click();
+         |                                                                       ^
+      10 |   await expect(page.getByTestId('input-task-project')).toHaveValue('');
+      11 |   await page.getByTestId('input-task-title').fill('Empty workspace capture');
+      12 |   await page.getByTestId('button-save-task').click();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:9:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Add a task', exact: true }) resolved to 2 elements:
+        1) <button class="button button-primary" data-testid="button-add-task-dashboard">…</button> aka getByTestId('button-add-task-dashboard')
+        2) <button class="button">Add a task</button> aka locator('button').filter({ hasText: /^Add a task$/ })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Add a task', exact: true })
+
+
+       7 |   await expect(page.getByText('Nothing on the board yet', { exact: true })).toBeVisible();
+       8 |   await expect(page.getByText('Start with a project', { exact: true })).toBeVisible();
+    >  9 |   await page.getByRole('button', { name: 'Add a task', exact: true }).click();
+         |                                                                       ^
+      10 |   await expect(page.getByTestId('input-task-project')).toHaveValue('');
+      11 |   await page.getByTestId('input-task-title').fill('Empty workspace capture');
+      12 |   await page.getByTestId('button-save-task').click();
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:9:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-mobile/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-mobile/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-mobile/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+  12 passed (25.5s)
