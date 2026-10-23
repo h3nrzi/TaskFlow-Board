@@ -80,7 +80,7 @@ L01–L05 classified and preserved; L03/L05 strengthened in `stability.spec.ts`.
 
 ## Final journey reconciliation — ticket 06
 
-Final test implementation candidate: `57f57323521405de23f3e7ab3afa59bb2753c0a2`. Two-axis review through tickets 01–05: Standards 0 remaining, Spec 0 remaining. No product defects exposed; no blocked journeys or required deferrals. The final three-run protocol passed consecutively: 270 passes and six documented skips in each full run, with the third supplied by passing `pnpm check`. Actual logs, metadata, durations and preserved reports are in the evaluation guide. Each row below reconciles the initial disposition with current assertion ownership. Classifications remain those in the original matrix; mixed storage/fixture cases were retained deliberately.
+Final tested implementation: `57f57323521405de23f3e7ab3afa59bb2753c0a2`. Two-axis review through tickets 01–05: Standards 0 remaining, Spec 0 remaining. No product defects exposed; no blocked journeys or required deferrals. The final three-run protocol passed consecutively: 270 passes and six documented skips in each full run, with the third supplied by passing `pnpm check`. Actual logs, metadata, durations and preserved reports are in the evaluation guide. Each row below reconciles the initial disposition with current assertion ownership. Classifications remain those in the original matrix; mixed storage/fixture cases were retained deliberately.
 
 | IDs | Final disposition and current assertion location | Verification scope |
 | --- | --- | --- |
@@ -117,3 +117,5 @@ Final test implementation candidate: `57f57323521405de23f3e7ab3afa59bb2753c0a2`.
 | I05 | Preserved native desktop drag and six-config status menu in project CRUD | Baseline + focused + final sequence |
 
 Coverage choices: representative rich and optional tasks, two-project movement plus standalone survivor, explicit empty captures and five-item discovery fixture cover high-risk paths without a Cartesian product. Existing overdue themes/calendar boundaries and local safeguard fault injections remain. No new product requirement, dependency, instrumentation or backend fixture abstraction was introduced. Manual physical touch scrolling and human observations remain outside automated certification; they are not hidden skips or claimed acceptance.
+
+Final phase review at `62235a6`: Standards 0, Spec 0 remaining findings. All six implementation tickets and automated verification complete. Human evaluation remains pending in the evaluation guide; no backend-readiness claim is made.
