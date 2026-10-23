@@ -1,0 +1,196 @@
+[WebServer] (node:10097) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:10156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 36 tests using 3 workers
+
+(node:10200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10198) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.0s)
+  ✘   2 [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.1s)
+  ✓   4 [chromium-desktop] › tests/frontend/stability.spec.ts:126:5 › switching login to signup starts an empty signup form (246ms)
+(node:10232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (3.8s)
+  ✓   5 [chromium-desktop] › tests/frontend/workflows.spec.ts:69:5 › project CRUD, board status controls and cascade deletion (2.7s)
+(node:10264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10265) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium-desktop] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (3.3s)
+(node:10274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (704ms)
+  ✓  10 [chromium-mobile] › tests/frontend/stability.spec.ts:126:5 › switching login to signup starts an empty signup form (292ms)
+  ✓   7 [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.4s)
+  ✓   9 [chromium-mobile] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (2.7s)
+  ✓  12 [chromium-mobile] › tests/frontend/workflows.spec.ts:69:5 › project CRUD, board status controls and cascade deletion (2.5s)
+(node:10308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10309) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [chromium-mobile] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (3.5s)
+(node:10312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (2.3s)
+  ✘  13 [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (2.6s)
+  ✓  16 [firefox-desktop] › tests/frontend/stability.spec.ts:126:5 › switching login to signup starts an empty signup form (568ms)
+(node:10362) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [firefox-desktop] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (5.6s)
+  ✓  17 [firefox-desktop] › tests/frontend/workflows.spec.ts:69:5 › project CRUD, board status controls and cascade deletion (4.0s)
+(node:10399) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10401) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  20 [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (2.1s)
+  ✓  18 [firefox-desktop] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (6.4s)
+(node:10443) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (3.3s)
+  ✓  22 [firefox-mobile] › tests/frontend/stability.spec.ts:126:5 › switching login to signup starts an empty signup form (1.5s)
+  ✓  21 [firefox-mobile] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (3.5s)
+(node:10471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [firefox-mobile] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (4.6s)
+(node:10500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  24 [firefox-mobile] › tests/frontend/workflows.spec.ts:69:5 › project CRUD, board status controls and cascade deletion (3.6s)
+  ✘  25 [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.6s)
+(node:10524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.4s)
+  ✓  28 [webkit-desktop] › tests/frontend/stability.spec.ts:126:5 › switching login to signup starts an empty signup form (786ms)
+  ✓  30 [webkit-desktop] › tests/frontend/workflows.spec.ts:69:5 › project CRUD, board status controls and cascade deletion (3.2s)
+  ✓  27 [webkit-desktop] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (4.2s)
+(node:10583) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [webkit-desktop] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (4.5s)
+(node:10618) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  32 [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.2s)
+  ✓  34 [webkit-mobile] › tests/frontend/stability.spec.ts:126:5 › switching login to signup starts an empty signup form (401ms)
+  ✓  31 [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (2.4s)
+  ✓  33 [webkit-mobile] › tests/frontend/stability.spec.ts:79:5 › board task entry points follow navigation and keep explicit project choices (3.3s)
+  ✓  36 [webkit-mobile] › tests/frontend/workflows.spec.ts:69:5 › project CRUD, board status controls and cascade deletion (3.0s)
+  ✓  35 [webkit-mobile] › tests/frontend/workflows.spec.ts:5:5 › task CRUD, drawer edits, completion and reload (4.1s)
+
+
+  1) [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Create project', exact: true }) resolved to 2 elements:
+        1) <button class="icon-button" aria-label="Create project" data-testid="button-create-project-nav">…</button> aka getByTestId('button-create-project-nav')
+        2) <button class="button">Create project</button> aka getByText('Create project')
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Create project', exact: true })
+
+
+      15 |   await expect(page.getByTestId(/^task-row-/)).toContainText('Empty workspace capture');
+      16 |   await expect(page.getByTestId(/^task-row-/)).toContainText('No project');
+    > 17 |   await page.getByRole('button', { name: 'Create project', exact: true }).click();
+         |                                                                           ^
+      18 |   await expect(page).toHaveURL(/\/projects$/);
+      19 |   await page.getByRole('button', { name: 'Create your first project', exact: true }).click();
+      20 |   await page.getByTestId('input-project-name').fill('First project');
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:17:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-chromium-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Create project', exact: true }) resolved to 2 elements:
+        1) <button class="icon-button" aria-label="Create project" data-testid="button-create-project-nav">…</button> aka getByTestId('button-create-project-nav')
+        2) <button class="button">Create project</button> aka getByText('Create project')
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Create project', exact: true })
+
+
+      15 |   await expect(page.getByTestId(/^task-row-/)).toContainText('Empty workspace capture');
+      16 |   await expect(page.getByTestId(/^task-row-/)).toContainText('No project');
+    > 17 |   await page.getByRole('button', { name: 'Create project', exact: true }).click();
+         |                                                                           ^
+      18 |   await expect(page).toHaveURL(/\/projects$/);
+      19 |   await page.getByRole('button', { name: 'Create your first project', exact: true }).click();
+      20 |   await page.getByTestId('input-project-name').fill('First project');
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:17:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-firefox-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Create project', exact: true }) resolved to 2 elements:
+        1) <button class="icon-button" aria-label="Create project" data-testid="button-create-project-nav">…</button> aka getByTestId('button-create-project-nav')
+        2) <button class="button">Create project</button> aka getByText('Create project')
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Create project', exact: true })
+
+
+      15 |   await expect(page.getByTestId(/^task-row-/)).toContainText('Empty workspace capture');
+      16 |   await expect(page.getByTestId(/^task-row-/)).toContainText('No project');
+    > 17 |   await page.getByRole('button', { name: 'Create project', exact: true }).click();
+         |                                                                           ^
+      18 |   await expect(page).toHaveURL(/\/projects$/);
+      19 |   await page.getByRole('button', { name: 'Create your first project', exact: true }).click();
+      20 |   await page.getByTestId('input-project-name').fill('First project');
+        at /Users/hossein/Downloads/TaskFlow-Board/tests/frontend/empty-workspace.spec.ts:17:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/empty-workspace-empty-Dash-faf0a-ject-leads-to-board-capture-webkit-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+    [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture 
+  33 passed (42.7s)

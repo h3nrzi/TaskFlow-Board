@@ -54,3 +54,7 @@ Baseline and final results, review findings, per-ticket verification and human e
 ### Ticket 02 checkpoint
 
 T01–T03 strengthened in `workflows: task CRUD`; T05 optional UI retention added in `standalone: edit-form unassignment`; T07–T08 added in `consistency: task assignment and status stay consistent`. T04/O01/O02 useful existing assertions retained. Six-config task field check passed; consistency/standalone/overdue run passed 54. The final optional-field focus exposed a fixture resetting saved assignment on every reload (six deterministic failures, not a product defect or flake). Replaced that fixture setup with guarded `seedWorkspace`; correct UI expectation retained. Final recheck and reviews are recorded in the evaluation guide. Stable IDs here are observed from UI test IDs, not asserted from raw storage.
+
+### Ticket 03 checkpoint
+
+P01/P02 strengthened in `workflows: project CRUD` (all fields, cancelled edit/delete, saved cascade boundaries and UI survivors); P03/T06 strengthened in `stability: board task entry points` (required controls, explicit mobile policy and destination UI). P04 added in `empty-workspace.spec.ts` (Dashboard empty actions, first project/board, Tasks empty capture). T04's zero-project/general/board cases now have complementary empty-state evidence. Existing stored cascade assertions and desktop drag remain. One deterministic locator ambiguity corrected by scoping the empty-state action; no product expectation was removed.

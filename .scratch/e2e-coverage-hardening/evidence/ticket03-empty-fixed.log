@@ -1,0 +1,50 @@
+[WebServer] (node:10990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:11055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11075) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 3 workers
+
+(node:11087) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11086) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11085) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.3s)
+(node:11134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.9s)
+  ✓   3 [chromium-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (1.9s)
+(node:11141) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (708ms)
+(node:11144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (2.4s)
+  ✓   5 [firefox-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (3.6s)
+(node:11195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11209) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (3.3s)
+(node:11222) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.3s)
+  ✓   9 [webkit-desktop] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (2.5s)
+(node:11254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11255) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [firefox-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (2.6s)
+  ✓  12 [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:36:5 › empty Tasks action creates usable standalone work without a project (1.1s)
+  ✓  11 [webkit-mobile] › tests/frontend/empty-workspace.spec.ts:4:5 › empty Dashboard captures standalone work and first project leads to board capture (2.3s)
+
+  12 passed (16.7s)

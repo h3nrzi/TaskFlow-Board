@@ -82,7 +82,10 @@ test('board task entry points follow navigation and keep explicit project choice
     await page.getByTestId(`card-project-${projectId}`).getByRole('link', { name: projectName, exact: true }).click();
     await expect(page.getByRole('heading', { name: projectName, exact: true })).toBeVisible();
     for (const trigger of ['button-add-task-project', 'button-add-task-column', 'button-quick-add']) {
-      if (await page.getByTestId(trigger).isVisible()) {
+      if (trigger === 'button-quick-add' && page.viewportSize()!.width <= 680) {
+        await expect(page.getByTestId(trigger)).toBeHidden();
+      } else {
+        await expect(page.getByTestId(trigger)).toBeVisible();
         await page.getByTestId(trigger).click();
         await expect(page.getByTestId('input-task-project')).toHaveValue(projectId);
         await expect(page.getByTestId('input-task-project').locator('option:checked')).toHaveText(projectName);
@@ -97,7 +100,10 @@ test('board task entry points follow navigation and keep explicit project choice
     await page.getByTestId('input-task-project').selectOption('studio-site');
     await page.getByTestId('button-save-task').click();
     await expect.poll(async () => (await saved(page)).tasks.find(t => t.title === title)?.projectId).toBe('studio-site');
-    await page.goBack();
+    await expect(page.getByTestId(/^board-task-/).filter({ hasText: title })).toHaveCount(0);
+    await page.goto('/projects/studio-site');
+    await expect(page.getByTestId(/^board-task-/).filter({ hasText: title })).toBeVisible();
+    await page.goto('/projects');
     await expect(page.getByRole('heading', { name: 'Projects', exact: true })).toBeVisible();
   }
 });
