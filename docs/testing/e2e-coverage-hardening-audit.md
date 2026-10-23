@@ -58,3 +58,7 @@ T01–T03 strengthened in `workflows: task CRUD`; T05 optional UI retention adde
 ### Ticket 03 checkpoint
 
 P01/P02 strengthened in `workflows: project CRUD` (all fields, cancelled edit/delete, saved cascade boundaries and UI survivors); P03/T06 strengthened in `stability: board task entry points` (required controls, explicit mobile policy and destination UI). P04 added in `empty-workspace.spec.ts` (Dashboard empty actions, first project/board, Tasks empty capture). T04's zero-project/general/board cases now have complementary empty-state evidence. Existing stored cascade assertions and desktop drag remain. One deterministic locator ambiguity corrected by scoping the empty-state action; no product expectation was removed.
+
+### Ticket 04 checkpoint
+
+D01–D03/N01 added in `discovery.spec.ts`, using UI task identities and controlled inputs rather than starter counts. N02 strengthened in `recovery.spec.ts` through Browse projects and saved UI/byte retention. A01 strengthened in `workflows`; A02 added in `demo-profile.spec.ts`, retaining old draft-reset and welcome checks. First focus exposed title-locator metadata mismatch, fixed without changing matching/ordering expectations. Required profile/recovery checks passed in the initial 42-pass subset; discovery corrected focus passed 18. Exact current verification and review are in the evaluation guide.

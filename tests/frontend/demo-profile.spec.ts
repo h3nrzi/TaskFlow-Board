@@ -1,0 +1,57 @@
+import { test, expect } from './test';
+import { seedWorkspace, waitForSaved } from './workspace';
+
+test('demo signup validates inputs, saves a trimmed local profile and resets drafts between modes', async ({ page }) => {
+  await seedWorkspace(page);
+  await page.goto('/signup');
+  await page.getByTestId('button-signup-submit').click();
+  await expect(page).toHaveURL(/\/signup$/);
+  expect(await page.getByTestId('input-signup-name').evaluate((el: HTMLInputElement) => el.validity.valueMissing)).toBe(true);
+  await page.getByTestId('input-signup-name').fill(' ');
+  await page.getByTestId('input-signup-email').fill('invalid-email');
+  await page.getByTestId('button-signup-submit').click();
+  expect(await page.getByTestId('input-signup-email').evaluate((el: HTMLInputElement) => el.validity.typeMismatch)).toBe(true);
+  await expect(page).toHaveURL(/\/signup$/);
+  await page.getByTestId('input-signup-email').fill('demo@example.com');
+  await page.getByTestId('button-signup-submit').click();
+  await expect(page.getByRole('alert')).toContainText('Add your name to get started.');
+  await page.getByTestId('link-auth-login').click();
+  await expect(page.getByTestId('input-login-email')).toHaveValue('audit@example.com');
+  await page.getByTestId('link-auth-signup').click();
+  await expect(page.getByTestId('input-signup-name')).toHaveValue('');
+  await expect(page.getByTestId('input-signup-email')).toHaveValue('');
+  await page.getByTestId('input-signup-name').fill('  Demo Person  ');
+  await page.getByTestId('input-signup-email').fill('demo@example.com');
+  await page.getByTestId('button-signup-submit').click();
+  await expect(page.getByRole('heading', { name: 'Welcome back, Demo.', exact: true })).toBeVisible();
+  await waitForSaved(page);
+  await page.goto('/settings');
+  await page.reload();
+  await expect(page.getByTestId('input-profile-name')).toHaveValue('Demo Person');
+  await expect(page.getByTestId('input-profile-email')).toHaveValue('demo@example.com');
+});
+
+test('demo login validates email and updates the local profile without replacing its name or workspace', async ({ page }) => {
+  await seedWorkspace(page);
+  await page.goto('/tasks');
+  await page.getByTestId('button-create-task').click();
+  await page.getByTestId('input-task-title').fill('Demo keeps my work');
+  await page.getByTestId('button-save-task').click();
+  await waitForSaved(page);
+  await page.goto('/login');
+  await expect(page.getByTestId('input-login-email')).toHaveValue('audit@example.com');
+  await page.getByTestId('input-login-email').fill('invalid-email');
+  await page.getByTestId('button-login-submit').click();
+  await expect(page).toHaveURL(/\/login$/);
+  expect(await page.getByTestId('input-login-email').evaluate((el: HTMLInputElement) => el.validity.typeMismatch)).toBe(true);
+  await page.getByTestId('input-login-email').fill('returning@example.com');
+  await page.getByTestId('button-login-submit').click();
+  await expect(page.getByRole('heading', { name: 'Welcome back, Audit.', exact: true })).toBeVisible();
+  await waitForSaved(page);
+  await page.goto('/settings');
+  await page.reload();
+  await expect(page.getByTestId('input-profile-name')).toHaveValue('Audit User');
+  await expect(page.getByTestId('input-profile-email')).toHaveValue('returning@example.com');
+  await page.goto('/tasks');
+  await expect(page.getByText('Demo keeps my work', { exact: true })).toBeVisible();
+});
