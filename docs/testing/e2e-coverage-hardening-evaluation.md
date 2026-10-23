@@ -47,3 +47,5 @@ First action: create `Evaluation moving task` in Tasks, with description `Keep t
 | Overdue | With local dates, inspect past active, due-today, future, undated and done tasks; complete/reopen and change date. | Only past active work is overdue across list/drawer/board/recent; relevant render/reload refreshes calendar boundaries. No idle-page refresh requirement. |
 
 Human observations: Pending.
+
+Ticket 02 causal finding: adding the final optional-field reload assertion exposed the existing fixture's unconditional `addInitScript` storage replacement, resetting the assignment to `p` on every reload. Focused run: **6 failed**, expected No project, received `p` (`ticket02-optional.log`). This is deterministic fixture interference, not product evidence. Kept the expectation and switched that fixture to guarded initialization. Representative Chromium desktop trace/screenshot/context preserved under `evidence/optional-fixture-failure/`. No product changes. The passing earlier combined run did not reliably execute that last added assertion in every worker and is not counted as its final verification.

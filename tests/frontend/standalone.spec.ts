@@ -1,4 +1,5 @@
 import { test, expect } from './test';
+import { seedWorkspace } from './workspace';
 
 const key = 'taskflow-store-v1';
 
@@ -85,11 +86,11 @@ test('No project combines with search, status, priority, sorting and empty resul
 });
 
 test('edit-form unassignment preserves absent assignee and empty due date', async ({ page }) => {
-  await page.addInitScript(key => localStorage.setItem(key, JSON.stringify({
+  await seedWorkspace(page, {
     projects: [{ id: 'p', name: 'Project', description: '', color: '#558b73', icon: 'P', createdAt: '2026-10-20' }],
     tasks: [{ id: 'optional', title: 'Optional values', description: '', projectId: 'p', status: 'todo', priority: 'medium', dueDate: '', createdAt: '2026-10-20', updatedAt: '2026-10-20' }],
     profile: { name: 'Tester', email: 'test@example.com', avatar: 'T' }, theme: 'light',
-  })), key);
+  });
   await page.goto('/tasks');
   await page.getByTestId('button-open-task-optional').click();
   await page.getByTestId('button-edit-task').click();

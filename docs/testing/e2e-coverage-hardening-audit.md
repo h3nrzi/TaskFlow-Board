@@ -50,3 +50,7 @@ Classification: **U** portable user-facing E2E contract; **L** browser-local saf
 ## Execution and reconciliation
 
 Baseline and final results, review findings, per-ticket verification and human evaluation are tracked in [the evaluation guide](e2e-coverage-hardening-evaluation.md). This initial matrix records planned dispositions; ticket checkpoints will record actual changes and any blockers.
+
+### Ticket 02 checkpoint
+
+T01–T03 strengthened in `workflows: task CRUD`; T05 optional UI retention added in `standalone: edit-form unassignment`; T07–T08 added in `consistency: task assignment and status stay consistent`. T04/O01/O02 useful existing assertions retained. Six-config task field check passed; consistency/standalone/overdue run passed 54. The final optional-field focus exposed a fixture resetting saved assignment on every reload (six deterministic failures, not a product defect or flake). Replaced that fixture setup with guarded `seedWorkspace`; correct UI expectation retained. Final recheck and reviews are recorded in the evaluation guide. Stable IDs here are observed from UI test IDs, not asserted from raw storage.
