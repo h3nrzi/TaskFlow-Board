@@ -60,3 +60,39 @@ Evidence: focused Chromium desktop test failed on the welcome assertion before t
 User observations: **Pending**.
 
 Ticket 03 final preflight (application/test checkpoint `3124ea8`): `pnpm exec playwright test tests/frontend/welcome.spec.ts --workers=1`: **6 passed**, no skips. `pnpm typecheck`: passed. Standards: 0 findings. Spec: 0 findings. Reviewed diff `d29a8a4...3124ea8`.
+
+## Ticket 04 — Provide user-facing 404 recovery
+
+Review base: `6983769`. First action: visit http://localhost:21998/not-a-route and activate **Back to Dashboard**.
+
+1. Save a uniquely named task. Visit an unknown route. The page says **404 — Page not found** and explains that the page may have moved or the address may be incorrect.
+2. Press Tab (Option-Tab in macOS Safari with its default link-navigation setting) to focus Back to Dashboard, then Enter. Dashboard opens; follow View all and find your saved task. Unknown-page recovery preserves exact stored workspace data.
+3. Visit `/projects/does-not-exist`: the distinct **This project has moved** fallback remains.
+4. At a narrow width, check the recovery text and link without horizontal scrolling. Both light/dark CSS theme classes are tested independently of the workspace shell, which remains unmounted on the unknown route. A direct unknown-page load does not initialize workspace theme state; Dashboard recovery restores the workspace's saved appearance.
+5. For deployments under a configured base path, use the fallback inside that base and verify its Dashboard link stays inside that base.
+
+Evidence: the focused Chromium desktop workflow failed before the friendly-copy change. Matrix, non-root-base smoke, full repository check and review results follow below.
+
+User observations: **Pending**.
+
+Ticket 04 keyboard preflight: initial matrix had 7 passes and 5 failures: two timeouts plus three WebKit focus assertions. macOS WebKit uses Option-Tab for links by default ([Apple reference](https://help.apple.com/safari/mac/8.0/en.lproj/cpsh003.html)). The test now uses that platform shortcut, retaining focus and Enter assertions; no application workaround was added.
+
+Non-root deployment preflight: built with `pnpm --filter @taskflow/web exec vite build --base=/taskflow/ --outDir=/tmp/taskflow-base-preview`, then served using `WEB_PORT=22018 pnpm --filter @taskflow/web exec vite preview --base=/taskflow/ --outDir=/tmp/taskflow-base-preview`. Chromium, Firefox and WebKit all verified that `/taskflow/not-a-route` offers `href="/taskflow/"`, activation reaches that URL, and Dashboard renders. WebKit's first load timed out; retry using DOMContentLoaded plus the same visible UI assertions passed. Its outstanding requests were three `fonts.gstatic.com` font downloads. The temporary preview was stopped after the smoke check.
+
+Integration test stabilization: a shared Playwright fixture aborts only Google Fonts requests (`fonts.googleapis.com` and `fonts.gstatic.com`) so external cosmetic downloads cannot hold navigation or layout checks open. All workflow assertions remain intact and application font loading is unchanged. Automated screenshots use fallback fonts. The initial post-keyboard-fix recovery matrix passed all 12 cases; matrix rerun and full integration check follow with this deterministic resource boundary.
+
+Ticket 04 final preflight (application/test checkpoint `508edce`): `pnpm exec playwright test tests/frontend/recovery.spec.ts --workers=1` with isolated fonts: **12 passed**, no skips (20 seconds). `pnpm typecheck`: passed. Standards: 0 findings. Spec: 0 findings; both reviewers rechecked the keyboard and shared-fixture amendments. Reviewed diff `6983769...508edce`. Inspected a narrow dark recovery screenshot: text and link fit and are readable.
+
+## Final integration checkpoint
+
+On 2026-10-23 at application/test revision `508edce`, **`pnpm check` passed (exit 0)**:
+
+- Frontend: **222 passed, 6 intentional skips**, all six browser/viewport configurations, normal three-worker setting, 1.7 minutes. Skips retain their existing reasons: three mobile beforeunload cases and three mobile configurations of the desktop-wheel-only overlay test.
+- Dependency audit: 297 retained frontend snapshots and direct resolutions preserved.
+- Both application typechecks and production builds: passed.
+- API HTTP application test: 1 passed.
+- Development/preview proxy, SPA navigation, stopped-backend and occupied-port tooling tests: 3 passed.
+
+This final run rechecks all earlier ticket checkpoints using the shared cosmetic-resource fixture, with no retries or failed-test reruns required. The existing nonfatal tooltip sourcemap diagnostic remains in Vite build output. No application changes followed this check; the final ticket commit adds completion evidence and ticket checkboxes.
+
+First concrete evaluation action: open the local Tasks page, click **New task**, choose **No project**, enter a unique title, and save. Then follow each ticket's steps above and report observations by ticket/step. All four tickets are implemented and reviewed; **human evaluation remains pending** for each. The final implementation commits are discoverable with `git log -4 --oneline` (evidence-only amendments finalize each ticket checkpoint).

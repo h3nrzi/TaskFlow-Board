@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './test';
 
 const key = 'taskflow-store-v1';
 test('task CRUD, drawer edits, completion and reload', async ({ page }) => {

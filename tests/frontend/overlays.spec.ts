@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './test';
 
 const overlays = [
   { name: 'task form', path: '/tasks', opener: 'button-create-task', role: 'dialog', label: 'New task', initial: 'input-task-title', first: 'button-close-task-form', last: 'button-save-task' },

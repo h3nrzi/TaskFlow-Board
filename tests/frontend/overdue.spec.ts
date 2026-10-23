@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './test';
 
 const key = 'taskflow-store-v1';
 async function seed(page: Page, theme = 'light') {
