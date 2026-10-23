@@ -15,6 +15,12 @@ test('demo signup validates inputs, saves a trimmed local profile and resets dra
   await page.getByTestId('input-signup-email').fill('demo@example.com');
   await page.getByTestId('button-signup-submit').click();
   await expect(page.getByRole('alert')).toContainText('Add your name to get started.');
+  await page.goto('/settings');
+  await expect(page.getByTestId('input-profile-name')).toHaveValue('Audit User');
+  await expect(page.getByTestId('input-profile-email')).toHaveValue('audit@example.com');
+  await page.goto('/signup');
+  await page.getByTestId('input-signup-name').fill('Discarded signup draft');
+  await page.getByTestId('input-signup-email').fill('discarded@example.com');
   await page.getByTestId('link-auth-login').click();
   await expect(page.getByTestId('input-login-email')).toHaveValue('audit@example.com');
   await page.getByTestId('link-auth-signup').click();
@@ -44,6 +50,10 @@ test('demo login validates email and updates the local profile without replacing
   await page.getByTestId('button-login-submit').click();
   await expect(page).toHaveURL(/\/login$/);
   expect(await page.getByTestId('input-login-email').evaluate((el: HTMLInputElement) => el.validity.typeMismatch)).toBe(true);
+  await page.goto('/settings');
+  await expect(page.getByTestId('input-profile-name')).toHaveValue('Audit User');
+  await expect(page.getByTestId('input-profile-email')).toHaveValue('audit@example.com');
+  await page.goto('/login');
   await page.getByTestId('input-login-email').fill('returning@example.com');
   await page.getByTestId('button-login-submit').click();
   await expect(page.getByRole('heading', { name: 'Welcome back, Audit.', exact: true })).toBeVisible();

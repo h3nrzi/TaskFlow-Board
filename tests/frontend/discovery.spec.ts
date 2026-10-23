@@ -24,6 +24,16 @@ async function expectOrder(page: Page, ids: string[]) {
   await expect.poll(() => taskIds(page)).toEqual(ids);
 }
 
+
+// Groups follow distinct sort values; identities inside a tie may appear in any order.
+async function expectGroups(page: Page, groups: string[][]) {
+  await expect.poll(async () => {
+    const remaining = await taskIds(page);
+    const actual = groups.map(group => remaining.splice(0, group.length).sort());
+    return { groups: actual, extra: remaining };
+  }).toEqual({ groups: groups.map(group => [...group].sort()), extra: [] });
+}
+
 test('search identifies title, description and project matches with combined filters and recovery', async ({ page }) => {
   await seedDiscovery(page);
   await page.goto('/tasks');
@@ -56,16 +66,13 @@ test('sorts order every result, keep undated work last and respect meaningful re
   await page.goto('/tasks');
   const titles = page.getByTestId(/^button-open-task-/);
   await page.getByTestId('sort-tasks').selectOption('priority');
-  await expectOrder(page, ['beta', 'epsilon', 'alpha', 'gamma', 'delta']);
+  await expectGroups(page, [['beta', 'epsilon'], ['alpha'], ['gamma'], ['delta']]);
   await page.getByTestId('sort-tasks').selectOption('due');
-  await expectOrder(page, ['alpha', 'beta', 'gamma', 'delta', 'epsilon']);
+  await expectGroups(page, [['alpha'], ['beta', 'gamma'], ['delta', 'epsilon']]);
   await page.getByTestId('sort-tasks').selectOption('updated');
   // Date-only recency cannot order edits within the same day. Check the tied group as a set.
   await expect(titles).toHaveCount(5);
-  await expect.poll(async () => {
-    const ids = await taskIds(page);
-    return [ids.slice(0, 2).sort(), ids.slice(2)];
-  }).toEqual([['beta', 'epsilon'], ['gamma', 'delta', 'alpha']]);
+  await expectGroups(page, [['beta', 'epsilon'], ['gamma'], ['delta'], ['alpha']]);
 });
 
 test('in-app navigation retains shell search and resets page filters and sorting on remount', async ({ page }) => {

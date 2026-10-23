@@ -59,6 +59,10 @@ test('stale tab cannot overwrite another tab’s saved changes', async ({ page, 
   await other.getByTestId('button-save-task').click();
   expect((await saved(page)).tasks.some(t => t.title === 'Keep first tab task')).toBe(true);
   await expect(other.getByRole('alert')).toContainText(/another tab|elsewhere/i);
+  expect((await saved(page)).tasks.some(t => t.title === 'Second tab task')).toBe(false);
+  await page.reload();
+  await expect(page.getByText('Keep first tab task', { exact: true })).toBeVisible();
+  await expect(page.getByText('Second tab task', { exact: true })).toHaveCount(0);
 });
 
 for (const suffix of ['', '/']) {
@@ -185,12 +189,14 @@ test('unsaved return to the initial theme still warns before reload', async ({ p
   await page.evaluate(() => { Storage.prototype.setItem = () => { throw new DOMException('Quota exceeded', 'QuotaExceededError'); }; });
   await page.getByTestId('button-theme-light').click();
   await expect(page.getByRole('alert')).toContainText('not saved');
-  const dialog = page.waitForEvent('dialog', { timeout: 5000 });
-  const reload = page.reload({ timeout: 2000 }).catch(() => null);
-  const prompt = await dialog;
-  expect(prompt.type()).toBe('beforeunload');
-  await prompt.dismiss();
-  await reload;
+  const dismissed = page.waitForEvent('dialog').then(async prompt => {
+    expect(prompt.type()).toBe('beforeunload');
+    await prompt.dismiss();
+  });
+  // A cancelled reload never reaches a load event. Trigger the browser request
+  // without waiting for that impossible event or swallowing unrelated errors.
+  await Promise.all([dismissed, page.evaluate(() => location.reload())]);
+  await expect(page.getByRole('alert')).toContainText('not saved');
   await expect(page.locator('html')).not.toHaveClass(/dark/);
 });
 

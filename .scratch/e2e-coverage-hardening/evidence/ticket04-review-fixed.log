@@ -1,0 +1,80 @@
+[WebServer] (node:15825) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+[WebServer] (node:15881) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15901) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 30 tests using 3 workers
+
+(node:15922) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15923) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium-desktop] › tests/frontend/discovery.spec.ts:37:5 › search identifies title, description and project matches with combined filters and recovery (831ms)
+  ✓   4 [chromium-desktop] › tests/frontend/discovery.spec.ts:64:5 › sorts order every result, keep undated work last and respect meaningful recency groups (317ms)
+  ✓   1 [chromium-desktop] › tests/frontend/demo-profile.spec.ts:4:5 › demo signup validates inputs, saves a trimmed local profile and resets drafts between modes (1.5s)
+  ✓   2 [chromium-desktop] › tests/frontend/demo-profile.spec.ts:40:5 › demo login validates email and updates the local profile without replacing its name or workspace (1.7s)
+  ✓   5 [chromium-desktop] › tests/frontend/discovery.spec.ts:78:5 › in-app navigation retains shell search and resets page filters and sorting on remount (522ms)
+(node:15963) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium-mobile] › tests/frontend/discovery.spec.ts:37:5 › search identifies title, description and project matches with combined filters and recovery (467ms)
+  ✓   9 [chromium-mobile] › tests/frontend/discovery.spec.ts:64:5 › sorts order every result, keep undated work last and respect meaningful recency groups (240ms)
+  ✓   6 [chromium-mobile] › tests/frontend/demo-profile.spec.ts:4:5 › demo signup validates inputs, saves a trimmed local profile and resets drafts between modes (1.0s)
+  ✓   7 [chromium-mobile] › tests/frontend/demo-profile.spec.ts:40:5 › demo login validates email and updates the local profile without replacing its name or workspace (1.2s)
+  ✓  10 [chromium-mobile] › tests/frontend/discovery.spec.ts:78:5 › in-app navigation retains shell search and resets page filters and sorting on remount (518ms)
+(node:15980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15993) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15994) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [firefox-desktop] › tests/frontend/demo-profile.spec.ts:40:5 › demo login validates email and updates the local profile without replacing its name or workspace (3.4s)
+  ✓  11 [firefox-desktop] › tests/frontend/demo-profile.spec.ts:4:5 › demo signup validates inputs, saves a trimmed local profile and resets drafts between modes (3.0s)
+  ✓  13 [firefox-desktop] › tests/frontend/discovery.spec.ts:37:5 › search identifies title, description and project matches with combined filters and recovery (2.6s)
+  ✓  14 [firefox-desktop] › tests/frontend/discovery.spec.ts:64:5 › sorts order every result, keep undated work last and respect meaningful recency groups (450ms)
+(node:16053) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [firefox-desktop] › tests/frontend/discovery.spec.ts:78:5 › in-app navigation retains shell search and resets page filters and sorting on remount (888ms)
+(node:16055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16057) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [firefox-mobile] › tests/frontend/demo-profile.spec.ts:4:5 › demo signup validates inputs, saves a trimmed local profile and resets drafts between modes (2.9s)
+  ✓  18 [firefox-mobile] › tests/frontend/discovery.spec.ts:37:5 › search identifies title, description and project matches with combined filters and recovery (2.2s)
+  ✓  19 [firefox-mobile] › tests/frontend/discovery.spec.ts:64:5 › sorts order every result, keep undated work last and respect meaningful recency groups (718ms)
+  ✓  17 [firefox-mobile] › tests/frontend/demo-profile.spec.ts:40:5 › demo login validates email and updates the local profile without replacing its name or workspace (3.5s)
+  ✓  20 [firefox-mobile] › tests/frontend/discovery.spec.ts:78:5 › in-app navigation retains shell search and resets page filters and sorting on remount (1.4s)
+(node:16124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16149) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [webkit-desktop] › tests/frontend/discovery.spec.ts:37:5 › search identifies title, description and project matches with combined filters and recovery (1.5s)
+  ✓  24 [webkit-desktop] › tests/frontend/discovery.spec.ts:64:5 › sorts order every result, keep undated work last and respect meaningful recency groups (592ms)
+  ✓  21 [webkit-desktop] › tests/frontend/demo-profile.spec.ts:4:5 › demo signup validates inputs, saves a trimmed local profile and resets drafts between modes (2.4s)
+  ✓  22 [webkit-desktop] › tests/frontend/demo-profile.spec.ts:40:5 › demo login validates email and updates the local profile without replacing its name or workspace (2.6s)
+(node:16185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  25 [webkit-desktop] › tests/frontend/discovery.spec.ts:78:5 › in-app navigation retains shell search and resets page filters and sorting on remount (720ms)
+(node:16186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [webkit-mobile] › tests/frontend/demo-profile.spec.ts:4:5 › demo signup validates inputs, saves a trimmed local profile and resets drafts between modes (1.8s)
+  ✓  28 [webkit-mobile] › tests/frontend/discovery.spec.ts:37:5 › search identifies title, description and project matches with combined filters and recovery (994ms)
+  ✓  27 [webkit-mobile] › tests/frontend/demo-profile.spec.ts:40:5 › demo login validates email and updates the local profile without replacing its name or workspace (2.4s)
+  ✓  29 [webkit-mobile] › tests/frontend/discovery.spec.ts:64:5 › sorts order every result, keep undated work last and respect meaningful recency groups (885ms)
+  ✓  30 [webkit-mobile] › tests/frontend/discovery.spec.ts:78:5 › in-app navigation retains shell search and resets page filters and sorting on remount (1.1s)
+
+  30 passed (25.0s)

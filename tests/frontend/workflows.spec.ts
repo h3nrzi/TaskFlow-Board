@@ -199,9 +199,11 @@ test('responsive routes fit portrait and landscape, with touch navigation', asyn
     await page.setViewportSize({ width, height: mobile && width === 844 ? 390 : 900 });
     for (const route of ['/', '/tasks', '/projects', '/projects/field-notes', '/settings', '/login', '/signup']) {
       await page.goto(route);
-      const overflow = await page.evaluate(() => ({ viewport: innerWidth, width: document.documentElement.scrollWidth,
-        elements: Array.from(document.querySelectorAll('main *')).filter(el => el.getBoundingClientRect().right > innerWidth + 1).slice(0, 6).map(el => ({ tag: el.tagName, class: el.className, right: el.getBoundingClientRect().right })) }));
-      expect(overflow.width, `${route} at ${width}px: ${JSON.stringify(overflow.elements)}`).toBeLessThanOrEqual(overflow.viewport);
+      await expect.poll(async () => {
+        const overflow = await page.evaluate(() => ({ viewport: innerWidth, width: document.documentElement.scrollWidth,
+          elements: Array.from(document.querySelectorAll('main *')).filter(el => el.getBoundingClientRect().right > innerWidth + 1).slice(0, 6).map(el => ({ tag: el.tagName, class: el.className, right: el.getBoundingClientRect().right })) }));
+        return { fits: overflow.width <= overflow.viewport, elements: overflow.elements };
+      }, { message: `${route} at ${width}px fits the viewport` }).toMatchObject({ fits: true });
       if (mobile && width === 320 && (route === '/' || route === '/settings')) {
         await info.attach(route === '/' ? 'overview-320px' : 'settings-320px', { body: await page.screenshot(), contentType: 'image/png' });
       }
@@ -211,11 +213,11 @@ test('responsive routes fit portrait and landscape, with touch navigation', asyn
     await page.setViewportSize({ width: 320, height: 700 });
     await page.goto('/tasks');
     await page.getByTestId('button-create-task').click();
-    expect(await page.getByTestId('form-task').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+    await expect.poll(() => page.getByTestId('form-task').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
     await page.getByTestId('button-cancel-task').click();
     await page.goto('/projects');
     await page.getByTestId('button-create-project').click();
-    expect(await page.getByTestId('form-project').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+    await expect.poll(() => page.getByTestId('form-project').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
     await page.getByTestId('button-cancel-project').click();
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');

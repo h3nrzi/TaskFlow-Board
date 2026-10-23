@@ -62,3 +62,18 @@ P01/P02 strengthened in `workflows: project CRUD` (all fields, cancelled edit/de
 ### Ticket 04 checkpoint
 
 D01–D03/N01 added in `discovery.spec.ts`, using UI task identities and controlled inputs rather than starter counts. N02 strengthened in `recovery.spec.ts` through Browse projects and saved UI/byte retention. A01 strengthened in `workflows`; A02 added in `demo-profile.spec.ts`, retaining old draft-reset and welcome checks. First focus exposed title-locator metadata mismatch, fixed without changing matching/ordering expectations. Required profile/recovery checks passed in the initial 42-pass subset; discovery corrected focus passed 18. Exact current verification and review are in the evaluation guide.
+
+### Ticket 05 causal reliability and safeguard decisions
+
+| Finding | Evidence category | Disposition and preserved contract |
+| --- | --- | --- |
+| Optional-field fixture overwrote saved assignment on reload | Six deterministic failures in ticket 02, preserved trace; guarded fixture then six passes | Correct fixture initialization, retain exact optional schema and UI assignment/field assertions. |
+| Empty-state actions shared accessible names with header/sidebar | Six, then three deterministic locator failures in ticket 03 | Scope to the intended empty-state section/main; retain actual button interaction, not direct state injection. |
+| Task-open button text includes metadata | 18 deterministic discovery assertion failures in ticket 04 | Select UI row identities for full membership/order; preserve exact tasks without brittle subtitle expectations. |
+| Broad cancelled-reload catch and artificial 2s navigation timeout | Static weakness; baseline passed, Chromium/Firefox desktop took 2.4/2.6s vs WebKit 0.484s | Trigger browser reload with `location.reload`, explicitly dismiss native beforeunload and await both promises. Assert unsaved warning/light UI remain; no swallowed errors or impossible load-event wait. Current desktop checks passed in ticket 05. |
+| Font isolation only applied to primary page | Static fixture scope gap; second cross-tab page bypassed isolation | Move same cosmetic-only route interception to browser context so all tabs inherit it. No product/network contract is removed. |
+| Immediate route/form geometry checks | Static synchronization risk; no reproduced flake in fresh baseline | Poll the original overflow condition with default assertion limits and retained diagnostic elements. No fixed waits, retry setting, larger timeout or reduced workers. |
+| Long responsive scenario, drag and backdrop geometry | Baseline and focused execution passed | Preserve boundaries and native interactions. No splitting/rewrite justified by observed evidence; full-width mobile drawer legitimately has no exposed backdrop. |
+| Cross-tab write safety UI evidence incomplete | Existing local assertion retained, coverage strengthened | Check rejected task absent from saved data and first tab UI after reload; keep conflict warning and original task. |
+
+L01–L05 classified and preserved; L03/L05 strengthened in `stability.spec.ts`. I01–I03/I05 preserved, I04 synchronization strengthened in `workflows.spec.ts`. The fixture-local and locator failures above are not product defects or evidence of intermittent flakes. No new skips. Physical touch scrolling remains a manual limitation.

@@ -93,3 +93,27 @@ First action: search Tasks for a known title, then for text found only in its de
 | Recovery | Create/save a unique task, visit an unknown route, use Back to Dashboard with keyboard. Visit a missing project and choose Browse projects, then a valid board and Tasks. | All routes recover to usable pages; saved task remains after reload. |
 
 Human observations: Pending. Required review recorded below.
+
+## Ticket 05 — local safeguards and interaction reliability
+
+Candidate pre-ticket HEAD: `d2cb998`. Beforeunload handling was checked against current Playwright v1.63.0 documentation via Context7 ([dialog handling](https://github.com/microsoft/playwright/blob/v1.63.0/docs/src/dialogs.md)). A registered handler must handle the native prompt; a cancelled reload cannot supply a successful load event. The test now awaits dismissal plus a browser reload request without catching every error. Primary and secondary tabs share the existing cosmetic font isolation. Responsive checks poll the same overflow conditions instead of inspecting a single instant; browser/worker/retry configuration is unchanged. Cross-tab assertions now reject the stale task and expose the retained first-tab work through UI after reload.
+
+Focused command: `pnpm exec playwright test tests/frontend/stability.spec.ts tests/frontend/overlays.spec.ts tests/frontend/workflows.spec.ts tests/frontend/discovery.spec.ts -g 'invalid|storage|tab|locking|reads|unsaved|focus|keyboard|overlay|overflow|responsive|search identifies|sorts order|in-app navigation'`. Result: **150 passed, 6 skipped, 1.1m** (`ticket05-focus.log`). Typecheck passed (`typecheck-05.log`). The six skips retain the original three mobile beforeunload and three mobile wheel reasons. Native desktop drag was preserved and passed in ticket 03. No fresh intermittent failure reproduced. Reliability findings/causes/dispositions are tabulated in the audit rather than claiming static risks are proven flakes.
+
+First action: in a disposable browser profile, open the same saved workspace in two tabs; save a new uniquely named task in the first, then attempt a different new task in the stale second tab.
+
+| Feature | Reproducible actions | Expected result |
+| --- | --- | --- |
+| Cross-tab conflict | Follow the first action, then reload the first tab. | Second tab warns of changes elsewhere; first task persists, rejected second task is absent from the saved workspace. |
+| Invalid-data recovery | In a separate disposable profile set the storage key to `{broken workspace`, reload, download saved data. | Recovery warning appears; original bytes stay untouched and downloaded bytes match exactly. |
+| Write/read failure and export | Use the focused stability scenarios for deterministic browser-boundary failures. For manual write failure on the disposable origin, replace `Storage.prototype.setItem` with a function throwing `QuotaExceededError`, then create a task and download current workspace. | UI remains usable, reports unsaved work and export contains that task. Reload restores native browser methods; do not treat unsaved work as saved. Read failure and missing locks never overwrite stored bytes. |
+| Beforeunload | On desktop save dark theme, simulate write failure, choose light, attempt reload and cancel the native prompt. | Prompt occurs; unsaved warning and light in-memory UI remain. Mobile uses warning/export rather than a guaranteed prompt. |
+| Keyboard overlays | Open task/project forms and task drawer via keyboard; Tab/Shift-Tab through boundaries. Open edit/delete over drawer, cancel each with Escape. | Focus stays within active layer, one layer closes at a time and focus returns to its opener; cancellation preserves work. |
+| Pointer/scroll | Desktop: drag a board card between columns; open a tall form, scroll inside and on backdrop, press inside/release outside and separately press exposed backdrop. | Status changes through actual drag; inside/outside-release retains form; exposed backdrop cancels; documented background scrolling remains usable. Wheel evidence does not certify touch scrolling. |
+| Responsive navigation/forms | At 320/390/844px and 768/1024/1440px, visit all documented routes, open forms, use mobile menu/bottom navigation. | No document/form horizontal overflow; intended routes open and menu closes; fields/actions remain operable. Physical-device observations are still Pending. |
+
+Human observations: Pending. Required review recorded below.
+
+Ticket 04 review: Standards **0 findings**; Spec **1 finding** (undocumented ordering within tied priority/date/undated groups). Resolved using ordered groups with exact tied identities compared as sets, including no extra rows; precise ordering remains required between distinct sort values. Also added Settings UI checks that invalid signup/login attempts preserve both current profile fields before valid submission. Final review-focus recheck: **30 passed, 25.0s** (`ticket04-review-fixed.log`). No expectation for actual supported sorting or validation was weakened. Review recheck pending below.
+
+For deterministic manual write failure, run this in DevTools on the disposable application origin: `Storage.prototype.setItem = () => { throw new DOMException('Quota exceeded', 'QuotaExceededError'); }`. This affects only that page's JavaScript realm and ends on reload. Export unsaved work before reloading.
