@@ -13,6 +13,8 @@ Which layer owns each kind of validation, and what needs to be agreed now for fu
 
 Separate user-facing form feedback, domain invariants, stored-data validation, transport validation and authoritative server rejection. Use whitespace-only names, nonexistent project assignment, optional-field clearing, malformed dates and a server rejecting a form-valid request as scenarios.
 
+Include the boundary between a local demo profile and a real account/profile when authentication is enabled; transport/account enforcement details belong to later backend work.
+
 Decide where duplicate checks are intentional, how field and operation errors reach callers, and whether sharing types or executable schemas is justified. Identify existing checks that can remain unchanged, any minimum ownership clarification or preparation, and server enforcement deferred to backend work. A trusted TypeScript type alone does not settle how external data is checked.
 
 ## Existing evidence

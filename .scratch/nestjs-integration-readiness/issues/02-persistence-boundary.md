@@ -9,11 +9,11 @@ Blocked by: 01
 
 ## Question
 
-Given the approved integration unit, where should state ownership, domain operations and persistence meet, and does the existing separation already provide enough of a seam?
+Given the approved module-by-module integration unit and one authority per tightly coupled domain, where should state ownership, domain operations and persistence meet, and does the existing separation already provide enough of a seam?
 
 Compare retaining current responsibilities, a narrow capability seam, and a broader abstraction only where a concrete need justifies it. Establish the meanings of in-memory application, durable local save and confirmed remote operation without equating them. Decide whether anything must be prepared before a remote adapter exists, and what remains local-only.
 
-Account for load/empty/demo-data behavior, workspace snapshots versus resource operations, cross-tab conflicts, failed writes, recovery export and unsaved-work protection. State which browser-local safeguards remain unchanged and which remote questions require a distinct contract. Identify any need for an interface without assuming an adapter, repository or cache implementation.
+Account for real account/profile ownership and browser-local theme while task/project storage may remain local. Do not let a local whole-store snapshot overwrite a remotely authoritative domain. Account for load/empty/demo-data behavior, workspace snapshots versus resource operations, cross-tab conflicts, failed writes, recovery export and unsaved-work protection. State which browser-local safeguards remain unchanged and which remote questions require a distinct contract. Identify any need for an interface without assuming an adapter, repository or cache implementation.
 
 ## Existing evidence
 

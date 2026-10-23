@@ -13,7 +13,7 @@ Considering the approved decisions, what is the smallest justified readiness sco
 
 For each earlier decision, link its answer and classify the outcome as retain existing design, document/agree a contract, require minimum frontend preparation, or defer with an explicit trigger. Do not restate the answers here as a competing specification. Challenge proposed abstractions or changes that lack a concrete integration requirement.
 
-Identify any remaining architectural blocker, contradictory guarantees or hidden assumption; create new decision children and dependencies if necessary rather than declaring readiness prematurely. Confirm behavior preservation, local independence and progressive verification requirements. Seek explicit user approval of the resulting scope; approval opens later implementation planning and authorizes no code changes in this map.
+Identify any remaining architectural blocker, contradictory guarantees or hidden assumption; create new decision children and dependencies if necessary rather than declaring readiness prematurely. Confirm behavior preservation, local-configuration independence and module-by-module frontend/backend verification requirements, including the permitted authentication-connected/tasks-and-projects-local increment. Seek explicit user approval of the resulting scope; approval opens later implementation planning and authorizes no code changes in this map.
 
 ## Existing evidence
 

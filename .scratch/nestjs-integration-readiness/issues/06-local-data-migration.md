@@ -1,6 +1,6 @@
 # Choose the policy for existing local data when remote capabilities arrive
 
-Status: open
+Status: resolved
 Type: grilling
 Labels: wayfinder:grilling
 Parent: [TaskFlow NestJS Integration Readiness — decision map](../map.md)
@@ -30,3 +30,12 @@ Human-in-the-loop decision. Use grilling and domain-modeling; ask the live user,
 - [Choose the minimum persistence boundary for local and future remote operation](02-persistence-boundary.md)
 - [Define the frontend-facing contract needed for incremental API integration](03-api-contract.md)
 - [Assign validation ownership across forms, domain rules and external data](05-validation-ownership.md)
+
+
+## Answer
+
+### Scope closure — 2026-10-23
+
+Retired from the frontier, not resolved as a second decision session. The user explicitly approved disposable local development/test data and no transition migration, import/export, preservation or offline synchronization requirement while resolving [Choose the unit and ownership rules for progressive integration](01-progressive-integration-boundary.md#answer). Its Answer is the canonical policy. The transfer alternatives above are historical question framing and are no longer live questions. Existing local MVP export/recovery functionality is not removed.
+
+No migration readiness gate remains. Removed this ticket from the testability decision's blockers; remaining dependencies are unchanged. This scope closure makes no claim about implementation or runtime verification.

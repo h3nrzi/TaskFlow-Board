@@ -13,6 +13,8 @@ With ownership and contract guarantees established, what should callers observe 
 
 Use create-project-and-navigate, edit-task-and-close, task reassignment, and delete-project-with-cascade as concrete scenarios. Decide when data changes, when a form closes, when success appears, and what happens to the draft and current view after failure. Cover duplicate submission, stale responses, unmount/navigation and repeated actions proportionately.
 
+Apply the approved error/input-retention policy to each connected module, including authentication/profile where enabled; do not silently fall back to demo/local behavior. Exact success timing and retry semantics remain decisions here.
+
 Compare confirmed completion and optimistic alternatives without selecting one in advance. Distinguish local in-memory completion from existing asynchronous saving notices; preserve current local workflows. Decide what readiness must change, what can be exercised with controlled delays/failures, and which policies should wait for the first connected capability. Do not assume every command must become a Promise or introduce a query library.
 
 ## Existing evidence

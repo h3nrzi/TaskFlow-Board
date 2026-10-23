@@ -8,6 +8,7 @@ Reach a user-approved architectural decision set identifying what must change, w
 
 ## Notes
 
+- Apply the approved ownership and activation decision linked in Decisions so far to every subsequent ticket; earlier whole-workspace transition wording is superseded by module-by-module integration.
 - Approved in chat on 2026-10-23: decision-focused readiness, followed by separate implementation planning; no application changes or implementation tickets in this effort.
 - Approved architectural direction: progressive integration. Identify minimum frontend preparation for future asynchronous operations and incremental API integration. Connect and verify NestJS capabilities as they become available; an all-at-once migration is not required.
 - Actual backend persistence, real authentication and deployment belong to later integration. This map may define frontend-facing requirements and identify future decisions, without designing those systems prematurely.
@@ -21,18 +22,20 @@ Reach a user-approved architectural decision set identifying what must change, w
 
 ## Decisions so far
 
-<!-- Empty at charting. Approved destination/direction are standing scope in Notes, not resolved child tickets. -->
+- [Choose the unit and ownership rules for progressive integration](issues/01-progressive-integration-boundary.md#answer): integrate and verify modules progressively in one workspace, with one authority per coupled domain and explicit activation; profile follows real accounts, theme stays local, and connected failures never silently fall back.
 
 ## Not yet specified
 
 - Integration-specific complications may emerge once the unit of integration and ownership are chosen. Graduate concrete questions about cross-boundary operations, ordering, conflicts or reconciliation only where the chosen direction makes them necessary; do not assume distributed transactions or offline synchronization.
 - External research or a throwaway prototype may become necessary to discriminate between live alternatives. Identify a precise uncertainty first, then create the appropriate child and dependency.
-- A chosen contract or transfer policy may expose compatibility and recovery cases not visible yet. Promote each precise new decision when it emerges rather than silently assigning an implementation task.
+- A chosen contract or module boundary may expose compatibility and recovery cases not visible yet. Promote each precise new decision when it emerges rather than silently assigning an implementation task.
 
 ## Out of scope
 
 - Application, API, test, dependency or configuration changes; implementation tickets, estimates and build sequencing. Implementation planning begins after the decision map is resolved and the user approves its conclusions.
 - Building backend persistence, authentication, database schemas/ORMs, production deployment or multi-user collaboration. Return frontend-facing prerequisites to this map only if needed for readiness.
-- Product redesign or changed domain semantics. Preserve standalone tasks, project deletion cascade, free-text assignees, existing field/date behavior, state lifetimes and local demo workflows. Any discovered incompatibility must return to the user as a scope question.
+- Product redesign or changed domain semantics. Preserve standalone tasks, project deletion cascade, free-text assignees, existing field/date behavior, state lifetimes and local demo workflows until deliberately replaced by the approved real-authentication increment. Any other discovered incompatibility must return to the user as a scope question.
 - Treating incremental integration as an implicit requirement for offline sync, background queues, automatic failover, dual writes or universal abstractions.
 - Reopening completed MVP/E2E work or claiming broader human acceptance from automated evidence.
+
+- [Choose the policy for existing local data when remote capabilities arrive](issues/06-local-data-migration.md#answer): retired because development data is disposable and the user explicitly excludes transition migration, import/export, preservation and offline synchronization.
