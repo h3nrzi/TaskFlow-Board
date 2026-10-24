@@ -9,7 +9,7 @@ Blocked by: 13
 
 ## Question
 
-What OpenAPI document completely describes the approved MVP Endpoint Catalog and canonical shared schemas, and how will consistency be maintained? Produce a linked OpenAPI design artifact and define supported specification version, security descriptions, operation identifiers, schema references, examples and error coverage. Choose generated versus authored portions with canonical runtime schemas remaining the source of truth; avoid a second manually maintained DTO authority. Record planned validation/drift checks and explicit user review. Generation wiring, dependencies, server handlers and CI implementation remain outside this planning map.
+What OpenAPI document completely describes the approved MVP Endpoint Catalog and canonical shared schemas, and how will consistency be maintained? Apply the [approved tooling and generation design](../design/shared-schema-tooling.md): OpenAPI 3.1 generated from the authoritative operation catalog and shared Zod schemas by native conversion plus a small assembler, with all mandatory safeguards. Produce a linked OpenAPI design artifact and specify security descriptions, operation identifiers, schema references, examples and error coverage. Do not introduce independently maintained payload schemas or competing controller-derived operation authority. Record planned validation/drift checks and explicit user review. Generation wiring, dependencies, server handlers and CI implementation remain outside this planning map.
 
 ## Resolution requirements
 
