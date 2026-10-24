@@ -8,6 +8,8 @@ Reach a user-approved TaskFlow API architecture and integration-readiness design
 
 ## Notes
 
+- Apply the approved [Shared Schema-First contract specification](design/shared-schema-contracts.md), including Q1–Q17 approval and its S1–S16 checkpoints, to existing downstream design decisions; implementation/runtime evidence and human acceptance remain pending.
+
 - Apply the approved [MVP Endpoint Catalog](design/endpoint-catalog.md), including Q1–Q28 clarifications, 22 explicit operations/five HEAD counterparts, E1–E34 and downstream ownership. Its explicit same-origin cookie/password/CSRF/lifecycle/HTTP choices refine earlier unselected-detail deferrals. Design approval does not establish implementation/runtime security or human acceptance.
 
 - Apply the approved ownership and activation decision linked in Decisions so far to every subsequent ticket; earlier whole-workspace transition wording is superseded by module-by-module integration.
@@ -61,6 +63,8 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 - [Research password and cookie-session contract security](issues/18-password-cookie-security-evidence.md#answer): primary-source password, cookie/CSRF, restricted-credential and HTTP evidence informs catalog choices; DELETE bodies and current idempotency draft semantics need deliberate contract treatment.
 
 - [Design the MVP Endpoint Catalog](issues/12-endpoint-catalog.md#answer): approved complete MVP operations, HTTP/success/error contracts, coherent Workspace/revision/cascade and durable creation recovery, same-origin cookie authentication/enrollment/CSRF/session activity and abuse boundaries; schemas, OpenAPI and evidence retain their existing owners.
+
+- [Specify the shared Schema-First contracts](issues/13-shared-schema-contracts.md#answer): approved complete four-role schema/export and transport/error contracts, exact Unicode 17.0.0 baseline, runtime/generation safeguards and S1–S16 guide; production implementation and acceptance remain pending.
 
 ## Not yet specified
 
