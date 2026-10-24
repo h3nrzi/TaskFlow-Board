@@ -19,3 +19,7 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 
 - [Define the frontend-facing contract needed for incremental API integration](03-api-contract.md)
 - [Assign validation ownership across forms, domain rules and external data](05-validation-ownership.md)
+
+## Approved async requirements to carry forward
+
+Define the API responsibilities and consistency guarantees required by the approved async policy, including concurrent same-submission creation safety and transactional project cascade. Do not treat frontend conflict coordination as a server guarantee. See [Asynchronous completion, feedback and recovery requirements](../design/async-operation-policy.md), approved in full by Q14 confirmation of its owning decision.

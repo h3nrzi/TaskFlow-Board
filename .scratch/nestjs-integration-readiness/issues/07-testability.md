@@ -31,3 +31,7 @@ Human-in-the-loop decision. Use grilling and domain-modeling; ask the live user,
 - [Define asynchronous operation completion and user feedback](04-async-operations.md)
 - [Assign validation ownership across forms, domain rules and external data](05-validation-ownership.md)
 - [Specify the OpenAPI document and its contract consistency rules](14-openapi-specification.md)
+
+## Approved async requirements to carry forward
+
+Cover all ten async-policy scenarios with controlled pending, rejection, response-loss, concurrent same-submission creation, stale/account-switched results and draft-lifetime evidence. Preserve local independence; design approval and test passes do not establish human implementation acceptance. See [Asynchronous completion, feedback and recovery requirements](../design/async-operation-policy.md), approved in full by Q14 confirmation of its owning decision.

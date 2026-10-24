@@ -20,3 +20,7 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 - [Design the MVP Endpoint Catalog](12-endpoint-catalog.md)
 - [Choose shared-schema and OpenAPI tooling](10-contract-tooling.md)
 - [Assign validation ownership across forms, domain rules and external data](05-validation-ownership.md)
+
+## Approved async requirements to carry forward
+
+Specify the catalog-selected creation idempotency submission/result/conflict/recovery contracts and compatibility obligations, including concurrent and expired/unavailable-record outcomes. Retain UI operation state outside shared wire schemas. See [Asynchronous completion, feedback and recovery requirements](../design/async-operation-policy.md), approved in full by Q14 confirmation of its owning decision.

@@ -45,6 +45,8 @@ This table identifies decision owners, not approved designs or completed deliver
 - [Choose shared-schema and OpenAPI tooling](issues/10-contract-tooling.md#answer): Zod 4 shared schemas, Nest-side nestjs-zod and catalog-driven native conversion/OpenAPI 3.1 assembly, with mandatory safeguards to demonstrate during implementation and a first-module client-tooling review.
 - [Define the frontend-facing contract needed for incremental API integration](issues/03-api-contract.md#answer): approved domain and frontend-facing contract specification, including resource fields, canonicalization, access/deletion privacy, account guarantees and compatibility; exact HTTP/schema design and email-security scope retain downstream owners.
 
+- [Define asynchronous operation completion and user feedback](issues/04-async-operations.md#answer): confirmed connected completion, account-scoped drafts and late-result isolation, coordinated conflicts and deliberate recovery with concurrent-safe creation idempotency; local completion remains unchanged.
+
 ## Not yet specified
 
 - Integration-specific complications may emerge as the remaining domain, schema and API decisions settle. Graduate concrete questions about cross-boundary operations, ordering, conflicts or reconciliation only where the chosen direction makes them necessary; do not assume distributed transactions or offline synchronization.

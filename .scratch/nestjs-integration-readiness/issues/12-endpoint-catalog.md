@@ -20,3 +20,7 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 - [Define the API Architecture Blueprint for progressive integration](11-api-architecture-blueprint.md)
 - [Define asynchronous operation completion and user feedback](04-async-operations.md)
 - [Define account email-change scope and security requirements](16-account-email-change.md)
+
+## Approved async requirements to carry forward
+
+Specify account-scoped task/project creation idempotency: key transport, exact-original-payload recovery, equivalence/original-outcome semantics, different-payload conflict, safe concurrent/in-progress handling, retention window and expired/unavailable-record recovery. No automatic replay or inference that an unavailable record makes retry safe. See [Asynchronous completion, feedback and recovery requirements](../design/async-operation-policy.md), approved in full by Q14 confirmation of its owning decision.
