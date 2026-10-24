@@ -14,6 +14,7 @@ Reach a user-approved TaskFlow API architecture and integration-readiness design
 - Design the MVP API surface and its required domain/access semantics during readiness. Actual backend persistence, authentication implementation and deployment remain later work. Do not infer a database, ORM, authentication mechanism, collaboration system or deployment topology from the expanded destination.
 - Approved Contract-First direction: a shared monorepo contracts package owns API DTOs, common enums, request/response schemas, error contracts and account/profile contracts. Runtime schemas are the source of truth with inferred TypeScript types; validate API inputs/responses at relevant boundaries. UI state, browser snapshots and business logic stay outside. Tooling/package approvals live in the resolved tooling decision linked in Decisions so far; no production package is implemented.
 - Apply the approved contract specification linked from the resolved contract decision in Decisions so far. Subsequent sessions must read its latest approved requirements and supersessions rather than infer current requirements from earlier discussion entries. Tooling is resolved; remaining API-design decisions retain their named owners. Architectural approval does not establish implementation acceptance.
+- Apply the approved [MVP account email scope](design/account-email-scope.md): read-only registered email, immutable account identity and display-name-only profile updates; exclude email-change operations/workflows/contracts from all MVP design artifacts. Preserve approved authentication guarantees.
 - Apply the approved Blueprint linked from its resolved decision, including its downstream ownership table and revised foreground-interaction activity policy. Earlier contract statements without coherent-read/revision/authentication-lifecycle guarantees are refined by this later approval. No authentication mechanism or infrastructure is implicitly selected.
 - Every architectural choice needs explicit user approval. Apply the resolved tooling design linked in Decisions so far; design approval does not establish implementation acceptance. No repository, optimistic update policy, cache, rollout mechanism, database or sync system is implicitly selected.
 - Consult Wayfinder, grilling and domain-modeling in each decision session. Consult docs/agents/issue-tracker.md and docs/agents/domain.md. Use Context7 if a decision needs current library-specific documentation; use a research child ticket if external evidence is needed. The shared-schema tooling evidence ticket is now a precise external research prerequisite; it supplies facts, not tooling approval.
@@ -53,6 +54,8 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 
 - [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md#answer): approved canonical account/module ownership, verification/enrollment/session security, foreground activity, coherent Workspace reads, revisions and atomic domain/idempotency guarantees; exact contract and infrastructure details retain downstream owners.
 
+- [Define account email-change scope and security requirements](issues/16-account-email-change.md#answer): approved MVP email scope keeps registered email read-only and profile edits limited to display name; secure email changes are deferred until account-settings expansion.
+
 ## Not yet specified
 
 - Integration-specific complications may emerge as the remaining domain, schema and API decisions settle. Graduate concrete questions about cross-boundary operations, ordering, conflicts or reconciliation only where the chosen direction makes them necessary; do not assume distributed transactions or offline synchronization.
@@ -60,6 +63,8 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 - A chosen contract or module boundary may expose compatibility and recovery cases not visible yet. Promote each precise new decision when it emerges rather than silently assigning an implementation task.
 
 ## Out of scope
+
+- Secure account email changes, including pending-change workflows and related verification/recovery: deferred until account-settings expansion under [Define account email-change scope and security requirements](issues/16-account-email-change.md#answer). This decision settles MVP scope; it creates no alternate recovery or email-modification path.
 
 - Password recovery, third-party identity providers, account deletion and global sign-out: excluded from the Authentication MVP scope approved in [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md#comments). Registration verification and bounded resend are included in that decision's approved scope.
 - Application, API, test, dependency or configuration changes; implementation tickets, estimates and build sequencing. Implementation planning begins after the decision map is resolved and the user approves its conclusions.
