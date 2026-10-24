@@ -4,7 +4,7 @@ Research date: 2026-10-24. Repository baseline: `bcd576bb0af0e4eff262795fecbe461
 Research branch: `research/schema-tooling-evidence`; research only, never merge this branch.
 Question: [Research shared-schema and OpenAPI tooling compatibility](../issues/09-schema-tooling-evidence.md).
 
-This report establishes options and constraints. It does not select tooling or approve date, assignee, endpoint, or domain models. The user's shared Schema-First contracts decision is an input, not an open question.
+This report establishes options and constraints. It does not select tooling or approve assignee, endpoint, or domain models. The user's shared Schema-First contracts, private-account MVP, calendar due-date and server-controlled creation/update-instant decisions are inputs, not open questions.
 
 ## Repository evidence
 
@@ -39,7 +39,7 @@ The adapter provides `createZodDto`, request validation, response serialization/
 
 Zod4's `toJSONSchema` targets Draft2020-12 by default and can target Draft7 or OpenAPI3.0. Input/output projections differ for coercion, defaults and pipelines; output is the default, while request generation needs deliberate input projection. `Date`, transforms, maps, sets and custom types are among unrepresentable constructs. Conversion normally fails; an `unrepresentable: 'any'` escape hatch weakens the generated contract. A handwritten override must be reviewed for equivalence, not assumed correct. [Zod JSON Schema conversion](https://zod.dev/json-schema).
 
-`nestjs-zod`5 replaced Swagger monkey-patching with `cleanupOpenApiDoc`; its Zod4 generation uses Zod's converter. DTOs default to input documentation; `.Output` or `ZodResponse` provides output documentation. The migration guide recommends string date/date-time schemas rather than `z.date()` for JSON representation. This supports either future date model; it does not select one. [Adapter migration guide](https://github.com/BenLorantfy/nestjs-zod/blob/main/MIGRATION.md).
+`nestjs-zod`5 replaced Swagger monkey-patching with `cleanupOpenApiDoc`; its Zod4 generation uses Zod's converter. DTOs default to input documentation; `.Output` or `ZodResponse` provides output documentation. The migration guide recommends string date/date-time schemas rather than `z.date()` for JSON representation. This can express the approved calendar due dates and server-controlled creation/update instants as strings; exact accepted formats and timezone precision still need specification. [Adapter migration guide](https://github.com/BenLorantfy/nestjs-zod/blob/main/MIGRATION.md).
 
 Cleanup can convert null/const constructs for OpenAPI3.0, but drops unsupported constructs such as `propertyNames`; duplicate component names and recursive parameter schemas can cause errors. OpenAPI3.0 cleanup is not a guarantee that every runtime constraint survives conversion. [Cleanup implementation/API](https://github.com/BenLorantfy/nestjs-zod/blob/main/_autodocs/api-reference/openapi.md).
 
@@ -71,7 +71,7 @@ Current Nest documentation describes built-in StandardSchema pipes/interceptors.
 2. Input/output typing, transformations/coercion/defaults and reject-versus-strip policy for unknown fields, including how potentially different deployed versions interact.
 3. OpenAPI dialect, design-time operation metadata and deterministic generation ownership; whether validation code is shipped or generated.
 4. Shared package compilation/exports for current CommonJS API and ESM browser, strictness policy, direct dependencies/peers and workspace registration. Dual outputs are one possibility, not yet a requirement or selection.
-5. Wire date and assignee model, null/omission semantics, error envelopes and domain rules. The user's approved semantics remain binding; no library defaults override them.
+5. Exact wire format/precision for the approved calendar due dates and server-controlled instants, assignee model, error envelopes and domain rules. Private-account scope and approved null/omission semantics remain binding; no library defaults override them.
 
 ## Preflight and handoff
 
