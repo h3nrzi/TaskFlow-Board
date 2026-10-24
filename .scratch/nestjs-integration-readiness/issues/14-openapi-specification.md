@@ -18,3 +18,7 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 ## Prerequisites
 
 - [Specify the shared Schema-First contracts](13-shared-schema-contracts.md)
+
+## Validation requirements to carry forward
+
+Apply [Validation ownership and canonicalization requirements](../design/validation-policy.md): approved in full by Q8 confirmation of its resolved owning decision. Preserve staged raw/canonical validation without premature length checks, authenticated domain enforcement, canonical output and tolerant-extra-field readers, validated safe errors, whole-read failure and uncertain-mutation recovery. Exact responsibilities and evaluation scenarios are linked there; retain this ticket's existing scope.

@@ -47,6 +47,8 @@ This table identifies decision owners, not approved designs or completed deliver
 
 - [Define asynchronous operation completion and user feedback](issues/04-async-operations.md#answer): confirmed connected completion, account-scoped drafts and late-result isolation, coordinated conflicts and deliberate recovery with concurrent-safe creation idempotency; local completion remains unchanged.
 
+- [Assign validation ownership across forms, domain rules and external data](issues/05-validation-ownership.md#answer): approved raw/canonical validation stages, explicit normalization, authoritative backend domain/access enforcement and validated response/error handling; local safeguards remain independent.
+
 ## Not yet specified
 
 - Integration-specific complications may emerge as the remaining domain, schema and API decisions settle. Graduate concrete questions about cross-boundary operations, ordering, conflicts or reconciliation only where the chosen direction makes them necessary; do not assume distributed transactions or offline synchronization.

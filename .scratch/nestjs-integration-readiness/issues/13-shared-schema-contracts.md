@@ -24,3 +24,7 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 ## Approved async requirements to carry forward
 
 Specify the catalog-selected creation idempotency submission/result/conflict/recovery contracts and compatibility obligations, including concurrent and expired/unavailable-record outcomes. Retain UI operation state outside shared wire schemas. See [Asynchronous completion, feedback and recovery requirements](../design/async-operation-policy.md), approved in full by Q14 confirmation of its owning decision.
+
+## Validation requirements to carry forward
+
+Apply [Validation ownership and canonicalization requirements](../design/validation-policy.md): approved in full by Q8 confirmation of its resolved owning decision. Preserve staged raw/canonical validation without premature length checks, authenticated domain enforcement, canonical output and tolerant-extra-field readers, validated safe errors, whole-read failure and uncertain-mutation recovery. Exact responsibilities and evaluation scenarios are linked there; retain this ticket's existing scope.
