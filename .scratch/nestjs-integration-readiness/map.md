@@ -23,6 +23,7 @@ Reach a user-approved architectural decision set identifying what must change, w
 ## Decisions so far
 
 - [Choose the unit and ownership rules for progressive integration](issues/01-progressive-integration-boundary.md#answer): integrate and verify modules progressively in one workspace, with one authority per coupled domain and explicit activation; profile follows real accounts, theme stays local, and connected failures never silently fall back.
+- [Choose the minimum persistence boundary for local and future remote operation](issues/02-persistence-boundary.md#answer): keep source selection behind explicit domain operations, isolate connected authority from local snapshot persistence, distinguish completion states, and defer concrete abstractions until justified.
 
 ## Not yet specified
 
