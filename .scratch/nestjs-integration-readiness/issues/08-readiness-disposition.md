@@ -31,3 +31,8 @@ Human-in-the-loop decision. Use grilling and domain-modeling; ask the live user,
 - [Choose evidence that proves local independence and each integration increment](07-testability.md)
 - [Define the API Architecture Blueprint for progressive integration](11-api-architecture-blueprint.md)
 - [Specify the OpenAPI document and its contract consistency rules](14-openapi-specification.md)
+
+
+## Approved Endpoint Catalog to carry forward
+
+Apply the complete [MVP Endpoint Catalog](../design/endpoint-catalog.md), explicitly confirmed with no material discrepancies in the final review of [Design the MVP Endpoint Catalog](12-endpoint-catalog.md#answer) on 2026-10-24. Preserve all Q1–Q28/clarifications, 22 explicit operations/five HEAD counterparts, exact success/error/header/authority/validation/retention/abuse contracts, downstream ownership and E1–E34 checkpoints. Explicit catalog choices refine earlier detail/mechanism deferrals; do not independently revise approved policy or add fields. Implementation, runtime/security evidence and human implementation acceptance remain pending. This reference update does not claim, start, resolve or otherwise change the lifecycle/assignee of this decision.

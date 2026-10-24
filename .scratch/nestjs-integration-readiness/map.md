@@ -8,6 +8,8 @@ Reach a user-approved TaskFlow API architecture and integration-readiness design
 
 ## Notes
 
+- Apply the approved [MVP Endpoint Catalog](design/endpoint-catalog.md), including Q1–Q28 clarifications, 22 explicit operations/five HEAD counterparts, E1–E34 and downstream ownership. Its explicit same-origin cookie/password/CSRF/lifecycle/HTTP choices refine earlier unselected-detail deferrals. Design approval does not establish implementation/runtime security or human acceptance.
+
 - Apply the approved ownership and activation decision linked in Decisions so far to every subsequent ticket; earlier whole-workspace transition wording is superseded by module-by-module integration.
 - Destination expanded by explicit user approval on 2026-10-24. API architecture and concrete API contract design are first-class readiness goals. This supersedes earlier deferral of endpoint/transport detail until module implementation. Readiness remains planning-only, followed by separate implementation planning; no application changes or implementation tickets in this effort.
 - Approved architectural direction: progressive integration. Identify minimum frontend preparation for future asynchronous operations and incremental API integration. Connect and verify NestJS capabilities as they become available; an all-at-once migration is not required.
@@ -55,6 +57,10 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 - [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md#answer): approved canonical account/module ownership, verification/enrollment/session security, foreground activity, coherent Workspace reads, revisions and atomic domain/idempotency guarantees; exact contract and infrastructure details retain downstream owners.
 
 - [Define account email-change scope and security requirements](issues/16-account-email-change.md#answer): approved MVP email scope keeps registered email read-only and profile edits limited to display name; secure email changes are deferred until account-settings expansion.
+
+- [Research password and cookie-session contract security](issues/18-password-cookie-security-evidence.md#answer): primary-source password, cookie/CSRF, restricted-credential and HTTP evidence informs catalog choices; DELETE bodies and current idempotency draft semantics need deliberate contract treatment.
+
+- [Design the MVP Endpoint Catalog](issues/12-endpoint-catalog.md#answer): approved complete MVP operations, HTTP/success/error contracts, coherent Workspace/revision/cascade and durable creation recovery, same-origin cookie authentication/enrollment/CSRF/session activity and abuse boundaries; schemas, OpenAPI and evidence retain their existing owners.
 
 ## Not yet specified
 
