@@ -5,7 +5,7 @@ Type: grilling
 Labels: wayfinder:grilling
 Parent: [TaskFlow API Architecture & Integration Readiness — decision map](../map.md)
 Assignee: unassigned
-Blocked by: 03
+Blocked by: 03, 11
 
 ## Question
 
@@ -18,3 +18,7 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 ## Comments
 
 Created from the user's explicit Q18 clarification on 2026-10-24. Neither inclusion nor deferral of an MVP email-change endpoint is approved yet; verification and authorization requirements must be designed separately.
+
+### Approved architectural prerequisite — 2026-10-24
+
+Apply [API Architecture Blueprint for progressive integration](../design/api-architecture-blueprint.md), approved in full by Q22. Account/Profile owns canonical identity/state/presentation; Authentication coordinates lifecycle/security authority. Pending verification/enrollment recovery cannot reopen active accounts or replace their credentials. Email-change scope remains this decision's own question and is not implicitly approved by registration verification. Use the approved active-account/session/security guarantees when deciding its requirements; no provider, credential strategy or transport is inferred.

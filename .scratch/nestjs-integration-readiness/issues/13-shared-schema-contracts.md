@@ -28,3 +28,9 @@ Specify the catalog-selected creation idempotency submission/result/conflict/rec
 ## Validation requirements to carry forward
 
 Apply [Validation ownership and canonicalization requirements](../design/validation-policy.md): approved in full by Q8 confirmation of its resolved owning decision. Preserve staged raw/canonical validation without premature length checks, authenticated domain enforcement, canonical output and tolerant-extra-field readers, validated safe errors, whole-read failure and uncertain-mutation recovery. Exact responsibilities and evaluation scenarios are linked there; retain this ticket's existing scope.
+
+## Approved Blueprint requirements to carry forward
+
+Apply [API Architecture Blueprint for progressive integration](../design/api-architecture-blueprint.md), approved in full by Q22. Express the catalog-selected coherent Workspace read, independent task/project/profile revisions, conflicts/missing distinctions, original creation outcomes and recovery cases, and approved authentication lifecycle/session/activity outcomes. Keep verification, enrollment, activation and sign-in authority distinct; conceptual lifecycle stages in the Blueprint do not themselves approve wire enums.
+
+Specify the chosen registration/enrollment raw/canonical input schemas and account-email policy consistently with the catalog's workflow/business decisions. Encode safe acknowledgement/failure/validation/conflict/recovery contracts and compatibility obligations without moving authorization, time/cap enforcement, atomic transitions or browser draft state into shared schemas. Preserve all approved 30-minute/three-proof/15-minute/session limits as runtime obligations where schema expression alone cannot establish them.

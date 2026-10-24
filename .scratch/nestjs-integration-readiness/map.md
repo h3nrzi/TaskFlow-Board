@@ -14,6 +14,7 @@ Reach a user-approved TaskFlow API architecture and integration-readiness design
 - Design the MVP API surface and its required domain/access semantics during readiness. Actual backend persistence, authentication implementation and deployment remain later work. Do not infer a database, ORM, authentication mechanism, collaboration system or deployment topology from the expanded destination.
 - Approved Contract-First direction: a shared monorepo contracts package owns API DTOs, common enums, request/response schemas, error contracts and account/profile contracts. Runtime schemas are the source of truth with inferred TypeScript types; validate API inputs/responses at relevant boundaries. UI state, browser snapshots and business logic stay outside. Tooling/package approvals live in the resolved tooling decision linked in Decisions so far; no production package is implemented.
 - Apply the approved contract specification linked from the resolved contract decision in Decisions so far. Subsequent sessions must read its latest approved requirements and supersessions rather than infer current requirements from earlier discussion entries. Tooling is resolved; remaining API-design decisions retain their named owners. Architectural approval does not establish implementation acceptance.
+- Apply the approved Blueprint linked from its resolved decision, including its downstream ownership table and revised foreground-interaction activity policy. Earlier contract statements without coherent-read/revision/authentication-lifecycle guarantees are refined by this later approval. No authentication mechanism or infrastructure is implicitly selected.
 - Every architectural choice needs explicit user approval. Apply the resolved tooling design linked in Decisions so far; design approval does not establish implementation acceptance. No repository, optimistic update policy, cache, rollout mechanism, database or sync system is implicitly selected.
 - Consult Wayfinder, grilling and domain-modeling in each decision session. Consult docs/agents/issue-tracker.md and docs/agents/domain.md. Use Context7 if a decision needs current library-specific documentation; use a research child ticket if external evidence is needed. The shared-schema tooling evidence ticket is now a precise external research prerequisite; it supplies facts, not tooling approval.
 - Decision children are human-in-the-loop grilling decisions; research children gather facts without substituting for user approval. Ask across the breadth of the selected question, recommend alternatives with concrete scenarios, then wait for the user's answers. Charting resolves no child ticket.
@@ -24,7 +25,7 @@ Reach a user-approved TaskFlow API architecture and integration-readiness design
 
 ### Planned deliverable ownership
 
-This table identifies decision owners, not approved designs or completed deliverables. Detailed specifications live in linked ticket assets; the map remains an index. Design documents and an OpenAPI design artifact are within planning; installing dependencies, creating a production contracts package, wiring generators and implementing endpoints are outside it.
+This table identifies decision owners; approved outcomes are indexed in Decisions so far and detailed specifications live in linked ticket assets. The map remains an index. Design documents and an OpenAPI design artifact are within planning; installing dependencies, creating a production contracts package, wiring generators and implementing endpoints are outside it.
 
 | Deliverable | Decision owner |
 | --- | --- |
@@ -37,6 +38,7 @@ This table identifies decision owners, not approved designs or completed deliver
 
 ## Decisions so far
 
+- [Research mechanism-independent authentication security guarantees](issues/17-authentication-security-evidence.md#answer): primary-source evidence distinguishes session/revocation guarantees, browser controls and registration/email-ownership choices without selecting an authentication mechanism or approving product scope.
 - [Choose the unit and ownership rules for progressive integration](issues/01-progressive-integration-boundary.md#answer): integrate and verify modules progressively in one workspace, with one authority per coupled domain and explicit activation; profile follows real accounts, theme stays local, and connected failures never silently fall back.
 - [Choose the minimum persistence boundary for local and future remote operation](issues/02-persistence-boundary.md#answer): keep source selection behind explicit domain operations, isolate connected authority from local snapshot persistence, distinguish completion states, and defer concrete abstractions until justified.
 
@@ -49,6 +51,8 @@ This table identifies decision owners, not approved designs or completed deliver
 
 - [Assign validation ownership across forms, domain rules and external data](issues/05-validation-ownership.md#answer): approved raw/canonical validation stages, explicit normalization, authoritative backend domain/access enforcement and validated response/error handling; local safeguards remain independent.
 
+- [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md#answer): approved canonical account/module ownership, verification/enrollment/session security, foreground activity, coherent Workspace reads, revisions and atomic domain/idempotency guarantees; exact contract and infrastructure details retain downstream owners.
+
 ## Not yet specified
 
 - Integration-specific complications may emerge as the remaining domain, schema and API decisions settle. Graduate concrete questions about cross-boundary operations, ordering, conflicts or reconciliation only where the chosen direction makes them necessary; do not assume distributed transactions or offline synchronization.
@@ -57,6 +61,7 @@ This table identifies decision owners, not approved designs or completed deliver
 
 ## Out of scope
 
+- Password recovery, third-party identity providers, account deletion and global sign-out: excluded from the Authentication MVP scope approved in [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md#comments). Registration verification and bounded resend are included in that decision's approved scope.
 - Application, API, test, dependency or configuration changes; implementation tickets, estimates and build sequencing. Implementation planning begins after the decision map is resolved and the user approves its conclusions.
 - Implementing backend persistence/authentication, database schemas/ORMs, production deployment or multi-user collaboration. API-facing access and account/assignment requirements are in scope for design; adding collaborative product behavior requires explicit user approval.
 - Unapproved product changes. Current browser-local behavior remains unchanged during planning. Future API date representation/display, optional free-text assignees and private workspace scope are approved as noted above. projectId: null for standalone tasks is approved. Preserve standalone-task support and project deletion cascade. Future reconsideration of account-linked assignment does not itself authorize collaboration or broader product redesign; revisit when collaboration is approved.

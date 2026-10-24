@@ -28,3 +28,11 @@ Specify account-scoped task/project creation idempotency: key transport, exact-o
 ## Validation requirements to carry forward
 
 Apply [Validation ownership and canonicalization requirements](../design/validation-policy.md): approved in full by Q8 confirmation of its resolved owning decision. Preserve staged raw/canonical validation without premature length checks, authenticated domain enforcement, canonical output and tolerant-extra-field readers, validated safe errors, whole-read failure and uncertain-mutation recovery. Exact responsibilities and evaluation scenarios are linked there; retain this ticket's existing scope.
+
+## Approved Blueprint requirements to carry forward
+
+Apply [API Architecture Blueprint for progressive integration](../design/api-architecture-blueprint.md), approved in full by Q22, including its remaining-owner table and all fifteen evaluation scenarios. Explicitly settle the coherent account-scoped Workspace read, task/project/profile revision transport and conflict semantics, destructive preconditions, serial cascade/mutation outcomes and original-versus-current idempotency recovery representation.
+
+Cover the approved pending registration, intentional verification, bounded resend, restricted enrollment/recovery, explicit sign-in, session lookup, scoped sign-out and foreground activity/touch contracts. Preserve server-enforced 30-minute inactivity/24-hour absolute sessions, 30-minute proofs with atomic three-valid-proof cap, one 15-minute enrollment authority, atomic activation/recovery and no active-account enrollment reopening. Public acknowledgements and service/verification/enrollment outcomes must preserve enumeration resistance, delivery distinctions and uncertainty.
+
+Own implementable contract-facing credential/session transport choices, authentication metadata, request-integrity/CSRF requirements, no-store behavior, exact rate limits and foreground activity handling. Settle remaining registration/enrollment input, email identity/comparison, repeat/pending-lifetime and provisional-presentation review policies needed by that chosen flow. Do not silently defer API-visible choices to implementation; do not implement providers, storage or deployment. Schema owner expresses the approved decisions without selecting business policy independently.

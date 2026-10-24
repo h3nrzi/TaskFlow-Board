@@ -8,6 +8,14 @@ Domain language for the approved TaskFlow product model.
 The identity that owns a TaskFlow private workspace. Its identity remains the same when its display name or account email changes.
 _Avoid_: Demo profile when referring to an authenticated account
 
+**Pending account**:
+A registered account awaiting mailbox verification or completion of owner-controlled enrollment before activation for private workspace access.
+_Avoid_: Active account when verification or enrollment is incomplete
+
+**Account activation**:
+Completion of verified mailbox ownership and owner-controlled enrollment, making an account eligible to sign in for private workspace access. Activation does not itself sign the owner in.
+_Avoid_: Sign-in when referring to account activation
+
 **Display name**:
 The editable name used to present an account, including its derived avatar initials.
 _Avoid_: Account identity when referring to a display name

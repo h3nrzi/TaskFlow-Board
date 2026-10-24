@@ -39,3 +39,9 @@ Cover all ten async-policy scenarios with controlled pending, rejection, respons
 ## Validation requirements to carry forward
 
 Apply [Validation ownership and canonicalization requirements](../design/validation-policy.md): approved in full by Q8 confirmation of its resolved owning decision. Preserve staged raw/canonical validation without premature length checks, authenticated domain enforcement, canonical output and tolerant-extra-field readers, validated safe errors, whole-read failure and uncertain-mutation recovery. Exact responsibilities and evaluation scenarios are linked there; retain this ticket's existing scope.
+
+## Approved Blueprint requirements to carry forward
+
+Apply [API Architecture Blueprint for progressive integration](../design/api-architecture-blueprint.md), approved in full by Q22 and all fifteen scenarios. Cover coherent snapshots, stale task/project/profile edits, serial cascade races, atomic durable idempotency with original-outcome recovery, verification cap/expiry/concurrent redemption, scanner-safe confirmation, pre-registration takeover, atomic enrollment/recovery and active-account exclusion, scoped revocation and copied credentials, foreground versus background activity and server deadlines, security boundary enforcement and independent local operation.
+
+Define deterministic concurrency/clock/failure evidence, direct API authorization/request-integrity checks and module activation checkpoints. Distinguish simulated checks from live security/consistency evidence and design approval from pending human implementation acceptance. Revised Q18 permits meaningful foreground reads/editing and a protected activity-touch operation; do not substitute the rejected mutation-only policy.
