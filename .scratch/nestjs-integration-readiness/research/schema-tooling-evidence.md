@@ -79,4 +79,4 @@ Evidence gathered: repository manifests/configurations and lockfile inspected; C
 
 No dependencies installed; no application code, builds, tests or prototype executed. Compatibility is documentary and must be proved by the later approved integration checks (compiled API execution, browser bundle, request/response parity, null/omission and malformed values, schema/OpenAPI drift, and deployed-version compatibility). Research completion is not human acceptance of tooling.
 
-First review action: read the two-lane comparison and the explicit human decisions above with [Choose the shared-contract and OpenAPI tooling](../issues/10-contract-tooling.md). Do not implement either lane until the tooling decision is approved.
+First review action: read the two-lane comparison and the explicit human decisions above with [Choose shared-schema and OpenAPI tooling](../issues/10-contract-tooling.md). Do not implement either lane until the tooling decision is approved.
