@@ -3,7 +3,7 @@
 Status: open
 Type: grilling
 Labels: wayfinder:grilling
-Parent: [TaskFlow NestJS Integration Readiness — decision map](../map.md)
+Parent: [TaskFlow API Architecture & Integration Readiness — decision map](../map.md)
 Assignee: unassigned
 Blocked by: 02, 03
 
@@ -26,6 +26,7 @@ Source paths: `apps/web/src/workspace/`, `apps/web/src/app/workspace-shell.tsx`,
 ## Resolution requirements
 
 Human-in-the-loop decision. Use grilling and domain-modeling; ask the live user, do not substitute their answers. Record alternatives, trade-offs, retained behavior, preparation if needed, deferrals and verification implications. Explicit user approval is required before resolution. Keep implementation tickets and application changes outside this map.
+
 
 ## Prerequisites
 

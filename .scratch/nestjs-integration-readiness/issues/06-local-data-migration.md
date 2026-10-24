@@ -3,7 +3,7 @@
 Status: resolved
 Type: grilling
 Labels: wayfinder:grilling
-Parent: [TaskFlow NestJS Integration Readiness — decision map](../map.md)
+Parent: [TaskFlow API Architecture & Integration Readiness — decision map](../map.md)
 Assignee: unassigned
 Blocked by: 02, 03, 05
 

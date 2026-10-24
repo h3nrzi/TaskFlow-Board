@@ -3,9 +3,9 @@
 Status: open
 Type: grilling
 Labels: wayfinder:grilling
-Parent: [TaskFlow NestJS Integration Readiness — decision map](../map.md)
+Parent: [TaskFlow API Architecture & Integration Readiness — decision map](../map.md)
 Assignee: unassigned
-Blocked by: 04, 05
+Blocked by: 04, 05, 14
 
 ## Question
 
@@ -13,7 +13,7 @@ What minimum test seams and evidence will demonstrate that the approved architec
 
 Separate portable user-facing behavior, browser-local storage safeguards, fixture setup and remote contract/operation behavior. Decide which existing tests and pure seams suffice, whether controlled async delays/failures or contract examples are needed, and what must wait for a real API capability.
 
-Account for pending/error/retry scenarios selected in prior answers, invalid external data, disposable development data (no transfer requirement), cross-surface consistency and the ability to run the local MVP with NestJS stopped. Identify deterministic setup requirements without inventing a universal backend fixture layer. Cover intentionally activated modules, authentication/profile connected while tasks/projects remain local, coupled-operation ownership, and absence of availability-based activation or fallback. Define the verification checkpoint for an integration increment, distinguish simulated evidence from live integration evidence, and preserve pending human evaluation explicitly. Decide evidence requirements, not a test implementation backlog.
+Account for pending/error/retry scenarios selected in prior answers, invalid external data, disposable development data (no transfer requirement), cross-surface consistency and the ability to run the local MVP with NestJS stopped. Identify deterministic setup requirements without inventing a universal backend fixture layer. Cover intentionally activated modules, authentication/profile connected while tasks/projects remain local, coupled-operation ownership, and absence of availability-based activation or fallback. Define the verification checkpoint for an integration increment, distinguish simulated evidence from live integration evidence, and preserve pending human evaluation explicitly. Produce a linked integration and contract-testing strategy covering shared schemas, both consumers, endpoint/OpenAPI consistency, error and cascade contracts, and compatibility across deployed versions. Specify design-time checks versus future simulated/live evidence and per-module evaluation checkpoints. Decide evidence requirements, not a test implementation backlog.
 
 ## Existing evidence
 
@@ -25,7 +25,9 @@ Source paths: `apps/web/src/workspace/`, `apps/web/src/app/workspace-shell.tsx`,
 
 Human-in-the-loop decision. Use grilling and domain-modeling; ask the live user, do not substitute their answers. Record alternatives, trade-offs, retained behavior, preparation if needed, deferrals and verification implications. Explicit user approval is required before resolution. Keep implementation tickets and application changes outside this map.
 
+
 ## Prerequisites
 
 - [Define asynchronous operation completion and user feedback](04-async-operations.md)
 - [Assign validation ownership across forms, domain rules and external data](05-validation-ownership.md)
+- [Specify the OpenAPI document and its contract consistency rules](14-openapi-specification.md)
