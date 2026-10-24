@@ -2,7 +2,7 @@
 
 Research date: 2026-10-24. Repository baseline: `bcd576bb0af0e4eff262795fecbe461eda0d21c8`.
 Research branch: `research/schema-tooling-evidence`; research only, never merge this branch.
-Question: [Research shared-schema and OpenAPI tooling compatibility](../issues/09-schema-tooling-evidence.md).
+Question: [Research shared-schema and OpenAPI tooling compatibility](/Users/hossein/Downloads/TaskFlow-Board/.scratch/nestjs-integration-readiness/issues/09-schema-tooling-evidence.md).
 
 This report establishes options and constraints. It does not select tooling or approve assignee, endpoint, or domain models. The user's shared Schema-First contracts, private-account MVP, calendar due-date and server-controlled creation/update-instant decisions are inputs, not open questions.
 
@@ -79,4 +79,4 @@ Evidence gathered: repository manifests/configurations and lockfile inspected; C
 
 No dependencies installed; no application code, builds, tests or prototype executed. Compatibility is documentary and must be proved by the later approved integration checks (compiled API execution, browser bundle, request/response parity, null/omission and malformed values, schema/OpenAPI drift, and deployed-version compatibility). Research completion is not human acceptance of tooling.
 
-First review action: read the two-lane comparison and the explicit human decisions above with [Choose shared-schema and OpenAPI tooling](../issues/10-contract-tooling.md). Do not implement either lane until the tooling decision is approved.
+First review action: read the two-lane comparison and the explicit human decisions above with [Choose shared-schema and OpenAPI tooling](/Users/hossein/Downloads/TaskFlow-Board/.scratch/nestjs-integration-readiness/issues/10-contract-tooling.md). Do not implement either lane until the tooling decision is approved.
