@@ -4,6 +4,14 @@ Domain language for the approved TaskFlow product model.
 
 ## Language
 
+**Account**:
+The identity that owns a TaskFlow private workspace. Its identity remains the same when its display name or account email changes.
+_Avoid_: Demo profile when referring to an authenticated account
+
+**Display name**:
+The editable name used to present an account, including its derived avatar initials.
+_Avoid_: Account identity when referring to a display name
+
 **Private workspace**:
 The projects and tasks belonging to one account and visible only to that account. A shared or team workspace is a different product scope.
 _Avoid_: Team workspace when referring to a private workspace

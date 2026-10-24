@@ -5,7 +5,7 @@ Type: grilling
 Labels: wayfinder:grilling
 Parent: [TaskFlow API Architecture & Integration Readiness — decision map](../map.md)
 Assignee: unassigned
-Blocked by: 11, 04
+Blocked by: 11, 04, 16
 
 ## Question
 
@@ -19,3 +19,4 @@ Human-in-the-loop decision. Consult grilling and domain-modeling. Explicit user 
 
 - [Define the API Architecture Blueprint for progressive integration](11-api-architecture-blueprint.md)
 - [Define asynchronous operation completion and user feedback](04-async-operations.md)
+- [Define account email-change scope and security requirements](16-account-email-change.md)

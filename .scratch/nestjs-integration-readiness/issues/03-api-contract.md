@@ -1,6 +1,6 @@
 # Define the frontend-facing contract needed for incremental API integration
 
-Status: claimed
+Status: resolved
 Type: grilling
 Labels: wayfinder:grilling
 Parent: [TaskFlow API Architecture & Integration Readiness — decision map](../map.md)
@@ -102,3 +102,64 @@ These approvals supersede the corresponding unresolved statements and alternativ
 Remaining work: tooling approval is still a prerequisite; complete the domain/business-rule specification and remaining account/profile, field and error-contract details before final shared-understanding confirmation. Concrete endpoint encodings and full schema/OpenAPI design retain their named downstream owners. This ticket remains claimed, with no Answer and no resolution.
 
 Verification/evaluation checkpoint: read Q13–Q15 above against the user's message; confirm optional text assignment is distinct from account identity, due dates are not shifted by timezone conversion, timestamp metadata represents server-controlled instants, and absent-resource deletion never swallows authentication/authorization/service errors. Follow the map to Choose shared-schema and OpenAPI tooling for the next prerequisite. Human evaluation of an implemented integration remains pending; no application change is made by this approval record.
+
+### Resumed decision checkpoint — 2026-10-24
+
+The tooling prerequisite is now resolved; its Answer and linked design govern this continuation. Retain the existing Codex claim. Read the map, tracker/domain instructions, glossary, approved ownership/persistence/tooling decisions and validation decision scope. Read-only delegated inspection confirmed current task/project fields, enum values, form defaults, transition behavior and demo-profile meaning. These are facts, not approval to copy every local representation into the API.
+
+The next discussion round covers field/clearing/default semantics, domain constraints, account/profile requirements, error semantics, reads and compatibility. Recommendations in chat remain proposals until explicitly approved. Exact schema definitions, endpoints, authentication mechanism, validation-layer ownership and async presentation keep their existing decision owners. No Answer or resolution is recorded, and no application change is made.
+
+Preflight: initial `git status --short` was empty; `git diff --check` passed before this checkpoint. No tests, builds or API runtime checks were run. First concrete action: answer the next discussion round in chat; human implementation evaluation remains pending.
+
+### User decisions — 2026-10-24, resource rules, account identity and compatibility
+
+The user explicitly approved Q16–Q21 with these binding clarifications:
+
+- Q16: retain the agreed editable resource fields and enums. Responses represent absent task due dates and free-text assignees as null; null clears them. Empty descriptions are empty strings. Create requires explicit task status, priority and project assignment, and explicit project color and icon, only on the applicable resource. Forms may supply defaults. Partial-update omission means unchanged; only explicitly nullable fields accept null clearing. IDs and timestamps are server-owned and not client-editable.
+- Q17: permit every transition among todo, in-progress and done, and duplicate task titles/project names. Titles/names must be nonblank. Project references must be accessible within the authenticated account's private workspace. Project deletion and its task cascade are one consistent backend-owned domain operation. Field-length limits require a separate explicit decision before the final contract; they are not approved or left unbounded by this answer.
+- Q18: immutable opaque account identity is distinct from editable display name and account email. Expose account ID/email; edit display name and derive avatar initials from it. Email changes are a separate security-sensitive account operation, not unrestricted profile updates. Verification and authorization requirements require separate design.
+- Q19: structured errors have stable machine-readable codes, safe displayable messages and validation field paths. Distinguish unauthenticated, authorization, validation, missing-resource and service failures. Conceal foreign resources as not-found without existence leaks. Enforce ownership on reads, updates, deletes and relational references; foreign deletion must never modify the resource. Never expose stack traces or sensitive implementation details. The Endpoint Catalog owns exact HTTP statuses/encoding. This approval does not decide whether a foreign deletion returns concealed not-found or confirmed absence; reconcile explicitly with the earlier absent-deletion approval.
+- Q20: complete account-scoped project/task collections, without pagination or silent truncation. Empty collections succeed. Filtering/presentation sorting stay frontend-side initially. Every task references an accessible project or projectId: null. Revisit pagination only for demonstrated scale/product need.
+- Q21: coordinate breaking changes across frontend/backend and check both consumers. Required request additions, response removal/change and enum expansion require explicit compatibility review. Continue tolerating additional response fields under the approved reader policy. No speculative API-versioning infrastructure.
+
+These are approvals of planning semantics, not application changes or final shared-understanding confirmation. Concrete schemas/HTTP encodings retain downstream owners. Remaining current-ticket choices include string limits/normalization, completeness of create fields, authentication-facing outcomes and reconciliation of concealed deletion with confirmed absence. The separate email-security question is captured by [Define account email-change scope and security requirements](16-account-email-change.md).
+
+Review checkpoint: compare this record to the user's Q16–Q21 message, especially resource-specific create fields, immutable account identity, cross-account references, safe error messages and complete collections. Browser-local behavior remains unchanged. The ticket stays claimed without an Answer; implementation evaluation remains pending.
+
+### User decisions — 2026-10-24, final detailed contract round
+
+The user explicitly approved Q22–Q26 with these precise decisions:
+
+- Q22: maximum Unicode-code-point lengths are task title 200, project name 120, account display name 100, free-text assignee 120, and task/project description 10,000. Evaluate applicable name/label length and nonblank rules against normalized values. Required titles, names and display names contain non-whitespace text. Preserve descriptions without trimming. The shared-schema specification owns project color/icon constraints.
+- Q23: trim task titles, project names, display names and non-null free-text assignees before authoritative validation/storage. Reject blank required names/titles/display names and blank assignee strings; null clears an assignee. Preserve description whitespace/line breaks exactly. Normalize outside shared wire schemas. NestJS independently enforces canonicalization and validation server-side, regardless of frontend behavior, and returns authoritative normalized values.
+- Q24: complete explicit task create payload is title, description, status, priority, projectId, dueDate and assignee; project create payload is name, description, color and icon. Use empty strings for empty descriptions and null for nullable fields. Forms may supply defaults; the backend never silently fills missing required create fields. Updates remain partial with omission unchanged. IDs and audit timestamps remain server-owned.
+- Q25: successful authentication establishes current account opaque ID, email and display name. An unauthenticated session differs from a failed/unavailable session-status request. Profile updates return authoritative presentation data. Sign-out reports confirmed completion or explicit failure; no silent demo fallback or pretended remote success. Authentication technology remains separate.
+- Q26: authenticated deletion of a well-formed missing or foreign ID returns an indistinguishable successful confirmed-absence outcome. Neither case modifies foreign data. Deletion and related cascades are account-scoped. Foreign reads/updates remain not-found. Authentication failures, malformed requests and genuine service failures stay explicit errors. Exact successful deletion encoding belongs to the Endpoint Catalog. This settles the Q19/Q15 reconciliation noted above.
+
+### Complete specification prepared for confirmation — 2026-10-24
+
+[Frontend-facing domain and contract requirements](../design/frontend-facing-contract.md) consolidates the approved decisions, supersessions, concrete review scenarios and downstream ownership. Detailed individual choices are approved; final confirmation that this complete specification captures shared understanding remains pending. This ticket stays claimed with no Answer, and no map decision index entry is added yet.
+
+Preflight/evaluation evidence: retained the preceding planning edits and claim; read the map and this ticket's full approval history. Consolidated only approved semantics and preserved downstream decision ownership. Consistency review checked resource-specific create fields, code-point limits after normalization, description preservation, account identity separation, Q26's deletion supersession, local independence and tooling requirements. Corrected stale map Notes that still described tooling as claimed/unresolved; the map remains an index and does not duplicate this specification.
+
+Documentation checks passed: git diff --check; all 16 ticket lifecycles/dependency references valid; graph acyclic; all effort Markdown link targets exist; this decision remains claimed with no Answer; the email-security child remains open and blocks the catalog. No application tests, builds or runtime/API checks were run. All changed files are planning/domain Markdown. The linked specification's ten numbered scenarios provide the reproducible feature-by-feature review guide. First concrete action: review those scenarios and confirm this specification captures shared understanding, or report a discrepancy. Future implementation evaluation and human acceptance remain pending observations.
+
+### User confirmation — 2026-10-24
+
+Q27 explicitly confirmed: the user reviewed the complete specification against Q1–Q26 and all ten review scenarios, found no material discrepancies, approved it as the final shared architectural understanding, and authorized resolution. Implementation acceptance remains separate and pending. This supersedes earlier pending-confirmation checkpoints without changing their historical record.
+
+## Answer
+
+Resolved on 2026-10-24 with explicit Q27 confirmation of [Frontend-facing domain and contract requirements](../design/frontend-facing-contract.md), following the detailed Q1–Q26 approvals and revisions. The linked specification is the canonical consolidated requirement artifact; Comments retain approval provenance and rejected/superseded alternatives.
+
+Approved choice: shared Schema-First contract authority, resource-specific explicit create payloads, partial updates and nullable clearing, opaque server-owned IDs/audit timestamps, canonical text and Unicode-code-point limits, calendar due dates, timestamp instants, free-text assignment, account-scoped access and complete collections, consistent project deletion cascade, privacy-preserving repeated deletion, account/profile/authentication-facing guarantees, structured safe errors and coordinated consumer compatibility. The specification records their exact semantics and the Q26 deletion supersession.
+
+Retained/revised behavior: preserve independent browser-local operation and progressive integration with one authority per coupled domain. Planned API semantics intentionally revise local representations and demo identity behavior as detailed in the specification; current browser-local behavior is unchanged. Connected failures never silently fall back.
+
+Minimum preparation/outcome: documentation and contract design only. No application, dependency, configuration, test or storage changes, and no mandatory preliminary abstraction refactor. Later activation must satisfy approved authority isolation and boundary validation requirements.
+
+Deferred work/triggers: async presentation/retry and validation-layer ownership remain with their existing decisions; architecture, exact endpoints/errors, color/icon and schema definitions, OpenAPI and evidence retain their linked owners. The separate email-change scope/security child must resolve before the Endpoint Catalog. No authentication technology, database, ORM, repository, cache, concurrency mechanism or versioning infrastructure is implicitly selected.
+
+Verification and handoff: the user has accepted this architectural specification and its ten reproducible review scenarios. Those scenarios remain future implementation evaluation requirements, not executed runtime checks. Final documentation checks cover whitespace, link targets, ticket lifecycles/dependencies and graph acyclicity. No application tests, builds or API runtime checks were run. Implementation acceptance remains pending user observations.
+
+First concrete action: resume the map with [Define asynchronous operation completion and user feedback](04-async-operations.md), the next lowest-numbered open, unblocked, unclaimed decision. This session resolves only the present decision.
