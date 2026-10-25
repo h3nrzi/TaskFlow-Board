@@ -1,12 +1,16 @@
 # TaskFlow API Architecture & Integration Readiness — decision map
 
 Labels: wayfinder:map
+Status: resolved
+Completed: 2026-10-25
 
 ## Destination
 
 Reach a user-approved TaskFlow API architecture and integration-readiness design for the MVP before implementing its NestJS modules. Planned deliverables include an API Architecture Blueprint, a concrete Endpoint Catalog, shared Schema-First contract specifications, domain/business-rule specifications, an OpenAPI design specification (the generated and validated document remains an implementation deliverable), and an integration/contract-testing strategy. Preserve module-by-module backend development and frontend integration, and an independently operational browser-local MVP.
 
 ## Notes
+
+- **Map complete:** explicit final user approval of [Approve the minimum readiness scope before implementation planning](issues/08-readiness-disposition.md#answer) completes this design effort on 2026-10-25. All eighteen children are resolved; the local-data-transition child remains a retired out-of-scope closure. The [approved readiness disposition](design/readiness-disposition.md) links all six deliverables and controlling answers. No concrete prerequisite architecture decision remains. This closure authorizes no subsequent work automatically: implementation planning, implementation, executable verification, activation and human implementation acceptance remain separate and are not started here. Earlier session/frontier instructions below are historical workflow guidance, not a live frontier.
 
 - Apply the approved [Integration and contract-testing strategy](design/integration-testing-strategy.md), explicitly confirmed in full on 2026-10-25 with no material discrepancies. Preserve Q1–Q9 and all clarifications, T1–T14, full source/runtime-rule traceability and per-capability evidence/evaluation requirements. This resolves the testing-design decision only; execution, integration readiness, activation and human implementation acceptance remain pending. No further decision is started by this resolution.
 
@@ -74,18 +78,18 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 
 - [Choose evidence that proves local independence and each integration increment](issues/07-testability.md#answer): approved complete integration/contract-testing design with distinct evidence layers, observable local independence, deterministic authoritative durability/security proof, scoped activation/compatibility records and T1–T14; execution and human implementation acceptance remain pending.
 
+- [Approve the minimum readiness scope before implementation planning](issues/08-readiness-disposition.md#answer): approved all six deliverables and prior-decision dispositions as sufficient for separate implementation planning; no architecture blocker remains, speculative fog is retired, and implementation/evidence/activation/acceptance remain pending.
+
 ## Not yet specified
 
-- Integration-specific complications may emerge as the remaining domain, schema and API decisions settle. Graduate concrete questions about cross-boundary operations, ordering, conflicts or reconciliation only where the chosen direction makes them necessary; do not assume distributed transactions or offline synchronization.
-- Further external research or a throwaway prototype may become necessary beyond the ticketed tooling and catalog-driven generator evidence. Identify a precise uncertainty first, then create the appropriate child and dependency.
-- A chosen contract or module boundary may expose compatibility and recovery cases not visible yet. Promote each precise new decision when it emerges rather than silently assigning an implementation task.
+None. The user explicitly confirmed no remaining concrete architectural question on 2026-10-25. Generic speculative-fog reminders are retired; real implementation deferrals, compatibility/evaluation obligations and scope boundaries remain preserved in the [approved readiness disposition](design/readiness-disposition.md) and its controlling sources.
 
 ## Out of scope
 
 - Secure account email changes, including pending-change workflows and related verification/recovery: deferred until account-settings expansion under [Define account email-change scope and security requirements](issues/16-account-email-change.md#answer). This decision settles MVP scope; it creates no alternate recovery or email-modification path.
 
 - Password recovery, third-party identity providers, account deletion and global sign-out: excluded from the Authentication MVP scope approved in [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md#comments). Registration verification and bounded resend are included in that decision's approved scope.
-- Application, API, test, dependency or configuration changes; implementation tickets, estimates and build sequencing. Implementation planning begins after the decision map is resolved and the user approves its conclusions.
+- Application, API, test, dependency or configuration changes; implementation tickets, estimates and build sequencing. The map and its conclusions are now approved; beginning implementation planning still requires separate authorization and is not part of this closure.
 - Implementing backend persistence/authentication, database schemas/ORMs, production deployment or multi-user collaboration. API-facing access and account/assignment requirements are in scope for design; adding collaborative product behavior requires explicit user approval.
 - Unapproved product changes. Current browser-local behavior remains unchanged during planning. Future API date representation/display, optional free-text assignees and private workspace scope are approved as noted above. projectId: null for standalone tasks is approved. Preserve standalone-task support and project deletion cascade. Future reconsideration of account-linked assignment does not itself authorize collaboration or broader product redesign; revisit when collaboration is approved.
 - Treating incremental integration as an implicit requirement for offline sync, background queues, automatic failover, dual writes or universal abstractions.
