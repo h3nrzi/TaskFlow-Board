@@ -1,1 +1,0 @@
-- [TaskFlow product boundary](taskflow-product-boundary.md) — the current release is a frontend demo with browser storage, intended for later adaptation to a separate backend.

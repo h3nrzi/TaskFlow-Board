@@ -4,9 +4,11 @@ Labels: wayfinder:map
 
 ## Destination
 
-Reach a user-approved TaskFlow API architecture and integration-readiness design for the MVP before implementing its NestJS modules. Planned deliverables include an API Architecture Blueprint, a concrete Endpoint Catalog, shared Schema-First contract specifications, domain/business-rule specifications, an OpenAPI Specification, and an integration/contract-testing strategy. Preserve module-by-module backend development and frontend integration, and an independently operational browser-local MVP.
+Reach a user-approved TaskFlow API architecture and integration-readiness design for the MVP before implementing its NestJS modules. Planned deliverables include an API Architecture Blueprint, a concrete Endpoint Catalog, shared Schema-First contract specifications, domain/business-rule specifications, an OpenAPI design specification (the generated and validated document remains an implementation deliverable), and an integration/contract-testing strategy. Preserve module-by-module backend development and frontend integration, and an independently operational browser-local MVP.
 
 ## Notes
+
+- Apply the approved [OpenAPI design specification](design/openapi-specification.md) and [example/counterexample companion](design/openapi-examples.md), confirmed in Q14 on 2026-10-25 with no material discrepancies. Preserve Q1–Q13, all 27 operationIds, 115 export identities, exact wire/security/error/header/runtime-rule/serialization mappings and O1–O16 checkpoints. Q11–Q13 refine earlier ambiguous enrollment-read, recovery-description and prohibited-content/media bindings. The readiness deliverable is design-only; actual generated/validated OpenAPI, executable schemas/examples, runtime/security evidence and human implementation acceptance remain pending. This resolution starts no further decision.
 
 - Apply the approved [Shared Schema-First contract specification](design/shared-schema-contracts.md), including Q1–Q17 approval and its S1–S16 checkpoints, to existing downstream design decisions; implementation/runtime evidence and human acceptance remain pending.
 
@@ -38,7 +40,7 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 | API Architecture Blueprint | [Define the API Architecture Blueprint for progressive integration](issues/11-api-architecture-blueprint.md) |
 | Endpoint Catalog: concrete paths, methods, requests, responses and errors | [Design the MVP Endpoint Catalog](issues/12-endpoint-catalog.md) |
 | Shared Schema-First contract specifications | [Specify the shared Schema-First contracts](issues/13-shared-schema-contracts.md) |
-| OpenAPI Specification | [Specify the OpenAPI document and its contract consistency rules](issues/14-openapi-specification.md) |
+| OpenAPI design specification; generated/validated document deferred to implementation | [Specify the OpenAPI document and its contract consistency rules](issues/14-openapi-specification.md) |
 | Integration and contract-testing strategy | [Choose evidence that proves local independence and each integration increment](issues/07-testability.md) |
 
 ## Decisions so far
@@ -65,6 +67,8 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 - [Design the MVP Endpoint Catalog](issues/12-endpoint-catalog.md#answer): approved complete MVP operations, HTTP/success/error contracts, coherent Workspace/revision/cascade and durable creation recovery, same-origin cookie authentication/enrollment/CSRF/session activity and abuse boundaries; schemas, OpenAPI and evidence retain their existing owners.
 
 - [Specify the shared Schema-First contracts](issues/13-shared-schema-contracts.md#answer): approved complete four-role schema/export and transport/error contracts, exact Unicode 17.0.0 baseline, runtime/generation safeguards and S1–S16 guide; production implementation and acceptance remain pending.
+
+- [Specify the OpenAPI document and its contract consistency rules](issues/14-openapi-specification.md#answer): approved complete OpenAPI design and synthetic examples, exact operation/schema/security/error/runtime-rule/serialization traceability and O1–O16 guide; generated-document and implementation evidence remain pending.
 
 ## Not yet specified
 
