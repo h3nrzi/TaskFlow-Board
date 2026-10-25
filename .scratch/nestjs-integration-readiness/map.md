@@ -8,6 +8,8 @@ Reach a user-approved TaskFlow API architecture and integration-readiness design
 
 ## Notes
 
+- Apply the approved [Integration and contract-testing strategy](design/integration-testing-strategy.md), explicitly confirmed in full on 2026-10-25 with no material discrepancies. Preserve Q1–Q9 and all clarifications, T1–T14, full source/runtime-rule traceability and per-capability evidence/evaluation requirements. This resolves the testing-design decision only; execution, integration readiness, activation and human implementation acceptance remain pending. No further decision is started by this resolution.
+
 - Apply the approved [OpenAPI design specification](design/openapi-specification.md) and [example/counterexample companion](design/openapi-examples.md), confirmed in Q14 on 2026-10-25 with no material discrepancies. Preserve Q1–Q13, all 27 operationIds, 115 export identities, exact wire/security/error/header/runtime-rule/serialization mappings and O1–O16 checkpoints. Q11–Q13 refine earlier ambiguous enrollment-read, recovery-description and prohibited-content/media bindings. The readiness deliverable is design-only; actual generated/validated OpenAPI, executable schemas/examples, runtime/security evidence and human implementation acceptance remain pending. This resolution starts no further decision.
 
 - Apply the approved [Shared Schema-First contract specification](design/shared-schema-contracts.md), including Q1–Q17 approval and its S1–S16 checkpoints, to existing downstream design decisions; implementation/runtime evidence and human acceptance remain pending.
@@ -69,6 +71,8 @@ This table identifies decision owners; approved outcomes are indexed in Decision
 - [Specify the shared Schema-First contracts](issues/13-shared-schema-contracts.md#answer): approved complete four-role schema/export and transport/error contracts, exact Unicode 17.0.0 baseline, runtime/generation safeguards and S1–S16 guide; production implementation and acceptance remain pending.
 
 - [Specify the OpenAPI document and its contract consistency rules](issues/14-openapi-specification.md#answer): approved complete OpenAPI design and synthetic examples, exact operation/schema/security/error/runtime-rule/serialization traceability and O1–O16 guide; generated-document and implementation evidence remain pending.
+
+- [Choose evidence that proves local independence and each integration increment](issues/07-testability.md#answer): approved complete integration/contract-testing design with distinct evidence layers, observable local independence, deterministic authoritative durability/security proof, scoped activation/compatibility records and T1–T14; execution and human implementation acceptance remain pending.
 
 ## Not yet specified
 
